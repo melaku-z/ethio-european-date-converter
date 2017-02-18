@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>Date converter</title>
+    <style>
+        body
+        {
+            margin: 0;
+            width: 554px;
+            height: 120px;
+        }
+        #gadgetContent
+        {
+            width: 554px;
+            top: 24px;
+            text-align: center;
+            font-family: Tahoma;
+            font-size: 10pt;
+            position: absolute;
+        }
+        #background
+        {
+            width: 554px;
+            height: 120px;
+            position: absolute;
+            z-index: -1;
+            background-repeat: no-repeat;
+        }
+    </style>
+<script type="text/javascript">
+
+var nowEnglish = new Date()
+var oneHour=60*60*1000
+var oneDay=24*oneHour
+var oneYear=365*oneDay
+var oneLeapYear=366*oneDay
+var fourYears=3*oneYear+oneLeapYear
+var globalDifference=new Date("December 9, 2012").getTime()-new Date("April 1, 2005").getTime()
+
+function amhDay(){
+return ( this.year+2*this.month+this.date+amhDifference(this.year) ) % 7
+function amhDifference(amhYear){
+return -(Math.floor((2023-amhYear)/4))
+}
+}
+
+function dayString(day){
+switch (day){
+case 0:return "Sun "
+case 1:return "Mon "
+case 2:return "Tue "
+case 3:return "Wed "
+case 4:return "Thu "
+case 5:return "Fri "
+case 6:return "Sat "
+}
+}
+
+function amhTime(date,mon,yr,hr,min,sec){//mon in human form
+if (date==31) {this.date=30} else {this.date=date}
+this.month=mon
+if (yr>200) {this.year=yr} else {this.year=yr+1900}
+this.hour=hr
+this.minute=min
+this.second=sec
+this.getDay=amhDay//or yr+2*mon...
+if (hr<13) {this.timeString=dayString(this.getDay())+this.date+"/"+mon+"/"+this.year+" "+hr+":"+min+":"+sec+" a.m"}
+else {this.timeString=dayString(this.getDay())+this.date+"/"+mon+"/"+this.year+" "+(hr-12)+":"+min+":"+sec+" p.m"}
+}
+
+function toAmharic(date) {
+var difference=date.getTime()-new Date("September 12, 1971").getTime()
+var fourYearsPassed=Math.floor(difference/fourYears)
+var remainingYears=Math.floor((difference-fourYearsPassed*fourYears)/oneYear)
+if (remainingYears==4) {remainingYears=3}
+var remainingMonths=Math.floor((difference-fourYearsPassed*fourYears-remainingYears*oneYear)/(30*oneDay))
+var remainingDays=Math.floor((difference-fourYearsPassed*fourYears-remainingYears*oneYear-remainingMonths*30*oneDay)/oneDay)
+var remainingHours=date.getHours()-6
+if (remainingHours<0) {remainingHours=24+remainingHours}
+var amhDate=new amhTime(remainingDays+1,remainingMonths+1,remainingYears+4*fourYearsPassed+1964,remainingHours,date.getMinutes(),date.getSeconds())
+return amhDate.timeString
+}
+
+function toAmharicDate(date){
+var dayarray=toAmharic(date).split(" ")
+return dayarray[0]+" "+dayarray[1]
+}
+
+function toEnglish(amhDate) {
+var initialEnglish=new Date(new Date(amhDate.year,amhDate.month-1,amhDate.date).getTime()+globalDifference)
+if (amhDate.month==13){
+if ((amhDate.year%4==3&&amhDate.date>6)||(amhDate.year%4!=3&&amhDate.date>5)){
+return "error month-13"
+}}
+for (var count=-8;count<9;count++){
+EngDate=new Date(initialEnglish.getTime()+count*oneDay)
+var difference=EngDate.getTime()-new Date("September 12, 1971").getTime()
+var fourYearsPassed=Math.floor(difference/fourYears)
+var remainingYears=Math.floor((difference-fourYearsPassed*fourYears)/oneYear)
+if (remainingYears==4) {remainingYears=3}
+var remainingMonths=Math.floor((difference-fourYearsPassed*fourYears-remainingYears*oneYear)/(30*oneDay))
+var remainingDays=Math.floor((difference-fourYearsPassed*fourYears-remainingYears*oneYear-remainingMonths*30*oneDay)/oneDay)
+if (amhDate.date==remainingDays+1 && amhDate.month==remainingMonths+1){
+return EngDate.toDateString()
+}
+}}
+
+function optionToAmharic() {
+opt=document.form1
+document.form1.amhDayTextArea.value=toAmharicDate(new Date(parseInt(opt.year.options[opt.year.selectedIndex].text),-1+parseInt(opt.month.options[opt.month.selectedIndex].text),parseInt(opt.day.options[opt.day.selectedIndex].text)))
+}
+function optionToEnglish() {
+opt=document.form1
+document.form1.engDayTextArea.value=toEnglish(new amhTime(parseInt(opt.engDayScroll.options[opt.engDayScroll.selectedIndex].text),parseInt(opt.engMonthScroll.options[opt.engMonthScroll.selectedIndex].text),parseInt(opt.engYearScroll.options[opt.engYearScroll.selectedIndex].text),0,0,0))
+}
+</script>
+</head>
+<body  onload="document.form1.amhTodayTextArea.value=toAmharic(new Date())">
+<g:background 
+        src="defaultPotter.png"
+        id="HelloWorldBg"   
+        style="position:absolute;width:554px;height:120px;z-index:-1"/>
+<br />
+<form name="form1"  onsubmit="return false">  
+&nbsp;&nbsp; &nbsp;  
+<input type="button" value="Today in amharic" onclick="document.form1.amhTodayTextArea.value=toAmharic(new Date())" > :
+<input type="text" name="amhTodayTextArea" style="width: 170px" > <BR>&nbsp;&nbsp; &nbsp;
+<span style='background:silver;'>Day in English:</span>&nbsp;&nbsp;<select name="day" onchange="optionToAmharic()" >
+<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+</select>
+<select name="month"  onchange="optionToAmharic()" >
+<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+</select>
+<select name="year"  onchange="optionToAmharic()" >
+<option>1975</option><option>1976</option><option>1977</option><option>1978</option><option>1979</option><option>1980</option><option>1981</option><option>1982</option><option>1983</option><option>1984</option><option>1985</option><option>1986</option><option>1987</option><option>1988</option><option>1989</option><option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option><option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option><option>2000</option><option>2001</option><option>2002</option><option>2003</option><option>2004</option><option>2005</option><option>2006</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option>
+</select><span style='background:silver;'>Day in Amharic:</span> 
+<textarea rows="1" name="amhDayTextArea" readonly style="width: 130px"></textarea>
+<br>&nbsp;&nbsp; &nbsp;
+<span style='background:silver;'>Day in Amharic:</span><select name="engDayScroll" onchange="optionToEnglish()" >
+<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
+</select>
+<select name="engMonthScroll"  onchange="optionToEnglish()" >
+<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option>
+</select>
+<select name="engYearScroll"  onchange="optionToEnglish()" >
+<option>1968</option><option>1969</option><option>1970</option><option>1971</option><option>1972</option><option>1973</option><option>1974</option><option>1975</option><option>1976</option><option>1977</option><option>1978</option><option>1979</option><option>1980</option><option>1981</option><option>1982</option><option>1983</option><option>1984</option><option>1985</option><option>1986</option><option>1987</option><option>1988</option><option>1989</option><option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option><option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option><option>2000</option><option>2001</option><option>2002</option><option>2003</option><option>2004</option><option>2005</option><option>2006</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option>
+</select><span style='background:silver;'>Day in English:</span>&nbsp;&nbsp;
+<textarea rows="1" name="engDayTextArea" readonly style="width: 146px"></textarea>
+</form><br />
+</body>
+</html>
+<!--
+function toAmharic(date) {
+var nowAmh1 = new Date(date.getTime()-globalDifference)
+nowAmh1= new Date(nowAmh1.getTime()+oneDay*((date.getDate()-nowAmh1.getDate())-8))
+var nowAmharic = new amhTime(nowAmh1.getDate(),nowAmh1.getMonth()+1,nowAmh1.getFullYear(),nowAmh1.getHours(),nowAmh1.getMinutes(),nowAmh1.getSeconds())
+var intermediate= date.getDay()-nowAmharic.getDay()
+if (intermediate>0) {intermediate=intermediate-7}
+var intermHour=nowAmh1.getHours()-6
+if (intermHour<0) {intermHour=24+intermHour}
+nowAmh1.setTime(nowAmh1.getTime()+oneDay*intermediate)
+nowAmharic = new amhTime(nowAmh1.getDate(),nowAmh1.getMonth()+1,nowAmh1.getYear(),intermHour,nowAmh1.getMinutes(),nowAmh1.getSeconds())
+return nowAmharic.timeString
+}
+-->
