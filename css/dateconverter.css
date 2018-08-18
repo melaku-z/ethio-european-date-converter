@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    width: 554px;
+    height: 120px;
+}
+
+#gadgetContent {
+    width: 554px;
+    top: 24px;
+    text-align: center;
+    font-family: Tahoma;
+    font-size: 10pt;
+    position: absolute;
+}
+
+#background {
+    width: 554px;
+    height: 120px;
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
