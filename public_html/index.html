@@ -32,13 +32,25 @@
         <div>
             <span style='background:silver;'>Day in European:</span>
             <input type="date" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()"/>
-            <div>
-                <span>Ethiopian Day:</span>
-                <p id="ethDayTextArea"></p>
-            </div>
+            <p id="EurDayTextArea"></p>
         </div>
         <div>
             <span style='background:silver;'>Ethiopian Day:</span>
+            <select name="EthMonthScroll" onchange="updateCalculatedEurDateOnPage()">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+            </select>
             <select name="EthDayScroll" onchange="updateCalculatedEurDateOnPage()">
                 <option>1</option>
                 <option>2</option>
@@ -70,21 +82,6 @@
                 <option>28</option>
                 <option>29</option>
                 <option>30</option>
-            </select>
-            <select name="EthMonthScroll" onchange="updateCalculatedEurDateOnPage()">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
             </select>
             <select name="EthYearScroll" onchange="updateCalculatedEurDateOnPage()">
                 <option>1968</option>
@@ -138,10 +135,7 @@
                 <option>2016</option>
                 <option>2017</option>
             </select>
-            <div>
-                <span>Day in European:</span>
-                <p id="EurDayTextArea"></p>
-            </div>
+            <p id="ethDayTextArea"></p>
         </div>
     </form>
     <script src="js/vendor/modernizr-3.6.0.min.js"></script>
