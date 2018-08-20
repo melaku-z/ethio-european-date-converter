@@ -14,15 +14,15 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
 
-    <body onload="document.dateConvverterForm.ethTodayTextArea.value = toEthiopian(new Date())">
+    <body onload="document.dateConverterForm.ethTodayTextArea.value = toEthiopian(new Date())">
         <!--[if lte IE 9]>
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
         <p>Ethiopian Calendar date calculator</p>
-        <form name="dateConvverterForm" onsubmit="return false">
+        <form name="dateConverterForm" onsubmit="return false">
             <div>
-                <input type="button" value="Today in Ethioian" onclick="document.dateConvverterForm.ethTodayTextArea.value = toEthiopian(new Date())">        :
+                <input type="button" value="Today in Ethioian" onclick="document.dateConverterForm.ethTodayTextArea.value = toEthiopian(new Date())">        :
                 <input type="text" name="ethTodayTextArea" style="width: 170px">
             </div>
             <div>
