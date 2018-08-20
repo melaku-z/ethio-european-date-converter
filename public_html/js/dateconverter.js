@@ -77,10 +77,10 @@ function toEnglish(ethDate) {
 }
 
 function optionToEthiopian() {
-    opt = document.form1
-    document.form1.ethDayTextArea.value = toEthiopianDate(new Date(parseInt(opt.year.options[opt.year.selectedIndex].text), -1 + parseInt(opt.month.options[opt.month.selectedIndex].text), parseInt(opt.day.options[opt.day.selectedIndex].text)))
+    opt = document.dateConvverterForm
+    document.dateConvverterForm.ethDayTextArea.value = toEthiopianDate(new Date(parseInt(opt.year.options[opt.year.selectedIndex].text), -1 + parseInt(opt.month.options[opt.month.selectedIndex].text), parseInt(opt.day.options[opt.day.selectedIndex].text)))
 }
 function optionToEnglish() {
-    opt = document.form1
-    document.form1.engDayTextArea.value = toEnglish(new ethTime(parseInt(opt.engDayScroll.options[opt.engDayScroll.selectedIndex].text), parseInt(opt.engMonthScroll.options[opt.engMonthScroll.selectedIndex].text), parseInt(opt.engYearScroll.options[opt.engYearScroll.selectedIndex].text), 0, 0, 0))
+    opt = document.dateConvverterForm
+    document.dateConvverterForm.engDayTextArea.value = toEnglish(new ethTime(parseInt(opt.engDayScroll.options[opt.engDayScroll.selectedIndex].text), parseInt(opt.engMonthScroll.options[opt.engMonthScroll.selectedIndex].text), parseInt(opt.engYearScroll.options[opt.engYearScroll.selectedIndex].text), 0, 0, 0))
 }
