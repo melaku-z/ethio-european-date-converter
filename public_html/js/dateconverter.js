@@ -55,8 +55,8 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
     }
 }
 
-function toEthiopianDateString(date) {
-    var difference = date.getTime() - new Date("September 12, 1971").getTime()
+function toEthiopianDateTime(eurDate) {
+    var difference = eurDate.getTime() - new Date("September 12, 1971").getTime()
     var fourYearsPassed = Math.floor(difference / fourYears)
     var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear)
     if (remainingYears == 4) {
@@ -64,16 +64,20 @@ function toEthiopianDateString(date) {
     }
     var remainingMonths = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear) / (30 * oneDay))
     var remainingDays = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear - remainingMonths * 30 * oneDay) / oneDay)
-    var remainingHours = date.getHours() - 6
+    var remainingHours = eurDate.getHours() - 6
     if (remainingHours < 0) {
         remainingHours = 24 + remainingHours
     }
-    var ethDate = new ethTime(remainingDays + 1, remainingMonths + 1, remainingYears + 4 * fourYearsPassed + 1964, remainingHours, date.getMinutes(), date.getSeconds())
-    return ethDate.timeString
+    var ethDate = new ethTime(remainingDays + 1, remainingMonths + 1, remainingYears + 4 * fourYearsPassed + 1964, remainingHours, eurDate.getMinutes(), eurDate.getSeconds())
+    return ethDate
 }
 
-function toEthiopianDate(date) {
-    var dayarray = toEthiopianDateString(date).split(" ")
+function toEthiopianDateTimeString(eurDate) {
+    return toEthiopianDateTime(eurDate).timeString
+}
+
+function toEthiopianDateString(eurDate) {
+    var dayarray = toEthiopianDateTimeString(eurDate).split(" ")
     return dayarray[0] + " " + dayarray[1]
 }
 
@@ -105,7 +109,7 @@ function toEuropeanDateString(ethDate) {
 }
 
 function updateCalculatedEthDateOnPage() {
-    $('#ethDayTextArea').html(toEthiopianDate(new Date($('#EuropeanDate').val())))
+    $('#ethDayTextArea').html(toEthiopianDateString(new Date($('#EuropeanDate').val())))
 }
 
 function updateCalculatedEurDateOnPage() {
@@ -114,7 +118,7 @@ function updateCalculatedEurDateOnPage() {
 }
 
 function initDates() {
-    $('#ethTodayTextArea').html(toEthiopianDateString(new Date()));
+    $('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()));
     $('#EuropeanDate').val(new Date().toJSON().slice(0, 10));
     updateCalculatedEthDateOnPage();
 }
