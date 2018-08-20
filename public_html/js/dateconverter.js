@@ -32,6 +32,37 @@ function dayString(day) {
     }
 }
 
+function monthString(month) {
+    switch (month) {
+        case 1:
+            return "Meskerem "
+        case 2:
+            return "Tikimt "
+        case 3:
+            return "Hidar "
+        case 4:
+            return "Tahsas "
+        case 5:
+            return "Tir "
+        case 6:
+            return "Yekatit "
+        case 7:
+            return "Megabit "
+        case 8:
+            return "Meyazya "
+        case 9:
+            return "Ginbot "
+        case 10:
+            return "Sene "
+        case 11:
+            return "Hamle "
+        case 12:
+            return "Nehase "
+        case 13:
+            return "Pagume "
+    }
+}
+
 function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
     if (date == 31) {
         this.date = 30
@@ -49,9 +80,9 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
     this.second = sec
     this.getDay = ethDay
     if (hr < 13) {
-        this.timeString = dayString(this.getDay()) + this.date + "/" + mon + "/" + this.year + " " + hr + ":" + min + ":" + sec + " a.m"
+        this.timeString = dayString(this.getDay()) + " " + monthString(mon) + this.date + ", " + this.year + " " + hr + ":" + min + ":" + sec + " a.m"
     } else {
-        this.timeString = dayString(this.getDay()) + this.date + "/" + mon + "/" + this.year + " " + (hr - 12) + ":" + min + ":" + sec + " p.m"
+        this.timeString = dayString(this.getDay()) + " " + monthString(mon) + this.date + ", " + this.year + " " + (hr - 12) + ":" + min + ":" + sec + " p.m"
     }
 }
 
@@ -78,7 +109,7 @@ function toEthiopianDateTimeString(eurDate) {
 
 function toEthiopianDateString(eurDate) {
     var dayarray = toEthiopianDateTimeString(eurDate).split(" ")
-    return dayarray[0] + " " + dayarray[1]
+    return dayarray[0] + " " + dayarray[1] + " " + dayarray[2] + " " + dayarray[3] + " " + dayarray[4]
 }
 
 function toEuropeanDate(ethDate) {
