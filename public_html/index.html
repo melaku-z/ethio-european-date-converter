@@ -30,7 +30,7 @@
     </div>
     <form name="dateConverterForm" onsubmit="return false">
         <div>
-            <span style='background:silver;'>Day in English:</span>
+            <span style='background:silver;'>Day in European:</span>
             <input type="date" id="EuropeanDate" onchange="optionToEthiopian()"/>
             <div>
                 <span>Ethiopian Day:</span>
@@ -38,7 +38,8 @@
             </div>
         </div>
         <div>
-            <span style='background:silver;'>Ethiopian Day:</span><select name="engDayScroll" onchange="optionToEnglish()">
+            <span style='background:silver;'>Ethiopian Day:</span>
+            <select name="EthDayScroll" onchange="optionToEuropean()">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -70,7 +71,7 @@
                 <option>29</option>
                 <option>30</option>
             </select>
-            <select name="engMonthScroll" onchange="optionToEnglish()">
+            <select name="EthMonthScroll" onchange="optionToEuropean()">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -85,7 +86,7 @@
                 <option>12</option>
                 <option>13</option>
             </select>
-            <select name="engYearScroll" onchange="optionToEnglish()">
+            <select name="EthYearScroll" onchange="optionToEuropean()">
                 <option>1968</option>
                 <option>1969</option>
                 <option>1970</option>
@@ -136,8 +137,11 @@
                 <option>2015</option>
                 <option>2016</option>
                 <option>2017</option>
-            </select><span style='background:silver;'>Day in English:</span>
-            <textarea rows="1" name="engDayTextArea" readonly style="width: 146px"></textarea>
+            </select>
+            <div>
+                <span>Day in European:</span>
+                <p id="EurDayTextArea"></p>
+            </div>
         </div>
     </form>
     <script src="js/vendor/modernizr-3.6.0.min.js"></script>
