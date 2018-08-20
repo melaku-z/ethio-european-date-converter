@@ -78,9 +78,14 @@ function toEnglish(ethDate) {
 
 function optionToEthiopian() {
     opt = document.dateConverterForm
-    document.dateConverterForm.ethDayTextArea.value = toEthiopianDate(new Date(parseInt(opt.year.options[opt.year.selectedIndex].text), -1 + parseInt(opt.month.options[opt.month.selectedIndex].text), parseInt(opt.day.options[opt.day.selectedIndex].text)))
+    $('#ethDayTextArea').html(toEthiopianDate(new Date($('#EuropeanDate').val())))
 }
 function optionToEnglish() {
     opt = document.dateConverterForm
     document.dateConverterForm.engDayTextArea.value = toEnglish(new ethTime(parseInt(opt.engDayScroll.options[opt.engDayScroll.selectedIndex].text), parseInt(opt.engMonthScroll.options[opt.engMonthScroll.selectedIndex].text), parseInt(opt.engYearScroll.options[opt.engYearScroll.selectedIndex].text), 0, 0, 0))
+}
+function initDates() {
+    $('#ethTodayTextArea').html(toEthiopian(new Date()));
+    $('#EuropeanDate').val(new Date().toJSON().slice(0,10));
+    optionToEthiopian();
 }
