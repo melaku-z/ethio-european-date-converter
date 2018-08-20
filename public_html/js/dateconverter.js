@@ -47,7 +47,7 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
     this.hour = hr
     this.minute = min
     this.second = sec
-    this.getDay = ethDay//or yr+2*mon...
+    this.getDay = ethDay
     if (hr < 13) {
         this.timeString = dayString(this.getDay()) + this.date + "/" + mon + "/" + this.year + " " + hr + ":" + min + ":" + sec + " a.m"
     } else {
@@ -55,7 +55,7 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
     }
 }
 
-function toEthiopian(date) {
+function toEthiopianDateString(date) {
     var difference = date.getTime() - new Date("September 12, 1971").getTime()
     var fourYearsPassed = Math.floor(difference / fourYears)
     var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear)
@@ -73,15 +73,15 @@ function toEthiopian(date) {
 }
 
 function toEthiopianDate(date) {
-    var dayarray = toEthiopian(date).split(" ")
+    var dayarray = toEthiopianDateString(date).split(" ")
     return dayarray[0] + " " + dayarray[1]
 }
 
-function toEuropean(ethDate) {
+function toEuropeanDate(ethDate) {
     var initialEuropean = new Date(new Date(ethDate.year, ethDate.month - 1, ethDate.date).getTime() + globalDifference)
     if (ethDate.month == 13) {
         if ((ethDate.year % 4 == 3 && ethDate.date > 6) || (ethDate.year % 4 != 3 && ethDate.date > 5)) {
-            return "error month-13"
+            return "error month-13" //todo: handle error
         }
     }
     for (var count = -8; count < 9; count++) {
@@ -95,23 +95,26 @@ function toEuropean(ethDate) {
         var remainingMonths = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear) / (30 * oneDay))
         var remainingDays = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear - remainingMonths * 30 * oneDay) / oneDay)
         if (ethDate.date == remainingDays + 1 && ethDate.month == remainingMonths + 1) {
-            return EngDate.toDateString()
+            return EngDate
         }
     }
 }
 
-function optionToEthiopian() {
-    opt = document.dateConverterForm
+function toEuropeanDateString(ethDate) {
+    return toEuropeanDate(ethDate).toDateString()
+}
+
+function updateCalculatedEthDateOnPage() {
     $('#ethDayTextArea').html(toEthiopianDate(new Date($('#EuropeanDate').val())))
 }
 
-function optionToEuropean() {
+function updateCalculatedEurDateOnPage() {
     opt = document.dateConverterForm
-    $('#EurDayTextArea').html(toEuropean(new ethTime(parseInt(opt.EthDayScroll.options[opt.EthDayScroll.selectedIndex].text), parseInt(opt.EthMonthScroll.options[opt.EthMonthScroll.selectedIndex].text), parseInt(opt.EthYearScroll.options[opt.EthYearScroll.selectedIndex].text), 0, 0, 0)))
+    $('#EurDayTextArea').html(toEuropeanDateString(new ethTime(parseInt(opt.EthDayScroll.options[opt.EthDayScroll.selectedIndex].text), parseInt(opt.EthMonthScroll.options[opt.EthMonthScroll.selectedIndex].text), parseInt(opt.EthYearScroll.options[opt.EthYearScroll.selectedIndex].text), 0, 0, 0)))
 }
 
 function initDates() {
-    $('#ethTodayTextArea').html(toEthiopian(new Date()));
+    $('#ethTodayTextArea').html(toEthiopianDateString(new Date()));
     $('#EuropeanDate').val(new Date().toJSON().slice(0, 10));
-    optionToEthiopian();
+    updateCalculatedEthDateOnPage();
 }
