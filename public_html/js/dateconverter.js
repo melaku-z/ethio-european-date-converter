@@ -1,4 +1,4 @@
-var nowEnglish = new Date()
+var nowEuropean = new Date()
 var oneHour = 60 * 60 * 1000
 var oneDay = 24 * oneHour
 var oneYear = 365 * oneDay
@@ -55,15 +55,15 @@ function toEthiopianDate(date) {
     return dayarray[0] + " " + dayarray[1]
 }
 
-function toEnglish(ethDate) {
-    var initialEnglish = new Date(new Date(ethDate.year, ethDate.month - 1, ethDate.date).getTime() + globalDifference)
+function toEuropean(ethDate) {
+    var initialEuropean = new Date(new Date(ethDate.year, ethDate.month - 1, ethDate.date).getTime() + globalDifference)
     if (ethDate.month == 13) {
         if ((ethDate.year % 4 == 3 && ethDate.date > 6) || (ethDate.year % 4 != 3 && ethDate.date > 5)) {
             return "error month-13"
         }
     }
     for (var count = -8; count < 9; count++) {
-        EngDate = new Date(initialEnglish.getTime() + count * oneDay)
+        EngDate = new Date(initialEuropean.getTime() + count * oneDay)
         var difference = EngDate.getTime() - new Date("September 12, 1971").getTime()
         var fourYearsPassed = Math.floor(difference / fourYears)
         var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear)
@@ -80,12 +80,12 @@ function optionToEthiopian() {
     opt = document.dateConverterForm
     $('#ethDayTextArea').html(toEthiopianDate(new Date($('#EuropeanDate').val())))
 }
-function optionToEnglish() {
+function optionToEuropean() {
     opt = document.dateConverterForm
-    document.dateConverterForm.engDayTextArea.value = toEnglish(new ethTime(parseInt(opt.engDayScroll.options[opt.engDayScroll.selectedIndex].text), parseInt(opt.engMonthScroll.options[opt.engMonthScroll.selectedIndex].text), parseInt(opt.engYearScroll.options[opt.engYearScroll.selectedIndex].text), 0, 0, 0))
+    $('#EurDayTextArea').html(toEuropean(new ethTime(parseInt(opt.EthDayScroll.options[opt.EthDayScroll.selectedIndex].text), parseInt(opt.EthMonthScroll.options[opt.EthMonthScroll.selectedIndex].text), parseInt(opt.EthYearScroll.options[opt.EthYearScroll.selectedIndex].text), 0, 0, 0)))
 }
 function initDates() {
     $('#ethTodayTextArea').html(toEthiopian(new Date()));
-    $('#EuropeanDate').val(new Date().toJSON().slice(0,10));
+    $('#EuropeanDate').val(new Date().toJSON().slice(0, 10));
     optionToEthiopian();
 }
