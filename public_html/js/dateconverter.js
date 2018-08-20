@@ -141,21 +141,22 @@ function toEuropeanDateString(ethDate) {
 
 function updateCalculatedEthDateOnPage() {
     ethDate = toEthiopianDateTime(new Date($('#EuropeanDate').val()))
-    opt = document.dateConverterForm
-    opt.EthDayScroll.selectedIndex = ethDate.date-1
-    opt.EthMonthScroll.selectedIndex = ethDate.month-1
-    opt.EthYearScroll.options[opt.EthYearScroll.selectedIndex].text = ethDate.year //todo
+    $('#EthDayScroll')[0].selectedIndex = ethDate.date-1
+    $('#EthMonthScroll')[0].selectedIndex = ethDate.month-1
+    $('#EthYearScroll')[0].options[$('#EthYearScroll')[0].selectedIndex].text = ethDate.year //todo
     $('#EurDayTextArea').html(toEuropeanDateString(ethDate))
     $('#ethDayTextArea').html(toEthiopianDateString(new Date($('#EuropeanDate').val())))
 }
 
 function updateCalculatedEurDateOnPage() {
-    opt = document.dateConverterForm
-    ethDate = new ethTime(parseInt(opt.EthDayScroll.options[opt.EthDayScroll.selectedIndex].text), parseInt(opt.EthMonthScroll.options[opt.EthMonthScroll.selectedIndex].text), parseInt(opt.EthYearScroll.options[opt.EthYearScroll.selectedIndex].text), 0, 0, 0)
+    ethDate_Year = parseInt($('#EthYearScroll')[0].options[$('#EthYearScroll')[0].selectedIndex].text)
+    ethDate_Month = parseInt($('#EthMonthScroll')[0].options[$('#EthMonthScroll')[0].selectedIndex].text)
+    ethDate_Day = parseInt($('#EthDayScroll')[0].options[$('#EthDayScroll')[0].selectedIndex].text)
+    ethDate = new ethTime(ethDate_Day, ethDate_Month, ethDate_Year, 0, 0, 0)
     eurDate = toEuropeanDate(ethDate)
     $('#EuropeanDate').val(eurDate.toJSON().slice(0, 10))
     $('#EurDayTextArea').html(toEuropeanDateString(ethDate))
-    $('#ethDayTextArea').html(toEthiopianDateString(new Date($('#EuropeanDate').val())))
+    $('#ethDayTextArea').html(toEthiopianDateString(eurDate))
 }
 
 function initDates() {
