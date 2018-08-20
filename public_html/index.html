@@ -21,7 +21,7 @@
 
     <p>Ethiopian Calendar date calculator</p>
     <div>
-        <button type="button" class="btn btn-default" onclick="$('#ethTodayTextArea').html(toEthiopian(new Date()))">
+        <button type="button" class="btn btn-default" onclick="$('#ethTodayTextArea').html(toEthiopianDateString(new Date()))">
             Today in Ethiopian
         </button>
         <div>
@@ -31,7 +31,7 @@
     <form name="dateConverterForm" onsubmit="return false">
         <div>
             <span style='background:silver;'>Day in European:</span>
-            <input type="date" id="EuropeanDate" onchange="optionToEthiopian()"/>
+            <input type="date" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()"/>
             <div>
                 <span>Ethiopian Day:</span>
                 <p id="ethDayTextArea"></p>
@@ -39,7 +39,7 @@
         </div>
         <div>
             <span style='background:silver;'>Ethiopian Day:</span>
-            <select name="EthDayScroll" onchange="optionToEuropean()">
+            <select name="EthDayScroll" onchange="updateCalculatedEurDateOnPage()">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -71,7 +71,7 @@
                 <option>29</option>
                 <option>30</option>
             </select>
-            <select name="EthMonthScroll" onchange="optionToEuropean()">
+            <select name="EthMonthScroll" onchange="updateCalculatedEurDateOnPage()">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -86,7 +86,7 @@
                 <option>12</option>
                 <option>13</option>
             </select>
-            <select name="EthYearScroll" onchange="optionToEuropean()">
+            <select name="EthYearScroll" onchange="updateCalculatedEurDateOnPage()">
                 <option>1968</option>
                 <option>1969</option>
                 <option>1970</option>
