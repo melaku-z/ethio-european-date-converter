@@ -29,32 +29,42 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <p class="lead text-center">Today in Ethiopian Calendar is <strong id="ethTodayTextArea"></strong>
-                        <button type="button" class="btn btn-sm" onclick="$('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))">
-                                Update
-                        </button>
-                    </p>
+                    <div class="card">
+                        <p class="lead text-center">Today in Ethiopian Calendar is <strong id="ethTodayTextArea"></strong>
+                            <button type="button" class="btn btn-sm" onclick="$('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))">
+                                    Update
+                            </button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-2" style="box-shadow: inset 1px -1px 1px #444,inset -1px 1px 1px #444;">
-                    <div class="form-group">
-                        <label for="EuropeanDate">European Date</label>
-                        <input type="date" class="form-control" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()" />
-                        <p id="EurDayTextArea"></p>
-                        <span class="help-block">Select date in European calendar here. it will be converted to Ethiopian Calendar.</span>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-2">
+                    <div class="card">
+                        <div class="card-header">European Date</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input type="date" class="form-control" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()" />
+                                <p id="EurDayTextArea"></p>
+                                <span class="help-block">Select date in European calendar here. it will be converted to Ethiopian Calendar.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4" style="box-shadow: inset 1px -1px 1px #444,inset -1px 1px 1px #444;">
-                    <div class="form-group">
-                        <label for="EthMonthScroll EthDayScroll EthYearScroll">Ethiopian Date</label>                        
-                        <input type="number" class="form-control" id="EthMonthScroll" min="1" max="13" onchange="updateCalculatedEurDateOnPage()"> /
-                        <input type="number" class="form-control" id="EthDayScroll" min="1" max="30" onchange="updateCalculatedEurDateOnPage()"> /
-                        <input type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999" onchange="updateCalculatedEurDateOnPage()">
-                        <p id="ethDayTextArea"></p>
-                        <span class="help-block">Select date in Ethiopian calendar here. it will be converted to European Calendar.</span>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">Ethiopian Date</div>
+                        <div class="card-body">
+                            <div class="form-inline">
+                                <input type="number" class="form-control" id="EthMonthScroll" min="1" max="13" style="width: 4em;" onchange="updateCalculatedEurDateOnPage()"> /
+                                <input type="number" class="form-control" id="EthDayScroll" min="1" max="30" style="width: 4em;" onchange="updateCalculatedEurDateOnPage()"> /
+                                <input type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999" style="width: 5em;" onchange="updateCalculatedEurDateOnPage()">
+                                <p id="ethDayTextArea"></p>
+                                <span class="help-block">Select date in Ethiopian calendar here. it will be converted to European Calendar.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
