@@ -1,0 +1,8 @@
+{
+    "name": "Ethiopian_Calendar_Date_Converter",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "Melaku.Zewdu",
+    "contributors": [],
+    "dependencies": {}
+}
