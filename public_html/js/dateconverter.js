@@ -105,7 +105,7 @@ function toEthiopianDateTime(eurDate) {
 }
 
 function toEthiopianDateTimeString(eurDate) {
-    return toEthiopianDateTime(eurDate).timeString
+        return toEthiopianDateTime(eurDate).timeString    
 }
 
 function toEthiopianDateString(eurDate) {
@@ -116,8 +116,14 @@ function toEthiopianDateString(eurDate) {
 function toEuropeanDate(ethDate) {
     var initialEuropean = new Date(new Date(ethDate.year, ethDate.month - 1, ethDate.date).getTime() + globalDifference)
     if (ethDate.month == 13) {
-        if ((ethDate.year % 4 == 3 && ethDate.date > 6) || (ethDate.year % 4 != 3 && ethDate.date > 5)) {
-            return "error month-13" //todo: handle error
+        if (ethDate.year % 4 == 3)
+            maxDate = 6
+        else
+            maxDate = 5
+        if (ethDate.date > maxDate) {
+            errMsg = "Pagume Only has " + maxDate + " days at year " + ethDate.year + ". Please select another day."
+            $('#ethDayTextArea').html(errMsg)
+            return errMsg
         }
     }
     for (var count = -8; count < 9; count++) {
@@ -137,13 +143,15 @@ function toEuropeanDate(ethDate) {
 }
 
 function toEuropeanDateString(ethDate) {
-    return toEuropeanDate(ethDate).toDateString()
+    EuropeanDate = toEuropeanDate(ethDate)
+    EuropeanDate = EuropeanDate.toDateString()
+    return EuropeanDate
 }
 
 function updateCalculatedEthDateOnPage() {
     ethDate = toEthiopianDateTime(new Date($('#EuropeanDate').val()))
-    $('#EthDayScroll')[0].selectedIndex = ethDate.date-1
-    $('#EthMonthScroll')[0].selectedIndex = ethDate.month-1
+    $('#EthDayScroll')[0].selectedIndex = ethDate.date - 1
+    $('#EthMonthScroll')[0].selectedIndex = ethDate.month - 1
     $('#EthYearScroll')[0].options[$('#EthYearScroll')[0].selectedIndex].text = ethDate.year //todo
     $('#EurDayTextArea').html(toEuropeanDateString(ethDate))
     $('#ethDayTextArea').html(toEthiopianDateString(new Date($('#EuropeanDate').val())))
@@ -154,10 +162,11 @@ function updateCalculatedEurDateOnPage() {
     ethDate_Month = parseInt($('#EthMonthScroll')[0].options[$('#EthMonthScroll')[0].selectedIndex].text)
     ethDate_Day = parseInt($('#EthDayScroll')[0].options[$('#EthDayScroll')[0].selectedIndex].text)
     ethDate = new ethTime(ethDate_Day, ethDate_Month, ethDate_Year, 0, 0, 0)
-    eurDate = toEuropeanDate(ethDate)
-    $('#EuropeanDate').val(eurDate.toJSON().slice(0, 10))
+    eurDateTime = toEuropeanDate(ethDate)
+    eurDate = eurDateTime.toJSON().slice(0, 10)
+    $('#EuropeanDate').val(eurDate)
     $('#EurDayTextArea').html(toEuropeanDateString(ethDate))
-    $('#ethDayTextArea').html(toEthiopianDateString(eurDate))
+    $('#ethDayTextArea').html(toEthiopianDateString(eurDateTime))
 }
 
 function initDates() {
