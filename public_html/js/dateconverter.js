@@ -6,14 +6,14 @@ var oneLeapYear = 366 * oneDay
 var fourYears = 3 * oneYear + oneLeapYear
 var globalDifference = new Date("December 9, 2012").getTime() - new Date("April 1, 2005").getTime()
 
-function ethDay() {
+function ethDayOfWeek() {
     return (this.year + 2 * this.month + this.date + ethDifference(this.year)) % 7
     function ethDifference(ethYear) {
         return -(Math.floor((2023 - ethYear) / 4))
     }
 }
 
-function dayString(day) {
+function dayOfWeekString(day) {
     switch (day) {
         case 0:
             return "Sun "
@@ -32,7 +32,7 @@ function dayString(day) {
     }
 }
 
-function monthString(month) {
+function monthStringEth(month) {
     switch (month) {
         case 1:
             return "Meskerem "
@@ -69,20 +69,21 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
     } else {
         this.date = date
     }
-    this.month = mon
     if (yr > 200) {
         this.year = yr
     } else {
         this.year = yr + 1900
     }
+    this.month = mon
     this.hour = hr
     this.minute = min
     this.second = sec
-    this.getDay = ethDay
+    this.getDay = ethDayOfWeek
+    this.timeString = dayOfWeekString(this.getDay()) + " " + monthStringEth(mon) + this.date + ", " + this.year + " "
     if (hr < 13) {
-        this.timeString = dayString(this.getDay()) + " " + monthString(mon) + this.date + ", " + this.year + " " + hr + ":" + min + ":" + sec + " a.m"
+        this.timeString += hr + ":" + min + ":" + sec + " a.m"
     } else {
-        this.timeString = dayString(this.getDay()) + " " + monthString(mon) + this.date + ", " + this.year + " " + (hr - 12) + ":" + min + ":" + sec + " p.m"
+        this.timeString += (hr - 12) + ":" + min + ":" + sec + " p.m"
     }
 }
 
@@ -95,9 +96,9 @@ function toEthiopianDateTime(eurDate) {
     }
     var remainingMonths = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear) / (30 * oneDay))
     var remainingDays = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear - remainingMonths * 30 * oneDay) / oneDay)
-    var remainingHours = eurDate.getHours() - 6
+    var remainingHours = eurDate.getHours() // - 6 to account for traditional local time
     if (remainingHours < 0) {
-        remainingHours = 24 + remainingHours
+        remainingHours += 24
     }
     var ethDate = new ethTime(remainingDays + 1, remainingMonths + 1, remainingYears + 4 * fourYearsPassed + 1964, remainingHours, eurDate.getMinutes(), eurDate.getSeconds())
     return ethDate
