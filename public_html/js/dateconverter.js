@@ -81,9 +81,9 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
     this.getDay = ethDayOfWeek
     this.timeString = dayOfWeekString(this.getDay()) + " " + monthStringEth(mon) + this.date + ", " + this.year + " "
     if (hr < 13) {
-        this.timeString += hr + ":" + min + ":" + sec + " a.m"
+        this.timeString += leftpad(hr) + ":" + leftpad(min) + ":" + leftpad(sec) + " a.m"
     } else {
-        this.timeString += (hr - 12) + ":" + min + ":" + sec + " p.m"
+        this.timeString += leftpad(hr - 12) + ":" + leftpad(min) + ":" + leftpad(sec) + " p.m"
     }
 }
 
@@ -105,7 +105,7 @@ function toEthiopianDateTime(eurDate) {
 }
 
 function toEthiopianDateTimeString(eurDate) {
-        return toEthiopianDateTime(eurDate).timeString    
+    return toEthiopianDateTime(eurDate).timeString
 }
 
 function toEthiopianDateString(eurDate) {
@@ -174,4 +174,8 @@ function initDates() {
     $('#EuropeanDate').val(new Date().toJSON().slice(0, 10))
     updateCalculatedEthDateOnPage()
     updateCalculatedEurDateOnPage()
+}
+
+function leftpad(Num, length = 2) {
+    return ("000000000" + Num).slice(-length)
 }
