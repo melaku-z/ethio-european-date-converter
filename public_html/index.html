@@ -18,19 +18,16 @@
     <!--[if lte IE 9]>
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-
-    <p>Ethiopian Calendar date calculator</p>
     <div>
-        <button type="button" class="btn btn-default" onclick="$('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))">
-            Today in Ethiopian
-        </button>
-        <div>
-            <p id="ethTodayTextArea"></p>
-        </div>
+        <p>Today in Ethiopian Calendar is <strong id="ethTodayTextArea"></strong>
+            <button type="button" class="btn btn-sm" onclick="$('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))">
+                Click to Update Value
+            </button>
+        </p>
     </div>
     <div>
         <span style='background:silver;'>Day in European:</span>
-        <input type="date" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()"/>
+        <input type="date" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()" />
         <p id="EurDayTextArea"></p>
     </div>
     <div>
