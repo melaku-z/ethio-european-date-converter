@@ -6,7 +6,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Date Converter - Ethiopian Calendar</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,
+        user-scalable=no,shrink-to-fit=no">
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
@@ -27,29 +28,34 @@
         <![endif]-->
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <p>Today in Ethiopian Calendar is <strong id="ethTodayTextArea"></strong></p>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <button type="button" class="btn btn-sm" onclick="$('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))">
-                        Click to Update Value
-                    </button>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p class="lead text-center">Today in Ethiopian Calendar is <strong id="ethTodayTextArea"></strong>
+                        <button type="button" class="btn btn-sm" onclick="$('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))">
+                                Update
+                        </button>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <span style='background:silver;'>European Date:</span>
-                    <input type="date" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()" />
-                    <p id="EurDayTextArea"></p>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-2" style="box-shadow: inset 1px -1px 1px #444,inset -1px 1px 1px #444;">
+                    <div class="form-group">
+                        <label for="EuropeanDate">European Date</label>
+                        <input type="date" class="form-control" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()" />
+                        <p id="EurDayTextArea"></p>
+                        <span class="help-block">Select date in European calendar here. it will be converted to Ethiopian Calendar.</span>
+                    </div>
                 </div>
-                <div class="col-xs-12 col-sm-6">
-                    <span style='background:silver;'>Ethiopian Date:</span>
-                    <input type="number" id="EthMonthScroll" min="1" max="13" onchange="updateCalculatedEurDateOnPage()"> /
-                    <input type="number" id="EthDayScroll" min="1" max="30" onchange="updateCalculatedEurDateOnPage()"> /
-                    <input type="number" id="EthYearScroll" min="-99999" max="999999" onchange="updateCalculatedEurDateOnPage()">
-                    <p id="ethDayTextArea"></p>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4" style="box-shadow: inset 1px -1px 1px #444,inset -1px 1px 1px #444;">
+                    <div class="form-group">
+                        <label for="EthMonthScroll EthDayScroll EthYearScroll">Ethiopian Date</label>                        
+                        <input type="number" class="form-control" id="EthMonthScroll" min="1" max="13" onchange="updateCalculatedEurDateOnPage()"> /
+                        <input type="number" class="form-control" id="EthDayScroll" min="1" max="30" onchange="updateCalculatedEurDateOnPage()"> /
+                        <input type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999" onchange="updateCalculatedEurDateOnPage()">
+                        <p id="ethDayTextArea"></p>
+                        <span class="help-block">Select date in Ethiopian calendar here. it will be converted to European Calendar.</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,24 +70,24 @@
         <script src="js/bootstrap.min.js"></script>
 
         <script>
-                                    window.ga = function () {
-                                        ga.q.push(arguments);
-                                    };
-                                    ga.q = [];
-                                    ga.l = +new Date;
-                                    ga('create', 'UA-124250343-1', 'auto');
-                                    ga('send', 'pageview');
+            window.ga = function () {
+                ga.q.push(arguments);
+            };
+            ga.q = [];
+            ga.l = +new Date;
+            ga('create', 'UA-124250343-1', 'auto');
+            ga('send', 'pageview');
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124250343-1"></script>
         <script>
-                                    window.dataLayer = window.dataLayer || [];
-                                    function gtag() {
-                                        dataLayer.push(arguments);
-                                    }
-                                    gtag('js', new Date());
-                                    gtag('config', 'UA-124250343-1');
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-124250343-1');
         </script>
 
     </body>
