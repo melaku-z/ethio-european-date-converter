@@ -16,19 +16,19 @@ function ethDayOfWeek() {
 function dayOfWeekString(day) {
     switch (day) {
         case 0:
-            return "Sun "
+            return "Sunday"
         case 1:
-            return "Mon "
+            return "Monday"
         case 2:
-            return "Tue "
+            return "Tuesday"
         case 3:
-            return "Wed "
+            return "Wednesday"
         case 4:
-            return "Thu "
+            return "Thursday"
         case 5:
-            return "Fri "
+            return "Friday"
         case 6:
-            return "Sat "
+            return "Saterday"
     }
 }
 
@@ -79,12 +79,13 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
     this.minute = min
     this.second = sec
     this.getDay = ethDayOfWeek
-    this.timeString = dayOfWeekString(this.getDay()) + " " + monthStringEth(mon) + this.date + ", " + this.year + " "
+    this.timeString = monthStringEth(mon) + this.date + ", " + this.year + ", "
     if (hr < 13) {
-        this.timeString += leftpad(hr) + ":" + leftpad(min) + ":" + leftpad(sec) + " a.m"
+        this.timeString += leftpad(hr) + ":" + leftpad(min) + ":" + leftpad(sec) + " a.m."
     } else {
-        this.timeString += leftpad(hr - 12) + ":" + leftpad(min) + ":" + leftpad(sec) + " p.m"
+        this.timeString += leftpad(hr - 12) + ":" + leftpad(min) + ":" + leftpad(sec) + " p.m."
     }
+    // this.timeString += ", " + dayOfWeekString(this.getDay()) + "."
 }
 
 function toEthiopianDateTime(eurDate) {
