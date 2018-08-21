@@ -124,7 +124,7 @@ function toEuropeanDate(ethDate) {
             maxDate = 5;
         if (ethDate.date > maxDate) {
             errMsg = "Pagume Only has " + maxDate + " days at year " + ethDate.year + ". Please select another day.";
-            $('#ethDayTextArea').html(errMsg);
+            $('#ethDayTextArea').html(errMsg); // todo: remove html elements from functions
             return errMsg;
         }
     }
