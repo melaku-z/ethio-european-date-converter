@@ -34,7 +34,7 @@
         <span style='background:silver;'>Ethiopian Day:</span>
         <input type="number" id="EthMonthScroll" min="1" max="13" onchange="updateCalculatedEurDateOnPage()"> /
         <input type="number" id="EthDayScroll" min="1" max="30" onchange="updateCalculatedEurDateOnPage()"> /
-        <input type="number" id="EthYearScroll"  onchange="updateCalculatedEurDateOnPage()">
+        <input type="number" id="EthYearScroll" min="-99999" max="999999" onchange="updateCalculatedEurDateOnPage()">
         <p id="ethDayTextArea"></p>
     </div>
     <script src="js/vendor/modernizr-3.6.0.min.js"></script>
