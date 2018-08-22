@@ -1,22 +1,61 @@
 body {
-    margin: 0;
-    width: 554px;
-    height: 120px;
+    background-color: #159957;
+    background-image: linear-gradient(90deg, #155799, #159957);
 }
 
-#gadgetContent {
-    width: 554px;
-    top: 24px;
-    text-align: center;
-    font-family: Tahoma;
-    font-size: 10pt;
-    position: absolute;
-}
-
-#background {
-    width: 554px;
-    height: 120px;
-    position: absolute;
-    z-index: -1;
-    background-repeat: no-repeat;
-}
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+ .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+  }
+  
+  /*
+   * make grid rows & columns visible.
+   */
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  h4 {
+    margin-top: 25px;
+  }
+  .row {
+    margin-bottom: 20px;
+  }
+  .row .row {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  [class*="col-"] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eee;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid #ddd;
+    border: 1px solid rgba(86,61,124,.2);
+  }
+  
+  /* Common styles for all types */
+  .bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 3px solid #eee;
+  }
+  .bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .bs-callout p:last-child {
+    margin-bottom: 0;
+  }
+  .bs-callout code {
+    background-color: #fff;
+    border-radius: 3px;
+  }
+  
