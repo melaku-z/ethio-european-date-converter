@@ -13,6 +13,7 @@
         <link rel="apple-touch-icon" href="icon.png">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/dateconverter.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -30,9 +31,9 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
-                        <p class="lead text-center">Today in Ethiopian Calendar is <strong id="ethTodayTextArea"></strong>
+                        <p class="lead text-center" style="margin-top: 1rem">Today in Ethiopian Calendar is <strong id="ethTodayTextArea"></strong>
                             <button type="button" class="btn btn-sm" onclick="$('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))">
-                                Update
+                                <strong style="font-size: x-large">⟳</strong>
                             </button>
                         </p>
                     </div>
@@ -41,7 +42,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 offset-md-1 offset-lg-2">
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 offset-md-1 offset-lg-2 row-eq-height">
                     <div class="card">
                         <div class="card-header text-center">European Date</div>
                         <div class="card-body">
@@ -53,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 row-eq-height">
                     <div class="card">
                         <div class="card-header text-center">Ethiopian Date</div>
                         <div class="card-body">
@@ -103,11 +104,8 @@
     </body>
 
 </html>
-<!-- color: #fff;
-    text-align: center;
-    background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957); 
-<a class="btn btn-block btn-social btn-twitter">
+<!-- 
+    <a class="btn btn-block btn-social btn-twitter">
     <span class="fa fa-twitter"></span> Sign in with Twitter
   </a>
 Or if you just want the icon button, use it like this:
