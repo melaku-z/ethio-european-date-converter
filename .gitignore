@@ -7,3 +7,4 @@ public_html/favicon.ico
 # todo: icons
 public_html/*.png
 .Bundles/*
+node_modules/*
