@@ -6,7 +6,7 @@
     "Ethiopian",
     "Converter"
   ],
-  "author": "Melaku.Zewdu",
+  "author": "Melaku Zewdu <melaku44@gmail.com>",
   "contributors": [],
   "dependencies": {
     "jquery": "^3.3.1",
