@@ -1,7 +1,7 @@
 //pb is package-bundle
 const nodeLocation = 'C:/Users/user/AppData/Roaming/npm/node_modules/'
 const pb = require(nodeLocation  + 'package-bundle/bin/package-bundle.js')
-const args = ["bootstrap", "jquery"]
+const args = []
 const options = {
   F: "C:/Users/user/AppData/Roaming/npm/pack1.zip"
 }
