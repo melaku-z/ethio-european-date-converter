@@ -3,7 +3,7 @@ const nodeLocation = 'C:/Users/user/AppData/Roaming/npm/node_modules/'
 const pb = require(nodeLocation  + 'package-bundle/bin/package-bundle.js')
 const args = []
 const options = {
-  F: "C:/Users/user/AppData/Roaming/npm/pack1.zip"
+  F: 'C:/Users/user/AppData/Roaming/npm/pack1.zip'
 }
 
 // cmd
