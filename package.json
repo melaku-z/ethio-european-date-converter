@@ -27,5 +27,6 @@
     "dev-build": "webpack -d --display-modules --progress",
     "dist-build": "webpack -p --display-modules --progress"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bundledDependencies": []
 }
