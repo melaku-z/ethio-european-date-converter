@@ -1,32 +1,44 @@
 {
-  "name": "Ethiopian_Calendar_Date_Converter",
-  "version": "1.0.0",
-  "keywords": [
-    "Calendar",
-    "Ethiopian",
-    "Converter"
-  ],
-  "author": "Melaku Zewdu <melaku44@gmail.com>",
-  "contributors": [],
-  "dependencies": {
-    "jquery": "^3.3.1",
-    "bootstrap": "^4.1.3"
-  },
-  "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-es2015": "^6.18.0",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.4",
-    "html-webpack-plugin": "^3.2.0",
-    "clean-webpack-plugin": "^0.1.19",
-    "style-loader": "^0.23.0",
-    "css-loader": "^1.0.0"
-  },
-  "scripts": {
-    "dev-build": "webpack -d --display-modules --progress",
-    "dist-build": "webpack -p --display-modules --progress"
-  },
-  "license": "MIT",
-  "bundledDependencies": []
+    "name": "Ethiopian_Calendar_Date_Converter",
+    "version": "1.0.0",
+    "keywords": [
+        "Calendar",
+        "Ethiopian",
+        "Converter"
+    ],
+    "author": "Melaku Zewdu <melaku44@gmail.com>",
+    "contributors": [],
+    "dependencies": {
+        "jquery": "^3.3.1",
+        "bootstrap": "^4.1.3"
+    },
+    "devDependencies": {
+        "babel-core": "^6.21.0",
+        "babel-loader": "^7.1.4",
+        "babel-preset-es2015": "^6.18.0",
+        "webpack": "^4.8.3",
+        "webpack-cli": "^2.1.4",
+        "html-webpack-plugin": "^3.2.0",
+        "clean-webpack-plugin": "^0.1.19",
+        "style-loader": "^0.23.0",
+        "css-loader": "^1.0.0"
+    },
+    "scripts": {
+        "dev-build": "webpack -d --display-modules --progress",
+        "dist-build": "webpack -p --display-modules --progress"
+    },
+    "license": "MIT",
+    "bundledDependencies": [
+        "jquery",
+        "bootstrap",
+        "babel-core",
+        "babel-loader",
+        "babel-preset-es2015",
+        "webpack",
+        "webpack-cli",
+        "html-webpack-plugin",
+        "clean-webpack-plugin",
+        "style-loader",
+        "css-loader"
+    ]
 }
