@@ -20,6 +20,11 @@
             "type": "npm",
             "script": "dist-build",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "Bundle-New-Packs",
+            "problemMatcher": []
         }
     ]
 }
