@@ -25,7 +25,8 @@
     },
     "scripts": {
         "dev-build": "webpack -d --display-modules --progress",
-        "dist-build": "webpack -p --display-modules --progress"
+        "dist-build": "webpack -p --display-modules --progress",
+        "Bundle-New-Packs": "package-bundle"
     },
     "license": "MIT",
     "bundledDependencies": [
