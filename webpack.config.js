@@ -3,7 +3,7 @@ module.exports = {
   mode: 'development',
   entry: path.join(__dirname, 'src', 'js', 'dateconverter.js'),
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public_html_temp')
   },
   module: {
