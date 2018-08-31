@@ -5,10 +5,6 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "install"
-        },
-        {
-            "type": "npm",
             "script": "dev-build",
             "problemMatcher": [],
             "group": {
@@ -21,10 +17,10 @@
             "script": "dist-build",
             "problemMatcher": []
         },
-        {
-            "type": "npm",
-            "script": "Bundle-New-Packs",
-            "problemMatcher": []
+            {
+                "type": "npm",
+                "script": "installDependencies",
+                "problemMatcher": []
         }
     ]
 }

@@ -10,3 +10,4 @@ public_html/*.png
 node_modules/*
 npm-packages-offline-cache/*
 packages/*
+package-bundle-cache.json
