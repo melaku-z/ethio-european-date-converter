@@ -8,3 +8,5 @@ public_html/favicon.ico
 public_html/*.png
 .Bundles/*
 node_modules/*
+npm-packages-offline-cache/*
+packages/*
