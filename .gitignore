@@ -8,3 +8,4 @@ public_html/favicon.ico
 public_html/*.png
 .Bundles/*
 node_modules/*
+package-bundle-cache.json

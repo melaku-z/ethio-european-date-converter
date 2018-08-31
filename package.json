@@ -28,7 +28,7 @@
     "scripts": {
         "dev-build": "webpack -d --display-modules --progress",
         "dist-build": "webpack -p --display-modules --progress",
-        "Bundle-New-Packs": "package-bundle"
+        "installDependencies": "yarn install"
     },
     "license": "MIT",
     "bundledDependencies": [
@@ -43,5 +43,7 @@
         "clean-webpack-plugin",
         "style-loader",
         "css-loader"
-    ]
+    ],
+    "main": "index.js",
+    "private": true
 }
