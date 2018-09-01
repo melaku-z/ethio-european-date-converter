@@ -31,7 +31,7 @@
         "start": "webpack-dev-server --open --config webpack.dev.js",
         "dev-build": "webpack --display-modules --progress --config webpack.dev.js",
         "dist-build": "webpack --display-modules --progress --config webpack.prod.js",
-        "installDependencies": "yarn install"
+        "install-yarn": "yarn install"
     },
     "license": "MIT",
     "main": "index.js",

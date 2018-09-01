@@ -17,10 +17,15 @@
             "script": "dist-build",
             "problemMatcher": []
         },
-            {
-                "type": "npm",
-                "script": "installDependencies",
-                "problemMatcher": []
+        {
+            "type": "npm",
+            "script": "start",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "install-yarn",
+            "problemMatcher": []
         }
     ]
 }
