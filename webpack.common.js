@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  // mode: 'development',
-  mode: 'production',
   entry: path.join(__dirname, 'src', 'js', 'dateconverter.js'),
   plugins: [
     new HtmlWebpackPlugin({
@@ -37,9 +35,5 @@ module.exports = {
   },
   resolve: {
     extensions: ['.json', '.js', '.jsx', '.css']
-  },
-  devtool: 'source-map',
-  devServer: {
-    publicPath: path.join('/public_html_temp/')
   }
 };

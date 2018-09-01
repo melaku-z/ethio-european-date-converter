@@ -28,8 +28,9 @@
         "yarn": "file:npm-packages-offline-cache/yarn-1.9.4.tgz"
     },
     "scripts": {
-        "dev-build": "webpack -d --display-modules --progress",
-        "dist-build": "webpack -p --display-modules --progress",
+        "start": "webpack-dev-server --open --config webpack.dev.js",
+        "dev-build": "webpack --display-modules --progress --config webpack.dev.js",
+        "dist-build": "webpack --display-modules --progress --config webpack.prod.js",
         "installDependencies": "yarn install"
     },
     "license": "MIT",
