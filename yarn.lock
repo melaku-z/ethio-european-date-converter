@@ -3019,7 +3019,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
-lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.3.0:
+lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -4857,6 +4857,12 @@ webpack-cli@^2.1.4:
     yeoman-environment "^2.1.1"
     yeoman-generator "^2.0.5"
 
+webpack-merge@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-4.1.4.tgz#0fde38eabf2d5fd85251c24a5a8c48f8a3f4eb7b"
+  dependencies:
+    lodash "^4.17.5"
+
 webpack-sources@^1.0.1, webpack-sources@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.2.0.tgz#18181e0d013fce096faf6f8e6d41eeffffdceac2"
@@ -5093,9 +5099,9 @@ yargs@~1.2.6:
   dependencies:
     minimist "^0.1.0"
 
-yarn@^1.9.4:
+"yarn@file:npm-packages-offline-cache/yarn-1.9.4.tgz":
   version "1.9.4"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.9.4.tgz#3b82d8446b652775723900b470d966861976924b"
+  resolved "file:npm-packages-offline-cache/yarn-1.9.4.tgz#3b82d8446b652775723900b470d966861976924b"
 
 yeoman-environment@^2.0.5, yeoman-environment@^2.1.1:
   version "2.3.3"
