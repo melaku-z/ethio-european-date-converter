@@ -1,3 +1,4 @@
+const $ = require('jquery');
 var nowEuropean = new Date();
 var oneHour = 60 * 60 * 1000;
 var oneDay = 24 * oneHour;
