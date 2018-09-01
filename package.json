@@ -1,5 +1,5 @@
 {
-    "name": "Ethiopian_Calendar_Date_Converter",
+    "name": "ethiopian_calendar_date_converter",
     "version": "1.0.0",
     "keywords": [
         "Calendar",
@@ -9,8 +9,8 @@
     "author": "Melaku Zewdu <melaku44@gmail.com>",
     "contributors": [],
     "dependencies": {
-        "jquery": "^3.3.1",
-        "bootstrap": "^4.1.3"
+        "bootstrap": "^4.1.3",
+        "jquery": "^3.3.1"
     },
     "devDependencies": {
         "babel-core": "^6.21.0",
@@ -22,6 +22,7 @@
         "style-loader": "^0.23.0",
         "webpack": "^4.8.3",
         "webpack-cli": "^2.1.4",
+        "webpack-merge": "^4.1.4",
         "workbox-webpack-plugin": "^3.4.1",
         "yarn": "file:npm-packages-offline-cache/yarn-1.9.4.tgz"
     },
