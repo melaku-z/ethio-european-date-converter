@@ -4,7 +4,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'js', 'dateconverter.js'),
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Date Converter - Ethiopian Calendar'
+      template: './src/index.html'
     })
   ],
   output: {
