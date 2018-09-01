@@ -1,7 +1,14 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
+  mode: 'production',
   entry: path.join(__dirname, 'src', 'js', 'dateconverter.js'),
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Date Converter - Ethiopian Calendar'
+    })
+  ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public_html_temp')
