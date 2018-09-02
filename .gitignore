@@ -12,3 +12,4 @@ npm-packages-offline-cache/*
 packages/*
 package-bundle-cache.json
 package-lock.json
+public_html_temp/*

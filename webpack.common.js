@@ -1,20 +1,36 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const pathToMainJs = require.resolve('./src/main.js');
+const pathToIndexHtml = require.resolve('./src/index.html');
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
-  entry: './main.js',
+  entry: [
+    pathToMainJs,
+    pathToIndexHtml
+  ],
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html'
+      template: pathToIndexHtml
     })
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].bundle.js', //todo: multiple outputs for multiple entry
     path: path.resolve(__dirname, 'public_html_temp')
   },
   module: {
     rules: [{
-      test: /.jsx?$/,
+      test: pathToIndexHtml,
+      use: [
+        "file-loader",
+        "extract-loader",
+        {
+          loader: "html-loader",
+          options: {
+            attrs: ["img:src", "link:href"]
+          }
+        }
+      ]
+    },{
+      test: /\.(js|jsx)$/,
       include: [
         path.resolve(__dirname, 'src')
       ],
@@ -33,6 +49,8 @@ module.exports = {
     {
       test: /\.css$/,
       use: [
+        "file-loader",
+        "extract-loader",
         'style-loader',
         'css-loader'
       ]
@@ -54,8 +72,5 @@ module.exports = {
     { test: /\.(woff|woff2|eot|ttf|otf)$/, 
       use: ['file-loader'] 
     }]
-  },
-  resolve: {
-    extensions: ['.json', '.js', '.jsx', '.css']
   }
 };
