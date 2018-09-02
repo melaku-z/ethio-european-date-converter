@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  entry: path.join(__dirname, 'src', 'main.js'),
+  context: path.resolve(__dirname, 'src'),
+  entry: './main.js',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './index.html'
     })
   ],
   output: {
@@ -25,7 +26,11 @@ module.exports = {
       query: {
         presets: ['es2015']
       }
-    },{
+    },{ 
+      test: /\.html$/, 
+      use: ['html-loader'] 
+    },
+    {
       test: /\.css$/,
       use: [
         'style-loader',
