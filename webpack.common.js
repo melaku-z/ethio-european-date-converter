@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  entry: path.join(__dirname, 'src', 'js', 'dateconverter.js'),
+  entry: path.join(__dirname, 'src', 'js', 'main.js'),
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
@@ -31,6 +31,23 @@ module.exports = {
         'style-loader',
         'css-loader'
       ]
+    },
+    // file-loader(for images)
+    {
+      test: /\.(jpg|png|gif|svg)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: './assets/media/'
+          }
+        }
+      ]
+    },
+    // file-loader(for fonts)
+    { test: /\.(woff|woff2|eot|ttf|otf)$/, 
+      use: ['file-loader'] 
     }]
   },
   resolve: {
