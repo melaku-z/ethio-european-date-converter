@@ -19,7 +19,7 @@
         },
         {
             "type": "npm",
-            "script": "start",
+            "script": "start-server",
             "problemMatcher": []
         },
         {
