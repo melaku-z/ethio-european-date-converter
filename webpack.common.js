@@ -27,10 +27,10 @@ module.exports = {
       loader: 'babel-loader',
       query: {
         presets: ['es2015']
-      }
-    },{ 
+      }/*
+      },{ 
       test: /\.html$/, 
-      use: ['html-loader'] 
+      use: ['html-loader'] */
     },
     {
       test: /\.css$/,
@@ -38,7 +38,8 @@ module.exports = {
         'style-loader',
         'css-loader'
       ]
-    },
+      /*
+      },
     // file-loader(for images)
     {
       test: /\.(jpg|png|gif|svg)$/,
@@ -55,6 +56,7 @@ module.exports = {
     // file-loader(for fonts)
     { test: /\.(woff|woff2|eot|ttf|otf)$/, 
       use: ['file-loader'] 
+      */
     }]
   },
   resolve: {
