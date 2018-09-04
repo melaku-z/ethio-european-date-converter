@@ -19,43 +19,45 @@ module.exports = {
     path: path.resolve(__dirname, 'public_html_temp')
   },
   module: {
-    rules: [{
-      test: pathToIndexHtml,
-      use: [
-        'file-loader',
-        'extract-loader',
-        {
-          loader: 'html-loader',
-          options: {
-            attrs: ['img:src', 'link:href']
-          }
+    rules: [
+    //   {
+    //   test: pathToIndexHtml,
+    //   use: [
+    //     // 'file-loader',
+    //     // 'extract-loader',
+    //     {
+    //       loader: 'html-loader',
+    //       options: {
+    //         attrs: ['img:src', 'link:href']
+    //       }
+    //     }
+    //   ]
+    // },
+      {
+        test: /\.(js|jsx)$/,
+        include: [
+          path.resolve(__dirname, 'src')
+        ],
+        exclude: [
+          path.resolve(__dirname, 'node_modules'),
+          path.resolve(__dirname, 'bower_components')
+        ],
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
         }
-      ]
-    },{
-      test: /\.(js|jsx)$/,
-      include: [
-        path.resolve(__dirname, 'src')
-      ],
-      exclude: [
-        path.resolve(__dirname, 'node_modules'),
-        path.resolve(__dirname, 'bower_components')
-      ],
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015']
-      }
-    },{ 
-      test: /\.html$/, 
-      use: ['html-loader']
-    },
-    {
-      test: /\.css$/,
-      use: [
-        'file-loader',
-        'extract-loader',
-        'style-loader',
-        'css-loader'
-      ]
+      },{ 
+        test: /\.html$/, 
+        use: ['html-loader']
+      },
+      {
+        test: /\.css$/,
+        use: [
+        // 'file-loader',
+        // 'extract-loader',
+          'style-loader',
+          'css-loader'
+        ]
       /*
       },
     // file-loader(for images)
@@ -75,6 +77,6 @@ module.exports = {
     { test: /\.(woff|woff2|eot|ttf|otf)$/, 
       use: ['file-loader'] 
       */
-    }]
+      }]
   }
 }
