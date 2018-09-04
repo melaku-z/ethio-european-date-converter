@@ -20,7 +20,7 @@
         <!-- todo: add local options too -->
     </head>
 
-    <body onload="initDates()">
+    <body>
         <!--[if lte IE 9]>
               <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -29,7 +29,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <p class="lead text-center" style="margin-top: 1rem">Today in Ethiopian Calendar is <strong id="ethTodayTextArea">...</strong>
-                            <button type="button" class="btn btn-sm" onclick="$('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))">
+                            <button type="button" class="btn btn-sm" id="refreshEthDateButton">
                                 <strong style="font-size: x-large">⟳</strong>
                             </button>
                         </p>

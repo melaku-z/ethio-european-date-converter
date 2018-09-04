@@ -1,17 +1,9 @@
-const $ = require('jquery')
 const oneHour = 60 * 60 * 1000
 const oneDay = 24 * oneHour
 const oneYear = 365 * oneDay
 const oneLeapYear = 366 * oneDay
 const fourYears = 3 * oneYear + oneLeapYear
 const globalTimeDifference = new Date('December 9, 2012').getTime() - new Date('April 1, 2005').getTime()
-
-function ethDayOfWeek() {
-  return (this.year + 2 * this.month + this.date + ethDifference(this.year)) % 7
-  function ethDifference(ethYear) {
-    return -(Math.floor((2023 - ethYear) / 4))
-  }
-}
 
 function dayOfWeekString(day) {
   switch (day) {
@@ -88,6 +80,12 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
   this.dateWithDayString = dayOfWeekString(this.getDay()) + ', ' + this.dateString
   this.dateTimeString = this.dateString + ', ' + this.timeString
   this.fullDateTimeString = this.dateTimeString + ', ' + dayOfWeekString(this.getDay()) + '.'
+  function ethDayOfWeek() {
+    return (this.year + 2 * this.month + this.date + ethDifference(this.year)) % 7
+    function ethDifference(ethYear) {
+      return -(Math.floor((2023 - ethYear) / 4))
+    }
+  }
 }
 
 function toEthiopianDateTime(eurDate) {
@@ -125,7 +123,6 @@ function toEuropeanDate(ethDate) {
       maxDate = 5
     if (ethDate.date > maxDate) {
       const errMsg = 'Pagume Only has ' + maxDate + ' days at year ' + ethDate.year + '. Please select another day.'
-      $('#ethDayTextArea').html(errMsg) // todo: remove html elements from functions
       return errMsg
     }
   }
@@ -151,42 +148,15 @@ function toEuropeanDateString(ethDate) {
   return EuropeanDate
 }
 
-function updateCalculatedEthDateOnPage() {
-  const ethDate = toEthiopianDateTime(new Date($('#EuropeanDate').val()))
-  $('#EthDayScroll').val(ethDate.date)
-  $('#EthMonthScroll').val(ethDate.month)
-  $('#EthYearScroll').val(ethDate.year)
-  $('#EurDayTextArea').html(toEuropeanDateString(ethDate))
-  $('#ethDayTextArea').html(ethDate.dateWithDayString)
-}
-
-function updateCalculatedEurDateOnPage() {
-  const ethDate_Year = parseInt($('#EthYearScroll')[0].value)
-  const ethDate_Month = parseInt($('#EthMonthScroll')[0].value)
-  const ethDate_Day = parseInt($('#EthDayScroll')[0].value)
-  const ethDate = new ethTime(ethDate_Day, ethDate_Month, ethDate_Year, 0, 0, 0)
-  const eurDateTime = toEuropeanDate(ethDate)
-  const eurDate = eurDateTime.toJSON().slice(0, 10)
-  $('#EuropeanDate').val(eurDate)
-  $('#EurDayTextArea').html(toEuropeanDateString(ethDate))
-  $('#ethDayTextArea').html(ethDate.dateWithDayString)
-}
-
-function initDates() {
-  $('#ethTodayTextArea').html(toEthiopianDateTimeString(new Date()))
-  $('#EuropeanDate').val(new Date().toJSON().slice(0, 10))
-  updateCalculatedEthDateOnPage()
-  updateCalculatedEurDateOnPage()
-}
-
 function leftpad(Num, length) {
   length = length || 2
   return ('000000000' + Num).slice(-length)
 }
 
-module.exports = exports = [
-  initDates(),
-  toEthiopianDateTimeString(),
-  updateCalculatedEthDateOnPage(),
-  updateCalculatedEurDateOnPage()
-]
+module.exports = exports = {
+  toEthiopianDateTime,
+  toEthiopianDateString,
+  toEthiopianDateTimeString,
+  toEuropeanDate,
+  toEuropeanDateString
+}
