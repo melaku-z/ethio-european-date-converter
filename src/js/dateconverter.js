@@ -154,6 +154,7 @@ function leftpad(Num, length) {
 }
 
 module.exports = exports = {
+  ethTime,
   toEthiopianDateTime,
   toEthiopianDateString,
   toEthiopianDateTimeString,

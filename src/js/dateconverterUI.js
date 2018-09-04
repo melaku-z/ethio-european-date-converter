@@ -1,5 +1,5 @@
 const $ = require('jquery')
-const dateConverter = require.resolve('./dateconverter')
+const dateConverter = require('./dateconverter.js')
 
 function updateCalculatedEthDateOnPage() {
   const ethDate = dateConverter.toEthiopianDateTime(new Date($('#EuropeanDate').val()))
