@@ -16,50 +16,50 @@ function ethDayOfWeek() {
 function dayOfWeekString(day) {
   switch (day) {
   case 0:
-    return 'Sunday';
+    return 'Sunday'
   case 1:
-    return 'Monday';
+    return 'Monday'
   case 2:
-    return 'Tuesday';
+    return 'Tuesday'
   case 3:
-    return 'Wednesday';
+    return 'Wednesday'
   case 4:
-    return 'Thursday';
+    return 'Thursday'
   case 5:
-    return 'Friday';
+    return 'Friday'
   case 6:
-    return 'Saterday';
+    return 'Saterday'
   }
 }
 
 function monthStringEth(month) {
   switch (month) {
   case 1:
-    return 'Meskerem ';
+    return 'Meskerem '
   case 2:
-    return 'Tikimt ';
+    return 'Tikimt '
   case 3:
-    return 'Hidar ';
+    return 'Hidar '
   case 4:
-    return 'Tahsas ';
+    return 'Tahsas '
   case 5:
-    return 'Tir ';
+    return 'Tir '
   case 6:
-    return 'Yekatit ';
+    return 'Yekatit '
   case 7:
-    return 'Megabit ';
+    return 'Megabit '
   case 8:
-    return 'Meyazya ';
+    return 'Meyazya '
   case 9:
-    return 'Ginbot ';
+    return 'Ginbot '
   case 10:
-    return 'Sene ';
+    return 'Sene '
   case 11:
-    return 'Hamle ';
+    return 'Hamle '
   case 12:
-    return 'Nehase ';
+    return 'Nehase '
   case 13:
-    return 'Pagume ';
+    return 'Pagume '
   }
 }
 
@@ -81,13 +81,13 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
   this.getDay = ethDayOfWeek
   this.dateString = monthStringEth(mon) + this.date + ', ' + this.year
   if (hr < 13) {
-    this.timeString = leftpad(hr) + ':' + leftpad(min) + ':' + leftpad(sec) + ' a.m.';
+    this.timeString = leftpad(hr) + ':' + leftpad(min) + ':' + leftpad(sec) + ' a.m.'
   } else {
-    this.timeString = leftpad(hr - 12) + ':' + leftpad(min) + ':' + leftpad(sec) + ' p.m.';
+    this.timeString = leftpad(hr - 12) + ':' + leftpad(min) + ':' + leftpad(sec) + ' p.m.'
   }
   this.dateWithDayString = dayOfWeekString(this.getDay()) + ', ' + this.dateString
   this.dateTimeString = this.dateString + ', ' + this.timeString
-  this.fullDateTimeString = this.dateTimeString + ', ' + dayOfWeekString(this.getDay()) + '.';
+  this.fullDateTimeString = this.dateTimeString + ', ' + dayOfWeekString(this.getDay()) + '.'
 }
 
 function toEthiopianDateTime(eurDate) {
@@ -124,7 +124,7 @@ function toEuropeanDate(ethDate) {
     else
       maxDate = 5
     if (ethDate.date > maxDate) {
-      const errMsg = 'Pagume Only has ' + maxDate + ' days at year ' + ethDate.year + '. Please select another day.';
+      const errMsg = 'Pagume Only has ' + maxDate + ' days at year ' + ethDate.year + '. Please select another day.'
       $('#ethDayTextArea').html(errMsg) // todo: remove html elements from functions
       return errMsg
     }
@@ -184,9 +184,9 @@ function leftpad(Num, length) {
   return ('000000000' + Num).slice(-length)
 }
 
-module.exports = exports = {
-  initDates,
-  toEthiopianDateTimeString,
-  updateCalculatedEthDateOnPage,
-  updateCalculatedEurDateOnPage
-}
+module.exports = exports = [
+  initDates(),
+  toEthiopianDateTimeString(),
+  updateCalculatedEthDateOnPage(),
+  updateCalculatedEurDateOnPage()
+]
