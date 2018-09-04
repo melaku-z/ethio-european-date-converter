@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WorkboxPlugin = require('workbox-webpack-plugin')
 const pathToMainJs = require.resolve('./src/main.js')
 const pathToIndexHtml = require.resolve('./src/index.html')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 module.exports = {
   entry: [
     pathToMainJs,
@@ -12,6 +13,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: pathToIndexHtml
     }),
+    new FriendlyErrorsWebpackPlugin(),
     new WorkboxPlugin.GenerateSW()
   ],
   output: {
@@ -20,21 +22,21 @@ module.exports = {
   },
   module: {
     rules: [
-    //   {
-    //   test: pathToIndexHtml,
-    //   use: [
-    //     // 'file-loader',
-    //     // 'extract-loader',
-    //     {
-    //       loader: 'html-loader',
-    //       options: {
-    //         attrs: ['img:src', 'link:href']
-    //       }
-    //     }
-    //   ]
-    // },
       {
-        test: /\.(js|jsx)$/,
+        test: pathToIndexHtml,
+        use: [
+          'file-loader',
+          'extract-loader',
+          {
+            loader: 'html-loader',
+            options: {
+              attrs: [':data-src']
+            }
+          }
+        ]
+      },
+      {
+        test: /\.js$/,
         include: [
           path.resolve(__dirname, 'src')
         ],
@@ -53,30 +55,34 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-        // 'file-loader',
-        // 'extract-loader',
-          'style-loader',
-          'css-loader'
-        ]
-      /*
-      },
-    // file-loader(for images)
-    {
-      test: /\.(jpg|png|gif|svg)$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: './assets/media/'
+          'file-loader',
+          'extract-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
           }
-        }
-      ]
-    },
-    // file-loader(for fonts)
-    { test: /\.(woff|woff2|eot|ttf|otf)$/, 
-      use: ['file-loader'] 
-      */
+        ]
+      },{
+        test: /\.png$/,
+        use: ['file-loader']
+      },
+      {
+        test: /\.(jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './assets/media/'
+            }
+          }
+        ]
+      },
+      // file-loader(for fonts)
+      { test: /\.(woff|woff2|eot|ttf|otf)$/, 
+        use: ['file-loader']
       }]
   }
 }
