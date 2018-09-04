@@ -11,9 +11,6 @@
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
-
-        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" href="css/vendor/dateconverter.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -71,16 +68,7 @@
             </div>
         </div>
 
-        <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-        <script src="js/dateconverter.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>');</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script>
+        <!-- <script todo: reenable google-analytics>
             window.ga = function () {
                 ga.q.push(arguments);
             };
@@ -89,9 +77,9 @@
             ga('create', 'UA-124250343-1', 'auto');
             ga('send', 'pageview');
         </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124250343-1"></script>
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124250343-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
@@ -99,13 +87,13 @@
             }
             gtag('js', new Date());
             gtag('config', 'UA-124250343-1');
-        </script>
+        </script> -->
         <script>
             // Check that service workers are registered
             if ('serviceWorker' in navigator) {
               // Use the window load event to keep the page load performant
               window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js');
+                navigator.serviceWorker.register('/service-worker.js');
               });
             }
         </script>
