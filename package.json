@@ -14,14 +14,15 @@
         "popper.js": "^1.14.3"
     },
     "devDependencies": {
-        "bootstrap-loader": "^3.0.1",
         "babel-core": "^6.21.0",
         "babel-loader": "^7.1.4",
         "babel-preset-es2015": "^6.18.0",
+        "bootstrap-loader": "^3.0.1",
         "clean-webpack-plugin": "^0.1.19",
         "css-loader": "^1.0.0",
         "extract-loader": "^3.0.0",
         "file-loader": "^2.0.0",
+        "friendly-errors-webpack-plugin": "^1.7.0",
         "html-loader": "^0.5.5",
         "html-webpack-plugin": "^3.2.0",
         "style-loader": "^0.23.0",
