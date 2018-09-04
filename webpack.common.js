@@ -1,8 +1,8 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
-const pathToMainJs = require.resolve('./src/main.js');
-const pathToIndexHtml = require.resolve('./src/index.html');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin')
+const pathToMainJs = require.resolve('./src/main.js')
+const pathToIndexHtml = require.resolve('./src/index.html')
 module.exports = {
   entry: [
     pathToMainJs,
@@ -22,12 +22,12 @@ module.exports = {
     rules: [{
       test: pathToIndexHtml,
       use: [
-        "file-loader",
-        "extract-loader",
+        'file-loader',
+        'extract-loader',
         {
-          loader: "html-loader",
+          loader: 'html-loader',
           options: {
-            attrs: ["img:src", "link:href"]
+            attrs: ['img:src', 'link:href']
           }
         }
       ]
@@ -43,16 +43,16 @@ module.exports = {
       loader: 'babel-loader',
       query: {
         presets: ['es2015']
-      }/*
-      },{ 
+      }
+    },{ 
       test: /\.html$/, 
-      use: ['html-loader'] */
+      use: ['html-loader']
     },
     {
       test: /\.css$/,
       use: [
-        "file-loader",
-        "extract-loader",
+        'file-loader',
+        'extract-loader',
         'style-loader',
         'css-loader'
       ]
@@ -77,4 +77,4 @@ module.exports = {
       */
     }]
   }
-};
+}
