@@ -14,13 +14,6 @@
                 "debug"
             ],
             "port": 9229
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/pack_offline.js",
-            "runtimeExecutable": "C:/Program Files/nodejs/"
         }
     ]
 }
