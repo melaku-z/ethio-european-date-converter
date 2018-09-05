@@ -11,10 +11,11 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
-// todo: fetch from local fallback
+importScripts("sw-assets/workbox-v3.4.1/workbox-sw.js");
+workbox.setConfig({modulePathPrefix: "sw-assets/workbox-v3.4.1"});
+
 importScripts(
-  "precache-manifest.73769c7f16f430cf42197ef541cdf6f7.js"
+  "sw-assets/precache-manifest.f1167f11f43a0acf2c1f8a820fdb5235.js"
 );
 
 /**
