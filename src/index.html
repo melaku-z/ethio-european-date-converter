@@ -11,6 +11,8 @@
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
+        <link rel="stylesheet" href="<%= require('bootstrap/dist/css/bootstrap.css') %>">
+        <link rel="stylesheet" href="<%= require('./css/dateconverter.css') %>">        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -96,8 +98,7 @@
                 navigator.serviceWorker.register('/service-worker.js');
               });
             }
-        </script>        
-        <script src="main.bundle.js"></script>
+        </script>
     </body>
 
 </html>

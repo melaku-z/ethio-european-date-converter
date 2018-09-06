@@ -1,3 +1,4 @@
+'use strict'
 const $ = require('jquery')
 const dateConverter = require('./dateconverter.js')
 

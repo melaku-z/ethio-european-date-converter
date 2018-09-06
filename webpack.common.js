@@ -1,18 +1,17 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WorkboxPlugin = require('workbox-webpack-plugin')
-const pathToMainJs = require.resolve('./src/main.js')
+const pathToMainJs = require.resolve('./src/js/main.js')
 const pathToIndexHtml = require.resolve('./src/index.html')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 module.exports = {
   entry: [
-    pathToMainJs,
-    pathToIndexHtml
+    pathToMainJs
   ],
   plugins: [
-    // new HtmlWebpackPlugin({
-    //   template: pathToIndexHtml
-    // }),
+    new HtmlWebpackPlugin({
+      template: pathToIndexHtml
+    }),
     new FriendlyErrorsWebpackPlugin(),
     new WorkboxPlugin.GenerateSW({
       importWorkboxFrom: 'local',
@@ -25,28 +24,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: pathToIndexHtml,
-        use: [
-          {loader: 'file-loader',
-            options: {
-              name: '[name].[ext]'
-            }
-          },
-          {loader: 'extract-loader',
-            options: {
-              name: '[path][name].[ext]'
-            }
-          },
-          {
-            loader: 'html-loader',
-            options: {
-              attrs: [':data-src'],
-              name: '[path][name].[ext]'
-            }
-          }
-        ]
-      },
       {
         test: /\.js$/,
         include: [
