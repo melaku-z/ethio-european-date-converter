@@ -10,9 +10,9 @@ module.exports = {
     pathToIndexHtml
   ],
   plugins: [
-    new HtmlWebpackPlugin({
-      template: pathToIndexHtml
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: pathToIndexHtml
+    // }),
     new FriendlyErrorsWebpackPlugin(),
     // new WorkboxPlugin.GenerateSW({
     //   importWorkboxFrom: 'local',
@@ -30,7 +30,7 @@ module.exports = {
         use: [
           {loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]'
+              name: '[name].[ext]'
             }
           },
           {loader: 'extract-loader',
