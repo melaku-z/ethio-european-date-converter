@@ -38,20 +38,10 @@ function initDates() {
   updateCalculatedEurDateOnPage()
 }
 
-function createEventListnersHTML(){
-  $('body').onload=initDates
-  $('#refreshEthDateButton').onclick=refreshEthDateOnPage
-  $('#EuropeanDate').onchange=updateCalculatedEthDateOnPage
-  $('#EthMonthScroll').onchange=updateCalculatedEurDateOnPage
-  $('#EthDayScroll').onchange=updateCalculatedEurDateOnPage
-  $('#EthYearScroll').onchange=updateCalculatedEurDateOnPage
-  initDates()
-}
-
 module.exports = exports = {
   initDates,
   refreshEthDateOnPage,
   updateCalculatedEthDateOnPage,
   updateCalculatedEurDateOnPage,
-  createEventListnersHTML
+  $
 }
