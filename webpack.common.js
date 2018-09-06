@@ -19,7 +19,7 @@ module.exports = {
     })
   ],
   output: {
-    filename: '[name].bundle.js', //todo: multiple outputs for multiple entry
+    filename: './js/[name].bundle.js',
     path: path.resolve(__dirname, 'public_html_temp')
   },
   module: {
@@ -41,7 +41,12 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: './css/'
+            }
+          },
           'extract-loader',
           {
             loader: 'css-loader',
@@ -60,14 +65,14 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
               outputPath: './assets/media/'
             }
           }
         ]
       },
       // file-loader(for fonts)
-      { test: /\.(woff|woff2|eot|ttf|otf)$/, 
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader']
       }]
   },
