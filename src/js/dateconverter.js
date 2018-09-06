@@ -1,3 +1,5 @@
+'use strict'
+
 const oneHour = 60 * 60 * 1000
 const oneDay = 24 * oneHour
 const oneYear = 365 * oneDay
