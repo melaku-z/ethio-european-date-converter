@@ -39,15 +39,13 @@ function initDates() {
 }
 
 function createEventListnersHTML(){
-  $('body').onload= function(){
-    initDates()
-    createEventListnersHTML()
-  }
-  $('#refreshEthDateButton').onclick=refreshEthDateOnPage()
-  $('#EuropeanDate').onchange=updateCalculatedEthDateOnPage()
-  $('#EthMonthScroll').onchange=updateCalculatedEurDateOnPage()
-  $('#EthDayScroll').onchange=updateCalculatedEurDateOnPage()
-  $('#EthYearScroll').onchange=updateCalculatedEurDateOnPage()
+  $('body').onload=initDates
+  $('#refreshEthDateButton').onclick=refreshEthDateOnPage
+  $('#EuropeanDate').onchange=updateCalculatedEthDateOnPage
+  $('#EthMonthScroll').onchange=updateCalculatedEurDateOnPage
+  $('#EthDayScroll').onchange=updateCalculatedEurDateOnPage
+  $('#EthYearScroll').onchange=updateCalculatedEurDateOnPage
+  initDates()
 }
 
 module.exports = exports = {
