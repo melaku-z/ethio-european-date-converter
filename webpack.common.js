@@ -38,15 +38,6 @@ module.exports = {
           presets: ['es2015']
         }
       },
-      // { 
-      //   test: /\.html$/, 
-      //   use: {
-      //     loader: 'html-loader',
-      //     options: {
-      //       attrs: [':data-src'],
-      //     }
-      //   }
-      // },
       {
         test: /\.css$/,
         use: [
