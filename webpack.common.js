@@ -13,14 +13,16 @@ module.exports = {
       template: pathToIndexHtml
     }),
     new FriendlyErrorsWebpackPlugin(),
-    new WorkboxPlugin.GenerateSW({
-      importWorkboxFrom: 'local',
-      importsDirectory: 'sw-assets'
-    })
+    // new WorkboxPlugin.GenerateSW({ todo
+    //   importWorkboxFrom: 'local',
+    //   importsDirectory: 'sw-assets'
+    // })
   ],
   output: {
     filename: './js/[name].bundle.js',
-    path: path.resolve(__dirname, 'public_html_temp')
+    path: path.resolve(__dirname, 'public_html_temp'),
+    libraryTarget: 'var',
+    library: 'dateconverterUI'
   },
   module: {
     rules: [
