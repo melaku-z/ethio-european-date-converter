@@ -14,10 +14,10 @@ module.exports = {
     //   template: pathToIndexHtml
     // }),
     new FriendlyErrorsWebpackPlugin(),
-    // new WorkboxPlugin.GenerateSW({
-    //   importWorkboxFrom: 'local',
-    //   importsDirectory: 'sw-assets'
-    // })
+    new WorkboxPlugin.GenerateSW({
+      importWorkboxFrom: 'local',
+      importsDirectory: 'sw-assets'
+    })
   ],
   output: {
     filename: '[name].bundle.js', //todo: multiple outputs for multiple entry
