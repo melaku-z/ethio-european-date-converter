@@ -46,7 +46,7 @@
                         <div class="card-header text-center" style="background-color:rgb(29, 139, 248)">European Date</div>
                         <div class="card-body">
                             <div class="form-group">
-                                <input type="date" class="form-control" id="EuropeanDate" onchange="updateCalculatedEthDateOnPage()" />
+                                <input type="date" class="form-control" id="EuropeanDate"/>
                                 <p id="EurDayTextArea"></p>
                                 <span class="help-block">Change the date above to convert to Ethiopian calendar.</span>
                             </div>
@@ -58,9 +58,9 @@
                         <div class="card-header text-center" style="background-image: linear-gradient(#90ee90,#ffffe0,#ffffe0,#e87171);">Ethiopian Date</div>
                         <div class="card-body">
                                 <div class="form-inline">
-                                    <input type="number" class="form-control" id="EthMonthScroll" min="1" max="13" style="width:3em;padding-left:2px;padding-right:0;" onchange="updateCalculatedEurDateOnPage()"> /
-                                    <input type="number" class="form-control" id="EthDayScroll" min="1" max="30" style="width:3em;padding-left:2px;padding-right:0;" onchange="updateCalculatedEurDateOnPage()"> /
-                                    <input type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999" style="width:4em;padding-left:2px;padding-right:0;" onchange="updateCalculatedEurDateOnPage()">
+                                    <input type="number" class="form-control" id="EthMonthScroll" min="1" max="13" style="width:3em;padding-left:2px;padding-right:0;"> /
+                                    <input type="number" class="form-control" id="EthDayScroll" min="1" max="30" style="width:3em;padding-left:2px;padding-right:0;"> /
+                                    <input type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999" style="width:4em;padding-left:2px;padding-right:0;">
                                 </div>
                                 <p id="ethDayTextArea" style="width:100%;"></p>
                                 <span class="help-block" style="width:100%;">Change the date above to convert to European calendar.</span>
