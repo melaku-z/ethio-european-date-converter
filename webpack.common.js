@@ -14,10 +14,10 @@ module.exports = {
       template: pathToIndexHtml
     }),
     new FriendlyErrorsWebpackPlugin(),
-    new WorkboxPlugin.GenerateSW({
-      importWorkboxFrom: 'local',
-      importsDirectory: 'sw-assets'
-    })
+    // new WorkboxPlugin.GenerateSW({
+    //   importWorkboxFrom: 'local',
+    //   importsDirectory: 'sw-assets'
+    // })
   ],
   output: {
     filename: '[name].bundle.js', //todo: multiple outputs for multiple entry
@@ -28,12 +28,21 @@ module.exports = {
       {
         test: pathToIndexHtml,
         use: [
-          'file-loader',
-          'extract-loader',
+          {loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
+          },
+          {loader: 'extract-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
+          },
           {
             loader: 'html-loader',
             options: {
-              attrs: [':data-src']
+              attrs: [':data-src'],
+              name: '[path][name].[ext]'
             }
           }
         ]
@@ -51,10 +60,16 @@ module.exports = {
         query: {
           presets: ['es2015']
         }
-      },{ 
-        test: /\.html$/, 
-        use: ['html-loader']
       },
+      // { 
+      //   test: /\.html$/, 
+      //   use: {
+      //     loader: 'html-loader',
+      //     options: {
+      //       attrs: [':data-src'],
+      //     }
+      //   }
+      // },
       {
         test: /\.css$/,
         use: [
