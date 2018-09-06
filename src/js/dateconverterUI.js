@@ -1,5 +1,6 @@
+'use strict'
 const $ = require('jquery')
-const dateConverter = require('./dateconverter.js')
+import * as dateConverter from './dateconverter.js'
 
 function updateCalculatedEthDateOnPage() {
   const ethDate = dateConverter.toEthiopianDateTime(new Date($('#EuropeanDate').val()))
@@ -37,15 +38,10 @@ function initDates() {
   updateCalculatedEurDateOnPage()
 }
 
-function createEventListnersHTML(){
-  $('body').onload=initDates()
-  $('#refreshEthDateButton').onclick=refreshEthDateOnPage()
-}
-
 module.exports = exports = {
   initDates,
   refreshEthDateOnPage,
   updateCalculatedEthDateOnPage,
   updateCalculatedEurDateOnPage,
-  createEventListnersHTML
+  $
 }

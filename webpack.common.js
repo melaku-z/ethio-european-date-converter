@@ -1,43 +1,31 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WorkboxPlugin = require('workbox-webpack-plugin')
-const pathToMainJs = require.resolve('./src/main.js')
+const pathToMainJs = require.resolve('./src/js/main.js')
 const pathToIndexHtml = require.resolve('./src/index.html')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 module.exports = {
   entry: [
-    pathToMainJs,
-    pathToIndexHtml
+    pathToMainJs
   ],
   plugins: [
     new HtmlWebpackPlugin({
       template: pathToIndexHtml
     }),
     new FriendlyErrorsWebpackPlugin(),
-    new WorkboxPlugin.GenerateSW({
-      importWorkboxFrom: 'local',
-      importsDirectory: 'sw-assets'
-    })
+    // new WorkboxPlugin.GenerateSW({ todo
+    //   importWorkboxFrom: 'local',
+    //   importsDirectory: 'sw-assets'
+    // })
   ],
   output: {
-    filename: '[name].bundle.js', //todo: multiple outputs for multiple entry
-    path: path.resolve(__dirname, 'public_html_temp')
+    filename: './js/[name].bundle.js',
+    path: path.resolve(__dirname, 'public_html_temp'),
+    libraryTarget: 'var',
+    library: 'dateconverterUI'
   },
   module: {
     rules: [
-      {
-        test: pathToIndexHtml,
-        use: [
-          'file-loader',
-          'extract-loader',
-          {
-            loader: 'html-loader',
-            options: {
-              attrs: [':data-src']
-            }
-          }
-        ]
-      },
       {
         test: /\.js$/,
         include: [
@@ -51,14 +39,16 @@ module.exports = {
         query: {
           presets: ['es2015']
         }
-      },{ 
-        test: /\.html$/, 
-        use: ['html-loader']
       },
       {
         test: /\.css$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: './css/'
+            }
+          },
           'extract-loader',
           {
             loader: 'css-loader',
@@ -77,14 +67,14 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
               outputPath: './assets/media/'
             }
           }
         ]
       },
       // file-loader(for fonts)
-      { test: /\.(woff|woff2|eot|ttf|otf)$/, 
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader']
       }]
   },
