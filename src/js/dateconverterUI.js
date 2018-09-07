@@ -38,10 +38,15 @@ function initDates() {
   updateCalculatedEurDateOnPage()
 }
 
+function createEventListnersHTML(){
+  document.querySelector('body').onload=initDates
+  document.querySelector('#refreshEthDateButton').onclick=refreshEthDateOnPage
+  document.querySelector('#EuropeanDate').onchange=updateCalculatedEthDateOnPage
+  document.querySelector('#EthMonthScroll').onchange=updateCalculatedEurDateOnPage
+  document.querySelector('#EthDayScroll').onchange=updateCalculatedEurDateOnPage
+  document.querySelector('#EthYearScroll').onchange=updateCalculatedEurDateOnPage
+}
+
 module.exports = exports = {
-  initDates,
-  refreshEthDateOnPage,
-  updateCalculatedEthDateOnPage,
-  updateCalculatedEurDateOnPage,
-  $
+  createEventListnersHTML
 }
