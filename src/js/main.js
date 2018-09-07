@@ -1,19 +1,20 @@
-import * as dateconverterUI from './dateconverterUI'
-dateconverterUI.$('body').onload='dateconverterUI.initDates()'
+const dateconverterUI = require('./dateconverterUI')
 
 function createEventListnersHTML(){
   dateconverterUI.$('body').onload=dateconverterUI.initDates
-  dateconverterUI.$('#refreshEthDateButton').onclick=dateconverterUI.refreshEthDateOnPage
-  dateconverterUI.$('#EuropeanDate').onchange=dateconverterUI.updateCalculatedEthDateOnPage
-  dateconverterUI.$('#EthMonthScroll').onchange=dateconverterUI.updateCalculatedEurDateOnPage
-  dateconverterUI.$('#EthDayScroll').onchange=dateconverterUI.updateCalculatedEurDateOnPage
-  dateconverterUI.$('#EthYearScroll').onchange=dateconverterUI.updateCalculatedEurDateOnPage
+  document.querySelector('#refreshEthDateButton').onclick=dateconverterUI.refreshEthDateOnPage
+  document.querySelector('#EuropeanDate').onchange=dateconverterUI.updateCalculatedEthDateOnPage
+  document.querySelector('#EthMonthScroll').onchange=dateconverterUI.updateCalculatedEurDateOnPage
+  document.querySelector('#EthDayScroll').onchange=dateconverterUI.updateCalculatedEurDateOnPage
+  document.querySelector('#EthYearScroll').onchange=dateconverterUI.updateCalculatedEurDateOnPage
   dateconverterUI.initDates()
 }
 createEventListnersHTML()
+
 module.exports = {
   initDates: dateconverterUI.initDates,
   refreshEthDateOnPage: dateconverterUI.refreshEthDateOnPage,
   updateCalculatedEthDateOnPage: dateconverterUI.updateCalculatedEthDateOnPage,
   updateCalculatedEurDateOnPage: dateconverterUI.updateCalculatedEurDateOnPage,
+  $: dateconverterUI.$
 }
