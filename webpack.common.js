@@ -53,7 +53,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              // sourceMap: true
+              sourceMap: true
             }
           }
         ]
@@ -63,8 +63,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              // outputName: './assets/media/'
-              name: '[name].[ext]',
+              name: '[path][name].[ext]',
+              context: './src'
             }
           }
         ]
