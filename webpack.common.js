@@ -75,7 +75,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: './assets/media/'
+              outputPath: './assets/media/',
+              context: './src'
             }
           }
         ]
@@ -83,7 +84,8 @@ module.exports = {
       // file-loader(for fonts)
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
+        context: './src'
       }]
   },
   watchOptions: {
