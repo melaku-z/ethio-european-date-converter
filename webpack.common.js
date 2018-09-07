@@ -53,13 +53,21 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
+              // sourceMap: true
             }
           }
         ]
       },{
-        test: /\.png$/,
-        use: ['file-loader']
+        test: /\.(png|webmanifest)$/, 
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              // outputName: './assets/media/'
+              name: '[name].[ext]',
+            }
+          }
+        ]
       },
       {
         test: /\.(jpg|gif|svg)$/,
