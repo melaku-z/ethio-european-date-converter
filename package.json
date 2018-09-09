@@ -20,7 +20,6 @@
         "bootstrap-loader": "^3.0.1",
         "clean-webpack-plugin": "^0.1.19",
         "css-loader": "^1.0.0",
-        "expose-loader": "^0.7.5",
         "extract-loader": "^3.0.0",
         "favicons-webpack-plugin": "^0.0.9",
         "file-loader": "^2.0.0",
@@ -40,7 +39,8 @@
         "dev-build": "webpack --display-modules --progress --config webpack.dev.js",
         "dist-build": "webpack --display-modules --progress --config webpack.prod.js",
         "watch": "webpack --progress --watch",
-        "install-yarn": "yarn install"
+        "install-yarn": "yarn install",
+        "install-yarn-offline": "yarn install --offline"
     },
     "license": "MIT",
     "main": "index.js",
