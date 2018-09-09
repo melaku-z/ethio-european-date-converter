@@ -11,7 +11,6 @@ module.exports = {
     './src/404.html',
     './src/humans.txt',
     './src/robots.txt',
-    './src/browserconfig.xml',
     './src/LICENSE.txt',
     './src/.htaccess',
     './src/favicon.ico',
@@ -21,7 +20,17 @@ module.exports = {
       template: pathToIndexHtml
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/favicon.ico',
+      logo: './src/img/favicon.png',
+      appName: 'Ethiopian calendar converter',
+      title: 'Ethiopian calendar converter',
+      appDescription: 'Convert dates between Ethiopian and European calendar offline.',
+      developerName: 'Melaku Zewdu',            // Your (or your developer's) name. `string`
+      developerURL: 'github.com/melaku-z',             // Your (or your developer's) URL. `string`
+      background: '#fff',             // Background colour for flattened icons. `string`
+      theme_color: '#157878',         // Theme color for browser chrome. `string`
+      display: 'standalone',          // Android display: "browser" or "standalone". `string`
+      orientation: 'portrait',        // Android orientation: "portrait" or "landscape". `string`
+      start_url: '/?homescreen=1',    // Android start application's URL. `string`
       icons: {
         android: true,
         appleIcon: true,
@@ -36,10 +45,10 @@ module.exports = {
       }
     }),
     new FriendlyErrorsWebpackPlugin(),
-    // new WorkboxPlugin.GenerateSW({ todo
-    //   importWorkboxFrom: 'local',
-    //   importsDirectory: 'sw-assets'
-    // })
+    new WorkboxPlugin.GenerateSW({
+      importWorkboxFrom: 'local',
+      importsDirectory: 'sw-assets'
+    })
   ],
   output: {
     filename: './js/[name].bundle.js',
@@ -118,12 +127,24 @@ module.exports = {
         ]
       },
       {
-        test: /((\.(txt|htaccess|xml|ico))|(404.html))$/,
+        test: /((\.(txt|htaccess|ico))|(404.html))$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
+              context: './src'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.htaccess$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name]',
               context: './src'
             }
           }
