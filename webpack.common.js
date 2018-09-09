@@ -51,7 +51,7 @@ module.exports = {
     })
   ],
   output: {
-    filename: './js/[name].bundle.js',
+    filename: './js/[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'public_html_temp'),
     libraryTarget: 'var',
     library: 'dateconverterUI'
@@ -90,7 +90,7 @@ module.exports = {
           }
         ]
       }, {
-        test: /\.(png|webmanifest)$/,
+        test: /\.(png)$/,
         use: [
           {
             loader: 'file-loader',
@@ -127,7 +127,7 @@ module.exports = {
         ]
       },
       {
-        test: /((\.(txt|htaccess|ico))|(404.html))$/,
+        test: /((\.(txt|ico))|(404.html))$/,
         use: [
           {
             loader: 'file-loader',
