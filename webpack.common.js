@@ -14,7 +14,7 @@ module.exports = {
       template: pathToIndexHtml
     }),
     new FaviconsWebpackPlugin({
-      logo: 'favicon.ico',
+      logo: './src/favicon.ico',
       icons: {
         android: true,
         appleIcon: true,
@@ -73,8 +73,8 @@ module.exports = {
             }
           }
         ]
-      },{
-        test: /\.(png|webmanifest)$/, 
+      }, {
+        test: /\.(png|webmanifest)$/,
         use: [
           {
             loader: 'file-loader',
@@ -100,8 +100,15 @@ module.exports = {
       // file-loader(for fonts)
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader'],
-        context: './src'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: './assets/fonts/',
+              context: './src'
+            }
+          }
+        ]
       }]
   },
   watchOptions: {
