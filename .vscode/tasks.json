@@ -26,6 +26,11 @@
             "type": "npm",
             "script": "install-yarn",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "install-yarn-offline",
+            "problemMatcher": []
         }
     ]
 }
