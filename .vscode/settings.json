@@ -8,5 +8,17 @@
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
-    "eslint.provideLintTask": true
+    "eslint.provideLintTask": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".idea/**": true,
+        ".Bundles/**": true,
+        "nbproject/**": true,
+        "node_modules/**": true,
+        "npm-packages-offline-cache/**": true,
+    },
 }
