@@ -47,7 +47,8 @@ module.exports = {
     new FriendlyErrorsWebpackPlugin(),
     new WorkboxPlugin.GenerateSW({
       importWorkboxFrom: 'local',
-      importsDirectory: 'sw-assets'
+      importsDirectory: 'sw-assets',
+      exclude: [/(\.(?:txt|htaccess)$)|(404.html$)/],
     })
   ],
   output: {
