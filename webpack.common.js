@@ -7,7 +7,14 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 module.exports = {
   entry: [
-    pathToMainJs
+    pathToMainJs,
+    './src/404.html',
+    './src/humans.txt',
+    './src/robots.txt',
+    './src/browserconfig.xml',
+    './src/LICENSE.txt',
+    './src/.htaccess',
+    './src/favicon.ico',
   ],
   plugins: [
     new HtmlWebpackPlugin({
@@ -105,6 +112,18 @@ module.exports = {
             loader: 'file-loader',
             options: {
               outputPath: './assets/fonts/',
+              context: './src'
+            }
+          }
+        ]
+      },
+      {
+        test: /((\.(txt|htaccess|xml|ico))|(404.html))$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
               context: './src'
             }
           }
