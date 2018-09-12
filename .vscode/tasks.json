@@ -31,6 +31,11 @@
             "type": "npm",
             "script": "install-yarn-offline",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "start-server-prod",
+            "problemMatcher": []
         }
     ]
 }
