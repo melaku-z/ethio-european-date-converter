@@ -20,11 +20,10 @@ module.exports = {
       template: pathToIndexHtml
     }),
     new AppManifestWebpack({
-      logo: './src/img/favicon.png',
+      logo: './src/img/icons.png',
       output: '/assets/icons-[hash:8]/',
       config: {
-        appName: 'Ethiopian Calendar Converter',
-        shortName: 'Ethiopian Calendar',
+        appName: 'Ethio-European Date Converter',
         appDescription: 'Convert dates between Ethiopian and European calendar offline.',
         developerName: 'Melaku Zewdu',            // Your (or your developer's) name. `string`
         developerURL: 'github.com/melaku-z',             // Your (or your developer's) URL. `string`
