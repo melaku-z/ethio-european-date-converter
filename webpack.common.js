@@ -4,7 +4,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin')
 const pathToMainJs = require.resolve('./src/js/main.js')
 const pathToIndexHtml = require.resolve('./src/index.html')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const AppManifestWebpack = require('app-manifest-webpack-plugin')
 module.exports = {
   entry: [
     pathToMainJs,
@@ -19,35 +19,37 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: pathToIndexHtml
     }),
-    new FaviconsWebpackPlugin({
+    new AppManifestWebpack({
       logo: './src/img/favicon.png',
-      appName: 'Ethiopian calendar converter',
-      title: 'Ethiopian calendar converter',
-      appDescription: 'Convert dates between Ethiopian and European calendar offline.',
-      developerName: 'Melaku Zewdu',            // Your (or your developer's) name. `string`
-      developerURL: 'github.com/melaku-z',             // Your (or your developer's) URL. `string`
-      background: '#fff',             // Background colour for flattened icons. `string`
-      theme_color: '#157878',         // Theme color for browser chrome. `string`
-      display: 'standalone',          // Android display: "browser" or "standalone". `string`
-      orientation: 'portrait',        // Android orientation: "portrait" or "landscape". `string`
-      start_url: '/?homescreen=1',    // Android start application's URL. `string`
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: false,
-        coast: false,
-        favicons: true,
-        firefox: false,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: true
+      output: '/assets/icons-[hash:8]/',
+      config: {
+        appName: 'Ethiopian Calendar Converter',
+        shortName: 'Ethiopian Calendar',
+        appDescription: 'Convert dates between Ethiopian and European calendar offline.',
+        developerName: 'Melaku Zewdu',            // Your (or your developer's) name. `string`
+        developerURL: 'github.com/melaku-z',             // Your (or your developer's) URL. `string`
+        background: '#fff',             // Background colour for flattened icons. `string`
+        theme_color: '#157878',         // Theme color for browser chrome. `string`
+        display: 'standalone',          // Android display: "browser" or "standalone". `string`
+        orientation: 'portrait',        // Android orientation: "portrait" or "landscape". `string`
+        start_url: '/?homescreen=1',    // Android start application's URL. `string`
+        version: '1.1',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: false,
+          yandex: false,
+          windows: true
+        }
       }
     }),
     new FriendlyErrorsWebpackPlugin(),
     new WorkboxPlugin.GenerateSW({
       importWorkboxFrom: 'local',
-      importsDirectory: 'sw-assets',
+      importsDirectory: '/assets/sw/',
       exclude: [/(\.(?:txt|htaccess)$)|(404.html$)/],
     })
   ],
