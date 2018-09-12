@@ -4,6 +4,6 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './public_html_temp'
+    contentBase: './public_html'
   },
 })

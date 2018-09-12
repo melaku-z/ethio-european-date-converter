@@ -2,10 +2,6 @@ doc/**
 /nbproject/private/
 /nbproject/
 public_html/css/.DS_Store
-# todo: favicon
-public_html/favicon.ico
-# todo: icons
-public_html/*.png
 .Bundles/*
 node_modules/*
 npm-packages-offline-cache/*

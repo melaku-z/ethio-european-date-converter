@@ -16,12 +16,15 @@ module.exports = {
     './src/favicon.ico',
   ],
   plugins: [
+    new FriendlyErrorsWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: pathToIndexHtml
+      template: pathToIndexHtml,
+      minify: true
     }),
     new AppManifestWebpack({
       logo: './src/img/icons.png',
       output: '/assets/icons-[hash:8]/',
+      emitStats: false, //todo
       config: {
         appName: 'Ethio-European Date Converter',
         appDescription: 'Convert dates between Ethiopian and European calendar offline.',
@@ -45,16 +48,15 @@ module.exports = {
         }
       }
     }),
-    new FriendlyErrorsWebpackPlugin(),
     new WorkboxPlugin.GenerateSW({
       importWorkboxFrom: 'local',
       importsDirectory: '/assets/sw/',
-      exclude: [/(\.(?:txt|htaccess)$)|(404.html$)/],
+      exclude: [/(\.(txt|htaccess|png|xml)$)|(404.html$)/],
     })
   ],
   output: {
     filename: './js/[name].[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'public_html_temp'),
+    path: path.resolve(__dirname, 'public_html'),
     libraryTarget: 'var',
     library: 'dateconverterUI'
   },
