@@ -4,8 +4,24 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.css$/,
+  //       use: [
+  //         {
+  //           loader: 'clean-css-loader',
+  //           options: {
+  //             compatibility: 'ie9',
+  //             level: 2,
+  //           }
+  //         }
+  //       ]
+  //     }
+  //   ]    
+  // }, todo: merge.smart
   plugins: [
-    new CleanWebpackPlugin(['public_html_temp'])
+    new CleanWebpackPlugin(['public_html'])
   ],
   optimization: {
     runtimeChunk: 'single',
