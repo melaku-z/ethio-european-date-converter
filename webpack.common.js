@@ -91,6 +91,13 @@ module.exports = {
             options: {
               sourceMap: true
             }
+          },
+          {
+            loader: 'clean-css-loader',
+            options: {
+              compatibility: 'ie9',
+              level: 2,
+            }
           }
         ]
       }, {
