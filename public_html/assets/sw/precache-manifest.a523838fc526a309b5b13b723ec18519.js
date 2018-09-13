@@ -1,6 +1,6 @@
 self.__precacheManifest = [
   {
-    "revision": "e29fe3eb9ffc21856b3ef4b34fb3940b",
+    "revision": "d417b94293b67e4cf1e5434019f631cd",
     "url": "index.html"
   },
   {
@@ -12,6 +12,14 @@ self.__precacheManifest = [
   },
   {
     "url": "css/4af07974a90b80a00a7488b970822aab.css"
+  },
+  {
+    "revision": "1ae63be98966dbe460a8f84c53c772d2",
+    "url": "/assets/icons-b23883c8/manifest.json"
+  },
+  {
+    "revision": "5a4c20a097d810d812a5279010cc6619",
+    "url": "/assets/icons-b23883c8/favicon.ico"
   },
   {
     "revision": "639ba5db7da7e19458517987af332bac",
