@@ -11,11 +11,11 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("/assets/sw/workbox-v3.4.1/workbox-sw.js");
-workbox.setConfig({modulePathPrefix: "/assets/sw/workbox-v3.4.1"});
+importScripts("/assets/sw/workbox-v3.5.0/workbox-sw.js");
+workbox.setConfig({modulePathPrefix: "/assets/sw/workbox-v3.5.0"});
 
 importScripts(
-  "/assets/sw/precache-manifest.7f69023d4458a49aa8734fb8e17abefe.js"
+  "/assets/sw/precache-manifest.cc8a8b9b247937660d57fb282cb416f5.js"
 );
 
 /**
@@ -26,3 +26,5 @@ importScripts(
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.googleAnalytics.initialize({});
