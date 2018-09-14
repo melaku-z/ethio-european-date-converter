@@ -1,27 +1,30 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const WriteFilePlugin = require('write-file-webpack-plugin')
+const path = require('path')
 
-module.exports = merge(common, {
+module.exports = merge.smart(common, {
   mode: 'production',
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /\.css$/,
-  //       use: [
-  //         {
-  //           loader: 'clean-css-loader',
-  //           options: {
-  //             compatibility: 'ie9',
-  //             level: 2,
-  //           }
-  //         }
-  //       ]
-  //     }
-  //   ]    
-  // }, todo: merge.smart
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'clean-css-loader',
+            options: {
+              compatibility: 'ie9',
+              level: 2,
+            }
+          }
+        ]
+      }
+    ]    
+  },
   plugins: [
-    new CleanWebpackPlugin(['public_html'])
+    new CleanWebpackPlugin(['public_html']),
+    new WriteFilePlugin()
   ],
   optimization: {
     runtimeChunk: 'single',
@@ -34,5 +37,13 @@ module.exports = merge(common, {
         }
       }
     }
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public_html'),
+    compress: true,
+  },
+  serve: {
+    contentBase: path.resolve(__dirname, 'public_html'),
+    compress: true,
   }
 })

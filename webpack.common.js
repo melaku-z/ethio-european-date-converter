@@ -52,10 +52,11 @@ module.exports = {
       importWorkboxFrom: 'local',
       importsDirectory: '/assets/sw/',
       exclude: [/(\.(txt|htaccess|png|xml)$)|(404.html$)/],
+      offlineGoogleAnalytics: true
     })
   ],
   output: {
-    filename: './js/[name].[contenthash].bundle.js',
+    filename: './js/[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'public_html'),
     libraryTarget: 'var',
     library: 'dateconverterUI'
@@ -90,13 +91,6 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true
-            }
-          },
-          {
-            loader: 'clean-css-loader',
-            options: {
-              compatibility: 'ie9',
-              level: 2,
             }
           }
         ]
