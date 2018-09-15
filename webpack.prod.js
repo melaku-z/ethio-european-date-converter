@@ -7,21 +7,6 @@ const path = require('path')
 module.exports = merge.smart(common, {
   mode: 'production',
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'clean-css-loader',
-            options: {
-              compatibility: 'ie9',
-              level: 2,
-            }
-          }
-        ]
-      }
-    ]    
-  },
   plugins: [
     new CleanWebpackPlugin(['public_html']),
     new WriteFilePlugin()

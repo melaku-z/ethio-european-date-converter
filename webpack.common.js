@@ -5,6 +5,8 @@ const pathToMainJs = require.resolve('./src/js/main.js')
 const pathToIndexHtml = require.resolve('./src/index.html')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const AppManifestWebpack = require('app-manifest-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PurifyCSSPlugin = require('purifycss-webpack')
 module.exports = {
   entry: [
     pathToMainJs,
@@ -17,6 +19,9 @@ module.exports = {
   ],
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name][contenthash].css'}
+    ),
     new HtmlWebpackPlugin({
       template: pathToIndexHtml,
       minify: true
@@ -24,7 +29,6 @@ module.exports = {
     new AppManifestWebpack({
       logo: './src/img/icons.png',
       output: '/assets/icons-[hash:8]/',
-      emitStats: false, //todo
       config: {
         appName: 'Ethio-European Date Converter',
         appDescription: 'Convert dates between Ethiopian and European calendar offline.',
@@ -51,12 +55,22 @@ module.exports = {
     new WorkboxPlugin.GenerateSW({
       importWorkboxFrom: 'local',
       importsDirectory: '/assets/sw/',
-      exclude: [/(\.(txt|htaccess|png|xml)$)|(404.html$)/],
+      exclude: [/(\.(txt|htaccess|png|xml)$)|(404.html$)|(favicon.ico$)/],
       offlineGoogleAnalytics: true
+    }),
+    new PurifyCSSPlugin({
+      paths: [
+        pathToMainJs,
+        pathToIndexHtml
+      ],
+      minimize: true,
+      purifyOptions: {
+        whitelist: []
+      }
     })
   ],
   output: {
-    filename: './js/[name].[hash].bundle.js',
+    filename: './js/[name].[chunkhash].[ext]',
     path: path.resolve(__dirname, 'public_html'),
     libraryTarget: 'var',
     library: 'dateconverterUI'
@@ -79,22 +93,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: './css/'
-            }
-          },
-          'extract-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-          }
+        use: [          
+          MiniCssExtractPlugin.loader,
+          'css-loader'
         ]
-      }, {
+      }, 
+      {
         test: /\.(png)$/,
         use: [
           {
