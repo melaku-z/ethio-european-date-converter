@@ -31,6 +31,7 @@
         "html-loader": "^0.5.5",
         "html-webpack-plugin": "^3.2.0",
         "mini-css-extract-plugin": "^0.4.2",
+        "nodemon": "^1.18.4",
         "optimize-css-assets-webpack-plugin": "^5.0.1",
         "purify-css": "^1.2.5",
         "purifycss-webpack": "^0.7.0",
@@ -38,6 +39,7 @@
         "uglifyjs-webpack-plugin": "^2.0.0",
         "webpack": "^4.8.3",
         "webpack-cli": "^2.1.4",
+        "style-ext-html-webpack-plugin": "^3.4.7",
         "webpack-dev-server": "^3.1.7",
         "webpack-merge": "^4.1.4",
         "webpack-serve": "^2.0.2",
@@ -46,6 +48,7 @@
     },
     "scripts": {
         "start-server": "webpack-dev-server --open --config webpack.dev.js",
+        "server-with-config-reload": "nodemon --watch webpack.common.js exec 'node_modules/.bin/webpack-dev-server --open --config webpack.dev.js'",
         "start-server-prod": "webpack-dev-server --open --config webpack.prod.js",
         "dev-build": "webpack --display-modules --progress --config webpack.dev.js",
         "dist-build": "webpack --display-modules --progress --config webpack.prod.js",
