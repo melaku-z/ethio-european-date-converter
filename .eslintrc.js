@@ -11,7 +11,7 @@ module.exports = {
     },
     "rules": {
         "indent": [
-            "error",
+            "warn",
             2
         ],
         "linebreak-style": [
@@ -19,7 +19,7 @@ module.exports = {
             "windows"
         ],
         "quotes": [
-            "error",
+            "warn",
             "single"
         ],
         "semi": [
