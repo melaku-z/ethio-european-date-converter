@@ -47,15 +47,27 @@
         "yarn": "file:npm-packages-offline-cache/yarn-1.9.4.tgz"
     },
     "scripts": {
-        "start-server": "webpack-dev-server --open --config webpack.dev.js",
-        "server-with-config-reload": "nodemon --watch webpack.common.js exec 'node_modules/.bin/webpack-dev-server --open --config webpack.dev.js'",
+        "start-server-dev": "webpack-dev-server --open --config webpack.dev.js",
+        "nodemon-start-server-dev": "nodemon --watch webpack.common.js --exec npm run start-server-dev",
+        "nodemon-start-server-prod": "nodemon --watch webpack.common.js --exec npm run start-server-prod",
         "start-server-prod": "webpack-dev-server --open --config webpack.prod.js",
-        "dev-build": "webpack --display-modules --progress --config webpack.dev.js",
-        "dist-build": "webpack --display-modules --progress --config webpack.prod.js",
+        "build-dev": "webpack --display-modules --progress --config webpack.dev.js",
+        "build-dist": "webpack --display-modules --progress --config webpack.prod.js",
         "watch": "webpack --progress --watch",
-        "install-yarn": "yarn install",
-        "install-yarn-offline": "yarn install --offline"
+        "yarn-install": "yarn install",
+        "yarn-install-offline": "yarn install --offline"
     },
+    "engine": {
+        "node": ">=8.11.4",
+        "npm": ">= 5.6.0",
+        "yarn": "^1.9.0"
+    },
+    "browserslist": [
+        "> 0.1%",
+        "last 4 versions",
+        "not dead",
+        "not ie < 8"
+    ],
     "license": "MIT",
     "main": "./src/js/dateconverter.js",
     "private": true

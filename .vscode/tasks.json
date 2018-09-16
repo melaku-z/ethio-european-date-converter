@@ -5,7 +5,7 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "dev-build",
+            "script": "build-dev",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -14,27 +14,37 @@
         },
         {
             "type": "npm",
-            "script": "dist-build",
+            "script": "build-dist",
             "problemMatcher": []
         },
         {
             "type": "npm",
-            "script": "start-server",
+            "script": "start-server-dev",
             "problemMatcher": []
         },
         {
             "type": "npm",
-            "script": "install-yarn",
+            "script": "yarn-install",
             "problemMatcher": []
         },
         {
             "type": "npm",
-            "script": "install-yarn-offline",
+            "script": "yarn-install-offline",
             "problemMatcher": []
         },
         {
             "type": "npm",
             "script": "start-server-prod",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "nodemon-start-server-dev",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "nodemon-start-server-prod",
             "problemMatcher": []
         }
     ]
