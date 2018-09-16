@@ -2,18 +2,18 @@
 import * as dateConverter from './dateconverter.js'
 
 function updateCalculatedEthDateOnPage() {
-  const ethDate = dateConverter.toEthiopianDateTime(new Date(document.getElementById('EuropeanDate').val()))
-  document.getElementById('EthDayScroll').val(ethDate.date)
-  document.getElementById('EthMonthScroll').val(ethDate.month)
-  document.getElementById('EthYearScroll').val(ethDate.year)
-  document.getElementById('EurDayTextArea').html(dateConverter.toEuropeanDateString(ethDate))
-  document.getElementById('ethDayTextArea').html(ethDate.dateWithDayString)
+  const ethDate = dateConverter.toEthiopianDateTime(new Date(document.getElementById('EuropeanDate').value))
+  document.getElementById('EthDayScroll').value = ethDate.date
+  document.getElementById('EthMonthScroll').value = ethDate.month
+  document.getElementById('EthYearScroll').value = ethDate.year
+  document.getElementById('EurDayTextArea').innerHTML = dateConverter.toEuropeanDateString(ethDate)
+  document.getElementById('ethDayTextArea').innerHTML = ethDate.dateWithDayString
 }
 
 function updateCalculatedEurDateOnPage() {
-  const ethDate_Year = parseInt(document.getElementById('EthYearScroll')[0].value)
-  const ethDate_Month = parseInt(document.getElementById('EthMonthScroll')[0].value)
-  const ethDate_Day = parseInt(document.getElementById('EthDayScroll')[0].value)
+  const ethDate_Year = parseInt(document.getElementById('EthYearScroll').value)
+  const ethDate_Month = parseInt(document.getElementById('EthMonthScroll').value)
+  const ethDate_Day = parseInt(document.getElementById('EthDayScroll').value)
   const ethDate = new dateConverter.ethTime(ethDate_Day, ethDate_Month, ethDate_Year, 0, 0, 0)
   const eurDateTime = dateConverter.toEuropeanDate(ethDate)
   var eurDate
@@ -21,18 +21,18 @@ function updateCalculatedEurDateOnPage() {
     eurDate = eurDateTime.toJSON().slice(0, 10)
   else
     eurDate = eurDateTime
-  document.getElementById('EuropeanDate').val(eurDate)
-  document.getElementById('EurDayTextArea').html(dateConverter.toEuropeanDateString(ethDate))
-  document.getElementById('ethDayTextArea').html(ethDate.dateWithDayString)
+  document.getElementById('EuropeanDate').value = eurDate
+  document.getElementById('EurDayTextArea').innerHTML = dateConverter.toEuropeanDateString(ethDate)
+  document.getElementById('ethDayTextArea').innerHTML = ethDate.dateWithDayString
 }
 
 function refreshEthDateOnPage(){
-  document.getElementById('ethTodayTextArea').html(dateConverter.toEthiopianDateTimeString(new Date()))
+  document.getElementById('ethTodayTextArea').innerHTML = dateConverter.toEthiopianDateTimeString(new Date())
 }
 
 function initDates() {
   refreshEthDateOnPage()
-  document.getElementById('EuropeanDate').val(new Date().toJSON().slice(0, 10))
+  document.getElementById('EuropeanDate').value = new Date().toJSON().slice(0, 10)
   updateCalculatedEthDateOnPage()
   updateCalculatedEurDateOnPage()
 }
