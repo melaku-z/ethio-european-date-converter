@@ -25,7 +25,7 @@ module.exports = merge.smart(common, {
         theme_color: '#157878',         // Theme color for browser chrome. `string`
         display: 'standalone',          // Android display: "browser" or "standalone". `string`
         orientation: 'portrait',        // Android orientation: "portrait" or "landscape". `string`
-        start_url: '/?homescreen=1',    // Android start application's URL. `string`
+        start_url: '/',    // Android start application's URL. `string` todo: '/?homescreen=1' disables offline
         version: '1.1',
         icons: {
           android: true,
