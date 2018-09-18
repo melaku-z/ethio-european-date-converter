@@ -26,7 +26,6 @@ module.exports = merge.smart(common, {
         display: 'standalone',          // Android display: "browser" or "standalone". `string`
         orientation: 'portrait',        // Android orientation: "portrait" or "landscape". `string`
         start_url: '/?homescreen=1',    // Android start application's URL. `string`
-        scope: '/',
         version: '1.2',
         icons: {
           android: true,
