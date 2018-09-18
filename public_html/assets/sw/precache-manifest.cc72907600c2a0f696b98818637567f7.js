@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "css/main.9df67b3a8b001a9f0c6c.css"
   },
   {
-    "revision": "1ae63be98966dbe460a8f84c53c772d2",
+    "revision": "04974f103a94b33dd389085c13c40f99",
     "url": "/assets/icons-b23883c8/manifest.json"
   },
   {
-    "revision": "c5e873bec3c506fda14585f116eda609",
+    "revision": "87e6c2394149ce9b16cda908209543c2",
     "url": ".cache"
   },
   {
