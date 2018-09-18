@@ -1,6 +1,6 @@
 self.__precacheManifest = [
   {
-    "revision": "553a6df09edf81f5065909935e4d5560",
+    "revision": "f08bba4c48cd5f8ea397cbff84430b67",
     "url": "index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/assets/icons-b23883c8/manifest.json"
   },
   {
-    "revision": "e82907133fa74e62f8acb2475e57c1b4",
+    "revision": "c5e873bec3c506fda14585f116eda609",
     "url": ".cache"
   },
   {
