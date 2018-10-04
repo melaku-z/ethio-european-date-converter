@@ -1,5 +1,5 @@
 const path = require('path');
-const devMode = process.env.NODE_ENV !== 'production';
+// const devMode = process.env.NODE_ENV !== 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pathToMainJs = require.resolve('./src/js/main.js');
 const pathToIndexHtml = require.resolve('./src/index.html');
@@ -56,7 +56,7 @@ module.exports = {
         ],
         loader: 'babel-loader',
         query: {
-          presets: ['es2015']
+          presets: ['env']
         }
       },
       {
