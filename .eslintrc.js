@@ -24,7 +24,7 @@ module.exports = {
         ],
         "semi": [
             "warn",
-            "never"
+            "always"
         ]
     }
 };

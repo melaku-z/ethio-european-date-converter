@@ -1,11 +1,11 @@
-const path = require('path')
-const devMode = process.env.NODE_ENV !== 'production'
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const pathToMainJs = require.resolve('./src/js/main.js')
-const pathToIndexHtml = require.resolve('./src/index.html')
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PurifyCSSPlugin = require('purifycss-webpack')
+const path = require('path');
+const devMode = process.env.NODE_ENV !== 'production';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const pathToMainJs = require.resolve('./src/js/main.js');
+const pathToIndexHtml = require.resolve('./src/index.html');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 module.exports = {
   entry: [
     pathToMainJs,
@@ -130,4 +130,4 @@ module.exports = {
   watchOptions: {
     ignored: /node_modules/
   }
-}
+};

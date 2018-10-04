@@ -1,158 +1,158 @@
-'use strict'
+'use strict';
 
-const oneHour = 60 * 60 * 1000
-const oneDay = 24 * oneHour
-const oneYear = 365 * oneDay
-const oneLeapYear = 366 * oneDay
-const fourYears = 3 * oneYear + oneLeapYear
-const globalTimeDifference = new Date('December 9, 2012').getTime() - new Date('April 1, 2005').getTime()
+const oneHour = 60 * 60 * 1000;
+const oneDay = 24 * oneHour;
+const oneYear = 365 * oneDay;
+const oneLeapYear = 366 * oneDay;
+const fourYears = 3 * oneYear + oneLeapYear;
+const globalTimeDifference = new Date('December 9, 2012').getTime() - new Date('April 1, 2005').getTime();
 
 function dayOfWeekString(day) {
   switch (day) {
   case 0:
-    return 'Sunday'
+    return 'Sunday';
   case 1:
-    return 'Monday'
+    return 'Monday';
   case 2:
-    return 'Tuesday'
+    return 'Tuesday';
   case 3:
-    return 'Wednesday'
+    return 'Wednesday';
   case 4:
-    return 'Thursday'
+    return 'Thursday';
   case 5:
-    return 'Friday'
+    return 'Friday';
   case 6:
-    return 'Saterday'
+    return 'Saterday';
   }
 }
 
 function monthStringEth(month) {
   switch (month) {
   case 1:
-    return 'Meskerem '
+    return 'Meskerem ';
   case 2:
-    return 'Tikimt '
+    return 'Tikimt ';
   case 3:
-    return 'Hidar '
+    return 'Hidar ';
   case 4:
-    return 'Tahsas '
+    return 'Tahsas ';
   case 5:
-    return 'Tir '
+    return 'Tir ';
   case 6:
-    return 'Yekatit '
+    return 'Yekatit ';
   case 7:
-    return 'Megabit '
+    return 'Megabit ';
   case 8:
-    return 'Meyazya '
+    return 'Meyazya ';
   case 9:
-    return 'Ginbot '
+    return 'Ginbot ';
   case 10:
-    return 'Sene '
+    return 'Sene ';
   case 11:
-    return 'Hamle '
+    return 'Hamle ';
   case 12:
-    return 'Nehase '
+    return 'Nehase ';
   case 13:
-    return 'Pagume '
+    return 'Pagume ';
   }
 }
 
 function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
   if (date === 31) {
-    this.date = 30//todo
+    this.date = 30;//todo
   } else {
-    this.date = date
+    this.date = date;
   }
   if (yr > 200) {
-    this.year = yr
+    this.year = yr;
   } else {
-    this.year = yr + 1900
+    this.year = yr + 1900;
   }
-  this.month = mon
-  this.hour = hr
-  this.minute = min
-  this.second = sec
-  this.getDay = ethDayOfWeek
-  this.dateString = monthStringEth(mon) + this.date + ', ' + this.year
+  this.month = mon;
+  this.hour = hr;
+  this.minute = min;
+  this.second = sec;
+  this.getDay = ethDayOfWeek;
+  this.dateString = monthStringEth(mon) + this.date + ', ' + this.year;
   if (hr < 13) {
-    this.timeString = leftpad(hr) + ':' + leftpad(min) + ':' + leftpad(sec) + ' a.m.'
+    this.timeString = leftpad(hr) + ':' + leftpad(min) + ':' + leftpad(sec) + ' a.m.';
   } else {
-    this.timeString = leftpad(hr - 12) + ':' + leftpad(min) + ':' + leftpad(sec) + ' p.m.'
+    this.timeString = leftpad(hr - 12) + ':' + leftpad(min) + ':' + leftpad(sec) + ' p.m.';
   }
-  this.dateWithDayString = dayOfWeekString(this.getDay()) + ', ' + this.dateString
-  this.dateTimeString = this.dateString + ', ' + this.timeString
-  this.fullDateTimeString = this.dateTimeString + ', ' + dayOfWeekString(this.getDay()) + '.'
+  this.dateWithDayString = dayOfWeekString(this.getDay()) + ', ' + this.dateString;
+  this.dateTimeString = this.dateString + ', ' + this.timeString;
+  this.fullDateTimeString = this.dateTimeString + ', ' + dayOfWeekString(this.getDay()) + '.';
   function ethDayOfWeek() {
-    return (this.year + 2 * this.month + this.date + ethDifference(this.year)) % 7
+    return (this.year + 2 * this.month + this.date + ethDifference(this.year)) % 7;
     function ethDifference(ethYear) {
-      return -(Math.floor((2023 - ethYear) / 4))
+      return -(Math.floor((2023 - ethYear) / 4));
     }
   }
 }
 
 function toEthiopianDateTime(eurDate) {
-  var difference = eurDate.getTime() - new Date('September 12, 1971').getTime()
-  var fourYearsPassed = Math.floor(difference / fourYears)
-  var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear)
+  var difference = eurDate.getTime() - new Date('September 12, 1971').getTime();
+  var fourYearsPassed = Math.floor(difference / fourYears);
+  var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear);
   if (remainingYears === 4) {
-    remainingYears = 3
+    remainingYears = 3;
   }
-  var remainingMonths = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear) / (30 * oneDay))
-  var remainingDays = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear - remainingMonths * 30 * oneDay) / oneDay)
-  var remainingHours = eurDate.getHours() // - 6 to account for traditional local time
+  var remainingMonths = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear) / (30 * oneDay));
+  var remainingDays = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear - remainingMonths * 30 * oneDay) / oneDay);
+  var remainingHours = eurDate.getHours(); // - 6 to account for traditional local time
   if (remainingHours < 0) {
-    remainingHours += 24
+    remainingHours += 24;
   }
-  var ethDate = new ethTime(remainingDays + 1, remainingMonths + 1, remainingYears + 4 * fourYearsPassed + 1964, remainingHours, eurDate.getMinutes(), eurDate.getSeconds())
-  return ethDate
+  var ethDate = new ethTime(remainingDays + 1, remainingMonths + 1, remainingYears + 4 * fourYearsPassed + 1964, remainingHours, eurDate.getMinutes(), eurDate.getSeconds());
+  return ethDate;
 }
 
 function toEthiopianDateTimeString(eurDate) {
-  return toEthiopianDateTime(eurDate).dateTimeString
+  return toEthiopianDateTime(eurDate).dateTimeString;
 }
 
 function toEthiopianDateString(eurDate) {
-  return toEthiopianDateTime(eurDate).dateString
+  return toEthiopianDateTime(eurDate).dateString;
 }
 
 function toEuropeanDate(ethDate) {
-  var initialEuropean = new Date(new Date(ethDate.year, ethDate.month - 1, ethDate.date).getTime() + globalTimeDifference)
+  var initialEuropean = new Date(new Date(ethDate.year, ethDate.month - 1, ethDate.date).getTime() + globalTimeDifference);
   if (ethDate.month === 13) {
-    var maxDate
+    var maxDate;
     if (ethDate.year % 4 === 3)
-      maxDate = 6
+      maxDate = 6;
     else
-      maxDate = 5
+      maxDate = 5;
     if (ethDate.date > maxDate) {
-      const errMsg = 'Pagume Only has ' + maxDate + ' days at year ' + ethDate.year + '. Please select another day.'
-      return errMsg
+      const errMsg = 'Pagume Only has ' + maxDate + ' days at year ' + ethDate.year + '. Please select another day.';
+      return errMsg;
     }
   }
   for (var count = -8; count < 9; count++) {
-    const EngDate = new Date(initialEuropean.getTime() + count * oneDay)
-    var difference = EngDate.getTime() - new Date('September 12, 1971').getTime()
-    var fourYearsPassed = Math.floor(difference / fourYears)
-    var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear)
+    const EngDate = new Date(initialEuropean.getTime() + count * oneDay);
+    var difference = EngDate.getTime() - new Date('September 12, 1971').getTime();
+    var fourYearsPassed = Math.floor(difference / fourYears);
+    var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear);
     if (remainingYears === 4) {
-      remainingYears = 3
+      remainingYears = 3;
     }
-    var remainingMonths = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear) / (30 * oneDay))
-    var remainingDays = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear - remainingMonths * 30 * oneDay) / oneDay)
+    var remainingMonths = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear) / (30 * oneDay));
+    var remainingDays = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear - remainingMonths * 30 * oneDay) / oneDay);
     if (ethDate.date === remainingDays + 1 && ethDate.month === remainingMonths + 1) {
-      return EngDate
+      return EngDate;
     }
   }
 }
 
 function toEuropeanDateString(ethDate) {
-  var EuropeanDate = toEuropeanDate(ethDate)
-  EuropeanDate = EuropeanDate.toDateString()
-  return EuropeanDate
+  var EuropeanDate = toEuropeanDate(ethDate);
+  EuropeanDate = EuropeanDate.toDateString();
+  return EuropeanDate;
 }
 
 function leftpad(Num, length) {
-  length = length || 2
-  return ('000000000' + Num).slice(-length)
+  length = length || 2;
+  return ('000000000' + Num).slice(-length);
 }
 
 module.exports = exports = {
@@ -162,4 +162,4 @@ module.exports = exports = {
   toEthiopianDateTimeString,
   toEuropeanDate,
   toEuropeanDateString
-}
+};
