@@ -72,26 +72,7 @@
               });
             }
         </script>
-        <script>
-            window.ga = function () {
-                ga.q.push(arguments);
-            };
-            ga.q = [];
-            ga.l = +new Date;
-            ga('create', 'UA-124250343-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124250343-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'UA-124250343-1');
-        </script>
+        ${require('html-loader!./html/analytics.html')}
     </body>
 
 </html>
