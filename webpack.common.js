@@ -1,11 +1,11 @@
-const path = require('path')
-const devMode = process.env.NODE_ENV !== 'production'
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const pathToMainJs = require.resolve('./src/js/main.js')
-const pathToIndexHtml = require.resolve('./src/index.html')
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PurifyCSSPlugin = require('purifycss-webpack')
+const path = require('path');
+// const devMode = process.env.NODE_ENV !== 'production';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const pathToMainJs = require.resolve('./src/js/main.js');
+const pathToIndexHtml = require.resolve('./src/index.html');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 module.exports = {
   entry: [
     pathToMainJs,
@@ -15,6 +15,7 @@ module.exports = {
     './src/LICENSE.txt',
     './src/.htaccess',
     './src/favicon.ico',
+    './src/google4ea6bc293950abe1.html',
   ],
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
@@ -56,7 +57,7 @@ module.exports = {
         ],
         loader: 'babel-loader',
         query: {
-          presets: ['es2015']
+          presets: ['env']
         }
       },
       {
@@ -103,7 +104,7 @@ module.exports = {
         ]
       },
       {
-        test: /((\.(txt|ico))|(404.html))$/,
+        test: /((\.(txt|ico))|(404.html)|(google4ea6bc293950abe1.html))$/,
         use: [
           {
             loader: 'file-loader',
@@ -130,4 +131,4 @@ module.exports = {
   watchOptions: {
     ignored: /node_modules/
   }
-}
+};

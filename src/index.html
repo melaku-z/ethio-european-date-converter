@@ -7,6 +7,7 @@
         <title>Date Converter - Ethiopian Calendar</title>
         <meta name="description" content="Convert dates between Ethiopian and European calendar. Application works offline.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0">
+        <link rel="canonical" href="https://ethiopian-calendar.netlify.com">
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,46 +64,10 @@
                 </div>
             </div>
         </div>
-        <script>
-            // Check that service workers are registered
-            if ('serviceWorker' in navigator) {
-              // Use the window load event to keep the page load performant
-              window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js', {scope: '/'});
-              });
-            }
-        </script>
-        <script>
-            window.ga = function () {
-                ga.q.push(arguments);
-            };
-            ga.q = [];
-            ga.l = +new Date;
-            ga('create', 'UA-124250343-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124250343-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'UA-124250343-1');
-        </script>
+        ${require('html-loader!./html/serviceWorkerRegister.html')}
+        ${require('html-loader!./html/analytics.html')}
+        ${require('html-loader!./html/ads.html')}
+        <!-- ${require('html-loader!./html/social.html')} -->
     </body>
 
 </html>
-<!-- 
-    <a class="btn btn-block btn-social btn-twitter">
-    <span class="fa fa-twitter"></span> Sign in with Twitter
-  </a>
-Or if you just want the icon button, use it like this:
-
-  <a class="btn btn-social-icon btn-twitter">
-    <span class="fa fa-twitter"></span>
-  </a>
-    
-bootstrap-social.css-->

@@ -1,12 +1,12 @@
-const merge = require('webpack-merge')
-const common = require('./webpack.common.js')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const WriteFilePlugin = require('write-file-webpack-plugin')
-const path = require('path')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const WorkboxPlugin = require('workbox-webpack-plugin')
-const AppManifestWebpack = require('app-manifest-webpack-plugin')
+const merge = require('webpack-merge');
+const common = require('./webpack.common.js');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
+const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const AppManifestWebpack = require('app-manifest-webpack-plugin');
 
 module.exports = merge.smart(common, {
   mode: 'production',
@@ -74,4 +74,4 @@ module.exports = merge.smart(common, {
     contentBase: path.resolve(__dirname, 'public_html'),
     compress: true,
   }
-})
+});
