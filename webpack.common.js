@@ -15,6 +15,7 @@ module.exports = {
     './src/LICENSE.txt',
     './src/.htaccess',
     './src/favicon.ico',
+    './src/google4ea6bc293950abe1.html',
   ],
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
@@ -103,7 +104,7 @@ module.exports = {
         ]
       },
       {
-        test: /((\.(txt|ico))|(404.html))$/,
+        test: /((\.(txt|ico))|(404.html)|(google4ea6bc293950abe1.html))$/,
         use: [
           {
             loader: 'file-loader',
