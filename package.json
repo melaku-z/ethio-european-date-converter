@@ -59,6 +59,7 @@
     },
     "scripts": {
         "start-server-dev": "webpack-dev-server --open --config webpack.dev.js",
+        "lint-autofix": "eslint . --fix --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
         "nodemon-start-server-dev": "nodemon --watch webpack.common.js --exec npm run start-server-dev",
         "nodemon-start-server-prod": "nodemon --watch webpack.common.js --exec npm run start-server-prod",
         "start-server-prod": "webpack-dev-server --open --config webpack.prod.js",
