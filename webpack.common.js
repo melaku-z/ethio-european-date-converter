@@ -25,7 +25,8 @@ module.exports = {
     new PurifyCSSPlugin({
       paths: [
         pathToMainJs,
-        pathToIndexHtml
+        pathToIndexHtml,
+        require.resolve('./src/html/social.html')
       ],
       minimize: true,
       purifyOptions: {
