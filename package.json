@@ -55,7 +55,9 @@
         "webpack-serve": "^2.0.2",
         "workbox-webpack-plugin": "^3.4.1",
         "write-file-webpack-plugin": "^4.4.0",
-        "yarn": "file:npm-packages-offline-cache/yarn-1.9.4.tgz"
+        "yarn": "file:npm-packages-offline-cache/yarn-1.9.4.tgz",
+        "svg-inline-loader": "^0.8.0",
+        "raw-loader": "^0.5.1"
     },
     "scripts": {
         "start-server-dev": "webpack-dev-server --open --config webpack.dev.js",
