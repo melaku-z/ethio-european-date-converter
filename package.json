@@ -60,14 +60,14 @@
         "raw-loader": "^0.5.1"
     },
     "scripts": {
-        "start-server-dev": "webpack-dev-server --open --config webpack.dev.js",
-        "lint-autofix": "eslint . --fix --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
-        "nodemon-start-server-dev": "nodemon --watch webpack.common.js --exec npm run start-server-dev",
-        "nodemon-start-server-prod": "nodemon --watch webpack.common.js --exec npm run start-server-prod",
-        "start-server-prod": "webpack-dev-server --open --config webpack.prod.js",
         "build-dev": "webpack --display-modules --progress --config webpack.dev.js",
+        "start-server-dev": "webpack-dev-server --open --config webpack.dev.js",
+        "nodemon-start-server-dev": "nodemon --watch webpack.common.js --exec npm run start-server-dev",
         "build-dist": "webpack --display-modules --progress --config webpack.prod.js",
+        "start-server-prod": "webpack-dev-server --open --config webpack.prod.js",
+        "nodemon-start-server-prod": "nodemon --watch webpack.common.js --exec npm run start-server-prod",
         "watch": "webpack --progress --watch",
+        "lint-autofix": "eslint . --fix --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
         "yarn-install": "yarn install",
         "yarn-install-offline": "yarn install --offline"
     },
