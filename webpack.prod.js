@@ -26,7 +26,7 @@ module.exports = merge.smart(common, {
         display: 'standalone',          // Android display: "browser" or "standalone". `string`
         orientation: 'portrait',        // Android orientation: "portrait" or "landscape". `string`
         start_url: '/',    // Android start application's URL. `string` todo: /?homescreen=1 not getting serviceworker
-        version: '1.2',
+        version: '1.3',
         icons: {
           android: true,
           appleIcon: true,
