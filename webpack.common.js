@@ -36,7 +36,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: pathToIndexHtml,
       minify: true,
-      inject: 'body'
+      inject: 'body',
+      // files: { //todo: try
+      //   "chunks": {
+      //     "head": {
+      //       "css": []
+      //     },
+      //     "main": {
+      //       "css": ["main.css",  "vendor.css"]
+      //     },
+      //   }
+      // }
     }),
   ],
   output: {
@@ -63,11 +73,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [      
-          MiniCssExtractPlugin.loader,  
+        use: [
+          MiniCssExtractPlugin.loader,
           'css-loader'
         ]
-      }, 
+      },
       {
         test: /\.(png)$/,
         use: [
@@ -80,8 +90,15 @@ module.exports = {
           }
         ]
       },
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     'svg-inline-loader',
+      //     'file-loader',
+      //   ]
+      // },
       {
-        test: /\.(jpg|gif|svg)$/,
+        test: /\.(jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
