@@ -155,7 +155,7 @@ function leftpad(Num, length) {
   return ('000000000' + Num).slice(-length);
 }
 
-module.exports = exports = {
+export {
   ethTime,
   toEthiopianDateTime,
   toEthiopianDateString,
