@@ -66,10 +66,7 @@ module.exports = {
           path.resolve(__dirname, 'node_modules'),
           path.resolve(__dirname, 'bower_components')
         ],
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env']
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
