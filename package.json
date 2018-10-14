@@ -74,7 +74,8 @@
         "watch": "webpack --progress --watch",
         "lint-autofix": "eslint . --fix --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
         "yarn-install": "yarn install",
-        "yarn-install-offline": "yarn install --offline"
+        "yarn-install-offline": "yarn install --offline",
+        "test": "jest"
     },
     "engine": {
         "node": ">=8.11.4",
