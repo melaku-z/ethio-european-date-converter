@@ -65,9 +65,11 @@
             </div>
         </div>
         ${require('html-loader?interpolate!./html/social.html')}
-        ${require('html-loader!./html/serviceWorkerRegister.html')}
-        ${require('html-loader!./html/analytics.html')}
-        ${require('html-loader!./html/ads.html')}
+        <% if(process.env.NODE_ENV == 'production'){ %>
+            ${require('html-loader!./html/serviceWorkerRegister.html')}
+            ${require('html-loader!./html/analytics.html')}
+            ${require('html-loader!./html/ads.html')}
+        <% } %>
     </body>
 
 </html>
