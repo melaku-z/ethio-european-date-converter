@@ -61,7 +61,7 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
   if (date <= 30) {
     this.date = date;
   } else {
-    throw 'Invalid Ethiopian Date';
+    throw new Error('Invalid Ethiopian Date');
   }
   if (yr > 200) {
     this.year = yr;

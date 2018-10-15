@@ -36,7 +36,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: pathToIndexHtml,
       minify: true,
-      inject: 'body',
       // files: { //todo: try
       //   "chunks": {
       //     "head": {
@@ -66,10 +65,7 @@ module.exports = {
           path.resolve(__dirname, 'node_modules'),
           path.resolve(__dirname, 'bower_components')
         ],
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env']
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
