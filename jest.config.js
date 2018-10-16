@@ -1,7 +1,9 @@
 module.exports = {
   preset: 'jest-puppeteer',
   verbose: true,
-  roots: ['<rootDir>/src/', '<rootDir>/tests/']
+  roots: ['<rootDir>/src/', '<rootDir>/tests/'],
+  moduleFileExtensions: ['js', 'jsx'],
+  moduleDirectories: ['node_modules'],
   // testEnvironmentOptions TODO: use
 
     
