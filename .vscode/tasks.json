@@ -53,6 +53,11 @@
             "problemMatcher": [
                 "$eslint-stylish"
             ]
+        },
+        {
+            "type": "npm",
+            "script": "test",
+            "problemMatcher": []
         }
     ]
 }
