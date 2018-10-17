@@ -8,7 +8,11 @@ import {
 } from './dateconverter.js';
 
 function updateCalculatedEthDateOnPage() {
-  const ethDate = toEthiopianDateTime(new Date(document.getElementById('EuropeanDate').value));
+  const EuropeanDateValueArray = document.getElementById('EuropeanDate').value.split('-');
+  const eurYear = EuropeanDateValueArray[0];
+  const eurMon = EuropeanDateValueArray[1];
+  const eurDate = EuropeanDateValueArray[2];
+  const ethDate = toEthiopianDateTime(new Date(Date.UTC(eurYear, eurMon - 1, eurDate)));
   document.getElementById('EthDayScroll').value = ethDate.date;
   document.getElementById('EthMonthScroll').value = ethDate.month;
   document.getElementById('EthYearScroll').value = ethDate.year;
@@ -38,7 +42,9 @@ function refreshEthDateOnPage() {
 
 function initDates() {
   refreshEthDateOnPage();
-  document.getElementById('EuropeanDate').value = new Date().toJSON().slice(0, 10);
+  const currentDate = new Date();
+  const dateAtGMT = new Date(currentDate.valueOf() + currentDate.getTimezoneOffset() * 60000);
+  document.getElementById('EuropeanDate').value = dateAtGMT.toJSON().slice(0, 10);
   updateCalculatedEthDateOnPage();
   updateCalculatedEurDateOnPage();
 }

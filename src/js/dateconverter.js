@@ -9,51 +9,51 @@ const globalTimeDifference = new Date('December 9, 2012').getTime() - new Date('
 
 function dayOfWeekString(day) {
   switch (day) {
-  case 0:
-    return 'Sunday';
-  case 1:
-    return 'Monday';
-  case 2:
-    return 'Tuesday';
-  case 3:
-    return 'Wednesday';
-  case 4:
-    return 'Thursday';
-  case 5:
-    return 'Friday';
-  case 6:
-    return 'Saterday';
+    case 0:
+      return 'Sunday';
+    case 1:
+      return 'Monday';
+    case 2:
+      return 'Tuesday';
+    case 3:
+      return 'Wednesday';
+    case 4:
+      return 'Thursday';
+    case 5:
+      return 'Friday';
+    case 6:
+      return 'Saterday';
   }
 }
 
 function monthStringEth(month) {
   switch (month) {
-  case 1:
-    return 'Meskerem ';
-  case 2:
-    return 'Tikimt ';
-  case 3:
-    return 'Hidar ';
-  case 4:
-    return 'Tahsas ';
-  case 5:
-    return 'Tir ';
-  case 6:
-    return 'Yekatit ';
-  case 7:
-    return 'Megabit ';
-  case 8:
-    return 'Meyazya ';
-  case 9:
-    return 'Ginbot ';
-  case 10:
-    return 'Sene ';
-  case 11:
-    return 'Hamle ';
-  case 12:
-    return 'Nehase ';
-  case 13:
-    return 'Pagume ';
+    case 1:
+      return 'Meskerem ';
+    case 2:
+      return 'Tikimt ';
+    case 3:
+      return 'Hidar ';
+    case 4:
+      return 'Tahsas ';
+    case 5:
+      return 'Tir ';
+    case 6:
+      return 'Yekatit ';
+    case 7:
+      return 'Megabit ';
+    case 8:
+      return 'Meyazya ';
+    case 9:
+      return 'Ginbot ';
+    case 10:
+      return 'Sene ';
+    case 11:
+      return 'Hamle ';
+    case 12:
+      return 'Nehase ';
+    case 13:
+      return 'Pagume ';
   }
 }
 
@@ -91,7 +91,7 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
 }
 
 function toEthiopianDateTime(eurDate) {
-  var difference = eurDate.getTime() - new Date('September 12, 1971').getTime();
+  var difference = eurDate.getTime() - new Date(Date.UTC(1971, 8, 12)).getTime();
   var fourYearsPassed = Math.floor(difference / fourYears);
   var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear);
   if (remainingYears === 4) {
@@ -116,7 +116,7 @@ function toEthiopianDateString(eurDate) {
 }
 
 function toEuropeanDate(ethDate) {
-  var initialEuropean = new Date(new Date(ethDate.year, ethDate.month - 1, ethDate.date).getTime() + globalTimeDifference);
+  var initialEuropean = new Date(new Date(Date.UTC(ethDate.year, ethDate.month - 1, ethDate.date)).getTime() + globalTimeDifference);
   if (ethDate.month === 13) {
     var maxDate;
     if (ethDate.year % 4 === 3)
@@ -130,7 +130,7 @@ function toEuropeanDate(ethDate) {
   }
   for (var count = -8; count < 9; count++) {
     const EngDate = new Date(initialEuropean.getTime() + count * oneDay);
-    var difference = EngDate.getTime() - new Date('September 12, 1971').getTime();
+    var difference = EngDate.getTime() - new Date(Date.UTC(1971, 8, 12)).getTime();
     var fourYearsPassed = Math.floor(difference / fourYears);
     var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear);
     if (remainingYears === 4) {
@@ -146,7 +146,7 @@ function toEuropeanDate(ethDate) {
 
 function toEuropeanDateString(ethDate) {
   var EuropeanDate = toEuropeanDate(ethDate);
-  EuropeanDate = EuropeanDate.toDateString();
+  EuropeanDate = EuropeanDate.toUTCString().substring(0, 16) + ' (at GMT+0)';
   return EuropeanDate;
 }
 
