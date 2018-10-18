@@ -188,4 +188,5 @@ if (process.env.jestPreset) {
 }
 module.exports.globals = {
   JestTestURL: module.exports.testURL,
+  jestPreset: module.exports.preset,
 };
