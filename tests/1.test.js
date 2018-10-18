@@ -3,7 +3,7 @@ describe('Ethiopian', () => {
     beforeAll(async () => {
         await page.goto('http://localhost:8080/').catch(reason => {
             console.log(reason);
-            browserFailed = true;
+            browserFailed = true;//todo log a test fail
         });
     });
 
