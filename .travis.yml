@@ -9,6 +9,9 @@ cache:
     - '.eslintcache'
     - 'node_modules'
 
+install:
+  - yarn install
+
 before_script:
   - npm run start-server-dev
 
