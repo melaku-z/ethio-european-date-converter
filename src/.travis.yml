@@ -1,0 +1,11 @@
+language: node_js
+
+before_install:
+  - start-server-dev
+
+cache:
+    - '.eslintcache'
+    - 'node_modules'
+
+script:
+  - test
