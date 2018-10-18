@@ -1,7 +1,7 @@
 describe('Ethiopian', () => {
     var browserFailed = false;
     beforeAll(async () => {
-        await page.goto('http://localhost:8080/').catch(reason => {
+        await page.goto(global.JestTestURL).catch(reason => {
             console.log(reason);
             browserFailed = true;//todo log a test fail
         });

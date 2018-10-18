@@ -3,9 +3,10 @@ module.exports = {
   roots: ['<rootDir>/src/', '<rootDir>/tests/'],
   moduleFileExtensions: ['js', 'jsx'],
   moduleDirectories: ['node_modules'],
+  testURL: 'http://localhost:8080/',
   // testEnvironmentOptions TODO: use
 
-    
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -182,6 +183,9 @@ module.exports = {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
-if(process.env.jestPreset){
+if (process.env.jestPreset) {
   module.exports.preset = process.env.jestPreset;
 }
+module.exports.globals = {
+  JestTestURL: module.exports.testURL,
+};
