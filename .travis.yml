@@ -4,11 +4,11 @@ node_js:
   - '8.11.4'
 
 before_install:
-  - start-server-dev
+  - npm run start-server-dev
 
 cache:
-    - '.eslintcache'
-    - 'node_modules'
+  - '.eslintcache'
+  - 'node_modules'
 
 script:
   - test
