@@ -4,11 +4,22 @@ node_js:
   - '8.11.4'
 
 cache:
-  - '.eslintcache'
-  - 'node_modules'
+  "yarn": true
+  "directories":
+    - '.eslintcache'
+    - 'node_modules'
 
 before_script:
   - npm run start-server-dev
 
 script:
-  - test
+  - yarn test
+
+install:
+  - yarn install
+
+addons:
+  chrome: stable
+
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
