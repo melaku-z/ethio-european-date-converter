@@ -19,6 +19,5 @@
         ".Bundles/**": true,
         "nbproject/**": true,
         "node_modules/**": true,
-        "npm-packages-offline-cache/**": true,
     },
 }
