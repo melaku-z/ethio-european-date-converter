@@ -15,9 +15,6 @@ before_script:
 script:
   - yarn test
 
-install:
-  - yarn install
-
 addons:
   chrome: stable
 
