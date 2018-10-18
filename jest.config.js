@@ -1,5 +1,4 @@
 module.exports = {
-  preset: 'jest-puppeteer',
   verbose: true,
   roots: ['<rootDir>/src/', '<rootDir>/tests/'],
   moduleFileExtensions: ['js', 'jsx'],
@@ -183,3 +182,6 @@ module.exports = {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
+if(process.env.jestPreset){
+  module.exports.preset = process.env.jestPreset;
+}

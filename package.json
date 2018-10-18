@@ -24,6 +24,7 @@
         "babel-loader": "^8.0.4",
         "clean-css-loader": "^1.0.1",
         "clean-webpack-plugin": "^0.1.19",
+        "cross-env": "^5.2.0",
         "css-loader": "^1.0.0",
         "extract-loader": "^3.0.0",
         "file-loader": "^2.0.0",
@@ -68,13 +69,14 @@
         "build-dev": "webpack --display-modules --progress --config webpack.dev.js",
         "start-server-dev": "webpack-dev-server --open --config webpack.dev.js",
         "nodemon-start-server-dev": "nodemon --watch webpack.common.js --exec npm run start-server-dev",
-        "build-dist": "webpack --display-modules --progress --config webpack.prod.js",
+        "build-dist": "cross-env NODE_ENV=production webpack --display-modules --progress --config webpack.prod.js",
         "start-server-prod": "webpack-dev-server --open --config webpack.prod.js",
         "nodemon-start-server-prod": "nodemon --watch webpack.common.js --exec npm run start-server-prod",
         "watch": "webpack --progress --watch",
         "lint-autofix": "eslint . --fix --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
         "yarn-install": "yarn install",
         "yarn-install-offline": "yarn install --offline",
+        "test-puppeteer": "cross-env jestPreset=jest-puppeteer jest",
         "test": "jest"
     },
     "engine": {
