@@ -4,8 +4,6 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx'],
   moduleDirectories: ['node_modules'],
   testURL: 'http://localhost:8080/',
-  // testEnvironmentOptions TODO: use
-
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -185,6 +183,11 @@ module.exports = {
 };
 if (process.env.jestPreset) {
   module.exports.preset = process.env.jestPreset;
+} else {
+  module.exports.testEnvironmentOptions = {
+    runScripts: 'dangerously',
+    resources: 'usable',
+  };
 }
 module.exports.globals = {
   JestTestURL: module.exports.testURL,

@@ -14,6 +14,8 @@ describe('Ethiopian', () => {
             });
         }
     } else {
-
+        it('should display "Ethiopian" text on page', async () => {
+            await expect(document.querySelector('html').outerHTML).toMatch('Ethiopian');
+        });
     }
 });
