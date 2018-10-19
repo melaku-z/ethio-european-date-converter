@@ -73,6 +73,7 @@
         "yarn-install": "yarn install",
         "yarn-install-offline": "yarn install --offline",
         "test": "cross-env jestPreset=jest-puppeteer jest",
+        "nodemon-test": "nodemon --watch tests/*.test.js --exec npm run test",
         "test-no-puppeteer": "jest"
     },
     "engine": {
