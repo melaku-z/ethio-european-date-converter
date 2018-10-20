@@ -58,6 +58,11 @@
             "type": "npm",
             "script": "test",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "nodemon-test",
+            "problemMatcher": []
         }
     ]
 }
