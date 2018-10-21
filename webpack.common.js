@@ -36,16 +36,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: pathToIndexHtml,
       minify: true,
-      // files: { //todo: try
-      //   "chunks": {
-      //     "head": {
-      //       "css": []
-      //     },
-      //     "main": {
-      //       "css": ["main.css",  "vendor.css"]
-      //     },
-      //   }
-      // }
     }),
   ],
   output: {
