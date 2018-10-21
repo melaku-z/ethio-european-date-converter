@@ -1,8 +1,8 @@
 doc/**
 /nbproject/private/
 /nbproject/
-public_html/css/.DS_Store
+dist/css/.DS_Store
 .Bundles/*
 node_modules/*
 npm-packages-offline-cache/*
-public_html_temp/*
+dist_temp/*

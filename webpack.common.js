@@ -40,7 +40,7 @@ module.exports = {
   ],
   output: {
     filename: './js/[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'public_html'),
+    path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'var',
     library: 'dateconverterUI'
   },
