@@ -37,7 +37,7 @@ function updateCalculatedEurDateOnPage() {
 }
 
 function refreshEthDateOnPage() {
-  document.getElementById('ethTodayTextArea').innerHTML = toEthiopianDateTimeString(new Date());
+  // document.getElementById('ethTodayTextArea').innerHTML = toEthiopianDateTimeString(new Date());
 }
 
 function initDates() {
@@ -59,5 +59,6 @@ function createEventListnersHTML() {
 }
 
 export {
-  createEventListnersHTML
+  createEventListnersHTML,
+  toEthiopianDateTimeString
 };
