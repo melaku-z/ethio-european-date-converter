@@ -1,4 +1,5 @@
 const path = require('path');
+const glob = require('glob');
 // const devMode = process.env.NODE_ENV !== 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pathToMainJs = require.resolve('./src/js/main.js');
@@ -26,8 +27,7 @@ module.exports = {
       paths: [
         pathToMainJs,
         pathToIndexHtml,
-        require.resolve('./src/html/social.html')
-      ],
+      ].concat(glob.sync(path.join(__dirname, '/src/html/*.html'))),
       minimize: true,
       purifyOptions: {
         whitelist: []
@@ -36,16 +36,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: pathToIndexHtml,
       minify: true,
-      // files: { //todo: try
-      //   "chunks": {
-      //     "head": {
-      //       "css": []
-      //     },
-      //     "main": {
-      //       "css": ["main.css",  "vendor.css"]
-      //     },
-      //   }
-      // }
     }),
   ],
   output: {
