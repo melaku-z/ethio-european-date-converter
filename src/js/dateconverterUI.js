@@ -1,4 +1,3 @@
-'use strict';
 import {
   ethTime,
   toEthiopianDateTime,
@@ -6,6 +5,8 @@ import {
   toEuropeanDate,
   toEuropeanDateString
 } from './dateconverter.js';
+
+const Vue = require('vue/dist/vue.min.js');
 
 function updateCalculatedEthDateOnPage() {
   const EuropeanDateValueArray = document.getElementById('EuropeanDate').value.split('-');
@@ -37,7 +38,7 @@ function updateCalculatedEurDateOnPage() {
 }
 
 function refreshEthDateOnPage() {
-  // document.getElementById('ethTodayTextArea').innerHTML = toEthiopianDateTimeString(new Date());
+  ethTodayTextArea.ethTodayText = toEthiopianDateTimeString(new Date());
 }
 
 function initDates() {
@@ -58,7 +59,13 @@ function createEventListnersHTML() {
   document.querySelector('#EthYearScroll').onchange = updateCalculatedEurDateOnPage;
 }
 
+var ethTodayTextArea = new Vue({
+  el: '#ethTodayTextArea',
+  data: {
+    ethTodayText: toEthiopianDateTimeString(new Date())
+  }
+});
+
 export {
-  createEventListnersHTML,
-  toEthiopianDateTimeString
+  createEventListnersHTML
 };
