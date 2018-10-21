@@ -56,13 +56,14 @@ function createEventListnersHTML() {
 var ethTodayTextArea = new Vue({
   el: '#ethTodayTextArea',
   data: {
-    ethTodayText: '...',
+    ethTodayDateText: '...',
+    ethTodayTimeText: '...',
     liveRefreshEnabled: false,
     liveRefreshObj: null,
   },
   methods: {
     refreshEthDateOnPage: function () {
-      this.ethTodayText = toEthiopianDateTimeString(new Date());
+      [this.ethTodayDateText,this.ethTodayTimeText] = toEthiopianDateTimeString(new Date());
     },
     liveDateRefresh: function () {
       this.liveRefreshObj = setInterval(this.refreshEthDateOnPage, 1000);
@@ -83,5 +84,6 @@ var ethTodayTextArea = new Vue({
 });
 
 export {
-  createEventListnersHTML
+  createEventListnersHTML,
+  ethTodayTextArea
 };
