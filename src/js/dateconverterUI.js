@@ -37,12 +37,7 @@ function updateCalculatedEurDateOnPage() {
   document.getElementById('ethDayTextArea').innerHTML = ethDate.dateWithDayString;
 }
 
-function refreshEthDateOnPage() {
-  ethTodayTextArea.ethTodayText = toEthiopianDateTimeString(new Date());
-}
-
 function initDates() {
-  refreshEthDateOnPage();
   const currentDate = new Date();
   const dateAtGMT = new Date(currentDate.valueOf() + currentDate.getTimezoneOffset() * 60000);
   document.getElementById('EuropeanDate').value = dateAtGMT.toJSON().slice(0, 10);
@@ -52,7 +47,6 @@ function initDates() {
 
 function createEventListnersHTML() {
   document.querySelector('body').onload = initDates;
-  document.querySelector('#refreshEthDateButton').onclick = refreshEthDateOnPage;
   document.querySelector('#EuropeanDate').onchange = updateCalculatedEthDateOnPage;
   document.querySelector('#EthMonthScroll').onchange = updateCalculatedEurDateOnPage;
   document.querySelector('#EthDayScroll').onchange = updateCalculatedEurDateOnPage;
@@ -63,6 +57,11 @@ var ethTodayTextArea = new Vue({
   el: '#ethTodayTextArea',
   data: {
     ethTodayText: toEthiopianDateTimeString(new Date())
+  },
+  methods: {
+    refreshEthDateOnPage : function () {
+      this.ethTodayText = toEthiopianDateTimeString(new Date());
+    }
   }
 });
 
