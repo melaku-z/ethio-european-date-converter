@@ -6,19 +6,7 @@
         <!--[if lte IE 9]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
             <![endif]-->
-        <div class="container" style="padding: 2em;">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="card" style="width: 100%">
-                        <p class="lead text-center" style="margin-top: 1rem">Today in Ethiopian Calendar is <strong id="ethTodayTextArea">...</strong>
-                            <button type="button" class="btn btn-sm" id="refreshEthDateButton">
-                                <strong style="font-size: x-large">⟳</strong>
-                            </button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        ${require('html-loader?interpolate!./html/TodayInEthiopianCalendar.html')}
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 offset-md-1 offset-lg-2 row-eq-height">
