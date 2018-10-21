@@ -108,11 +108,16 @@ function toEthiopianDateTime(eurDate) {
 }
 
 function toEthiopianDateTimeString(eurDate) {
-  return toEthiopianDateTime(eurDate).dateTimeString;
+  const EthDateIn = toEthiopianDateTime(eurDate);
+  return [EthDateIn.dateString, EthDateIn.timeString];
 }
 
 function toEthiopianDateString(eurDate) {
   return toEthiopianDateTime(eurDate).dateString;
+}
+
+function toEthiopianTimeString(eurDate) {
+  return toEthiopianDateTime(eurDate).timeString;
 }
 
 function toEuropeanDate(ethDate) {
@@ -159,6 +164,7 @@ export {
   ethTime,
   toEthiopianDateTime,
   toEthiopianDateString,
+  toEthiopianTimeString,
   toEthiopianDateTimeString,
   toEuropeanDate,
   toEuropeanDateString
