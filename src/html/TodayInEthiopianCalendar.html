@@ -2,11 +2,9 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="card" style="width: 100%">
-                <p class="lead text-center" style="margin-top: 1rem">Today in Ethiopian Calendar is 
-                    <strong id="ethTodayTextArea">
-                        {{ ethTodayText }}
-                    </strong>
-                    <button type="button" class="btn btn-sm" id="refreshEthDateButton">
+                <p class="lead text-center" style="margin-top: 1rem" id="ethTodayTextArea">
+                    Today in Ethiopian Calendar is <strong>{{ ethTodayText }}</strong>
+                    <button type="button" class="btn btn-sm" id="refreshEthDateButton" v-on:click="refreshEthDateOnPage">
                         <strong style="font-size: x-large">⟳</strong>
                     </button>
                 </p>
