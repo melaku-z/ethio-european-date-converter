@@ -9,39 +9,8 @@
         ${require('html-loader?interpolate!./html/TodayInEthiopianCalendar.html')}
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 offset-md-1 offset-lg-2 row-eq-height">
-                    <div class="card" style="width: 100%">
-                        <div class="card-header text-center" style="background-color:rgb(29, 139, 248)">European Date</div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <input type="date" class="form-control" id="EuropeanDate" />
-                                <p id="EurDayTextArea"></p>
-                                <span class="help-block">Change the date above to convert to Ethiopian calendar.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 row-eq-height">
-                    <div class="card" style="width: 100%">
-                        <div class="card-header text-center" style="background-image: linear-gradient(#90ee90,#ffffe0,#ffffe0,#e87171);">
-                            Ethiopian Date
-                        </div>
-                        <div class="card-body">
-                            <div class="form-inline">
-                                <input type="number" class="form-control" id="EthMonthScroll" min="1" max="13" style="width:3em;padding-left:2px;padding-right:0;">
-                                /
-                                <input type="number" class="form-control" id="EthDayScroll" min="1" max="30" style="width:3em;padding-left:2px;padding-right:0;">
-                                /
-                                <input type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999"
-                                    style="width:4em;padding-left:2px;padding-right:0;">
-                            </div>
-                            <p id="ethDayTextArea" style="width:100%;"></p>
-                            <span class="help-block" style="width:100%;">
-                                Change the date above to convert to European calendar.
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                ${require('html-loader?interpolate!./html/EuropeanDate.html')}
+                ${require('html-loader?interpolate!./html/EthiopianDate.html')}                
             </div>
         </div>
         ${require('html-loader?interpolate!./html/social.html')}
