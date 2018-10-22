@@ -11,7 +11,7 @@ const AppManifestWebpack = require('app-manifest-webpack-plugin');
 module.exports = merge.smart(common, {
   mode: 'production',
   plugins: [
-    new CleanWebpackPlugin(['public_html']),
+    new CleanWebpackPlugin(['dist']),
     new WriteFilePlugin(),
     new AppManifestWebpack({
       logo: './src/img/icons.png',
@@ -67,11 +67,11 @@ module.exports = merge.smart(common, {
     ]
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public_html'),
+    contentBase: path.resolve(__dirname, 'dist'),
     compress: true,
   },
   serve: {
-    contentBase: path.resolve(__dirname, 'public_html'),
+    contentBase: path.resolve(__dirname, 'dist'),
     compress: true,
   }
 });

@@ -13,12 +13,14 @@
                 ${require('html-loader?interpolate!./html/EthiopianDate.html')}                
             </div>
         </div>
-        ${require('html-loader?interpolate!./html/social.html')}
-        <% if(process.env.NODE_ENV == 'production'){ %>
-            ${require('html-loader!./html/serviceWorkerRegister.html')}
-            ${require('html-loader!./html/analytics.html')}
-            ${require('html-loader!./html/ads.html')}
-        <% } %>
+        <footer>
+            ${require('html-loader?interpolate!./html/social.html')}
+            <% if(process.env.NODE_ENV == 'production'){ %>
+                ${require('html-loader!./html/serviceWorkerRegister.html')}
+                ${require('html-loader!./html/analytics.html')}
+                ${require('html-loader!./html/ads.html')}
+            <% } %>
+        </footer>
     </body>
 
 </html>
