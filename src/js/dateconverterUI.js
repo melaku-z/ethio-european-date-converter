@@ -6,7 +6,7 @@ import {
   toEuropeanDateString
 } from './dateconverter.js';
 
-const Vue = require('vue/dist/vue.min.js');
+import Vue from 'vue';
 
 function updateCalculatedEthDateOnPage() {
   const EuropeanDateValueArray = document.getElementById('EuropeanDate').value.split('-');
@@ -64,6 +64,7 @@ var ethTodayTextArea = new Vue({
   methods: {
     refreshEthDateOnPage: function () {
       [this.ethTodayDateText,this.ethTodayTimeText] = toEthiopianDateTimeString(new Date());
+      // console.log(new Date());
     },
     liveDateRefresh: function () {
       this.liveRefreshObj = setInterval(this.refreshEthDateOnPage, 1000);
