@@ -43,6 +43,8 @@ function initDates() {
   document.getElementById('EuropeanDate').value = dateAtGMT.toJSON().slice(0, 10);
   updateCalculatedEthDateOnPage();
   updateCalculatedEurDateOnPage();
+  window.onfocus = () => {ethTodayTextArea.liveRefreshEnabled = true;};
+  window.onblur = () => {ethTodayTextArea.liveRefreshEnabled = false;};
 }
 
 function createEventListnersHTML() {
