@@ -2,7 +2,7 @@ describe('Ethiopian', () => {
     var browserFailed = false;
     if (global.jestPreset == 'jest-puppeteer') {
         const RealDate = Date;
-        function mockDate(isoDate) {
+        function mockDate(isoDate, RealDate) {
             global.Date = class extends RealDate {
                 constructor(...args) {
                     if (args.length) return new RealDate(...args);
@@ -31,13 +31,16 @@ describe('Ethiopian', () => {
         it('should show expected date', async () => {
             if (!browserFailed) {
                 await page.evaluate((isoDate) => {
+                    function mockDate(isoDate, RealDate) {
+                        Date = class extends RealDate {
+                            constructor(...args) {
+                                if (args.length) return new RealDate(...args);
+                                return new RealDate(isoDate);
+                            }
+                        };
+                    }
                     const RealDate = Date;
-                    Date = class extends RealDate {
-                        constructor(...args) {
-                            if (args.length) return new RealDate(...args);
-                            return new RealDate(isoDate);
-                        }
-                    };
+                    mockDate(isoDate, RealDate);
                     onload();
                 }, '2018-10-17 22:23:56 GMT+0300');
                 await expect(page).toMatch('Ethiopian Calendar is Tikimt');
