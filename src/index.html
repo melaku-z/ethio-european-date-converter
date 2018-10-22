@@ -1,26 +1,33 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    ${require('html-loader?interpolate!./html/head.html')}
 
-    <body>
-        <!--[if lte IE 9]>
-                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-            <![endif]-->
-        ${require('html-loader?interpolate!./html/TodayInEthiopianCalendar.html')}
+<head>
+    ${require('html-loader?interpolate!./html/head.html')}
+</head>
+
+<body>
+    <noscript>
         <div class="container">
-            <div class="row">
-                ${require('html-loader?interpolate!./html/EuropeanDate.html')}
-                ${require('html-loader?interpolate!./html/EthiopianDate.html')}                
+            <div class="card" style="width: 100%">
+                <strong>You have javascript disabled in your browser. Please enable javascript to use the application.</strong>
             </div>
         </div>
-        <footer>
-            ${require('html-loader?interpolate!./html/social.html')}
-            <% if(process.env.NODE_ENV == 'production'){ %>
-                ${require('html-loader!./html/serviceWorkerRegister.html')}
-                ${require('html-loader!./html/analytics.html')}
-                ${require('html-loader!./html/ads.html')}
-            <% } %>
-        </footer>
-    </body>
+    </noscript>
+    ${require('html-loader?interpolate!./html/TodayInEthiopianCalendar.html')}
+    <div class="container">
+        <div class="row">
+            ${require('html-loader?interpolate!./html/EuropeanDate.html')}
+            ${require('html-loader?interpolate!./html/EthiopianDate.html')}
+        </div>
+    </div>
+    <footer>
+        ${require('html-loader?interpolate!./html/social.html')}
+        <% if(process.env.NODE_ENV == 'production'){ %>
+        ${require('html-loader!./html/serviceWorkerRegister.html')}
+        ${require('html-loader!./html/analytics.html')}
+        ${require('html-loader!./html/ads.html')}
+        <% } %>
+    </footer>
+</body>
 
 </html>
