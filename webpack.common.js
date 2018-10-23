@@ -52,8 +52,7 @@ module.exports = {
           path.resolve(__dirname, 'src')
         ],
         exclude: [
-          path.resolve(__dirname, 'node_modules'),
-          path.resolve(__dirname, 'bower_components')
+          path.resolve(__dirname, 'node_modules')
         ],
         loader: 'babel-loader'
       },
