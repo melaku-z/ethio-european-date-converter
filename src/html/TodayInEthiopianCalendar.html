@@ -4,7 +4,7 @@
             <div class="card" style="width: 100%">
                 <p class="lead text-center" style="margin-top: 1rem" id="ethTodayTextArea">
                     Today in Ethiopian Calendar is <strong style="font-weight:bold">{{ ethTodayDateText }}</strong> {{ ethTodayTimeText }}
-                    <button type="button" class="btn btn-sm" id="refreshEthDateButton">
+                    <button type="button" class="btn btn-sm" id="refreshEthDateButton" v-if="! liveRefreshEnabled">
                         <strong style="font-size: x-large">⟳</strong>
                     </button>
                 </p>
