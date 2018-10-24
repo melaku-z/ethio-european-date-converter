@@ -11,7 +11,7 @@
                 /
                 <input v-model.number="ethCalYear" type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999" style="width:4em;padding-left:2px;padding-right:0;">
             </div>
-            <p style="width:100%;">{{ ethCalText }}</p>
+            <p v-cloak style="width:100%;">{{ ethCalText }}</p>
             <span class="help-block" style="width:100%;">
                 Change the date above to convert to European calendar.
             </span>
