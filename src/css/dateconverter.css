@@ -70,4 +70,7 @@ body {
     max-height: 1.3rem;
     max-width: 1.3rem;
   }
-  
+
+  [v-cloak] {
+    display: none;
+  }  
