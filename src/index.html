@@ -14,7 +14,7 @@
         <main>
             ${require('html-loader?interpolate!./html/TodayInEthiopianCalendar.html')}
             <div class="container">
-                <div class="row">
+                <div class="row" id="CalendarConverter">
                     ${require('html-loader?interpolate!./html/EuropeanDate.html')}
                     ${require('html-loader?interpolate!./html/EthiopianDate.html')}
                 </div>

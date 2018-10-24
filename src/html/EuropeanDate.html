@@ -3,8 +3,8 @@
         <lable for="EuropeanDate" class="card-header text-center" style="background-color:rgb(70, 163, 255);color:black">European Date</lable>
         <div class="card-body">
             <div class="form-group">
-                <input type="date" class="form-control" id="EuropeanDate" />
-                <p id="EurDayTextArea"></p>
+                <input v-model="eurCalForm" type="date" class="form-control" id="EuropeanDate" />
+                <p>{{ eurCalText }}</p>
                 <span class="help-block">Change the date above to convert to Ethiopian calendar.</span>
             </div>
         </div>
