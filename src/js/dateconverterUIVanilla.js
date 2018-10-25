@@ -6,8 +6,6 @@ import {
   toEuropeanDateString
 } from './dateconverter.js';
 
-import Vue from 'vue';
-
 function updateCalculatedEthDateOnPage() {
   const EuropeanDateValueArray = document.getElementById('EuropeanDate').value.split('-');
   const eurYear = EuropeanDateValueArray[0];
@@ -37,7 +35,12 @@ function updateCalculatedEurDateOnPage() {
   document.getElementById('ethDayTextArea').innerHTML = ethDate.dateWithDayString;
 }
 
+function refreshEthDateOnPage() {
+  document.getElementById('ethTodayTextArea').innerHTML = toEthiopianDateTimeString(new Date());
+}
+
 function initDates() {
+  refreshEthDateOnPage();
   const currentDate = new Date();
   const dateAtGMT = new Date(currentDate.valueOf() + currentDate.getTimezoneOffset() * 60000);
   document.getElementById('EuropeanDate').value = dateAtGMT.toJSON().slice(0, 10);
@@ -49,44 +52,13 @@ function initDates() {
 
 function createEventListnersHTML() {
   document.querySelector('body').onload = initDates;
+  document.querySelector('#refreshEthDateButton').onclick = refreshEthDateOnPage;
   document.querySelector('#EuropeanDate').onchange = updateCalculatedEthDateOnPage;
   document.querySelector('#EthMonthScroll').onchange = updateCalculatedEurDateOnPage;
   document.querySelector('#EthDayScroll').onchange = updateCalculatedEurDateOnPage;
   document.querySelector('#EthYearScroll').onchange = updateCalculatedEurDateOnPage;
 }
 
-var ethTodayTextArea = new Vue({
-  el: '#ethTodayTextArea',
-  data: {
-    ethTodayDateText: '...',
-    ethTodayTimeText: '...',
-    liveRefreshEnabled: false,
-    liveRefreshObj: null,
-  },
-  methods: {
-    refreshEthDateOnPage: function () {
-      [this.ethTodayDateText,this.ethTodayTimeText] = toEthiopianDateTimeString(new Date());
-      // console.log(new Date());
-    },
-    liveDateRefresh: function () {
-      this.liveRefreshObj = setInterval(this.refreshEthDateOnPage, 1000);
-    },
-  },
-  watch: {
-    liveRefreshEnabled: function (enabled) {
-      if (enabled)
-        this.liveDateRefresh();
-      else
-        clearInterval(this.liveRefreshObj);
-    }
-  },
-  created: function () {
-    this.refreshEthDateOnPage();
-    this.liveRefreshEnabled = true;
-  },
-});
-
 export {
   createEventListnersHTML,
-  ethTodayTextArea
 };
