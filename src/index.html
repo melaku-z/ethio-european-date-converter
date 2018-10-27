@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
+    <head>        
+        <% for(var i=0; i < htmlWebpackPlugin.files.css.length; i++) {%>
+            <link href="<%= htmlWebpackPlugin.files.css[i] %>" rel="stylesheet">
+        <% } %>
         ${require('html-loader?interpolate!./html/head.html')}
     </head>
     <body>
@@ -22,10 +25,13 @@
         </main>
         <footer>
             ${require('html-loader?interpolate!./html/social.html')}
-            <% if(process.env.NODE_ENV == 'production'){ %>
+        </footer>
+        <% for(var i=0; i < htmlWebpackPlugin.files.js.length; i++) {%>
+            <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
+        <% } %>
+        <% if(process.env.NODE_ENV == 'production'){ %>
             ${require('html-loader!./html/serviceWorkerRegister.html')}
             ${require('html-loader!./html/analytics.html')}
-            <% } %>
-        </footer>
+        <% } %>
     </body>
 </html>
