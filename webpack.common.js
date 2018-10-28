@@ -35,6 +35,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: pathToIndexHtml,
+      inject: false,
       minify: true,
     }),
   ],

@@ -1,8 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        ${require('html-loader?interpolate!./html/head.html')}
-        ${require('html-loader?interpolate!./html/ads.html')}
+    <head> 
+${require('html-loader?interpolate!./html/head.html')}       
+<% for(var i=0; i < htmlWebpackPlugin.files.css.length; i++) {%>
+    <link href="<%= htmlWebpackPlugin.files.css[i] %>" rel="stylesheet">
+<% } %>
     </head>
     <body>
         <noscript>
@@ -16,17 +18,20 @@
             ${require('html-loader?interpolate!./html/TodayInEthiopianCalendar.html')}
             <div class="container">
                 <div class="row" id="CalendarConverter">
-                    ${require('html-loader?interpolate!./html/EuropeanDate.html')}
-                    ${require('html-loader?interpolate!./html/EthiopianDate.html')}
+${require('html-loader?interpolate!./html/EuropeanDate.html')}
+${require('html-loader?interpolate!./html/EthiopianDate.html')}
                 </div>
             </div>
         </main>
         <footer>
-            ${require('html-loader?interpolate!./html/social.html')}
-            <% if(process.env.NODE_ENV == 'production'){ %>
-            ${require('html-loader!./html/serviceWorkerRegister.html')}
-            ${require('html-loader!./html/analytics.html')}
-            <% } %>
+${require('html-loader?interpolate!./html/social.html')}
         </footer>
+        <% for(var i=0; i < htmlWebpackPlugin.files.js.length; i++) {%>
+<script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
+        <% } %>
+        <% if(process.env.NODE_ENV == 'production'){ %>
+${require('html-loader!./html/serviceWorkerRegister.html')}
+${require('html-loader!./html/analytics.html')}
+        <% } %>
     </body>
 </html>
