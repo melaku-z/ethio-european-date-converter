@@ -19,10 +19,8 @@
     "devDependencies": {
         "@babel/core": "^7.1.2",
         "@babel/preset-env": "^7.1.0",
-        "@cypress/webpack-preprocessor": "^3.0.0",
         "@vue/cli": "^3.0.5",
         "@vue/cli-plugin-babel": "^3.0.5",
-        "@vue/cli-plugin-e2e-cypress": "^3.0.5",
         "@vue/cli-plugin-eslint": "^3.0.5",
         "@vue/cli-plugin-pwa": "^3.0.5",
         "@vue/cli-plugin-unit-jest": "^3.0.5",
