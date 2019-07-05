@@ -11,4 +11,4 @@
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    jQuery, Modernizr, Normalize.css, Bootstrap, service-workers, webpack, node.js, yarn
+    Modernizr, Normalize.css, Bootstrap, service-workers, webpack, node.js, yarn, Vue.js
