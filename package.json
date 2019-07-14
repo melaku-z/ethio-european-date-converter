@@ -51,7 +51,7 @@
         "puppeteer": "^1.9.0",
         "purify-css": "^1.2.5",
         "purifycss-webpack": "^0.7.0",
-        "raw-loader": "^0.5.1",
+        "raw-loader": "^3.0.0",
         "regenerator-runtime": "^0.12.1",
         "style-ext-html-webpack-plugin": "^3.4.7",
         "style-loader": "^0.23.0",
