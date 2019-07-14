@@ -60,7 +60,7 @@
         "vue-loader": "^15.4.2",
         "vue-template-compiler": "^2.5.17",
         "webpack": "^4.8.3",
-        "webpack-cli": "^3.1.1",
+        "webpack-cli": "^3.3.6",
         "webpack-dev-server": "^3.1.7",
         "webpack-lighthouse-plugin": "^1.0.4",
         "webpack-merge": "^4.1.4",
