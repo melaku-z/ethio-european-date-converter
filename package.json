@@ -33,7 +33,7 @@
         "clean-css-loader": "^1.0.1",
         "clean-webpack-plugin": "^3.0.0",
         "cross-env": "^5.2.0",
-        "css-loader": "^1.0.0",
+        "css-loader": "^3.1.0",
         "extract-loader": "^3.0.0",
         "file-loader": "^4.0.0",
         "friendly-errors-webpack-plugin": "^1.7.0",
