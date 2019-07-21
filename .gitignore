@@ -6,3 +6,4 @@ dist/css/.DS_Store
 node_modules/*
 npm-packages-offline-cache/*
 dist_temp/*
+dist
