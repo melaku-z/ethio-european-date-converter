@@ -82,9 +82,8 @@
         "test-no-puppeteer": "jest"
     },
     "engine": {
-        "node": ">=10.13.0",
-        "npm": ">= 5.6.0",
-        "yarn": "^1.9.0"
+        "node": ">=10.16.0",
+        "yarn": "^1.13.0"
     },
     "browserslist": [
         "> 0.1%",
