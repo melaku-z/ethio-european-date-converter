@@ -89,7 +89,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: './assets/media/',
+              outputPath: 'assets/media/',
               context: './src'
             }
           }
@@ -101,7 +101,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: './assets/fonts/',
+              outputPath: 'assets/fonts/',
               context: './src'
             }
           }
