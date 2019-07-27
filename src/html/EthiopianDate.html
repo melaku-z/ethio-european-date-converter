@@ -4,12 +4,12 @@
             Ethiopian Date
         </label>
         <div class="card-body">
-            <div class="form-inline" id="EthioianDate">
-                <input v-model.number="ethCalMon" type="number" class="form-control" id="EthMonthScroll" min="1" max="13" style="width:3em;padding-left:2px;padding-right:0;">
+            <div class="form-inline" id="EthioianDate" aria-label="Ethioian Date">
+                <input v-model.number="ethCalMon" aria-label="Ethioian Month" type="number" class="form-control" id="EthMonthScroll" min="1" max="13" style="width:3em;padding-left:2px;padding-right:0;">
                 /
-                <input v-model.number="ethCalDate" type="number" class="form-control" id="EthDayScroll" min="1" max="30" style="width:3em;padding-left:2px;padding-right:0;">
+                <input v-model.number="ethCalDate" aria-label="Ethioian Date of Month" type="number" class="form-control" id="EthDayScroll" min="1" max="30" style="width:3em;padding-left:2px;padding-right:0;">
                 /
-                <input v-model.number="ethCalYear" type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999" style="width:4em;padding-left:2px;padding-right:0;">
+                <input v-model.number="ethCalYear" aria-label="Ethioian Year" type="number" class="form-control" id="EthYearScroll" min="-99999" max="999999" style="width:4em;padding-left:2px;padding-right:0;">
             </div>
             <p v-cloak style="width:100%;">{{ ethCalText }}</p>
             <span class="help-block" style="width:100%;">
