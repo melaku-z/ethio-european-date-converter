@@ -15,7 +15,6 @@ module.exports = merge.smart(common, {
     new WriteFilePlugin(),
     new AppManifestWebpack({
       logo: './src/img/icons.png',
-      output: 'assets/icons-[hash:8]/',
       config: {
         appName: 'Ethio-European Date Converter',
         appDescription: 'Convert dates between Ethiopian and European calendar offline.',
