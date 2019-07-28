@@ -44,7 +44,7 @@
         "jest-webpack": "^0.5.1",
         "lighthouse": "^5.1.0",
         "lint-staged": "^9.2.1",
-        "mini-css-extract-plugin": "^0.4.2",
+        "mini-css-extract-plugin": "^0.8.0",
         "nodemon": "^1.18.4",
         "optimize-css-assets-webpack-plugin": "^5.0.1",
         "prerender-spa-plugin": "^3.4.0",
