@@ -4043,13 +4043,13 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-clean-css-loader@^1.0.1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/clean-css-loader/-/clean-css-loader-1.1.0.tgz#ae3146c8249c3734e8f887ec3215e2acb94bc862"
-  integrity sha512-1k8n4y20G1ZEobILHfD6/IFV03S0QmTPLmezD5eHg6WvV+XKMJ+03li1kqlfRccpno0O9olEHtcc1qtqwrn0Og==
+clean-css-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/clean-css-loader/-/clean-css-loader-2.0.0.tgz#8d34aaa45767a2166963e7e797d74faa239d70ff"
+  integrity sha512-wULJG7dHXvWYRg+9cNNExv07VWQhyTdnmL3mOlsN14C5SeqLw8Qu/2vAlq/p35oi1HvkttiSiEuUe0fDXsV6Fg==
   dependencies:
     clean-css "^4.2.1"
-    loader-utils "^1.1.0"
+    loader-utils "^1.2.3"
 
 clean-css@4.2.x, clean-css@^4.0.12, clean-css@^4.2.1:
   version "4.2.1"
