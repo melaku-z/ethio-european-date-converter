@@ -61,7 +61,7 @@
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.7",
+    "webpack-dev-server": "^3.8.1",
     "webpack-lighthouse-plugin": "^1.0.4",
     "webpack-merge": "^4.1.4",
     "webpack-serve": "^3.1.0",
