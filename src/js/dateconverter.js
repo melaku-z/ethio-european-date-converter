@@ -90,7 +90,14 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
   }
 }
 
+function eurDateIsConvertible(eurDate) {
+  const minEurDate = new Date(1900, 2, 1);
+  const maxEurDate = new Date(2100, 1, 1);
+  return eurDate > minEurDate && eurDate < maxEurDate;
+}
+
 function toEthiopianDateTime(eurDate) {
+  if (!eurDateIsConvertible(eurDate)) return false;
   var difference = eurDate.getTime() - new Date(Date.UTC(1971, 8, 12)).getTime();
   var fourYearsPassed = Math.floor(difference / fourYears);
   var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear);
@@ -134,8 +141,8 @@ function toEuropeanDate(ethDate) {
     }
   }
   for (var count = -8; count < 9; count++) {
-    const EngDate = new Date(initialEuropean.getTime() + count * oneDay);
-    var difference = EngDate.getTime() - new Date(Date.UTC(1971, 8, 12)).getTime();
+    const eurDate = new Date(initialEuropean.getTime() + count * oneDay);
+    var difference = eurDate.getTime() - new Date(Date.UTC(1971, 8, 12)).getTime();
     var fourYearsPassed = Math.floor(difference / fourYears);
     var remainingYears = Math.floor((difference - fourYearsPassed * fourYears) / oneYear);
     if (remainingYears === 4) {
@@ -144,7 +151,8 @@ function toEuropeanDate(ethDate) {
     var remainingMonths = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear) / (30 * oneDay));
     var remainingDays = Math.floor((difference - fourYearsPassed * fourYears - remainingYears * oneYear - remainingMonths * 30 * oneDay) / oneDay);
     if (ethDate.date === remainingDays + 1 && ethDate.month === remainingMonths + 1) {
-      return EngDate;
+      if (!eurDateIsConvertible(eurDate)) return false;
+      return eurDate;
     }
   }
 }
