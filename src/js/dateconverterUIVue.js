@@ -33,7 +33,7 @@ var ethTodayTextArea = new Vue({
   },
   created: function () {
     this.refreshEthDateOnPage();
-    this.liveRefreshEnabled = true;    
+    this.liveRefreshEnabled = true;
     window.onfocus = () => { ethTodayTextArea.liveRefreshEnabled = true; };
     window.onblur = () => { ethTodayTextArea.liveRefreshEnabled = false; };
   },
@@ -56,7 +56,11 @@ var CalendarConverter = new Vue({
       return new Date(Date.UTC(eurYear, eurMon - 1, eurDate));
     },
     ethCalObj: function () {
-      return new ethTime(this.ethCalDate, this.ethCalMon, this.ethCalYear);
+      try {
+        return new ethTime(this.ethCalDate, this.ethCalMon, this.ethCalYear);
+      } catch (error) {
+        return '';
+      }
     },
     ethCalText: function () {
       return this.ethCalObj.dateWithDayString;
@@ -67,12 +71,20 @@ var CalendarConverter = new Vue({
   },
   methods: {
     updateCalculatedEthDate: function () {
-      const calculatedEthDate = toEthiopianDateTime(this.eurCal);
-      [this.ethCalDate, this.ethCalMon, this.ethCalYear] = 
-        [calculatedEthDate.date, calculatedEthDate.month, calculatedEthDate.year];
+      try {
+        const calculatedEthDate = toEthiopianDateTime(this.eurCal);
+        [this.ethCalDate, this.ethCalMon, this.ethCalYear] =
+          [calculatedEthDate.date, calculatedEthDate.month, calculatedEthDate.year];
+      } catch (error) {
+        [this.ethCalDate, this.ethCalMon, this.ethCalYear] = [null, null, null];
+      }
     },
     updateCalculatedEurDate: function () {
-      this.eurCalForm = toEuropeanDate(this.ethCalObj).toJSON().slice(0, 10);
+      try {
+        this.eurCalForm = toEuropeanDate(this.ethCalObj).toJSON().slice(0, 10);
+      } catch (error) {
+        this.eurCalForm = '';
+      }
     },
   },
   watch: {
@@ -81,7 +93,7 @@ var CalendarConverter = new Vue({
     },
     ethCalObj: function () {this.updateCalculatedEurDate();},
   },
-  created: function () {    
+  created: function () {
     const currentDate = new Date();
     const dateAtGMT = new Date(currentDate.valueOf() + currentDate.getTimezoneOffset() * 60000);
     this.eurCalForm = dateAtGMT.toJSON().slice(0, 10);
