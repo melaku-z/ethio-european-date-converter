@@ -3,6 +3,8 @@ import {
   toEthiopianDateTime,
   toEthiopianDateTimeString,
   toEuropeanDate,
+  minEurDate, maxEurDate,
+  minEthYear, maxEthYear
 } from './dateconverter.js';
 
 import Vue from 'vue';
@@ -46,6 +48,8 @@ var CalendarConverter = new Vue({
     ethCalMon: '',
     ethCalYear: '',
     eurCalForm: '',
+    minEurDate, maxEurDate,
+    minEthYear, maxEthYear
   },
   computed: {
     eurCal: function () {

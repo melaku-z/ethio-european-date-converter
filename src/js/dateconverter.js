@@ -7,53 +7,56 @@ const oneLeapYear = 366 * oneDay;
 const fourYears = 3 * oneYear + oneLeapYear;
 const globalTimeDifference = new Date('December 9, 2012').getTime() - new Date('April 1, 2005').getTime();
 
+const minEurDate = new Date(1900, 2, 1);
+const maxEurDate = new Date(2100, 1, 1);
+
 function dayOfWeekString(day) {
   switch (day) {
-    case 0:
-      return 'Sunday';
-    case 1:
-      return 'Monday';
-    case 2:
-      return 'Tuesday';
-    case 3:
-      return 'Wednesday';
-    case 4:
-      return 'Thursday';
-    case 5:
-      return 'Friday';
-    case 6:
-      return 'Saterday';
+  case 0:
+    return 'Sunday';
+  case 1:
+    return 'Monday';
+  case 2:
+    return 'Tuesday';
+  case 3:
+    return 'Wednesday';
+  case 4:
+    return 'Thursday';
+  case 5:
+    return 'Friday';
+  case 6:
+    return 'Saterday';
   }
 }
 
 function monthStringEth(month) {
   switch (month) {
-    case 1:
-      return 'Meskerem ';
-    case 2:
-      return 'Tikimt ';
-    case 3:
-      return 'Hidar ';
-    case 4:
-      return 'Tahsas ';
-    case 5:
-      return 'Tir ';
-    case 6:
-      return 'Yekatit ';
-    case 7:
-      return 'Megabit ';
-    case 8:
-      return 'Meyazya ';
-    case 9:
-      return 'Ginbot ';
-    case 10:
-      return 'Sene ';
-    case 11:
-      return 'Hamle ';
-    case 12:
-      return 'Nehase ';
-    case 13:
-      return 'Pagume ';
+  case 1:
+    return 'Meskerem ';
+  case 2:
+    return 'Tikimt ';
+  case 3:
+    return 'Hidar ';
+  case 4:
+    return 'Tahsas ';
+  case 5:
+    return 'Tir ';
+  case 6:
+    return 'Yekatit ';
+  case 7:
+    return 'Megabit ';
+  case 8:
+    return 'Meyazya ';
+  case 9:
+    return 'Ginbot ';
+  case 10:
+    return 'Sene ';
+  case 11:
+    return 'Hamle ';
+  case 12:
+    return 'Nehase ';
+  case 13:
+    return 'Pagume ';
   }
 }
 
@@ -91,9 +94,7 @@ function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
 }
 
 function eurDateIsConvertible(eurDate) {
-  const minEurDate = new Date(1900, 2, 1);
-  const maxEurDate = new Date(2100, 1, 1);
-  return eurDate > minEurDate && eurDate < maxEurDate;
+  return eurDate >= minEurDate && eurDate <= maxEurDate;
 }
 
 function toEthiopianDateTime(eurDate) {
@@ -168,7 +169,14 @@ function leftpad(Num, length) {
   return ('000000000' + Num).slice(-length);
 }
 
+const minEthYear = toEthiopianDateTime(minEurDate).year;
+const maxEthYear = toEthiopianDateTime(maxEurDate).year;
+
 export {
+  minEurDate,
+  maxEurDate,
+  minEthYear,
+  maxEthYear,
   ethTime,
   toEthiopianDateTime,
   toEthiopianDateString,
