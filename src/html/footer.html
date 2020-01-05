@@ -1,0 +1,30 @@
+<article class="card bg-white" id="footer-info">
+  <h3 class="card-header">
+    <button
+      class="btn btn-primary"
+      type="button"
+      aria-expanded="false"
+      aria-controls="footer-info-body"
+      v-on:click="isCollapsed = !isCollapsed"
+    >
+      ⓘ About Application
+    </button>
+  </h3>
+  <div class="card-body" id="footer-info-body" v-bind:class="isCollapsed ? 'd-none' : ''">
+    <p>
+    The Ethiopian calendar (Amharic: የኢትዮጵያ ዘመን አቆጣጠር) or Eritrean calendar is the principal calendar used in Ethiopia.
+    </p>
+    <p>
+    The calendar has twelve months of thirty days plus five or six epagomenal days, which comprise a thirteenth month. A sixth epagomenal day is added every four years, without exception. There is a gap of seven to eight years between the Ethiopian and Gregorian calendars.
+    </p>
+    <p>
+    New Year's Day occurs on September 11th in the Gregorian Calendar; except for the year preceding a leap year, when it occurs on September 12th. (This date correspondence applies for the Gregorian years 1900 to 2099.)
+    </p>
+    <p>
+    This converter works for the range of March 1900 to February 2100 GC. It can be installed as a PWA for offline use.
+    </p>
+    <p>
+    © Melaku Z.
+    </p>
+  </div>
+</article>

@@ -17,15 +17,16 @@ ${require('html-loader?interpolate!./html/ads.html')}
         </noscript>
         <main>
             ${require('html-loader?interpolate!./html/TodayInEthiopianCalendar.html')}
-            <div class="container">
+            <article class="container">
                 <div class="row" id="CalendarConverter">
 ${require('html-loader?interpolate!./html/EuropeanDate.html')}
 ${require('html-loader?interpolate!./html/EthiopianDate.html')}
                 </div>
-            </div>
+            </article>
         </main>
         <footer>
-${require('html-loader?interpolate!./html/social.html')}
+          ${require('html-loader?interpolate!./html/social.html')}
+          ${require('html-loader?interpolate!./html/footer.html')}
         </footer>
         <% for(var i=0; i < htmlWebpackPlugin.files.js.length; i++) {%>
 <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
