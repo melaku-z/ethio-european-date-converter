@@ -22,7 +22,7 @@
     "@vue/cli": "^3.10.0",
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-plugin-eslint": "^3.10.0",
-    "@vue/cli-plugin-pwa": "^3.10.0",
+    "@vue/cli-plugin-pwa": "^4.1.2",
     "@vue/cli-plugin-unit-jest": "^3.10.0",
     "@vue/cli-service": "^3.0.5",
     "@vue/eslint-config-standard": "^4.0.0",
