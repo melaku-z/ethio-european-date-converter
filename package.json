@@ -69,19 +69,17 @@
     "write-file-webpack-plugin": "^4.4.0"
   },
   "scripts": {
-    "build-dev": "webpack --display-modules --progress --config webpack.dev.js",
+    "build:dev": "webpack --display-modules --progress --config webpack.dev.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --display-modules --progress --config webpack.prod.js",
     "start-server-dev": "webpack-dev-server --open --config webpack.dev.js",
-    "nodemon-start-server-dev": "nodemon --watch webpack.common.js --exec npm run start-server-dev",
-    "build-dist": "cross-env NODE_ENV=production webpack --display-modules --progress --config webpack.prod.js",
+    "start-server-dev:watch": "nodemon --watch webpack.common.js --exec npm run start-server-dev",
     "start-server-prod": "webpack-dev-server --open --config webpack.prod.js",
-    "nodemon-start-server-prod": "nodemon --watch webpack.common.js --exec npm run start-server-prod",
+    "start-server-prod:watch": "nodemon --watch webpack.common.js --exec npm run start-server-prod",
     "watch": "webpack --progress --watch",
-    "lint-autofix": "eslint . --fix --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
-    "yarn-install": "yarn install",
-    "yarn-install-offline": "yarn install --offline",
-    "test": "cross-env jestPreset=jest-puppeteer jest",
-    "nodemon-test": "nodemon --watch tests/*.test.js --exec npm run test",
-    "test-no-puppeteer": "jest"
+    "lint:autofix": "eslint . --fix --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
+    "test:puppeteer": "cross-env jestPreset=jest-puppeteer jest",
+    "test:watch": "nodemon --watch tests/*.test.js --exec npm run test",
+    "test": "jest"
   },
   "engine": {
     "node": ">=10.13.0",
