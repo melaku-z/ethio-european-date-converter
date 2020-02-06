@@ -44,7 +44,7 @@ describe('Ethiopian', () => {
         window.document.querySelector('html').innerHTML  = html
       }
       const page = () => window.document.querySelector('html').outerHTML;
-      const evaluateJS = js => js()
+      const evaluateJS = async (js) => await js()
       const RealDate = Date;
 
       afterEach(() => {
@@ -65,7 +65,7 @@ describe('Ethiopian', () => {
       });
 
       it('should show expected date', async () => {
-          await evaluateJS((isoDate) => {
+          await evaluateJS(async (isoDate) => {
               function mockDate(isoDate, RealDate) {
                   Date = class extends RealDate {
                       constructor(...args) {
