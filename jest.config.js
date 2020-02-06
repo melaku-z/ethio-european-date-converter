@@ -1,9 +1,11 @@
+const testURL = `file:///${__dirname.replace('\\', '/')}/dist/index.html`;
+
 module.exports = {
   verbose: true,
   roots: ['<rootDir>/tests/'],
   moduleFileExtensions: ['js', 'jsx'],
   moduleDirectories: ['node_modules'],
-  testURL: `file:///${__dirname}/dist/index.html`,
+  testURL,
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -187,6 +189,9 @@ if (process.env.jestPreset) {
   module.exports.testEnvironmentOptions = {
     runScripts: 'dangerously',
     resources: 'usable',
+    FetchExternalResources: ['script'],
+    ProcessExternalResources: ['script'],
+    url: testURL,
   };
 }
 module.exports.globals = {
