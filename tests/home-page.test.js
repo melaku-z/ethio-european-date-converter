@@ -38,7 +38,7 @@ describe('Ethiopian', () => {
         });
     }
     else {
-      async function openPage(url) {
+      function openPage(url) {
         window.history.replaceState({}, '', url)
         const html = require('fs').readFileSync('./dist/index.html', { encoding: 'utf-8' })
         window.document.querySelector('html').innerHTML  = html
@@ -53,9 +53,10 @@ describe('Ethiopian', () => {
 
       beforeAll(async () => {
         return new Promise(async (resolve, reject) => {
-          await openPage(global.JestTestURL);
           window.onModulesLoaded = resolve;
-          window.addEventListener('load', resolve)
+          openPage(global.JestTestURL);
+          window.onModulesLoaded = resolve;
+          // window.addEventListener('load', resolve)
         })
       });
 
@@ -75,7 +76,7 @@ describe('Ethiopian', () => {
               }
               const RealDate = Date;
               mockDate(isoDate, RealDate);
-              if (onload) onload();
+              if (onload) await onload();
               document.getElementById('refreshEthDateButton').click()
           }, '2018-10-17 22:23:56 GMT+0300');
           await expect(page()).toMatch('Ethiopian Calendar is Tikimt');
