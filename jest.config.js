@@ -1,9 +1,9 @@
 module.exports = {
   verbose: true,
-  roots: ['<rootDir>/src/', '<rootDir>/tests/'],
+  roots: ['<rootDir>/tests/'],
   moduleFileExtensions: ['js', 'jsx'],
   moduleDirectories: ['node_modules'],
-  testURL: 'http://localhost:8080/',
+  testURL: `file:///${__dirname}/dist/index.html`,
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
