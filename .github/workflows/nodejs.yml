@@ -37,7 +37,7 @@ jobs:
         CI: true
 
     - name: build
-      run: yarn build:dist
+      run: yarn build:prod
 
     - name: test home page - jest
       run: yarn test
