@@ -37,10 +37,17 @@ jobs:
         CI: true
 
     - name: build
-      run: yarn build:dist
+      run: yarn build:prod
 
     - name: test home page - jest
       run: yarn test
+
+    - name: deploy to github-pages
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # issue: only works with private repositories currently
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: dist # The folder the action should deploy.
 
     - name: test home page - puppeteer
       run: yarn test:puppeteer
