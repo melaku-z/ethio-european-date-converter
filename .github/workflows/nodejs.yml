@@ -28,22 +28,28 @@ jobs:
           ${{ runner.os }}-yarn-
 
     - name: yarn install
-      run: yarn install --frozen-lockfile
+      run: yarn install # todo:  --frozen-lockfile
       env:
         CI: true
 
     - name: build
       run: yarn build:prod
 
-    - name: test home page - jest
-      run: yarn test
+    # - name: test home page - jest
+    #   run: yarn test
 
-    - name: deploy to github-pages
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+    # - name: test home page - puppeteer
+    #   run: yarn test:puppeteer
+
+    - name: Save yarn.lock
+      uses: actions/upload-artifact@v1
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # issue: only works with private repositories currently
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: dist # The folder the action should deploy.
+        name: yarn.lock
+        path: yarn.lock
 
-    - name: test home page - puppeteer
-      run: yarn test:puppeteer
+    # - name: deploy to github-pages # todo: enable on github issue solve
+    #   uses: JamesIves/github-pages-deploy-action@releases/v3
+    #   with:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # issue: only works with private repositories currently
+    #     BRANCH: gh-pages # The branch the action should deploy to.
+    #     FOLDER: dist # The folder the action should deploy.
