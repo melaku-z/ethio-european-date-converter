@@ -28,7 +28,7 @@ jobs:
           ${{ runner.os }}-yarn-
 
     - name: yarn install
-      run: yarn install # todo:  --frozen-lockfile
+      run: yarn install && yarn upgrade # todo:  --frozen-lockfile
       env:
         CI: true
 
