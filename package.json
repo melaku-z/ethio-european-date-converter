@@ -27,7 +27,7 @@
     "@vue/cli-service": "^3.0.5",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.20",
-    "app-manifest-webpack-plugin": "^1.1.3",
+    "app-manifest-webpack-plugin": "^1.2.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "clean-css-loader": "^2.0.0",
@@ -82,9 +82,9 @@
     "test": "jest"
   },
   "engine": {
-    "node": ">=10.13.0",
-    "npm": ">= 5.6.0",
-    "yarn": "^1.9.0"
+    "node": ">=12.13.0",
+    "npm": ">= 6.12.0",
+    "yarn": "^1.22.0"
   },
   "browserslist": [
     "> 0.1%",

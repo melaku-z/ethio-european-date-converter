@@ -4,4 +4,4 @@
 
   command = "yarn build:prod"
 
-  environment = { YARN_VERSION = "1.13.0" }
+  environment = { YARN_VERSION = "1.22.0" }
