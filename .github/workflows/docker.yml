@@ -1,0 +1,28 @@
+name: Docker Build
+
+on:
+  push:
+    branches:
+      - feature/docker
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build
+      run: docker-compose up -d
+
+    # - name: Test
+    #   run: docker run --network container:webapp-frontend appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
+    - shell: bash
+      run: |
+        docker save -o ethiopian_date_converter_web.docker melaku/ethiopian_date_converter_web
+    - name: Save docker image
+      uses: actions/upload-artifact@v1
+      with:
+        name: ethiopian_date_converter_web.docker
+        path: ethiopian_date_converter_web.docker

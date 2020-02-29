@@ -1,0 +1,14 @@
+version: "2.1"
+
+services:
+  ethiopian_date_converter_web:
+    image: melaku/ethiopian_date_converter_web
+    build:
+      context: .
+    ports:
+      - 3000:3000 # dev server
+      - 8000:8000 # prod server
+    volumes:
+      - "../npm-packages-offline-cache:/usr/yarn-offline"
+      - "./dist:/dist"
+    # command: yarn start-server-dev
