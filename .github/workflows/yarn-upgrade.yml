@@ -1,6 +1,9 @@
-name: Yarn Build
+name: Yarn upgrade
 
-on: [push]
+on:
+  push:
+    branches:
+      - feature/yarn-upgrade
 
 jobs:
   build:
@@ -28,7 +31,7 @@ jobs:
           ${{ runner.os }}-yarn-
 
     - name: yarn install
-      run: yarn install --frozen-lockfile
+      run: yarn install && yarn upgrade
       env:
         CI: true
 
@@ -40,6 +43,12 @@ jobs:
 
     # - name: test home page - puppeteer
     #   run: yarn test:puppeteer
+
+    - name: Save yarn.lock
+      uses: actions/upload-artifact@v1
+      with:
+        name: yarn.lock
+        path: yarn.lock
 
     # - name: deploy to github-pages # todo: enable on github issue solve
     #   uses: JamesIves/github-pages-deploy-action@releases/v3
