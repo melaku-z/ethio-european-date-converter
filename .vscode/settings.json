@@ -8,7 +8,7 @@
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
-    "eslint.provideLintTask": true,
+    "eslint.lintTask.enable": true,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,

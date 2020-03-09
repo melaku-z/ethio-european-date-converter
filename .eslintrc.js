@@ -5,8 +5,9 @@ module.exports = {
         "node": true
     },
     "extends": "eslint:recommended",
+    "plugins": ["jest"],
     "parserOptions": {
-        "ecmaVersion": 2015,
+        "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "rules": {
