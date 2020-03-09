@@ -2,9 +2,10 @@ module.exports = {
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest/globals": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:jest/recommended", "plugin:jest/style"],
     "plugins": ["jest"],
     "parserOptions": {
         "ecmaVersion": 2018,
