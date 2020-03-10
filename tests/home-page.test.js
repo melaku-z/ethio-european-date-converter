@@ -1,58 +1,46 @@
+async function openPage(url) {
+  await page.goto(url);
+}
+
+async function mockDate(mockIsoDate) {
+  const RealDate = class extends Date {};
+  // eslint-disable-next-line no-global-assign
+  Date = class extends RealDate {
+    constructor(...args) {
+      if (args.length) return new RealDate(...args);
+      return new RealDate(mockIsoDate);
+    }
+  };
+  window.CalendarConverter.updateCurrentEthDate();
+  await(new Promise(resolve => setTimeout(resolve, 4000)));
+}
+
 describe('Ethiopian', () => {
   if (global.jestPreset == 'jest-puppeteer') {
-    const puppeteer = require('puppeteer');
-
-    let page;
-    let browser;
-    async function openPage(url) {
-      browser = await puppeteer.launch({headless: true});
-      page = await browser.newPage();
-      await page.goto(url);
-    }
-    const RealDate = Date;
-
-    afterEach(() => {
-      global.Date = RealDate;
-    });
+    const mockIsoDate = '2018-10-17 22:23:56 GMT+0300';
 
     beforeAll(async () => {
       await openPage(global.JestTestURL).catch(reason => {
         throw  `Couldn't open ${global.JestTestURL}: ${reason}`;
       });
-    });
-
-    afterAll(() => {
-      browser.close();
-    });
+      await page.evaluate(mockDate, mockIsoDate);
+    }, 10000);
 
     it('should display "Ethiopian" text on page', async () => {
       const pageContent = await page.content()
       expect(pageContent).toMatch('Today in Ethiopian Calendar is');
-    });
+    }, 15000);
 
     it('should show expected date', async () => {
-      await page.evaluate((isoDate) => {
-        function mockDate(isoDate, RealDate) {
-          Date = class extends RealDate {
-            constructor(...args) {
-              if (args.length) return new RealDate(...args);
-              return new RealDate(isoDate);
-            }
-          };
-        }
-        const RealDate = Date;
-        mockDate(isoDate, RealDate);
-        document.querySelector('body').onload();
-      }, '2018-10-17 22:23:56 GMT+0300');
-      const pageContent = await page.content()
-      await expect(pageContent).toMatch('Ethiopian Calendar is Tikimt');
-      await expect(pageContent).toMatch('Ethiopian Calendar is Tikimt 7, 2011');
+      const pageContent = await page.content();
+      await expect(pageContent).toMatch('Tikimt');
+      await expect(pageContent).toMatch('Tikimt 7, 2011');
       await expect(pageContent).toMatch('Wed, 17 Oct 2018 (at GMT+0)');
       await expect(pageContent).toMatch('Wednesday, Tikimt 7, 2011');
-    });
+    }, 15000);
   }
   else {
-    function openPage(url) {
+    function openLocalPagejest(url) {
       window.history.replaceState({}, '', url);
       const html = require('fs').readFileSync('./dist/index.html', { encoding: 'utf-8' });
       window.document.querySelector('html').innerHTML  = html;
@@ -68,7 +56,7 @@ describe('Ethiopian', () => {
     beforeAll(async () => {
       return new Promise(async (resolve) => {
         window.onModulesLoaded = resolve;
-        openPage(global.JestTestURL);
+        openLocalPagejest(global.JestTestURL);
         window.onModulesLoaded = resolve;
         // window.addEventListener('load', resolve)
       });
