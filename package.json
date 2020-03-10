@@ -78,10 +78,10 @@
     "start-server-prod:watch": "nodemon --watch webpack.common.js --exec npm run start-server-prod",
     "watch": "webpack --progress --watch",
     "lint:autofix": "eslint . --fix --report-unused-disable-directives && echo '✔  Your .js files look so good.' && htmlhint -c ./.htmlhintrc views/*.ejs && htmlhint -c ./.htmlhintrc views/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/*.ejs && htmlhint -c ./.htmlhintrc views/**/**/**/**/**/**/*.ejs && echo '✔  So do your .ejs files.' && lesshint assets/styles/ --max-warnings=0 && echo '✔  Your .less files look good, too.'",
-    "test:puppeteer": "cross-env jestPreset=jest-puppeteer jest",
+    "test:puppeteer": "cross-env jestPreset=jest-puppeteer jest tests/puppeter",
     "test:puppeteer:watch": "yarn test:puppeteer --watch --bail",
     "test:watch": "nodemon --watch tests/*.test.js --exec npm run test",
-    "test": "jest"
+    "test": "jest tests/jsdom"
   },
   "engine": {
     "node": ">=12.13.0",
