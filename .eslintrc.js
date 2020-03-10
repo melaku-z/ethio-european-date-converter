@@ -28,5 +28,11 @@ module.exports = {
             "warn",
             "always"
         ]
+    },
+    "globals": {
+      page: true,
+      browser: true,
+      context: true,
+      jestPuppeteer: true,
     }
 };
