@@ -5,7 +5,7 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "build-dev",
+            "script": "build:prod",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -14,22 +14,13 @@
         },
         {
             "type": "npm",
-            "script": "build-dist",
-            "problemMatcher": []
+            "script": "build:dev",
+            "problemMatcher": [],
+            "group": "build"
         },
         {
             "type": "npm",
             "script": "start-server-dev",
-            "problemMatcher": []
-        },
-        {
-            "type": "npm",
-            "script": "yarn-install",
-            "problemMatcher": []
-        },
-        {
-            "type": "npm",
-            "script": "yarn-install-offline",
             "problemMatcher": []
         },
         {
@@ -63,6 +54,14 @@
             "type": "npm",
             "script": "nodemon-test",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "test:puppeteer:watch",
+            "problemMatcher": [
+                "$eslint-compact"
+            ],
+            "group": "test"
         }
     ]
 }
