@@ -38,8 +38,8 @@ jobs:
     # - name: test home page - jest
     #   run: yarn test
 
-    # - name: test home page - puppeteer
-    #   run: yarn test:puppeteer
+    - name: test home page - puppeteer
+      run: yarn test:puppeteer
 
     # - name: deploy to github-pages # todo: enable on github issue solve
     #   uses: JamesIves/github-pages-deploy-action@releases/v3
