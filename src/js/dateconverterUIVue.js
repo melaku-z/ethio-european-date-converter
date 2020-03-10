@@ -90,6 +90,12 @@ var CalendarConverter = new Vue({
         this.eurCalForm = '';
       }
     },
+    updateCurrentEthDate () {
+      const currentDate = new Date();
+      const dateAtGMT = new Date(currentDate.valueOf() + currentDate.getTimezoneOffset() * 60000);
+      this.eurCalForm = dateAtGMT.toJSON().slice(0, 10);
+      this.updateCalculatedEthDate();
+    },
   },
   watch: {
     eurCal: function () {
@@ -98,10 +104,7 @@ var CalendarConverter = new Vue({
     ethCalObj: function () {this.updateCalculatedEurDate();},
   },
   created: function () {
-    const currentDate = new Date();
-    const dateAtGMT = new Date(currentDate.valueOf() + currentDate.getTimezoneOffset() * 60000);
-    this.eurCalForm = dateAtGMT.toJSON().slice(0, 10);
-    this.updateCalculatedEthDate();
+    this.updateCurrentEthDate();
   },
 });
 
