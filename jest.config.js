@@ -1,4 +1,5 @@
-const testURL = `file:///${__dirname.replace('\\', '/')}/dist/index.html`;
+// const testURL = `file:///${__dirname.replace('\\', '/')}/dist/index.html`;
+const testURL = 'http://localhost:8000/';
 
 module.exports = {
   verbose: true,
