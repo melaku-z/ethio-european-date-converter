@@ -4,6 +4,7 @@ async function startDevServer() {
     rootDir: 'dist',
     port: 8000,
     compatibility: 'none',
+    // http2 : true, // todo: enable
   });
   const server = await startServer(config);
   return server;
@@ -11,6 +12,4 @@ async function startDevServer() {
 
 startDevServer();
 
-module.exports = async () => {
-  process.localDevServer = await startDevServer();
-};
+module.exports.startDevServer = startDevServer;
