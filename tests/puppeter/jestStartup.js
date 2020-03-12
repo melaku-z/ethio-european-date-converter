@@ -11,6 +11,4 @@ async function startDevServer() {
   return server;
 }
 
-startDevServer();
-
 module.exports.startDevServer = startDevServer;
