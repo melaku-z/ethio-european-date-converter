@@ -1,4 +1,5 @@
 const lighthouse = require('lighthouse');
+const startDevServer = require('./jestStartup').startDevServer;
 
 async function openPage(url) {
   await page.goto(url);
@@ -18,6 +19,7 @@ async function mockDate(mockIsoDate) {
 }
 
 describe('home page', () => {
+  let server;
 
   expect.extend({
     greaterOrEqualTo (received, expected) {
@@ -36,11 +38,16 @@ describe('home page', () => {
   const mockIsoDate = '2018-10-17 22:23:56 GMT+0300';
 
   beforeAll(async () => {
+    server = await startDevServer();
     await openPage(global.JestTestURL).catch(reason => {
       throw  `Couldn't open ${global.JestTestURL}: ${reason}`;
     });
     await page.evaluate(mockDate, mockIsoDate);
   }, 10000);
+
+  afterAll(() => {
+    server.close();
+  });
 
   it('should display "Ethiopian" text on page', async () => {
     const pageContent = await page.content();
@@ -72,9 +79,9 @@ describe('home page', () => {
     expect(result).toEqual({
       accessibility: 100,
       performance: 100,
-      pwa: 100,
+      pwa: 93, // not 100 for 'Does not redirect HTTP traffic to HTTPS'
       seo: 100,
-      'best-practices': 100, // expect.greaterOrEqualTo(99.9),
+      'best-practices': 93, // not 100 for 'Does not use HTTP/2 for all of its resources '
       pageSpeed: 100,
     });
   }, 40000);
