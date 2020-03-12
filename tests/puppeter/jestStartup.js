@@ -1,13 +1,15 @@
-async function startDevServer() {
-  const { createConfig, createServer } = require('es-dev-server');
+const stoppableServer = require('stoppable');
+const { createConfig, createServer } = require('es-dev-server');
+
+function startDevServer() {
   const config = createConfig({
     rootDir: 'dist',
-    port: 8000,
     compatibility: 'none',
     // http2 : true, // todo: enable
   });
-  const { server } = await createServer(config);
-  await server.listen(8000);
+  let { server } = createServer(config);
+  server = stoppableServer(server, 0);
+  server.listen(8000);
   return server;
 }
 

@@ -38,15 +38,17 @@ describe('home page', () => {
   const mockIsoDate = '2018-10-17 22:23:56 GMT+0300';
 
   beforeAll(async () => {
-    server = await startDevServer();
+    server = startDevServer();
     await openPage(global.JestTestURL).catch(reason => {
       throw  `Couldn't open ${global.JestTestURL}: ${reason}`;
     });
     await page.evaluate(mockDate, mockIsoDate);
   }, 10000);
 
-  afterAll(() => {
-    server.close();
+  afterAll(async () => {
+    const promisify = require('util').promisify;
+    const asyncServerStop = promisify(server.stop).bind(server);
+    await asyncServerStop();
   });
 
   it('should display "Ethiopian" text on page', async () => {
