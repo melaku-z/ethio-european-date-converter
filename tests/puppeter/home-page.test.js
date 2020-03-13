@@ -80,7 +80,7 @@ describe('home page', () => {
     };
     expect(result).toEqual({
       accessibility: 100,
-      performance: 99, // HTTP/2 not enabled
+      performance: 100,
       pwa: 93, // not 100 for 'Does not redirect HTTP traffic to HTTPS'
       seo: 100,
       'best-practices': 93, // not 100 for 'Does not use HTTP/2 for all of its resources '
