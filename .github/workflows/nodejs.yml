@@ -40,6 +40,8 @@ jobs:
 
     - name: test home page - puppeteer
       run: yarn test:puppeteer
+      env:
+        CI: true
 
     # - name: deploy to github-pages # todo: enable on github issue solve: https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869/highlight/true/page/3
     #   uses: JamesIves/github-pages-deploy-action@releases/v3
