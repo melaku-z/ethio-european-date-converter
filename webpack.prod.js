@@ -41,6 +41,8 @@ module.exports = merge.smart(common, {
       }
     }),
     new WorkboxPlugin.GenerateSW({
+      importWorkboxFrom: 'local',
+      importsDirectory: 'assets/sw/',
       exclude: [/(\.(txt|htaccess|png|xml)$)|(404.html$)|(favicon.ico$)/],
       offlineGoogleAnalytics: true
     })
