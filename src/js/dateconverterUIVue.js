@@ -5,7 +5,7 @@ import {
   toEuropeanDate,
   minEurDate, maxEurDate,
   minEthYear, maxEthYear
-} from './dateconverter.js';
+} from 'ethiopian-calendar-date-converter';
 
 import Vue from 'vue';
 

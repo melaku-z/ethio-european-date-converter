@@ -1,0 +1,40 @@
+{
+  "name": "ethiopian-calendar-date-converter",
+  "description": "Convert dates between Ethiopian and European calendars",
+  "version": "1.0.0",
+  "keywords": [
+    "Calendar Converter",
+    "Ethiopian Calendar"
+  ],
+  "author": "Melaku Zewdu <melaku44@gmail.com>",
+  "contributors": [],
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.4",
+    "cross-env": "^7.0.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "jest": "^25.1.0",
+    "jest-webpack": "^0.5.1",
+    "lint-staged": "^7.2.2",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.7"
+  },
+  "scripts": {
+  },
+  "engine": {
+    "node": ">=12.13.0",
+    "npm": ">= 6.12.0",
+    "yarn": "^1.22.0"
+  },
+  "browserslist": [
+    "> 0.1%",
+    "last 4 versions",
+    "not dead",
+    "not ie < 8"
+  ],
+  "license": "MIT",
+  "main": "./src/dateconverter.js"
+}

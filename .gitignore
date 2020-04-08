@@ -6,3 +6,4 @@ node_modules
 dist_temp/*
 dist
 yarn-error.log
+packages/*/node_modules

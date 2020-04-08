@@ -1,11 +1,10 @@
 {
-  "name": "ethiopian_calendar_date_converter",
+  "name": "ethiopian-calendar-date-converter-web-app",
   "description": "Convert dates between Ethiopian and European calendars offline.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "keywords": [
-    "Calendar",
-    "Ethiopian",
-    "Converter"
+    "Calendar Converter",
+    "Ethiopian Calendar"
   ],
   "author": "Melaku Zewdu <melaku44@gmail.com>",
   "contributors": [],
@@ -98,6 +97,6 @@
     "not ie < 8"
   ],
   "license": "MIT",
-  "main": "./src/js/dateconverter.js",
+  "workspaces": [ "packages/ethiopian-calendar-date-converter" ],
   "private": true
 }

@@ -4,7 +4,7 @@ import {
   toEthiopianDateTimeString,
   toEuropeanDate,
   toEuropeanDateString
-} from './dateconverter.js';
+} from 'ethiopian-calendar-date-converter';
 
 function updateCalculatedEthDateOnPage() {
   const EuropeanDateValueArray = document.getElementById('EuropeanDate').value.split('-');
