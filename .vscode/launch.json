@@ -20,7 +20,42 @@
       "request": "launch",
       "name": "jest:puppeteer",
       "args": [
+        "tests/puppeter",
         "--runInBand"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "env": {
+        "jestPreset": "jest-puppeteer",
+      },
+      "cwd": "${workspaceFolder}/",
+      "osx": {
+        "program": "${workspaceFolder}/node_modules/.bin/jest"
+      },
+      "linux": {
+        "program": "${workspaceFolder}/node_modules/.bin/jest"
+      },
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
+        "options": {
+          "shell": {
+            "executable": "bash.exe"
+          }
+        }
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "jest:puppeteer:detectOpenHandles",
+      "args": [
+        "tests/puppeter",
+        "--runInBand",
+        "---detectOpenHandles",
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
