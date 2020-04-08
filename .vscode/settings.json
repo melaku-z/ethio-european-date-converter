@@ -1,23 +1,13 @@
 {
-    "code-runner.executorMap": {
-        "php": "C:\\php\\php.exe",
-        "perl": "perl",
-        "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
-        "go": "go run",
-        "html": "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
-        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
-    },
-    "eslint.lintTask.enable": true,
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        ".idea/**": true,
-        ".Bundles/**": true,
-        "nbproject/**": true,
-        "node_modules/**": true,
-    },
+  "eslint.lintTask.enable": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".idea/**": true,
+    "nbproject/**": true,
+    "node_modules/**": true,
+  },
 }

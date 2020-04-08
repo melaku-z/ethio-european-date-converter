@@ -2,9 +2,7 @@ doc/**
 /nbproject/private/
 /nbproject/
 dist/css/.DS_Store
-.Bundles/*
-node_modules/*
-npm-packages-offline-cache/*
+node_modules
 dist_temp/*
 dist
 yarn-error.log
