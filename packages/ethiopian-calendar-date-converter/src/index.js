@@ -11,53 +11,35 @@ const minEurDate = new Date(1900, 2, 1);
 const maxEurDate = new Date(2100, 1, 1);
 
 function dayOfWeekString(day) {
-  switch (day) {
-  case 0:
-    return 'Sunday';
-  case 1:
-    return 'Monday';
-  case 2:
-    return 'Tuesday';
-  case 3:
-    return 'Wednesday';
-  case 4:
-    return 'Thursday';
-  case 5:
-    return 'Friday';
-  case 6:
-    return 'Saterday';
-  }
+  const dayOfWeekStrings = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saterday',
+  };
+  return dayOfWeekStrings[day];
 }
 
 function monthStringEth(month) {
-  switch (month) {
-  case 1:
-    return 'Meskerem ';
-  case 2:
-    return 'Tikimt ';
-  case 3:
-    return 'Hidar ';
-  case 4:
-    return 'Tahsas ';
-  case 5:
-    return 'Tir ';
-  case 6:
-    return 'Yekatit ';
-  case 7:
-    return 'Megabit ';
-  case 8:
-    return 'Meyazya ';
-  case 9:
-    return 'Ginbot ';
-  case 10:
-    return 'Sene ';
-  case 11:
-    return 'Hamle ';
-  case 12:
-    return 'Nehase ';
-  case 13:
-    return 'Pagume ';
-  }
+  const ethMonthStrings = {
+    1: 'Meskerem ',
+    2: 'Tikimt ',
+    3: 'Hidar ',
+    4: 'Tahsas ',
+    5: 'Tir ',
+    6: 'Yekatit ',
+    7: 'Megabit ',
+    8: 'Meyazya ',
+    9: 'Ginbot ',
+    10: 'Sene ',
+    11: 'Hamle ',
+    12: 'Nehase ',
+    13: 'Pagume ',
+  };
+  return ethMonthStrings[month];
 }
 
 function ethTime(date, mon, yr, hr, min, sec) {//mon in human form

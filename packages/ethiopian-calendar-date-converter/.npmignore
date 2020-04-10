@@ -1,0 +1,7 @@
+*.log
+__mocks__/**
+__tests__/**
+coverage/**
+node_modules/**
+jest.config.js
+build

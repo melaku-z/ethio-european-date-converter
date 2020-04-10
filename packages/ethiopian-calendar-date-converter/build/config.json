@@ -1,0 +1,6 @@
+{
+  "publicPath": "/",
+  "publicDir": "lib",
+  "publicStaticPath": "/",
+  "publicStaticDir": "lib"
+}
