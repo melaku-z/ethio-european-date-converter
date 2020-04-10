@@ -32,6 +32,8 @@ jobs:
       env:
         CI: true
 
+    - name: build:dependencies
+      run: yarn build:dependencies
     - name: build
       run: yarn build:prod
 
