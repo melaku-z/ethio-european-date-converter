@@ -6,8 +6,8 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    ".idea/**": true,
-    "nbproject/**": true,
-    "node_modules/**": true,
+    ".idea": true,
+    "nbproject": true,
+    "node_modules": true,
   },
 }
