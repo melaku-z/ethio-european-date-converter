@@ -3,7 +3,7 @@ const common = require('./webpack.common.js');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const AppManifestWebpack = require('app-manifest-webpack-plugin');
@@ -59,8 +59,8 @@ module.exports = merge.smart(common, {
       }
     },
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
+      new TerserPlugin({
+        test: /\.m?js(\?.*)?$/i,
         parallel: true,
         sourceMap: true
       }),
