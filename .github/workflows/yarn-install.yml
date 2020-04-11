@@ -1,9 +1,9 @@
-name: Yarn upgrade
+name: Yarn install
 
 on:
   push:
     branches:
-      - feature/yarn-upgrade
+      - feature/yarn-install
 
 jobs:
   build:
@@ -31,13 +31,12 @@ jobs:
           ${{ runner.os }}-yarn-
 
     - name: yarn install
-      run: yarn install && yarn upgrade
+      run: yarn install
       env:
         CI: true
 
     - name: build:dependencies
       run: yarn build:dependencies
-
     - name: build
       run: yarn build:prod
 
