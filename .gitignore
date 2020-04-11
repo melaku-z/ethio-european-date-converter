@@ -5,7 +5,7 @@ dist/css/.DS_Store
 node_modules
 dist_temp/*
 dist
-yarn-error.log
+*.log
 packages/*/node_modules
 packages/*/lib
 packages/*/coverage
