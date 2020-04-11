@@ -13,35 +13,22 @@ const fixture = {
 describe('main', () => {
   it('js exports expected module structure', () => {
     expect(converter).toHaveProperty(
-      'minEurDate',
-      'maxEurDate',
-      'minEthYear',
-      'maxEthYear',
-      'ethTime',
-      'toEthiopianDateTime',
-      'toEthiopianDateString',
-      'toEthiopianTimeString',
-      'toEthiopianDateTimeString',
-      'toEuropeanDate',
-      'toEuropeanDateString',
+      'ethDateTime',
+      'limits',
+      'converterDateTime',
+      'converterString',
     );
   });
   it('module exports expected module structure', () => {
     expect(converterModule).toHaveProperty(
-      'minEurDate',
-      'maxEurDate',
-      'minEthYear',
-      'maxEthYear',
-      'ethTime',
-      'toEthiopianDateTime',
-      'toEthiopianDateString',
-      'toEthiopianTimeString',
-      'toEthiopianDateTimeString',
-      'toEuropeanDate',
-      'toEuropeanDateString',
+      'ethDateTime',
+      'limits',
+      'converterDateTime',
+      'converterString',
     );
   });
   it('converts European date to Ethiopian', () => {
-    expect(converter.toEthiopianDateTimeString(fixture.dates.European)).toStrictEqual(fixture.dates.Ethiopian);
+    expect(converter.converterString.dateTime.toEthiopian(fixture.dates.European)).toStrictEqual(fixture.dates.Ethiopian);
+    expect(converterModule.converterString.dateTime.toEthiopian(fixture.dates.European)).toStrictEqual(fixture.dates.Ethiopian);
   });
 });

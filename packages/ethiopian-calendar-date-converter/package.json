@@ -1,6 +1,6 @@
 {
   "name": "ethiopian-calendar-date-converter",
-  "description": "Convert dates between Ethiopian and European calendars",
+  "description": "Convert dates between Ethiopian and European/Gregorian calendars",
   "version": "0.0.2",
   "keywords": [
     "Calendar Converter",

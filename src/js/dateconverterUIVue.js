@@ -1,10 +1,8 @@
 import {
-  ethTime,
-  toEthiopianDateTime,
-  toEthiopianDateTimeString,
-  toEuropeanDate,
-  minEurDate, maxEurDate,
-  minEthYear, maxEthYear
+  ethDateTime,
+  limits,
+  converterDateTime,
+  converterString
 } from 'ethiopian-calendar-date-converter';
 
 import Vue from 'vue';
@@ -19,7 +17,7 @@ var ethTodayTextArea = new Vue({
   },
   methods: {
     refreshEthDateOnPage: function () {
-      [this.ethTodayDateText, this.ethTodayTimeText] = toEthiopianDateTimeString(new Date());
+      [this.ethTodayDateText, this.ethTodayTimeText] = converterString.dateTime.toEthiopian(new Date());
     },
     liveDateRefresh: function () {
       this.liveRefreshObj = setInterval(this.refreshEthDateOnPage, 1000);
@@ -48,8 +46,10 @@ var CalendarConverter = new Vue({
     ethCalMon: '',
     ethCalYear: '',
     eurCalForm: '',
-    minEurDate, maxEurDate,
-    minEthYear, maxEthYear
+    minEurDate: limits.europeanCalendarDate.min,
+    maxEurDate: limits.europeanCalendarDate.max,
+    minEthYear: limits.ethiopianCalendarYear.min,
+    maxEthYear: limits.ethiopianCalendarYear.max,
   },
   computed: {
     eurCal: function () {
@@ -61,7 +61,7 @@ var CalendarConverter = new Vue({
     },
     ethCalObj: function () {
       try {
-        return new ethTime(this.ethCalDate, this.ethCalMon, this.ethCalYear);
+        return new ethDateTime(this.ethCalDate, this.ethCalMon, this.ethCalYear);
       } catch (error) {
         return '';
       }
@@ -76,7 +76,7 @@ var CalendarConverter = new Vue({
   methods: {
     updateCalculatedEthDate: function () {
       try {
-        const calculatedEthDate = toEthiopianDateTime(this.eurCal);
+        const calculatedEthDate = converterDateTime.toEthiopian(this.eurCal);
         [this.ethCalDate, this.ethCalMon, this.ethCalYear] =
           [calculatedEthDate.date, calculatedEthDate.month, calculatedEthDate.year];
       } catch (error) {
@@ -85,7 +85,7 @@ var CalendarConverter = new Vue({
     },
     updateCalculatedEurDate: function () {
       try {
-        this.eurCalForm = toEuropeanDate(this.ethCalObj).toJSON().slice(0, 10);
+        this.eurCalForm = converterDateTime.toEuropean(this.ethCalObj).toJSON().slice(0, 10);
       } catch (error) {
         this.eurCalForm = '';
       }

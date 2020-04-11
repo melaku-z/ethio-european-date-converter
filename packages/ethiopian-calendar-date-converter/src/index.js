@@ -42,7 +42,7 @@ function monthStringEth(month) {
   return ethMonthStrings[month];
 }
 
-function ethTime(date, mon, yr, hr, min, sec) {//mon in human form
+function ethDateTime(date, mon, yr, hr, min, sec) {//mon in human form
   if (date <= 30) {
     this.date = date;
   } else {
@@ -93,7 +93,7 @@ function toEthiopianDateTime(eurDate) {
   if (remainingHours < 0) {
     remainingHours += 24;
   }
-  var ethDate = new ethTime(remainingDays + 1, remainingMonths + 1, remainingYears + 4 * fourYearsPassed + 1964, remainingHours, eurDate.getMinutes(), eurDate.getSeconds());
+  var ethDate = new ethDateTime(remainingDays + 1, remainingMonths + 1, remainingYears + 4 * fourYearsPassed + 1964, remainingHours, eurDate.getMinutes(), eurDate.getSeconds());
   return ethDate;
 }
 
@@ -154,16 +154,42 @@ function leftpad(Num, length) {
 const minEthYear = toEthiopianDateTime(minEurDate).year;
 const maxEthYear = toEthiopianDateTime(maxEurDate).year;
 
+const limits = {
+  ethiopianCalendarYear: {
+    min: minEthYear,
+    max: maxEthYear
+  },
+  europeanCalendarDate: {
+    min: minEurDate,
+    max: maxEurDate
+  }
+};
+
+const converter = {
+  dateTime: {
+    toEthiopian: toEthiopianDateTime,
+    toEuropean: toEuropeanDate
+  },
+  string: {
+    date: {
+      toEthiopian: toEthiopianDateString,
+      toEuropean: toEuropeanDateString
+    },
+    time: {
+      toEthiopian: toEthiopianTimeString
+    },
+    dateTime: {
+      toEthiopian: toEthiopianDateTimeString
+    }
+  }
+};
+
+const converterDateTime = converter.dateTime;
+const converterString = converter.string;
+
 export {
-  minEurDate,
-  maxEurDate,
-  minEthYear,
-  maxEthYear,
-  ethTime,
-  toEthiopianDateTime,
-  toEthiopianDateString,
-  toEthiopianTimeString,
-  toEthiopianDateTimeString,
-  toEuropeanDate,
-  toEuropeanDateString
+  ethDateTime,
+  limits,
+  converterDateTime,
+  converterString
 };

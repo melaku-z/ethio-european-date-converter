@@ -1,5 +1,5 @@
 import {
-  ethTime,
+  ethDateTime,
   toEthiopianDateTime,
   toEthiopianDateTimeString,
   toEuropeanDate,
@@ -23,7 +23,7 @@ function updateCalculatedEurDateOnPage() {
   const ethDate_Year = parseInt(document.getElementById('EthYearScroll').value);
   const ethDate_Month = parseInt(document.getElementById('EthMonthScroll').value);
   const ethDate_Day = parseInt(document.getElementById('EthDayScroll').value);
-  const ethDate = new ethTime(ethDate_Day, ethDate_Month, ethDate_Year, 0, 0, 0);
+  const ethDate = new ethDateTime(ethDate_Day, ethDate_Month, ethDate_Year, 0, 0, 0);
   const eurDateTime = toEuropeanDate(ethDate);
   var eurDate;
   if (typeof (eurDateTime) != 'string')
