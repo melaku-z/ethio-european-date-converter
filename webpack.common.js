@@ -14,7 +14,6 @@ module.exports = {
     './src/humans.txt',
     './src/robots.txt',
     './src/LICENSE.txt',
-    './src/.htaccess',
     './src/favicon.ico',
     './src/google4ea6bc293950abe1.html',
   ],
@@ -114,18 +113,6 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              context: './src'
-            }
-          }
-        ]
-      },
-      {
-        test: /\.htaccess$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name]',
               context: './src'
             }
           }
