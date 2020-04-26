@@ -15,12 +15,9 @@ ${require('html-loader?interpolate!./html/head.html')}
             </div>
         </noscript>
         <main>
-            ${require('html-loader?interpolate!./html/TodayInEthiopianCalendar.html')}
+            ${require('html-loader?interpolate!./html/todayInEthiopianCalendar.html')}
             <article class="container">
-                <div class="row" id="CalendarConverter">
-${require('html-loader?interpolate!./html/EuropeanDate.html')}
-${require('html-loader?interpolate!./html/EthiopianDate.html')}
-                </div>
+                ${require('html-loader?interpolate!./html/calendarConverter.html')}
             </article>
         </main>
         <footer>

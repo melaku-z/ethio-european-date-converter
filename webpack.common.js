@@ -7,6 +7,8 @@ const pathToIndexHtml = require.resolve('./src/index.html');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 module.exports = {
   entry: [
     pathToMainJs,
@@ -37,6 +39,7 @@ module.exports = {
       inject: false,
       minify: true,
     }),
+    new VueLoaderPlugin(),
   ],
   output: {
     filename: './js/[name].[chunkhash].js',
@@ -117,7 +120,12 @@ module.exports = {
             }
           }
         ]
-      }]
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+    ]
   },
   watchOptions: {
     ignored: /node_modules/
