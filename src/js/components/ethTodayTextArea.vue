@@ -60,10 +60,10 @@ export default {
     this.refreshEthDateOnPage();
     this.liveRefreshEnabled = true;
     window.onfocus = () => {
-      ethTodayTextArea.liveRefreshEnabled = true;
+      this.liveRefreshEnabled = true;
     };
     window.onblur = () => {
-      ethTodayTextArea.liveRefreshEnabled = false;
+      this.liveRefreshEnabled = false;
     };
   }
 };
