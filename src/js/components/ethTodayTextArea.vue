@@ -56,7 +56,7 @@ export default {
       else clearInterval(this.liveRefreshObj);
     }
   },
-  created () {
+  mounted () {
     this.refreshEthDateOnPage();
     this.liveRefreshEnabled = true;
     window.onfocus = () => {

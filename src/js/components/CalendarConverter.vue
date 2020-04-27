@@ -153,7 +153,7 @@ export default {
       this.updateCalculatedEurDate();
     },
   },
-  created () {
+  mounted () {
     this.updateCurrentEthDate();
   },
 }
