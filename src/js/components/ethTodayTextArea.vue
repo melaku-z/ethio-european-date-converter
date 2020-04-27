@@ -59,12 +59,12 @@ export default {
   mounted () {
     this.refreshEthDateOnPage();
     this.liveRefreshEnabled = true;
-    window.onfocus = () => {
+    window.addEventListener('focus', () => {
       this.liveRefreshEnabled = true;
-    };
-    window.onblur = () => {
+    });
+    window.addEventListener('blur', () => {
       this.liveRefreshEnabled = false;
-    };
+    });
   }
 };
 </script>
