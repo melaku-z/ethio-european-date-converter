@@ -89,7 +89,7 @@ const ethDateTime = new ethDateTime(
 
 ## Demo
 
-A sample web application using this library can be accessed at <https://ethiopian-calendar.netlify.com>
+A sample web application using this library can be accessed at <https://ethiopian-calendar.netlify.app>
 
 ## License
 
