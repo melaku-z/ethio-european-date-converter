@@ -1,7 +1,7 @@
 {
   "name": "ethiopian-calendar-date-converter",
   "description": "Convert dates between Ethiopian and European/Gregorian calendars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "Calendar Converter",
     "Ethiopian Calendar"
@@ -13,7 +13,6 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.8.7",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.5",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
