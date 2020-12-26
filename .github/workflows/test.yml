@@ -3,7 +3,7 @@ name: build and test
 on: [push, pull_request]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -44,6 +44,12 @@ jobs:
       run: yarn test:puppeteer
       env:
         CI: true
+    - name: Archive test results
+      uses: actions/upload-artifact@v2
+      if: ${{ failure() }}
+      with:
+        name: lh-test-report.html
+        path: tests/lhreport.html
 
     # - name: deploy to github-pages # todo: enable on github issue solve: https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869/highlight/true/page/3
     #   uses: JamesIves/github-pages-deploy-action@releases/v3

@@ -1,4 +1,5 @@
 const lighthouse = require('lighthouse');
+const fs = require('fs');
 const startDevServer = require('./jestStartup').startDevServer;
 
 async function openPage(url) {
@@ -65,26 +66,34 @@ describe('home page', () => {
   }, 15000);
 
   it('has acceptable lighthouse score', async () => {
-    const {lhr} = await lighthouse(global.JestTestURL, {
+    const { lhr, report } = await lighthouse(global.JestTestURL, {
       port: (new URL(browser.wsEndpoint())).port,
-      output: 'json',
+      output: 'html',
       logLevel: 'error',
     });
-    const result = {
-      accessibility: lhr.categories.accessibility.score * 100,
-      performance: String(lhr.categories.performance.score * 100),
-      pwa: lhr.categories.pwa.score * 100,
-      seo: lhr.categories.seo.score * 100,
-      'best-practices': lhr.categories['best-practices'].score * 100,
-      pageSpeed: lhr.audits['speed-index'].score * 100,
-    };
-    expect(result).toEqual({
-      accessibility: 100,
-      performance: expect.stringMatching(/99|100/), // HTTP/2 not enabled on dev server
-      pwa: 93, // not 100 for 'Does not redirect HTTP traffic to HTTPS'
-      seo: 100,
-      'best-practices': 93, // not 100 for 'Does not use HTTP/2 for all of its resources '
-      pageSpeed: 100,
-    });
+    fs.writeFileSync('tests/lhreport.html', report);
+    const [result, expectedResult] = getLightHouseSummary(lhr);
+    expect(result).toEqual(expectedResult);
   }, 40000);
 });
+
+function getLightHouseSummary (lhResult) {
+  const categories = ['accessibility', 'performance', 'pwa', 'seo', 'best-practices'];
+  const expectedResult = {
+    accessibility: 100,
+    performance: expect.stringMatching(/99|100/), // HTTP/2 not enabled on dev server
+    pwa: 93, // not 100 for 'Does not redirect HTTP traffic to HTTPS'
+    seo: 100,
+    'best-practices': 86, // not 100 for 'Does not use HTTP/2 for all of its resources', and 'cloudflare CORS policy'
+    pageSpeed: 100,
+  };
+  const result = {
+    pageSpeed: lhResult.audits['speed-index'].score * 100,
+  };
+  categories.forEach(category => {
+    result[category] = lhResult.categories[category].score * 100;
+  });
+  result.performance = String(result.performance);
+  return [result, expectedResult];
+}
+
