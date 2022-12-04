@@ -1,6 +1,9 @@
 name: build and test
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main, master]
+  pull_request:
 
 jobs:
   test:
@@ -41,6 +44,19 @@ jobs:
         with:
           name: lh-test-report.html
           path: tests/lhreport.html
+
+      - name: Install Playwright Browsers
+        run: pnpx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: pnpm run test:e2e
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
 
       # - name: deploy to github-pages # todo: enable on github issue solve: https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869/highlight/true/page/3
       #   uses: JamesIves/github-pages-deploy-action@releases/v3
