@@ -1,15 +1,34 @@
 {
-  "eslint.lintTask.enable": true,
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    ".idea": true,
-    "nbproject": true,
-    "node_modules": true,
-    "packages/*/node_modules": true,
-    "packages/*/coverage": true,
+  "eslint.validate": ["vue", "javascript"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "css.validate": false,
+  // the default StyleLint is checking way too much, so silence all that
+  "stylelint.validate": ["css", "postcss", "vue"],
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "dist": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }
