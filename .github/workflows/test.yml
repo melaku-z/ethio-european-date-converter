@@ -27,6 +27,12 @@ jobs:
         env:
           CI: true
 
+      - name: Setup cache for Chromium binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/puppeteer/chrome
+          key: ${{ runner.os }}-chromium-${{ hashFiles('packages/puppeteer-core/src/revisions.ts') }}
+
       - name: lint
         run: pnpm lint
 
