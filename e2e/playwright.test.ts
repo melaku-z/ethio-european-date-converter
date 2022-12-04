@@ -1,11 +1,21 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
 
 // See here how to get started:
 // https://playwright.dev/docs/intro
-test('Correct dates are displayed', async ({ page,  }) => {
-  
+test('Correct dates are displayed', async ({ page }) => {
   const mockIsoDate = '2018-10-17 22:23:56 GMT+0300'
-  const mockNow = new Date(mockIsoDate).valueOf();
+  await mockDate(page, mockIsoDate)
+
+  await page.goto('/')
+  await expect(page.locator('body')).toHaveText(/Tikimt 7, 2011/)
+  await expect(page.locator('body')).toHaveText(
+    /Wed, 17 Oct 2018 \(at GMT\+0\)/,
+  )
+  await expect(page.locator('body')).toHaveText(/Wednesday, Tikimt 7, 2011/)
+})
+
+async function mockDate(page: Page, mockIsoDate: string) {
+  const mockNow = new Date(mockIsoDate).valueOf()
 
   await page.addInitScript(`{
     // Extend Date constructor to default to fakeNow
@@ -23,9 +33,4 @@ test('Correct dates are displayed', async ({ page,  }) => {
     const __DateNow = Date.now;
     Date.now = () => __DateNow() + __DateNowOffset;
   }`)
-
-  await page.goto('/')
-  await expect(page.locator('body')).toHaveText(/Tikimt 7, 2011/)
-  await expect(page.locator('body')).toHaveText(/Wed, 17 Oct 2018 \(at GMT\+0\)/)
-  await expect(page.locator('body')).toHaveText(/Wednesday, Tikimt 7, 2011/)
-})
+}
