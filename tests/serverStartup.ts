@@ -1,16 +1,12 @@
-const stoppableServer = require('stoppable');
-const { createConfig, createServer } = require('es-dev-server');
+import { startDevServer } from '@web/dev-server'
 
-function startDevServer() {
-  const config = createConfig({
-    rootDir: 'dist',
-    compatibility: 'none',
-    // http2 : true, // todo: enable
-  });
-  let { server } = createServer(config);
-  server = stoppableServer(server, 0);
-  server.listen(8000);
-  return server;
+export async function startServer(port = 8000, rootDir = 'dist') {
+  const server = await startDevServer({
+    config: {
+      rootDir,
+      port,
+    },
+  })
+
+  return server
 }
-
-module.exports.startDevServer = startDevServer;
