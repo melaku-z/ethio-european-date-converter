@@ -1,0 +1,64 @@
+<template>
+  <article class="eth-today-time-text-container">
+    <div class="bg-white w-full p-4 pl-14">
+      Today in Ethiopian Calendar is
+
+      <strong style="font-weight: bold">{{ ethTodayDateText }}</strong>
+      {{ ethTodayTimeText }}
+
+      <button
+        type="button"
+        class="rounded border py-1 px-2 text-xl font-bold ml-1"
+        :class="{
+          'text-white border-white': liveRefreshEnabled,
+        }"
+      >
+        ⟳
+      </button>
+    </div>
+  </article>
+</template>
+
+<script setup lang="ts">
+import { converterString } from 'ethiopian-calendar-date-converter'
+import { onMounted, ref, watch } from 'vue'
+
+const ethTodayDateText = ref('...loading...')
+const ethTodayTimeText = ref('')
+const liveRefreshEnabled = ref(false)
+const liveRefreshObj = ref<number>()
+
+function refreshEthDateOnPage() {
+  ;[ethTodayDateText.value, ethTodayTimeText.value] =
+    converterString.dateTime.toEthiopian(new Date())
+}
+
+function liveDateRefresh() {
+  liveRefreshObj.value = window.setInterval(refreshEthDateOnPage, 1000)
+}
+
+watch(liveRefreshEnabled, (enabled) => {
+  if (enabled) liveDateRefresh()
+  else clearInterval(liveRefreshObj.value)
+})
+
+onMounted(() => {
+  refreshEthDateOnPage()
+  liveRefreshEnabled.value = true
+
+  window.addEventListener('focus', () => {
+    liveRefreshEnabled.value = true
+  })
+  window.addEventListener('blur', () => {
+    liveRefreshEnabled.value = false
+  })
+})
+</script>
+
+<style>
+.eth-today-time-text-container {
+  @apply mx-auto sm:p-3 p-4 break-words text-center text-xl font-light rounded;
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
+}
+</style>

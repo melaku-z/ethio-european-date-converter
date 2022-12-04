@@ -1,59 +1,66 @@
 name: build and test
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main, master]
+  pull_request:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
-    - name: Get yarn cache
-      id: yarn-cache
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
 
-    - name: cache yarn node packages
-      uses: actions/cache@v1
-      with:
-        path: ${{ steps.yarn-cache.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
+      - name: pnpm install
+        run: pnpm install
+        env:
+          CI: true
 
-    - name: yarn install
-      run: yarn install --frozen-lockfile
-      env:
-        CI: true
+      - name: lint
+        run: pnpm lint
 
-    - name: build:dependencies
-      run: yarn build:dependencies
-    - name: build
-      run: yarn build:prod
+      - name: build
+        run: pnpm build
 
-    # - name: test home page - jest
-    #   run: yarn test
+      - name: test
+        run: pnpm test
+        env:
+          CI: true
 
-    - name: test home page - puppeteer
-      run: yarn test:puppeteer
-      env:
-        CI: true
-    - name: Archive test results
-      uses: actions/upload-artifact@v2
-      if: ${{ failure() }}
-      with:
-        name: lh-test-report.html
-        path: tests/lhreport.html
+      - name: Archive test results
+        uses: actions/upload-artifact@v2
+        if: ${{ failure() }}
+        with:
+          name: lh-test-report.html
+          path: tests/lhreport.html
 
-    # - name: deploy to github-pages # todo: enable on github issue solve: https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869/highlight/true/page/3
-    #   uses: JamesIves/github-pages-deploy-action@releases/v3
-    #   with:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # issue: only works with private repositories currently
-    #     BRANCH: gh-pages # The branch the action should deploy to.
-    #     FOLDER: dist # The folder the action should deploy.
+      - name: Install Playwright Browsers
+        run: pnpx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: pnpm run test:e2e
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      # - name: deploy to github-pages # todo: enable on github issue solve: https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869/highlight/true/page/3
+      #   uses: JamesIves/github-pages-deploy-action@releases/v3
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # issue: only works with private repositories currently
+      #     BRANCH: gh-pages # The branch the action should deploy to.
+      #     FOLDER: dist # The folder the action should deploy.

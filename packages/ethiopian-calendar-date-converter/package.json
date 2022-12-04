@@ -1,42 +1,32 @@
 {
   "name": "ethiopian-calendar-date-converter",
   "description": "Convert dates between Ethiopian and European/Gregorian calendars",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "keywords": [
     "Calendar Converter",
     "Ethiopian Calendar"
   ],
   "author": "Melaku Zewdu <melaku44@gmail.com>",
-  "contributors": [],
   "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.8.7",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
-    "cross-env": "^7.0.2",
-    "eslint": "^7.12.0",
-    "eslint-plugin-jest": "^23.8.2",
-    "jest": "^25.3.0",
-    "lodash": "^4.17.15",
-    "rimraf": "^3.0.2",
-    "terser-webpack-plugin": "^3.0.1",
-    "webpack": "^4.42.1"
+    "@vitest/coverage-c8": "^0.25.3",
+    "dts-bundle-generator": "^7.1.0",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4",
+    "vitest": "^0.25.3"
   },
   "scripts": {
-    "clean": "rimraf lib",
-    "lint": "eslint src __tests__ build",
-    "test:node": "jest --env=node",
-    "test:browser": "jest --env=jsdom",
-    "test": "yarn test:node && yarn test:browser",
-    "build:dev": "node build",
-    "build:prod": "cross-env NODE_ENV=production node build",
-    "prepublish": "yarn clean && yarn lint && yarn build:prod && yarn test"
+    "test": "vitest run",
+    "prepublishOnly": "yarn lint && yarn build:prod && yarn test",
+    "dev": "vite --host",
+    "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint:scripts": "eslint . --ext .ts",
+    "format:scripts": "prettier . --write",
+    "format": "npm run format:scripts && npm run format:styles"
   },
   "devEngines": {
-    "node": ">=12.13.0",
-    "npm": ">= 6.12.0",
-    "yarn": "^1.22.0"
+    "node": ">=16"
   },
   "repository": {
     "type": "git",
@@ -48,7 +38,15 @@
   },
   "homepage": "https://github.com/melaku-z/ethio-european-date-converter/tree/master/packages/ethiopian-calendar-date-converter#readme",
   "license": "MIT",
-  "sideEffects": false,
-  "module": "lib/index.es6.js",
-  "main": "lib/index.js"
+  "packageManager": "pnpm@7.17.0",
+  "main": "./dist/ethiopian-calendar-date-converter.cjs",
+  "module": "./dist/ethiopian-calendar-date-converter.mjs",
+  "types": "./dist/ethiopian-calendar-date-converter.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/ethiopian-calendar-date-converter.cjs",
+      "import": "./dist/ethiopian-calendar-date-converter.mjs",
+      "types": "./dist/ethiopian-calendar-date-converter.d.ts"
+    }
+  }
 }

@@ -1,6 +1,6 @@
 # Ethio-European Date Converter
 
-![build and test](https://github.com/melaku-z/ethio-european-date-converter/workflows/build%20and%20test/badge.svg)
+![build and test](https://github.com/melaku-z/ethio-european-date-converter/workflows/test/badge.svg)
 
 Ethiopian calendar is unique for having 13 months, 12 months each with 13 days and 1 more month with 5 or 6 days. It is also 7/8 years behind the European/Gregorian calendar.
 This project contains javascript code (node), and a progressive web application (PWA) for conversion of the date formats back and forth. The web app works offline.
@@ -9,52 +9,73 @@ This web application can be accessed at <https://ethiopian-calendar.netlify.app>
 
 Automatically exported from code.google.com/p/ethio-european-date-converter
 
-## Installation
+## Recommended IDE Setup
 
-Use [yarn](https://classic.yarnpkg.com/en/docs/install) to install and build dependencies.
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-```bash
-yarn install
-yarn build:dependencies
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+pnpm install
 ```
 
-## Development
+### Compile and Hot-Reload for Development
 
-```bash
-yarn start-server-dev:watch
+```sh
+pnpm dev
 ```
 
-View application with live relead on code edit at <http://localhost:8080/>
+### Type-Check, Compile and Minify for Production
 
-## Build and Deploy
-
-1. Build the application
-
-```bash
-yarn install
-yarn build:dependencies
-yarn build:prod
+```sh
+pnpm build
 ```
 
-2. [Optional] Serve
+### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-```bash
-yarn start-server:prod
+```sh
+pnpm test:unit
 ```
 
-View application at <http://localhost:8000/>
+### Run End-to-End Tests with [Playwright](https://playwright.dev)
 
-3. [Optional] Test
+```sh
+# Install browsers for the first run
+npx playwright install
 
-```bash
-yarn test:puppeteer
+# When testing on CI, must build the project first
+pnpm build
+
+# Runs the end-to-end tests
+pnpm test:e2e
+# Runs the tests only on Chromium
+pnpm test:e2e --project=chromium
+# Runs the tests of a specific file
+pnpm test:e2e tests/example.spec.ts
+# Runs the tests in debug mode
+pnpm test:e2e --debug
 ```
 
-View application at <http://localhost:8000/>
+### Lint with [ESLint](https://eslint.org/)
 
-4. Deploy
-
-Deploy the contents of `./dist` to a static file server like [netlify](https://www.netlify.com)
+```sh
+pnpm lint
+```
 
 ## License
 
