@@ -1,70 +1,64 @@
 <template>
-  <article class="container" style="padding: 2em;">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="card" style="width: 100%">
-                <p class="lead text-center" style="margin-top: 1rem">
-                    Today in Ethiopian Calendar is
-                    <span v-cloak>
-                        <strong style="font-weight:bold">{{ ethTodayDateText }}</strong>
-                        {{ ethTodayTimeText }}
-                    </span>
-                    <span v-once>
-                        <span v-if="false">...loading...</span>
-                    </span>
-                    <button type="button" class="btn btn-sm" id="refreshEthDateButton" v-if="! liveRefreshEnabled">
-                        <strong style="font-size: x-large">⟳</strong>
-                    </button>
-                </p>
-            </div>
-        </div>
+  <article class="eth-today-time-text-container">
+    <div class="bg-white w-full p-4 pl-14">
+      Today in Ethiopian Calendar is
+
+      <strong style="font-weight: bold">{{ ethTodayDateText }}</strong>
+      {{ ethTodayTimeText }}
+
+      <button
+        type="button"
+        class="rounded border py-1 px-2 text-xl font-bold ml-1"
+        :class="{
+          'text-white border-white': liveRefreshEnabled,
+        }"
+      >
+        ⟳
+      </button>
     </div>
   </article>
 </template>
 
-<script>
-import {
-  ethDateTime,
-  limits,
-  converterDateTime,
-  converterString
-} from "ethiopian-calendar-date-converter";
+<script setup lang="ts">
+import { converterString } from 'ethiopian-calendar-date-converter'
+import { onMounted, ref, watch } from 'vue'
 
-export default {
-  data () {
-    return {
-      ethTodayDateText: "...",
-      ethTodayTimeText: "...",
-      liveRefreshEnabled: false,
-      liveRefreshObj: null
-    };
-  },
-  methods: {
-    refreshEthDateOnPage () {
-      [
-        this.ethTodayDateText,
-        this.ethTodayTimeText
-      ] = converterString.dateTime.toEthiopian(new Date());
-    },
-    liveDateRefresh () {
-      this.liveRefreshObj = setInterval(this.refreshEthDateOnPage, 1000);
-    }
-  },
-  watch: {
-    liveRefreshEnabled (enabled) {
-      if (enabled) this.liveDateRefresh();
-      else clearInterval(this.liveRefreshObj);
-    }
-  },
-  mounted () {
-    this.refreshEthDateOnPage();
-    this.liveRefreshEnabled = true;
-    window.addEventListener('focus', () => {
-      this.liveRefreshEnabled = true;
-    });
-    window.addEventListener('blur', () => {
-      this.liveRefreshEnabled = false;
-    });
-  }
-};
+const ethTodayDateText = ref('...loading...')
+const ethTodayTimeText = ref('')
+const liveRefreshEnabled = ref(false)
+const liveRefreshObj = ref<number>()
+
+function refreshEthDateOnPage() {
+  ;[ethTodayDateText.value, ethTodayTimeText.value] =
+    converterString.dateTime.toEthiopian(new Date())
+}
+
+function liveDateRefresh() {
+  liveRefreshObj.value = window.setInterval(refreshEthDateOnPage, 1000)
+}
+
+watch(liveRefreshEnabled, (enabled) => {
+  if (enabled) liveDateRefresh()
+  else clearInterval(liveRefreshObj.value)
+})
+
+onMounted(() => {
+  refreshEthDateOnPage()
+  liveRefreshEnabled.value = true
+
+  window.addEventListener('focus', () => {
+    liveRefreshEnabled.value = true
+  })
+  window.addEventListener('blur', () => {
+    liveRefreshEnabled.value = false
+  })
+})
 </script>
+
+<style>
+.eth-today-time-text-container {
+  @apply mx-auto sm:p-3 p-4 break-words text-center text-xl font-light rounded;
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
+}
+</style>

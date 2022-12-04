@@ -1,49 +1,39 @@
-describe('Ethiopian', () => {
-  if (global.jestPreset == 'jest-puppeteer') throw 'invalid preset jest-puppeteer'
-  function openLocalPagejest(url) {
-    window.history.replaceState({}, '', url);
-    const html = require('fs').readFileSync('./dist/index.html', { encoding: 'utf-8' });
-    window.document.querySelector('html').innerHTML  = html;
-  }
-  const page = () => window.document.querySelector('html').outerHTML;
-  const evaluateJS = async (js) => await js();
-  const RealDate = Date;
+/**
+ * @vitest-environment jsdom
+ */
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+
+import { mount, flushPromises } from '@vue/test-utils'
+import App from '@/App.vue'
+
+describe('Root App Component', () => {
+  beforeEach(() => {
+    // tell vitest we use mocked time
+    vi.useFakeTimers()
+  })
 
   afterEach(() => {
-    global.Date = RealDate;
-  });
+    // restoring date after each test run
+    vi.useRealTimers()
+  })
 
-  beforeAll(async () => {
-    return new Promise(async (resolve) => {
-      window.onModulesLoaded = resolve;
-      openLocalPagejest(global.JestTestURL);
-      window.onModulesLoaded = resolve;
-      // window.addEventListener('load', resolve)
-    });
-  });
+  it('renders properly', () => {
+    const wrapper = mount(App)
+    expect(wrapper.text()).toContain('Today in Ethiopian Calendar is')
+  })
 
-  it('should display "Ethiopian" text on page', async () => {
-    await expect(page()).toMatch('Today in Ethiopian Calendar is');
-  });
+  it('should show expected dates', async () => {
+    const mockIsoDate = '2018-10-17 22:23:56 GMT+0300'
 
-  it('should show expected date', async () => {
-    await evaluateJS(async (isoDate) => {
-      function mockDate(isoDate, RealDate) {
-        Date = class extends RealDate {
-          constructor(...args) {
-            if (args.length) return new RealDate(...args);
-            return new RealDate(isoDate);
-          }
-        };
-      }
-      const RealDate = Date;
-      mockDate(isoDate, RealDate);
-      document.querySelector('body').onload();
-      document.getElementById('refreshEthDateButton').click();
-    }, '2018-10-17 22:23:56 GMT+0300');
-    await expect(page()).toMatch('Ethiopian Calendar is Tikimt');
-    await expect(page()).toMatch('Ethiopian Calendar is Tikimt 7, 2011');
-    await expect(page()).toMatch('Wed, 17 Oct 2018 (at GMT+0)');
-    await expect(page()).toMatch('Wednesday, Tikimt 7, 2011');
-  });
-});
+    const date = new Date(mockIsoDate)
+    vi.setSystemTime(date)
+
+    const wrapper = mount(App)
+    await flushPromises()
+
+    expect(wrapper.text()).toMatch('Tikimt')
+    expect(wrapper.text()).toMatch('Tikimt 7, 2011')
+    expect(wrapper.text()).toMatch('Wed, 17 Oct 2018 (at GMT+0)')
+    expect(wrapper.text()).toMatch('Wednesday, Tikimt 7, 2011')
+  })
+})
