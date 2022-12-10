@@ -23,7 +23,7 @@ importers:
       autoprefixer: ^10.4.13
       eslint: ^8.29.0
       eslint-plugin-vue: ^9.8.0
-      ethiopian-calendar-date-converter: workspace:2.0.1
+      ethiopian-calendar-date-converter: workspace:*
       jsdom: ^20.0.3
       lighthouse: ^9.6.8
       npm-run-all: ^4.1.5
