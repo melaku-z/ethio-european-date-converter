@@ -1,8 +1,4 @@
-import {
-  EthDateTime,
-  limits,
-  converterDateTime,
-} from 'ethiopian-calendar-date-converter'
+import { EthDateTime, limits } from 'ethiopian-calendar-date-converter'
 import { computed, onMounted, ref, watch } from 'vue'
 
 export default function useCalendarConverter() {
@@ -20,9 +16,9 @@ export default function useCalendarConverter() {
     try {
       if (ethCalDate.value)
         return new EthDateTime(
-          ethCalDate.value as number,
-          ethCalMon.value as number,
           ethCalYear.value as number,
+          ethCalMon.value as number,
+          ethCalDate.value as number,
         )
       else return null
     } catch (error) {
@@ -30,7 +26,7 @@ export default function useCalendarConverter() {
     }
   })
 
-  const ethCalText = computed(() => ethCalObj.value?.dateWithDayString() || '')
+  const ethCalText = computed(() => ethCalObj.value?.toDateWithDayString() || '')
 
   const eurCalText = computed(() =>
     eurCal.value
@@ -41,7 +37,7 @@ export default function useCalendarConverter() {
   function updateCalculatedEthDate() {
     try {
       if (!eurCal.value) throw 'eurCalendar is empty'
-      const calculatedEthDate = converterDateTime.toEthiopian(eurCal.value)
+      const calculatedEthDate = EthDateTime.fromEuropeanDate(eurCal.value)
       ;[ethCalDate.value, ethCalMon.value, ethCalYear.value] = [
         calculatedEthDate.date,
         calculatedEthDate.month,
@@ -58,10 +54,8 @@ export default function useCalendarConverter() {
 
   function updateCalculatedEurDate() {
     try {
-      eurCalForm.value = converterDateTime
-        .toEuropean(ethCalObj.value as EthDateTime)
-        .toJSON()
-        .slice(0, 10)
+      eurCalForm.value =
+        ethCalObj.value?.toEuropeanDate().toJSON().slice(0, 10) || ''
     } catch (error) {
       eurCalForm.value = ''
     }
@@ -90,7 +84,7 @@ export default function useCalendarConverter() {
     eurCalText,
     minEurDate: limits.europeanCalendarDate.min,
     maxEurDate: limits.europeanCalendarDate.max,
-    minEthYear: limits.ethiopianCalendarYear.min,
-    maxEthYear: limits.ethiopianCalendarYear.max,
+    minEthYear: limits.ethiopianCalendarYear.min(),
+    maxEthYear: limits.ethiopianCalendarYear.max(),
   }
 }
