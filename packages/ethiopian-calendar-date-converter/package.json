@@ -10,20 +10,22 @@
   "devDependencies": {
     "@vitest/coverage-c8": "^0.25.6",
     "dts-bundle-generator": "^7.1.0",
+    "eslint": "^8.29.0",
+    "prettier": "^2.8.1",
     "typescript": "^4.9.4",
     "vite": "^4.0.0",
     "vitest": "^0.25.6"
   },
   "scripts": {
     "test": "vitest run",
-    "prepublishOnly": "yarn lint && yarn build:prod && yarn test",
+    "prepublishOnly": "pnpm lint && pnpm build && pnpm test",
     "dev": "vite --host",
     "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "lint:scripts": "eslint . --ext .ts",
-    "format:scripts": "prettier . --write",
-    "format": "npm run format:scripts && npm run format:styles"
+    "lint:scripts": "eslint . --ext .ts --fix",
+    "lint": "pnpm lint:scripts && pnpm format",
+    "format": "prettier . --write"
   },
   "devEngines": {
     "node": ">=16"

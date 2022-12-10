@@ -23,7 +23,7 @@ importers:
       autoprefixer: ^10.4.13
       eslint: ^8.29.0
       eslint-plugin-vue: ^9.8.0
-      ethiopian-calendar-date-converter: workspace:*
+      ethiopian-calendar-date-converter: workspace:2.0.1
       jsdom: ^20.0.3
       lighthouse: ^9.6.8
       npm-run-all: ^4.1.5
@@ -78,12 +78,16 @@ importers:
     specifiers:
       '@vitest/coverage-c8': ^0.25.6
       dts-bundle-generator: ^7.1.0
+      eslint: ^8.29.0
+      prettier: ^2.8.1
       typescript: ^4.9.4
       vite: ^4.0.0
       vitest: ^0.25.6
     devDependencies:
       '@vitest/coverage-c8': 0.25.6
       dts-bundle-generator: 7.1.0
+      eslint: 8.29.0
+      prettier: 2.8.1
       typescript: 4.9.4
       vite: 4.0.0
       vitest: 0.25.6

@@ -26,7 +26,9 @@ export default function useCalendarConverter() {
     }
   })
 
-  const ethCalText = computed(() => ethCalObj.value?.toDateWithDayString() || '')
+  const ethCalText = computed(
+    () => ethCalObj.value?.toDateWithDayString() || '',
+  )
 
   const eurCalText = computed(() =>
     eurCal.value
