@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { converterString } from 'ethiopian-calendar-date-converter'
+import { EthDateTime } from 'ethiopian-calendar-date-converter'
 import { onMounted, ref, watch } from 'vue'
 
 const ethTodayDateText = ref('...loading...')
@@ -29,8 +29,9 @@ const liveRefreshEnabled = ref(false)
 const liveRefreshObj = ref<number>()
 
 function refreshEthDateOnPage() {
-  ;[ethTodayDateText.value, ethTodayTimeText.value] =
-    converterString.dateTime.toEthiopian(new Date())
+  const now = EthDateTime.now()
+  ethTodayDateText.value = now.toDateWithDayString()
+  ethTodayTimeText.value = now.toTimeString()
 }
 
 function liveDateRefresh() {

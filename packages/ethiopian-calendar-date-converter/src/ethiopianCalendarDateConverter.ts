@@ -1,15 +1,12 @@
+import {
+  fourYears,
+  oneYear,
+  oneDay,
+  globalTimeDifference,
+  maxEurDate,
+  minEurDate,
+} from './dateConstants'
 import { DayOfWeek, MonthEth } from './types'
-
-const oneHour = 60 * 60 * 1000
-const oneDay = 24 * oneHour
-const oneYear = 365 * oneDay
-const oneLeapYear = 366 * oneDay
-const fourYears = 3 * oneYear + oneLeapYear
-const globalTimeDifference =
-  new Date('December 9, 2012').getTime() - new Date('April 1, 2005').getTime()
-
-const minEurDate = new Date(1900, 2, 1)
-const maxEurDate = new Date(2100, 1, 1)
 
 function dayOfWeekString(day: DayOfWeek): string {
   const dayOfWeekStrings = {
@@ -52,14 +49,15 @@ export class EthDateTime {
   second: number
 
   constructor(
-    date: number,
-    mon: number, //mon in human form
     yr: number,
+    mon: number, // mon in human form
+    date: number,
     hr = 0,
     min = 0,
     sec = 0,
   ) {
     if (date > 30) throw new Error(`Invalid Ethiopian Date: ${date}`)
+    if (mon < 1 || mon > 13) throw new Error(`Invalid Ethiopian Month: ${mon}`)
 
     this.year = yr > 200 ? yr : yr + 1900
     this.month = mon as MonthEth
@@ -69,38 +67,54 @@ export class EthDateTime {
     this.second = sec
   }
 
-  timeString = () =>
+  static now(): EthDateTime {
+    const eurNow = new Date()
+    return this.fromEuropeanDate(eurNow)
+  }
+
+  static fromEuropeanDate(europeanDate: Date): EthDateTime {
+    return toEthiopianDateTime(europeanDate)
+  }
+
+  toEuropeanDate(): Date {
+    return toEuropeanDate(this)
+  }
+
+  toTimeString = () =>
     this.hour < 13
-      ? leftpad(this.hour) +
+      ? leftpadZero(this.hour) +
         ':' +
-        leftpad(this.minute) +
+        leftpadZero(this.minute) +
         ':' +
-        leftpad(this.second) +
+        leftpadZero(this.second) +
         ' a.m.'
-      : leftpad(this.hour - 12) +
+      : leftpadZero(this.hour - 12) +
         ':' +
-        leftpad(this.minute) +
+        leftpadZero(this.minute) +
         ':' +
-        leftpad(this.second) +
+        leftpadZero(this.second) +
         ' p.m.'
 
-  dateString = () => monthStringEth(this.month) + this.date + ', ' + this.year
+  toDateString = () => monthStringEth(this.month) + this.date + ', ' + this.year
 
-  dateWithDayString = () =>
-    `${dayOfWeekString(this.getDay())}, ${this.dateString()}`
+  toDateWithDayString = () =>
+    `${dayOfWeekString(this.getDay())}, ${this.toDateString()}`
 
-  dateTimeString = () => `${this.dateString()}, ${this.timeString()}`
+  toString = () => `${this.toDateString()}, ${this.toTimeString()}`
 
-  fullDateTimeString = () =>
-    `${this.dateTimeString()}, ${dayOfWeekString(this.getDay())} .`
+  toFullDateTimeString = () =>
+    `${this.toString()}, ${dayOfWeekString(this.getDay())} .`
 
   getDay = () =>
-    ((this.year + 2 * this.month + this.date + this.yearDifference(this.year)) %
+    ((this.year +
+      2 * this.month +
+      this.date +
+      yearDifferenceForEthDay(this.year)) %
       7) as DayOfWeek
+}
 
-  private yearDifference(ethYear: number) {
-    return -Math.floor((2023 - ethYear) / 4)
-  }
+function yearDifferenceForEthDay(ethYear: number) {
+  return -Math.floor((2023 - ethYear) / 4)
 }
 
 function eurDateIsConvertible(eurDate: Date): boolean {
@@ -135,27 +149,14 @@ function toEthiopianDateTime(eurDate: Date): EthDateTime {
     remainingHours += 24
   }
   const ethDate = new EthDateTime(
-    remainingDays + 1,
-    remainingMonths + 1,
     remainingYears + 4 * fourYearsPassed + 1964,
+    remainingMonths + 1,
+    remainingDays + 1,
     remainingHours,
     eurDate.getMinutes(),
     eurDate.getSeconds(),
   )
   return ethDate
-}
-
-function toEthiopianDateTimeString(eurDate: Date): [string, string] {
-  const EthDateIn = toEthiopianDateTime(eurDate)
-  return [EthDateIn.dateString(), EthDateIn.timeString()]
-}
-
-function toEthiopianDateString(eurDate: Date): string {
-  return toEthiopianDateTime(eurDate).dateString()
-}
-
-function toEthiopianTimeString(eurDate: Date): string {
-  return toEthiopianDateTime(eurDate).timeString()
 }
 
 function toEuropeanDate(ethDate: EthDateTime): Date {
@@ -212,49 +213,17 @@ function toEuropeanDate(ethDate: EthDateTime): Date {
   throw `Date not converted: ${ethDate.year},  ${ethDate.month},  ${ethDate.date}, `
 }
 
-function toEuropeanDateString(ethDate: EthDateTime): string {
-  const EuropeanDate = toEuropeanDate(ethDate)
-  const EuropeanDateStr =
-    EuropeanDate.toUTCString().substring(0, 16) + ' (at GMT+0)'
-  return EuropeanDateStr
+function leftpadZero(Num: number, length = 2): string {
+  return String(Num).padStart(length, '0')
 }
-
-function leftpad(Num: number, length = 2): string {
-  return ('000000000' + Num).slice(-length)
-}
-
-const minEthYear = toEthiopianDateTime(minEurDate).year
-const maxEthYear = toEthiopianDateTime(maxEurDate).year
 
 export const limits = {
   ethiopianCalendarYear: {
-    min: minEthYear,
-    max: maxEthYear,
+    min: () => toEthiopianDateTime(minEurDate).year,
+    max: () => toEthiopianDateTime(maxEurDate).year,
   },
   europeanCalendarDate: {
     min: minEurDate,
     max: maxEurDate,
   },
 }
-
-const converter = {
-  dateTime: {
-    toEthiopian: toEthiopianDateTime,
-    toEuropean: toEuropeanDate,
-  },
-  string: {
-    date: {
-      toEthiopian: toEthiopianDateString,
-      toEuropean: toEuropeanDateString,
-    },
-    time: {
-      toEthiopian: toEthiopianTimeString,
-    },
-    dateTime: {
-      toEthiopian: toEthiopianDateTimeString,
-    },
-  },
-}
-
-export const converterDateTime = converter.dateTime
-export const converterString = converter.string
