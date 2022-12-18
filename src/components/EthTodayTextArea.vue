@@ -47,11 +47,8 @@ onMounted(() => {
   refreshEthDateOnPage()
   liveRefreshEnabled.value = true
 
-  window.addEventListener('focus', () => {
-    liveRefreshEnabled.value = true
-  })
-  window.addEventListener('blur', () => {
-    liveRefreshEnabled.value = false
+  document.addEventListener('visibilitychange', (vis) => {
+    liveRefreshEnabled.value = document.visibilityState == 'visible'
   })
 })
 </script>
