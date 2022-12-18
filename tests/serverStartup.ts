@@ -1,12 +1,24 @@
-import { startDevServer } from '@web/dev-server'
+import { constants } from 'zlib'
+import serve from 'koa-static'
+import compress from 'koa-compress'
+import Koa from 'koa'
 
 export async function startServer(port = 8000, rootDir = 'dist') {
-  const server = await startDevServer({
-    config: {
-      rootDir,
-      port,
-    },
-  })
+  const app = new Koa()
+  app.use(
+    compress({
+      gzip: {
+        flush: constants.Z_SYNC_FLUSH,
+      },
+      deflate: {
+        flush: constants.Z_SYNC_FLUSH,
+      },
+      br: false, // disable brotli
+    }) as unknown as any,
+  )
+  app.use(serve(rootDir))
+
+  const server = app.listen(port)
 
   return server
 }

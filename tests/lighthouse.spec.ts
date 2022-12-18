@@ -7,6 +7,7 @@ import puppeteer from 'puppeteer'
 import { writeFile } from 'fs/promises'
 import { startServer } from './serverStartup'
 import Result from 'lighthouse/types/lhr/lhr'
+import { Server } from 'http'
 
 const categories = [
   'accessibility',
@@ -19,7 +20,7 @@ const categories = [
 describe('home page', async () => {
   const SERVER_PORT = 8001
   // let server = await startServer(SERVER_PORT)
-  let server
+  let server: Server
 
   expect.extend({
     greaterOrEqualTo(received, expected) {
@@ -44,8 +45,8 @@ describe('home page', async () => {
     server = await startServer(SERVER_PORT)
   }, 10000)
 
-  afterAll(async () => {
-    await server?.stop()
+  afterAll(() => {
+    server.close()
   })
 
   it('has acceptable lighthouse score', async () => {
@@ -68,7 +69,7 @@ describe('home page', async () => {
 function getLightHouseSummary(lhResult: Result) {
   const expectedResult = {
     accessibility: '100',
-    performance: expect.stringMatching(/99|100/), // text compression not enabled on dev server
+    performance: '100',
     pwa: '100',
     seo: '100',
     'best-practices': '100',
