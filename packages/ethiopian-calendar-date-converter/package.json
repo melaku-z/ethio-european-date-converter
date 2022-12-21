@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/melaku-z/ethio-european-date-converter/tree/master/packages/ethiopian-calendar-date-converter#readme",
   "license": "MIT",
-  "packageManager": "pnpm@7.18.2",
+  "packageManager": "pnpm@7.19.0",
   "main": "./dist/ethiopian-calendar-date-converter.cjs",
   "module": "./dist/ethiopian-calendar-date-converter.mjs",
   "types": "./dist/ethiopian-calendar-date-converter.d.ts",
