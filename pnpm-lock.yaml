@@ -27,7 +27,7 @@ importers:
       eslint: ^8.30.0
       eslint-plugin-vue: ^9.8.0
       ethiopian-calendar-date-converter: workspace:*
-      jsdom: ^20.0.3
+      jsdom: ^21.0.0
       koa: ^2.14.1
       koa-compress: github:koajs/compress
       koa-static: ^5.0.0
@@ -69,7 +69,7 @@ importers:
       compress: link:@types/koajs/compress
       eslint: 8.30.0
       eslint-plugin-vue: 9.8.0_eslint@8.30.0
-      jsdom: 20.0.3
+      jsdom: 21.0.0
       koa: 2.14.1
       koa-compress: github.com/koajs/compress/41af9e8d9c9dbe33d5e1dab10e606eb74e380c44
       koa-static: 5.0.0
@@ -82,7 +82,7 @@ importers:
       vite: 4.0.2_@types+node@18.11.17
       vite-plugin-pwa: 0.14.0_gusaiip33kkuwpygl36cqmizje
       vite-ssg: 0.22.1_zqaqt7enndzoh6eqfl7fozkvky
-      vitest: 0.26.0_m3teocsshyjhqx3mawnn2w3s4y
+      vitest: 0.26.0_iur7s3cmke665bb7hcsbhyx6pu
       vue-tsc: 1.0.14_typescript@4.9.4
       workbox-window: 6.5.4
 
@@ -4926,6 +4926,47 @@ packages:
       - utf-8-validate
     dev: true
 
+  /jsdom/21.0.0:
+    resolution: {integrity: sha512-AIw+3ZakSUtDYvhwPwWHiZsUi3zHugpMEKlNPaurviseYoBqo0zBd3zqoUi3LPCNtPFlEP8FiW9MqCZdjb2IYA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      canvas: ^2.5.0
+    peerDependenciesMeta:
+      canvas:
+        optional: true
+    dependencies:
+      abab: 2.0.6
+      acorn: 8.8.1
+      acorn-globals: 7.0.1
+      cssom: 0.5.0
+      cssstyle: 2.3.0
+      data-urls: 3.0.2
+      decimal.js: 10.4.3
+      domexception: 4.0.0
+      escodegen: 2.0.0
+      form-data: 4.0.0
+      html-encoding-sniffer: 3.0.0
+      http-proxy-agent: 5.0.0
+      https-proxy-agent: 5.0.1
+      is-potential-custom-element-name: 1.0.1
+      nwsapi: 2.2.2
+      parse5: 7.1.2
+      saxes: 6.0.0
+      symbol-tree: 3.2.4
+      tough-cookie: 4.1.2
+      w3c-xmlserializer: 4.0.0
+      webidl-conversions: 7.0.0
+      whatwg-encoding: 2.0.0
+      whatwg-mimetype: 3.0.0
+      whatwg-url: 11.0.0
+      ws: 8.11.0
+      xml-name-validator: 4.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: true
+
   /jsesc/0.5.0:
     resolution: {integrity: sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==}
     hasBin: true
@@ -6989,7 +7030,7 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.26.0_m3teocsshyjhqx3mawnn2w3s4y:
+  /vitest/0.26.0_iur7s3cmke665bb7hcsbhyx6pu:
     resolution: {integrity: sha512-5kUnms5WOa0qrDCJePEPB13v9mhr+ZT1Qy0qNg0eVj1X7/Fx4GY4L1e5s3OH+BQ/J7M5WtaKsUGv9l1pbC7v2Q==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -7019,7 +7060,7 @@ packages:
       acorn-walk: 8.2.0
       chai: 4.3.7
       debug: 4.3.4
-      jsdom: 20.0.3
+      jsdom: 21.0.0
       local-pkg: 0.4.2
       source-map: 0.6.1
       strip-literal: 1.0.0
