@@ -8,13 +8,13 @@
   ],
   "author": "Melaku Zewdu <melaku44@gmail.com>",
   "devDependencies": {
-    "@vitest/coverage-c8": "^0.26.0",
+    "@vitest/coverage-c8": "^0.26.3",
     "dts-bundle-generator": "^7.1.0",
-    "eslint": "^8.29.0",
-    "prettier": "^2.8.1",
+    "eslint": "^8.31.0",
+    "prettier": "^2.8.2",
     "typescript": "^4.9.4",
-    "vite": "^4.0.0",
-    "vitest": "^0.26.0"
+    "vite": "^4.0.4",
+    "vitest": "^0.26.3"
   },
   "scripts": {
     "test": "vitest run",
@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/melaku-z/ethio-european-date-converter/tree/master/packages/ethiopian-calendar-date-converter#readme",
   "license": "MIT",
-  "packageManager": "pnpm@7.19.0",
+  "packageManager": "pnpm@7.22.0",
   "main": "./dist/ethiopian-calendar-date-converter.cjs",
   "module": "./dist/ethiopian-calendar-date-converter.mjs",
   "types": "./dist/ethiopian-calendar-date-converter.d.ts",

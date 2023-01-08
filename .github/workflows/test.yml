@@ -22,16 +22,16 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: pnpm install
-        run: pnpm install
-        env:
-          CI: true
-
       - name: Setup cache for Chromium binary
         uses: actions/cache@v3
         with:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-pnpm-chromium-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: pnpm install
+        run: pnpm install
+        env:
+          CI: true
 
       - name: lint
         run: pnpm lint
@@ -52,7 +52,7 @@ jobs:
           path: tests/lhreport.html
 
       - name: Install Playwright Browsers
-        run: pnpx playwright install --with-deps
+        run: pnpm run test:playwright:install
 
       - name: Run Playwright tests
         run: pnpm run test:e2e
