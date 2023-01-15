@@ -1,8 +1,9 @@
 # Ethio-European Date Converter
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmelaku-z%2Fethio-european-date-converter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmelaku-z%2Fethio-european-date-converter?ref=badge_shield)
-
 
 ![build and test](<https://github.com/melaku-z/ethio-european-date-converter/workflows/build and test/badge.svg>)
+[![Version](https://img.shields.io/npm/v/ethiopian-calendar-date-converter.svg?sanitize=true)](https://www.npmjs.com/package/ethiopian-calendar-date-converter)
+[![License](https://img.shields.io/npm/l/ethiopian-calendar-date-converter.svg?sanitize=true)](https://www.npmjs.com/package/ethiopian-calendar-date-converter)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmelaku-z%2Fethio-european-date-converter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmelaku-z%2Fethio-european-date-converter?ref=badge_shield)
 
 Ethiopian calendar is unique for having 13 months, 12 months each with 30 days and 1 more month with 5 or 6 days. It is also 7/8 years behind the European/Gregorian calendar.
 This project contains javascript code (node), and a progressive web application (PWA) for conversion of the date formats back and forth. The web app works offline.
@@ -42,8 +43,8 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
 1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
 ### Customize configuration
