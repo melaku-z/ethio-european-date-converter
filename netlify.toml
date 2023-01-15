@@ -2,6 +2,4 @@
 
   publish = "dist/"
 
-  command = "yarn build-dist"
-
-  environment = { YARN_VERSION = "1.13.0" }  
+  command = "pnpm run build"

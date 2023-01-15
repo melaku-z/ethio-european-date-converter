@@ -1,0 +1,54 @@
+{
+  "name": "ethiopian-calendar-date-converter",
+  "description": "Convert dates between Ethiopian and European/Gregorian calendars",
+  "version": "2.0.1",
+  "keywords": [
+    "Calendar Converter",
+    "Ethiopian Calendar"
+  ],
+  "author": "Melaku Zewdu <melaku44@gmail.com>",
+  "devDependencies": {
+    "@vitest/coverage-c8": "^0.27.0",
+    "dts-bundle-generator": "^7.1.0",
+    "eslint": "^8.31.0",
+    "prettier": "^2.8.2",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4",
+    "vitest": "^0.27.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "prepublishOnly": "pnpm lint && pnpm build && pnpm test",
+    "dev": "vite --host",
+    "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint:scripts": "eslint . --ext .ts --fix",
+    "lint": "pnpm lint:scripts && pnpm format",
+    "format": "prettier . --write"
+  },
+  "devEngines": {
+    "node": ">=16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melaku-z/ethio-european-date-converter.git",
+    "directory": "packages/ethiopian-calendar-date-converter"
+  },
+  "bugs": {
+    "url": "https://github.com/melaku-z/ethio-european-date-converter/issues"
+  },
+  "homepage": "https://github.com/melaku-z/ethio-european-date-converter/tree/master/packages/ethiopian-calendar-date-converter#readme",
+  "license": "MIT",
+  "packageManager": "pnpm@7.25.0",
+  "main": "./dist/ethiopian-calendar-date-converter.cjs",
+  "module": "./dist/ethiopian-calendar-date-converter.mjs",
+  "types": "./dist/ethiopian-calendar-date-converter.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/ethiopian-calendar-date-converter.cjs",
+      "import": "./dist/ethiopian-calendar-date-converter.mjs",
+      "types": "./dist/ethiopian-calendar-date-converter.d.ts"
+    }
+  }
+}
