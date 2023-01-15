@@ -5,6 +5,9 @@
 ---
 
 ![build and test](https://github.com/melaku-z/ethio-european-date-converter/workflows/build%20and%20test/badge.svg)
+[![Version](https://img.shields.io/npm/v/ethiopian-calendar-date-converter.svg?sanitize=true)](https://www.npmjs.com/package/ethiopian-calendar-date-converter)
+[![License](https://img.shields.io/npm/l/ethiopian-calendar-date-converter.svg?sanitize=true)](https://www.npmjs.com/package/ethiopian-calendar-date-converter)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmelaku-z%2Fethio-european-date-converter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmelaku-z%2Fethio-european-date-converter?ref=badge_shield)
 
 Ethiopian calendar is unique for having 13 months, 12 months each with 30 days and 1 more month with 5 or 6 days. It is also 7/8 years behind the European/Gregorian calendar.
 This library contains javascript code (node/browser) for conversion of the date formats back and forth.
