@@ -34,7 +34,7 @@
     "compress": "link:@types/koajs/compress",
     "eslint": "^8.32.0",
     "eslint-plugin-vue": "^9.9.0",
-    "jsdom": "^21.0.0",
+    "jsdom": "^22.0.0",
     "koa": "^2.14.1",
     "koa-compress": "github:koajs/compress",
     "koa-static": "^5.0.0",
