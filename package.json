@@ -29,7 +29,7 @@
     "@vue/test-utils": "^2.2.7",
     "@vue/tsconfig": "^0.1.3",
     "@vueuse/head": "^1.0.22",
-    "@web/dev-server": "^0.1.35",
+    "@web/dev-server": "^0.2.0",
     "autoprefixer": "^10.4.13",
     "compress": "link:@types/koajs/compress",
     "eslint": "^8.32.0",
