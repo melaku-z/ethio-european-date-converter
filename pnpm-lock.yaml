@@ -112,7 +112,7 @@ importers:
         version: 4.0.4(@types/node@18.11.18)
       vite-plugin-pwa:
         specifier: ^0.16.0
-        version: 0.16.0(vite@4.0.4)(workbox-build@7.0.0)(workbox-window@6.5.4)
+        version: 0.16.0(vite@4.0.4)(workbox-build@7.0.0)(workbox-window@7.0.0)
       vite-ssg:
         specifier: ^0.22.1
         version: 0.22.1(@vueuse/head@1.0.22)(vite@4.0.4)(vue@3.2.45)
@@ -123,8 +123,8 @@ importers:
         specifier: ^1.0.24
         version: 1.0.24(typescript@4.9.4)
       workbox-window:
-        specifier: ^6.5.4
-        version: 6.5.4
+        specifier: ^7.0.0
+        version: 7.0.0
 
   packages/ethiopian-calendar-date-converter:
     devDependencies:
@@ -6705,7 +6705,7 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-pwa@0.16.0(vite@4.0.4)(workbox-build@7.0.0)(workbox-window@6.5.4):
+  /vite-plugin-pwa@0.16.0(vite@4.0.4)(workbox-build@7.0.0)(workbox-window@7.0.0):
     resolution: {integrity: sha512-E+AQRzHxqNU4ZhEeR8X37/foZB+ezJEhXauE/mcf1UITY6k2Pa1dtlFl+BQu57fTdiVlWim5S0Qy44Yap93Dkg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -6718,7 +6718,7 @@ packages:
       pretty-bytes: 6.0.0
       vite: 4.0.4(@types/node@18.11.18)
       workbox-build: 7.0.0
-      workbox-window: 6.5.4
+      workbox-window: 7.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7074,10 +7074,6 @@ packages:
       workbox-core: 7.0.0
     dev: true
 
-  /workbox-core@6.5.4:
-    resolution: {integrity: sha512-OXYb+m9wZm8GrORlV2vBbE5EC1FKu71GGp0H4rjmxmF4/HLbMCoTFws87M3dFwgpmg0v00K++PImpNQ6J5NQ6Q==}
-    dev: true
-
   /workbox-core@7.0.0:
     resolution: {integrity: sha512-81JkAAZtfVP8darBpfRTovHg8DGAVrKFgHpOArZbdFd78VqHr5Iw65f2guwjE2NlCFbPFDoez3D3/6ZvhI/rwQ==}
     dev: true
@@ -7150,13 +7146,6 @@ packages:
 
   /workbox-sw@7.0.0:
     resolution: {integrity: sha512-SWfEouQfjRiZ7GNABzHUKUyj8pCoe+RwjfOIajcx6J5mtgKkN+t8UToHnpaJL5UVVOf5YhJh+OHhbVNIHe+LVA==}
-    dev: true
-
-  /workbox-window@6.5.4:
-    resolution: {integrity: sha512-HnLZJDwYBE+hpG25AQBO8RUWBJRaCsI9ksQJEp3aCOFCaG5kqaToAYXFRAHxzRluM2cQbGzdQF5rjKPWPA1fug==}
-    dependencies:
-      '@types/trusted-types': 2.0.2
-      workbox-core: 6.5.4
     dev: true
 
   /workbox-window@7.0.0:
