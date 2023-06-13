@@ -1,27 +1,16 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const isCollapsed = ref(true)
-</script>
-
 <template>
-  <article
-    class="flex flex-col rounded break-words border border-1 border-gray-300 bg-white"
+  <details
+    class="rounded break-words border border-1 border-gray-300 bg-white"
   >
-    <button
-      class="border w-full py-3 px-6 bg-gray-200 border-b-1 border-gray-300 text-gray-900"
-      type="button"
-      aria-expanded="false"
-      aria-controls="footer-info-body"
-      @click="isCollapsed = !isCollapsed"
+    <summary
+      class="cursor-pointer list-none text-center border w-full py-3 px-6 bg-gray-200 border-b-1 border-gray-300 text-gray-900"
+      
     >
       ⓘ About Application
-    </button>
+    </summary>
 
     <div
       class="flex-auto p-6"
-      id="footer-info-body"
-      v-bind:class="isCollapsed ? 'hidden' : ''"
     >
       <p>
         The Ethiopian calendar (Amharic: የኢትዮጵያ ዘመን አቆጣጠር) or Eritrean calendar
@@ -45,5 +34,5 @@ const isCollapsed = ref(true)
       </p>
       <p>© Melaku Z.</p>
     </div>
-  </article>
+  </details>
 </template>
