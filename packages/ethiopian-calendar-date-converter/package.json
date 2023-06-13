@@ -46,9 +46,9 @@
   "types": "./dist/ethiopian-calendar-date-converter.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/ethiopian-calendar-date-converter.d.ts",
       "require": "./dist/ethiopian-calendar-date-converter.cjs",
-      "import": "./dist/ethiopian-calendar-date-converter.mjs",
-      "types": "./dist/ethiopian-calendar-date-converter.d.ts"
+      "import": "./dist/ethiopian-calendar-date-converter.mjs"
     }
   }
 }
