@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ethiopian Calendar Converter</string>
+    <string name="title_activity_main">Ethiopian Calendar Converter</string>
+    <string name="package_name">app.calendar.ethiopian.converter</string>
+    <string name="custom_url_scheme">app.calendar.ethiopian.converter</string>
+</resources>
