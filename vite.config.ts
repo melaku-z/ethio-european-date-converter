@@ -97,6 +97,8 @@ export default defineConfig({
       'node_modules',
       'dist',
       '.idea',
+      '.gradle',
+      'android',
       '.git',
       '.cache',
       'packages',
