@@ -28,6 +28,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
+  "npm.packageManager": "pnpm",
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   }
