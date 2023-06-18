@@ -30,4 +30,4 @@ playwright-report/
 dev-dist
 tests/lhreport.html
 
-.gradle
+mobile/.gradle

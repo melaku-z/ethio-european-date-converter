@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@capacitor/android": "^5.0.5",
+    "@capacitor/core": "^5.0.5"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^2.0.4",
+    "@capacitor/cli": "^5.0.5"
+  },
+  "scripts": {
+    "generate:assets": "capacitor-assets generate --iconBackgroundColor '#fff' --iconBackgroundColorDark '#000' --splashBackgroundColor '#157878' --splashBackgroundColorDark '#157878'",
+    "build:android": "pnpm build && pnpm cap sync",
+    "sync:android": "pnpm cap sync",
+    "debug:android": "cap run android"
+  },
+  "packageManager": "pnpm@8.6.1",
+  "pnpm": {
+    "overrides": {
+      "ethiopian-calendar-date-converter": "workspace:*"
+    }
+  },
+  "private": true
+}
