@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   android-builder:
-    image: mingc/android-build-box
+    image: thyrlian/android-sdk
     volumes:
       - ./:/web
       - ./.gradle:/root/.gradle

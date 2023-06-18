@@ -16,6 +16,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       manifest: {
         name: 'Ethio-European Date Converter',
+        short_name: 'Ethiopian Date',
         description:
           'Convert dates between Ethiopian and European calendar offline.',
         background_color: '#fff', // Background colour for flattened icons. `string`
@@ -72,6 +73,7 @@ export default defineConfig({
           {
             src: '/icons-b23883c8/icons.svg',
             sizes: 'any',
+            type: 'image/svg+xml',
           },
           {
             src: '/icons-b23883c8/windows11/LargeTile.scale-100.png',
