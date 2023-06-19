@@ -31,3 +31,4 @@ dev-dist
 tests/lhreport.html
 
 mobile/.gradle
+mobile/android-sdk

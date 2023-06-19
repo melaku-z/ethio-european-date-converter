@@ -4,11 +4,14 @@ services:
   android-builder:
     image: thyrlian/android-sdk
     volumes:
-      - ./:/web
+      - ../:/web
       - ./.gradle:/root/.gradle
+      - ./android-sdk/platforms:/opt/android-sdk/platforms
+      - ./android-sdk/patcher:/opt/android-sdk/patcher
+      # - ./android-sdk/platform-tools:/opt/android-sdk/platform-tools
     # command: gradle assembleDebug
     # command: ./gradlew assembleRelease
     # command: ./gradlew bundleRelease
     # command: ./gradlew buildRelease
     command: ./gradlew build
-    working_dir: /web/android
+    working_dir: /web/mobile/android
