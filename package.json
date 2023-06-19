@@ -68,7 +68,7 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
-  "packageManager": "pnpm@8.6.1",
+  "packageManager": "pnpm@8.6.3",
   "pnpm": {
     "overrides": {
       "ethiopian-calendar-date-converter": "workspace:*"
