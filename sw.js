@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-01d9f47c'], (function (workbox) { 'use strict';
+define(['./workbox-ab7aa862'], (function (workbox) { 'use strict';
 
   self.skipWaiting();
   workbox.clientsClaim();
@@ -78,23 +78,20 @@ define(['./workbox-01d9f47c'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
-    "url": "assets/app-1e60832f.js",
+    "url": "assets/app-7cc80f14.js",
     "revision": null
   }, {
-    "url": "assets/index-95c5e6dd.css",
+    "url": "assets/index-7274410b.css",
     "revision": null
   }, {
-    "url": "assets/pwa-4501c027.js",
-    "revision": null
-  }, {
-    "url": "assets/workbox-window.prod.es5-295a6886.js",
+    "url": "assets/workbox-window.prod.es5-a7b12eab.js",
     "revision": null
   }, {
     "url": "google4ea6bc293950abe1.html",
     "revision": "f5390ad846f57f3cc1e069e1ca354a23"
   }, {
     "url": "index.html",
-    "revision": "a54f32639ef04276a6a003b0ffe55e8d"
+    "revision": "cfedde92633473c3c68a80675f104fbc"
   }, {
     "url": "icons-b23883c8/android-chrome-36x36.png",
     "revision": "656b2f5cfdae0e548abee573998395fb"
@@ -124,10 +121,142 @@ define(['./workbox-01d9f47c'], (function (workbox) { 'use strict';
     "revision": "8f4ecd8960c52e6451c774404a47e641"
   }, {
     "url": "icons-b23883c8/icons.svg",
-    "revision": "6ed1638e1bf3bf512a7da04a7a1331ce"
+    "revision": "0b02079eea64e85f9be7298578c00b26"
+  }, {
+    "url": "icons-b23883c8/windows11/LargeTile.scale-100.png",
+    "revision": "926c066e6aef6c9702b84c2866b66c3e"
+  }, {
+    "url": "icons-b23883c8/windows11/LargeTile.scale-125.png",
+    "revision": "ee5d141de669a5ce11162466e86d6269"
+  }, {
+    "url": "icons-b23883c8/windows11/LargeTile.scale-150.png",
+    "revision": "f72471fc5d54e69557be50671d69d5bc"
+  }, {
+    "url": "icons-b23883c8/windows11/LargeTile.scale-200.png",
+    "revision": "51fa1a742dc9b1d0b364cd39c4ba47a0"
+  }, {
+    "url": "icons-b23883c8/windows11/LargeTile.scale-400.png",
+    "revision": "9b27424f6b717b47fd794c375fa298ef"
+  }, {
+    "url": "icons-b23883c8/android/android-launchericon-512-512.png",
+    "revision": "e76b9072bad1b6c82cbbf44f996b2f0e"
+  }, {
+    "url": "icons-b23883c8/android/android-launchericon-192-192.png",
+    "revision": "80996b103e64f2a8847f8f23a1519ab2"
+  }, {
+    "url": "icons-b23883c8/android/android-launchericon-144-144.png",
+    "revision": "f5f1588b53bc4c60e97a4b8aa8aa9dea"
+  }, {
+    "url": "icons-b23883c8/android/android-launchericon-96-96.png",
+    "revision": "fd25dd6b86a7949357a59a610bfbdfec"
+  }, {
+    "url": "icons-b23883c8/android/android-launchericon-72-72.png",
+    "revision": "35e2a38b41a64f38329ac6d76935c0c8"
+  }, {
+    "url": "icons-b23883c8/android/android-launchericon-48-48.png",
+    "revision": "00eb03278bd518496ef9b8f92974ca78"
+  }, {
+    "url": "icons-b23883c8/ios/16.png",
+    "revision": "7710fa83770641393150985cb4aa2bbe"
+  }, {
+    "url": "icons-b23883c8/ios/20.png",
+    "revision": "aca2ff38bde39a1afee00ee1d6d1e472"
+  }, {
+    "url": "icons-b23883c8/ios/29.png",
+    "revision": "22772dc8e104cf20252e2b30aaa03d27"
+  }, {
+    "url": "icons-b23883c8/ios/32.png",
+    "revision": "ebaa837a48433071607e98d99c6670d9"
+  }, {
+    "url": "icons-b23883c8/ios/40.png",
+    "revision": "c57dd9481b152e8515358f1d04b3b51e"
+  }, {
+    "url": "icons-b23883c8/ios/50.png",
+    "revision": "fcfa0ec289bf0e2954d9cb3c7b1f4401"
+  }, {
+    "url": "icons-b23883c8/ios/57.png",
+    "revision": "4ce572adc9b984d5ec12bed1a3363fd9"
+  }, {
+    "url": "icons-b23883c8/ios/58.png",
+    "revision": "2cf39d8cb7c352d85b0266f12059239f"
+  }, {
+    "url": "icons-b23883c8/ios/60.png",
+    "revision": "a6c127b208bd9b473cd15c40fefe7acb"
+  }, {
+    "url": "icons-b23883c8/ios/64.png",
+    "revision": "468d75ba2465accf74923438b8bbfb24"
+  }, {
+    "url": "icons-b23883c8/ios/72.png",
+    "revision": "35e2a38b41a64f38329ac6d76935c0c8"
+  }, {
+    "url": "icons-b23883c8/ios/76.png",
+    "revision": "2ce5b7ff87fb35bff3af6259f7fd984a"
+  }, {
+    "url": "icons-b23883c8/ios/80.png",
+    "revision": "e83de94a6249425c108ddc08c09450c4"
+  }, {
+    "url": "icons-b23883c8/ios/87.png",
+    "revision": "d54fa4efda6112c29031f6f8fc30b6c6"
+  }, {
+    "url": "icons-b23883c8/ios/100.png",
+    "revision": "49804bb4bc1405e08396739166ad3be4"
+  }, {
+    "url": "icons-b23883c8/ios/114.png",
+    "revision": "e9ca2417f5320215a5aa857eb31e6ef9"
+  }, {
+    "url": "icons-b23883c8/ios/120.png",
+    "revision": "8ed390f25cdb18810f979026ff7ac069"
+  }, {
+    "url": "icons-b23883c8/ios/128.png",
+    "revision": "74b7620e07992b6d802ca5b32d64849d"
+  }, {
+    "url": "icons-b23883c8/ios/144.png",
+    "revision": "f5f1588b53bc4c60e97a4b8aa8aa9dea"
+  }, {
+    "url": "icons-b23883c8/ios/152.png",
+    "revision": "38c73d95c24462ea4b618fa1a599fa8b"
+  }, {
+    "url": "icons-b23883c8/ios/167.png",
+    "revision": "ea87dd6f5dec644a7a3d8c1396c53f37"
+  }, {
+    "url": "icons-b23883c8/ios/180.png",
+    "revision": "fb3322d81949405badcf4ad09307e902"
+  }, {
+    "url": "icons-b23883c8/ios/192.png",
+    "revision": "80996b103e64f2a8847f8f23a1519ab2"
+  }, {
+    "url": "icons-b23883c8/ios/256.png",
+    "revision": "f5ce614b0776b7693192e8bd009e3bbc"
+  }, {
+    "url": "icons-b23883c8/ios/512.png",
+    "revision": "e76b9072bad1b6c82cbbf44f996b2f0e"
+  }, {
+    "url": "icons-b23883c8/ios/1024.png",
+    "revision": "7036ccc0a23f38947fccb11a614e1b26"
+  }, {
+    "url": "./icons-b23883c8/maskable/maskable_icon_x48.png",
+    "revision": "5664229485f0c486f89e4fa6bcf0a996"
+  }, {
+    "url": "./icons-b23883c8/maskable/maskable_icon_x72.png",
+    "revision": "12cae7b7b18414b1f2bfa6684c467157"
+  }, {
+    "url": "./icons-b23883c8/maskable/maskable_icon_x96.png",
+    "revision": "f1f3bfa20e45a5459176b974ca953540"
+  }, {
+    "url": "./icons-b23883c8/maskable/maskable_icon_x128.png",
+    "revision": "6fc266d1cfbb4cb075c0b1ea87609e07"
+  }, {
+    "url": "./icons-b23883c8/maskable/maskable_icon_x192.png",
+    "revision": "72a1e8cb8773b16a1bec8718ae1454fc"
+  }, {
+    "url": "./icons-b23883c8/maskable/maskable_icon_x384.png",
+    "revision": "e626c9b7f05f2cf1e6c5756ba4c41439"
+  }, {
+    "url": "./icons-b23883c8/maskable/maskable_icon_x512.png",
+    "revision": "3797e4e3a2e61588453f196391e243fb"
   }, {
     "url": "manifest.webmanifest",
-    "revision": "4d275df851ee3f1b06b856470ff9343e"
+    "revision": "35db8f422eeb1c8b9a1b5533010c7147"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html")));
