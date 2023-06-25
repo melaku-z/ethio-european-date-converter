@@ -281,4 +281,5 @@ export default defineConfig({
       'e2e',
     ],
   },
+  base: process.env.BASE_URL,
 })

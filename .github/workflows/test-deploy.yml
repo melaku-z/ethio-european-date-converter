@@ -75,11 +75,6 @@ jobs:
           path: playwright-report/
           retention-days: 30
 
-      - name: Upload artifact # for github pages
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist
-
   # Deployment job for github pages
   deploy-github-pages:
     environment:
@@ -89,6 +84,31 @@ jobs:
     needs: build-test
     if: github.ref == 'refs/heads/master'
     steps:
+      - uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+          
+      - name: pnpm install
+        run: pnpm install
+        env:
+          CI: true
+          
+      - name: build
+        run: pnpm build
+        env:
+          BASE_URL: /ethio-european-date-converter/
+      - name: Upload artifact # for github pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
