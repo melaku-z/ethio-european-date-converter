@@ -52,12 +52,12 @@ describe('home page', async () => {
   it('has acceptable lighthouse score', async () => {
     const browser = await puppeteer.launch()
 
-    const { lhr, report } = await lighthouse('http://localhost:8001/', {
+    const { lhr, report } = (await lighthouse('http://localhost:8001/', {
       port: Number(new URL(browser.wsEndpoint()).port),
       output: ['html'],
       logLevel: 'error',
       onlyCategories: categories,
-    })
+    }))!
     // await writeFile('tests/lhreport.html', String(report))
     const [result, expectedResult] = getLightHouseSummary(lhr)
     expect(result).toEqual(expectedResult)

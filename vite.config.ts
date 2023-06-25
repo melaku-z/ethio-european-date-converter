@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
+import { configDefaults } from 'vitest/config'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -270,16 +271,17 @@ export default defineConfig({
   },
   test: {
     exclude: [
-      'node_modules',
-      'dist',
-      '.idea',
+      ...configDefaults.exclude,
       '.gradle',
-      'android',
-      '.git',
+      'mobile',
       '.cache',
       'packages',
       'e2e',
     ],
+    root: fileURLToPath(new URL('./', import.meta.url)),
+    transformMode: {
+      web: [/\.[jt]sx$/],
+    },
   },
   base: process.env.BASE_URL,
 })
