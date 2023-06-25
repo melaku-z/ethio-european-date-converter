@@ -13,6 +13,7 @@
         class="mr-2"
         width="496"
         height="512"
+        loading="lazy"
       />
       View on Github
     </a>
@@ -28,6 +29,7 @@
         class="mr-2"
         width="448"
         height="512"
+        loading="lazy"
       />
 
       Find me on LinkedIn
