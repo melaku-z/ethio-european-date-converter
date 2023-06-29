@@ -101,7 +101,7 @@
 </template>
 
 <script setup lang="ts">
-import useCalendarConverter from '@/assets/composables/useConverter.vue'
+import useCalendarConverter from '@/composables/useConverter'
 
 const {
   ethCalDate,
@@ -119,7 +119,7 @@ const {
 
 <style lang="postcss">
 .card {
-  @apply flex flex-col rounded border border-gray-300 p-4 w-full md:w-96;
+  @apply flex flex-col rounded border border-gray-300 p-4 w-full md:w-96 md:mx-auto;
   background-color: rgba(86, 61, 124, 0.15);
   border: 1px solid rgba(86, 61, 124, 0.2);
 }

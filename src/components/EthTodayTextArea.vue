@@ -3,7 +3,9 @@
     <div class="bg-white w-full p-4 pl-14">
       Today in Ethiopian Calendar is
 
-      <strong style="font-weight: bold">{{ ethTodayDateText }}</strong>
+      <strong class="font-bold">
+        {{ ethTodayDateText || '...loading...' }}
+      </strong>
       {{ ethTodayTimeText }}
 
       <button
@@ -20,36 +22,20 @@
 </template>
 
 <script setup lang="ts">
-import { EthDateTime } from 'ethiopian-calendar-date-converter'
-import { onMounted, ref, watch } from 'vue'
+import { useEthTodayDateTimeText } from '@/composables/useEthTodayDateTime'
+import { onMounted } from 'vue'
 
-const ethTodayDateText = ref('...loading...')
-const ethTodayTimeText = ref('')
-const liveRefreshEnabled = ref(false)
-const liveRefreshObj = ref<number>()
+const { ethTodayDateText, ethTodayTimeText, liveRefreshEnabled } =
+  useEthTodayDateTimeText()
 
-function refreshEthDateOnPage() {
-  const now = EthDateTime.now()
-  ethTodayDateText.value = now.toDateWithDayString()
-  ethTodayTimeText.value = now.toTimeString()
+function onVisibilitychange() {
+  liveRefreshEnabled.value = document.visibilityState == 'visible'
 }
-
-function liveDateRefresh() {
-  liveRefreshObj.value = window.setInterval(refreshEthDateOnPage, 1000)
-}
-
-watch(liveRefreshEnabled, (enabled) => {
-  if (enabled) liveDateRefresh()
-  else clearInterval(liveRefreshObj.value)
-})
 
 onMounted(() => {
-  refreshEthDateOnPage()
   liveRefreshEnabled.value = true
 
-  document.addEventListener('visibilitychange', (vis) => {
-    liveRefreshEnabled.value = document.visibilityState == 'visible'
-  })
+  document.addEventListener('visibilitychange', onVisibilitychange)
 })
 </script>
 
