@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { useEthTodayDateTimeText } from '@/composables/useEthTodayDateTime'
+import { useEthTodayDateTimeText } from 'ethiopian-calendar-date-converter-vue'
 import { onMounted } from 'vue'
 
 const { ethTodayDateText, ethTodayTimeText, liveRefreshEnabled } =

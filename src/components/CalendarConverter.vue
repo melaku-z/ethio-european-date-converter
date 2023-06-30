@@ -101,7 +101,7 @@
 </template>
 
 <script setup lang="ts">
-import useCalendarConverter from '@/composables/useConverter'
+import { useCalendarConverter } from 'ethiopian-calendar-date-converter-vue'
 import { limits } from 'ethiopian-calendar-date-converter'
 import { computed, onMounted } from 'vue'
 
