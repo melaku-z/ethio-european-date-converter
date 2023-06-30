@@ -20,6 +20,7 @@ describe('Root App Component', () => {
   it('renders properly', () => {
     const wrapper = mount(App)
     expect(wrapper.text()).toContain('Today in Ethiopian Calendar is')
+    wrapper.unmount()
   })
 
   it('should show expected dates', async () => {
@@ -35,5 +36,6 @@ describe('Root App Component', () => {
     expect(wrapper.text()).toMatch('Tikimt 7, 2011')
     expect(wrapper.text()).toMatch('Wed, 17 Oct 2018 (at GMT+0)')
     expect(wrapper.text()).toMatch('Wednesday, Tikimt 7, 2011')
+    wrapper.unmount()
   })
 })

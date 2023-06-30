@@ -1,17 +1,12 @@
 <template>
-  <details
-    class="rounded break-words border border-1 border-gray-300 bg-white"
-  >
+  <details class="rounded break-words border border-1 border-gray-300 bg-white">
     <summary
       class="cursor-pointer list-none text-center border w-full py-3 px-6 bg-gray-200 border-b-1 border-gray-300 text-gray-900"
-      
     >
       ⓘ About Application
     </summary>
 
-    <div
-      class="flex-auto p-6"
-    >
+    <div class="flex-auto p-6">
       <p>
         The Ethiopian calendar (Amharic: የኢትዮጵያ ዘመን አቆጣጠር) or Eritrean calendar
         is the principal calendar used in Ethiopia.
