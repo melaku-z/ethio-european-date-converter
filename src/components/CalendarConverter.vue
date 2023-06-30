@@ -11,24 +11,24 @@
 
       <div class="p-6 bg-white flex-grow">
         <input
-          v-model="eurCalForm"
+          v-model="eurCalString"
           type="date"
           class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-white py-1 px-2 text-base leading-normal text-gray-800"
           id="EuropeanDate"
           pattern="\d{4}-\d{2}-\d{2}"
-          v-bind:min="
-            minEurDate.getFullYear() +
+          :min="
+            limits.europeanCalendarDate.min.getFullYear() +
             '-' +
-            minEurDate.getMonth() +
+            limits.europeanCalendarDate.min.getMonth() +
             '-' +
-            minEurDate.getDate()
+            limits.europeanCalendarDate.min.getDate()
           "
-          v-bind:max="
-            maxEurDate.getFullYear() +
+          :max="
+            limits.europeanCalendarDate.max.getFullYear() +
             '-' +
-            maxEurDate.getMonth() +
+            limits.europeanCalendarDate.max.getMonth() +
             '-' +
-            maxEurDate.getDate()
+            limits.europeanCalendarDate.max.getDate()
           "
         />
         <p class="my-2">
@@ -57,7 +57,7 @@
           aria-label="Ethioian Date"
         >
           <input
-            v-model.lazy.number="ethCalMon"
+            v-model.lazy.number="ethDate.month"
             aria-label="Ethioian Month"
             type="number"
             class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-white py-1 px-2 text-base leading-normal text-gray-800"
@@ -68,7 +68,7 @@
           />
           /
           <input
-            v-model.lazy.number="ethCalDate"
+            v-model.lazy.number="ethDate.date"
             aria-label="Ethioian Date of Month"
             type="number"
             class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-white py-1 px-2 text-base leading-normal text-gray-800"
@@ -79,13 +79,13 @@
           />
           /
           <input
-            v-model.lazy.number="ethCalYear"
+            v-model.lazy.number="ethDate.year"
             aria-label="Ethioian Year"
             type="number"
             class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-white py-1 px-2 text-base leading-normal text-gray-800"
             id="EthYearScroll"
-            v-bind:min="minEthYear"
-            v-bind:max="maxEthYear"
+            :min="limits.ethiopianCalendarYear.min()"
+            :max="limits.ethiopianCalendarYear.max()"
             style="width: 4em; padding-left: 2px; padding-right: 0"
           />
         </div>
@@ -102,19 +102,29 @@
 
 <script setup lang="ts">
 import useCalendarConverter from '@/composables/useConverter'
+import { limits } from 'ethiopian-calendar-date-converter'
+import { computed, onMounted } from 'vue'
 
-const {
-  ethCalDate,
-  ethCalMon,
-  ethCalYear,
-  ethCalText,
-  eurCalForm,
-  eurCalText,
-  minEurDate,
-  maxEurDate,
-  minEthYear,
-  maxEthYear,
-} = useCalendarConverter()
+const { ethDate, eurCalString, setInitialCurrentDate } = useCalendarConverter()
+
+onMounted(setInitialCurrentDate)
+
+const eurCalText = computed(() => {
+  const [eurYear, eurMon, eurDate] = eurCalString.value.split('-').map(Number)
+  if (!eurDate) return ''
+
+  return (
+    new Date(Date.UTC(eurYear, eurMon - 1, eurDate))
+      .toUTCString()
+      .substring(0, 16) + ' (at GMT+0)'
+  )
+})
+
+const ethCalText = computed(() =>
+  'toDateWithDayString' in ethDate.value
+    ? ethDate.value.toDateWithDayString()
+    : '',
+)
 </script>
 
 <style lang="postcss">

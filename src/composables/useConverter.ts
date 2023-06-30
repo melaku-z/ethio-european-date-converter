@@ -1,92 +1,84 @@
-import { EthDateTime, limits } from 'ethiopian-calendar-date-converter'
-import { computed, onMounted, ref, watch } from 'vue'
+import { EthDateTime } from 'ethiopian-calendar-date-converter'
+import { computed, ref, watch } from 'vue'
 
 export default function useCalendarConverter() {
-  const ethCalDate = ref<number>()
-  const ethCalMon = ref<number>()
-  const ethCalYear = ref<number>()
-  const eurCalForm = ref('')
+  interface EthDateRef {
+    date: number | null
+    month: number | null
+    year: number | null
+  }
+
+  const ethDate = ref<EthDateRef | EthDateTime>({
+    date: null,
+    month: null,
+    year: null,
+  })
+
+  const eurCalString = ref('')
 
   const eurCal = computed(() => {
-    const [eurYear, eurMon, eurDate] = eurCalForm.value.split('-').map(Number)
-    return eurDate ? new Date(Date.UTC(eurYear, eurMon - 1, eurDate)) : ''
+    const [eurYear, eurMon, eurDate] = eurCalString.value.split('-').map(Number)
+
+    return eurDate ? new Date(Date.UTC(eurYear, eurMon - 1, eurDate)) : null
   })
 
   const ethCalObj = computed(() => {
     try {
-      if (ethCalDate.value)
-        return new EthDateTime(
-          ethCalYear.value as number,
-          ethCalMon.value as number,
-          ethCalDate.value as number,
-        )
-      else return null
+      return ethDate.value.date
+        ? new EthDateTime(
+            ethDate.value.year as number,
+            ethDate.value.month as number,
+            ethDate.value.date as number,
+          )
+        : null
     } catch (error) {
       return null
     }
   })
 
-  const ethCalText = computed(
-    () => ethCalObj.value?.toDateWithDayString() || '',
-  )
-
-  const eurCalText = computed(() =>
-    eurCal.value
-      ? eurCal.value.toUTCString().substring(0, 16) + ' (at GMT+0)'
-      : '',
-  )
-
   function updateCalculatedEthDate() {
     try {
       if (!eurCal.value) throw 'eurCalendar is empty'
-      const calculatedEthDate = EthDateTime.fromEuropeanDate(eurCal.value)
-      ;[ethCalDate.value, ethCalMon.value, ethCalYear.value] = [
-        calculatedEthDate.date,
-        calculatedEthDate.month,
-        calculatedEthDate.year,
-      ]
+      ethDate.value = EthDateTime.fromEuropeanDate(eurCal.value)
     } catch (error) {
-      ;[ethCalDate.value, ethCalMon.value, ethCalYear.value] = [
-        undefined,
-        undefined,
-        undefined,
-      ]
+      ethDate.value = {
+        date: null,
+        month: null,
+        year: null,
+      }
     }
   }
 
   function updateCalculatedEurDate() {
     try {
-      eurCalForm.value =
+      eurCalString.value =
         ethCalObj.value?.toEuropeanDate().toJSON().slice(0, 10) || ''
     } catch (error) {
-      eurCalForm.value = ''
+      eurCalString.value = ''
     }
   }
 
-  function updateCurrentEthDate() {
+  function setInitialCurrentDate() {
     const currentDate = new Date()
     const dateAtGMT = new Date(
       currentDate.valueOf() + currentDate.getTimezoneOffset() * 60000,
     )
-    eurCalForm.value = dateAtGMT.toJSON().slice(0, 10)
+    eurCalString.value = dateAtGMT.toJSON().slice(0, 10)
     updateCalculatedEthDate()
   }
 
-  watch(eurCal, updateCalculatedEthDate)
-  watch(ethCalObj, updateCalculatedEurDate)
+  watch(eurCal, (dateNew, dateOld) => {
+    if (dateOld?.getTime() != dateNew?.getTime()) updateCalculatedEthDate()
+  })
 
-  onMounted(updateCurrentEthDate)
+  watch(ethCalObj, (dateNew, dateOld) => {
+    if (dateNew?.toFullDateTimeString() != dateOld?.toFullDateTimeString())
+      updateCalculatedEurDate()
+  })
 
   return {
-    ethCalDate,
-    ethCalMon,
-    ethCalYear,
-    ethCalText,
-    eurCalForm,
-    eurCalText,
-    minEurDate: limits.europeanCalendarDate.min,
-    maxEurDate: limits.europeanCalendarDate.max,
-    minEthYear: limits.ethiopianCalendarYear.min(),
-    maxEthYear: limits.ethiopianCalendarYear.max(),
+    ethDate,
+    eurCalString,
+    setInitialCurrentDate,
   }
 }
