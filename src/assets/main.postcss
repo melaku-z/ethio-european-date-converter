@@ -10,8 +10,16 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --theme-background: white;
+  --theme-text-color: #2c3e50;
   color: #2c3e50;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --theme-background: #1d201f;
+    --theme-text-color: #f7f5f3;
+  }
 }
 
 *,

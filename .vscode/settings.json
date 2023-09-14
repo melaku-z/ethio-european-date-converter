@@ -1,5 +1,5 @@
 {
-  "eslint.validate": ["vue", "javascript"],
+  "eslint.validate": ["vue", "javascript", "typescript"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
@@ -9,6 +9,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "css.validate": false,
+  "postcss.validate": false,
   // the default StyleLint is checking way too much, so silence all that
   "stylelint.validate": ["css", "postcss", "vue"],
   "emmet.includeLanguages": {

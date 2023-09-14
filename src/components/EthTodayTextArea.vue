@@ -1,6 +1,6 @@
 <template>
   <article class="eth-today-time-text-container">
-    <div class="bg-white w-full p-4 pl-14">
+    <div class="bg-theme-bg text-theme-text w-full p-4 pl-14">
       Today in Ethiopian Calendar is
 
       <strong class="font-bold">
