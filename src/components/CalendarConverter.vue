@@ -1,19 +1,15 @@
 <template>
   <div class="flex flex-wrap mx-auto my-14">
-    <div class="card">
-      <label
-        for="EuropeanDate"
-        class="card-header"
-        style="background-color: rgb(70, 163, 255)"
-      >
+    <section class="card">
+      <label for="EuropeanDate" class="card-header european-date-header">
         European Date
       </label>
 
-      <div class="p-6 bg-white flex-grow">
+      <div class="p-6 bg-theme-bg text-theme-text flex-grow">
         <input
           v-model="eurCalString"
           type="date"
-          class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-white py-1 px-2 text-base leading-normal text-gray-800"
+          class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-theme-bg text-theme-text py-1 px-2 text-base leading-normal text-gray-800"
           id="EuropeanDate"
           pattern="\d{4}-\d{2}-\d{2}"
           :min="
@@ -38,19 +34,13 @@
           ⓘ Change the date above to convert to Ethiopian calendar.
         </span>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <label
-        for="EthioianDate"
-        class="card-header"
-        style="
-          background-image: linear-gradient(#90ee90, #ffffe0, #ffffe0, #e87171);
-        "
-      >
+    <section class="card">
+      <label for="EthioianDate" class="card-header ethioian-date-header">
         Ethiopian Date
       </label>
-      <div class="p-6 bg-white flex-grow">
+      <div class="p-6 bg-theme-bg text-theme-text flex-grow">
         <div
           class="flex items-center"
           id="EthioianDate"
@@ -60,33 +50,27 @@
             v-model.lazy.number="ethDate.month"
             aria-label="Ethioian Month"
             type="number"
-            class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-white py-1 px-2 text-base leading-normal text-gray-800"
-            id="EthMonthScroll"
+            class="eth-date-number-input"
             min="1"
             max="13"
-            style="width: 3em; padding-left: 2px; padding-right: 0"
           />
           /
           <input
             v-model.lazy.number="ethDate.date"
             aria-label="Ethioian Date of Month"
             type="number"
-            class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-white py-1 px-2 text-base leading-normal text-gray-800"
-            id="EthDayScroll"
+            class="eth-date-number-input"
             min="1"
             max="30"
-            style="width: 3em; padding-left: 2px; padding-right: 0"
           />
           /
           <input
             v-model.lazy.number="ethDate.year"
             aria-label="Ethioian Year"
             type="number"
-            class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-white py-1 px-2 text-base leading-normal text-gray-800"
-            id="EthYearScroll"
+            class="eth-date-number-input eth-date-year-input"
             :min="limits.ethiopianCalendarYear.min()"
             :max="limits.ethiopianCalendarYear.max()"
-            style="width: 4em; padding-left: 2px; padding-right: 0"
           />
         </div>
         <p class="my-2">
@@ -96,7 +80,7 @@
           ⓘ Change the date above to convert to European calendar.
         </span>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -132,12 +116,29 @@ const ethCalText = computed(() =>
   @apply flex flex-col rounded border border-gray-300 p-4 w-full md:w-96 md:mx-auto;
   background-color: rgba(86, 61, 124, 0.15);
   border: 1px solid rgba(86, 61, 124, 0.2);
+
+  .card-header {
+    @apply mb-0 border-gray-300 bg-gray-200 py-3 px-6 text-center text-gray-900 rounded-t;
+    color: black;
+  }
+  .ethioian-date-header {
+    background-image: linear-gradient(#90ee90, #ffffe0, #ffffe0, #e87171);
+  }
+  .european-date-header {
+    background-color: rgb(70, 163, 255);
+  }
 }
-.card-header {
-  @apply mb-0 border-gray-300 bg-gray-200 py-3 px-6 text-center text-gray-900 rounded-t;
-  color: black;
-}
+
 .help-block {
   @apply mt-auto text-sm;
+}
+
+.eth-date-number-input {
+  @apply mb-1 block rounded border border-gray-200 bg-theme-bg text-theme-text py-1 text-base leading-normal;
+  padding-left: 0.6rem;
+  width: 3em;
+}
+.eth-date-year-input {
+  width: 4em;
 }
 </style>

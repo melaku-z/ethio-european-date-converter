@@ -1,5 +1,7 @@
 <template>
-  <details class="rounded break-words border border-1 border-gray-300 bg-white">
+  <details
+    class="rounded break-words border border-1 border-gray-300 bg-theme-bg text-theme-text"
+  >
     <summary
       class="cursor-pointer list-none text-center border w-full py-3 px-6 bg-gray-200 border-b-1 border-gray-300 text-gray-900"
     >
