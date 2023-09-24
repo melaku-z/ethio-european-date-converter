@@ -1,5 +1,5 @@
 <template>
-  <section class="social-footer">
+  <section class="social-footer text-theme-header-text">
     <a
       href="https://github.com/melaku-z/ethio-european-date-converter.git"
       class="social-link"
@@ -33,8 +33,8 @@
 
 <style scoped lang="postcss">
 .social-footer {
-  @apply mx-auto flex flex-wrap w-10/12 mb-8 text-black;
-  background-color: #ddd9e2;
+  @apply mx-auto flex flex-wrap w-10/12 mb-8;
+  background-color: rgb(221, 217, 226);
   .social-link {
     @apply flex p-4 w-full sm:w-1/2;
   }
@@ -42,9 +42,14 @@
     border: 1px solid rgba(86, 61, 124, 0.2);
   }
   img {
-    @apply mr-2;
+    @apply mr-2 my-auto;
     max-height: 1.3rem;
     max-width: 1.3rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .social-footer {
+    background-color: rgb(43, 46, 48);
   }
 }
 </style>
