@@ -11,8 +11,9 @@
       <button
         type="button"
         class="rounded border py-1 px-2 text-xl font-bold ml-1"
+        :disabled="liveRefreshEnabled"
         :class="{
-          'text-white border-white': liveRefreshEnabled,
+          'opacity-0': liveRefreshEnabled,
         }"
       >
         ⟳
