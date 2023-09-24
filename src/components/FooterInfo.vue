@@ -1,9 +1,7 @@
 <template>
-  <details
-    class="rounded break-words border border-1 border-gray-300 bg-theme-bg text-theme-text"
-  >
+  <details class="rounded break-words border border-1">
     <summary
-      class="cursor-pointer list-none text-center border w-full py-3 px-6 bg-gray-200 border-b-1 border-gray-300 text-gray-900"
+      class="cursor-pointer list-none text-center border w-full py-3 px-6"
     >
       ⓘ About Application
     </summary>
@@ -33,3 +31,23 @@
     </div>
   </details>
 </template>
+
+<style lang="postcss" scoped>
+details {
+  @apply border-gray-300 bg-theme-bg text-theme-text;
+  summary {
+    @apply bg-gray-200 border-gray-300 text-gray-900;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  details {
+    border-color: var(--theme-input-border);
+    summary {
+      color: rgb(214, 211, 205);
+      background-color: rgb(37, 40, 42);
+      border-color: rgb(60, 65, 67);
+    }
+  }
+}
+</style>

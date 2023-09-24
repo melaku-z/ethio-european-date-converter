@@ -4,21 +4,26 @@
 
 body {
   min-height: 100vh;
-  background-color: #159957;
-  background-image: linear-gradient(90deg, #155799, #159957);
+  background-image: linear-gradient(90deg, rgb(21, 87, 153), rgb(21, 153, 87));
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --theme-background: white;
-  --theme-text-color: #2c3e50;
-  color: #2c3e50;
+  --theme-text-color: rgb(44, 62, 80);
+  --theme-input-border: rgb(229 231 235);
+  --theme-header-text: black;
+  --theme-blue-bg: rgb(70, 163, 255);
+  color: var(--theme-text-color);
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    --theme-background: #1d201f;
-    --theme-text-color: #f7f5f3;
+    --theme-background: rgb(24, 26, 27);
+    --theme-text-color: rgb(174, 194, 211);
+    --theme-input-border: rgb(54, 59, 61);
+    --theme-header-text: rgb(232, 230, 227);
+    --theme-blue-bg: rgb(0, 81, 162);
   }
 }
 

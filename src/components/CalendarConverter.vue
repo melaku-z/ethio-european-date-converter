@@ -1,7 +1,10 @@
 <template>
   <div class="flex flex-wrap mx-auto my-14">
     <section class="card">
-      <label for="EuropeanDate" class="card-header european-date-header">
+      <label
+        for="EuropeanDate"
+        class="card-header european-date-header text-theme-header-text bg-theme-blue-bg"
+      >
         European Date
       </label>
 
@@ -9,7 +12,7 @@
         <input
           v-model="eurCalString"
           type="date"
-          class="mb-1 block w-full appearance-none rounded border border-gray-200 bg-theme-bg text-theme-text py-1 px-2 text-base leading-normal text-gray-800"
+          class="mb-1 block w-full appearance-none rounded border border-theme-border bg-theme-bg text-theme-text py-1 px-2 text-base leading-normal"
           id="EuropeanDate"
           pattern="\d{4}-\d{2}-\d{2}"
           :min="
@@ -118,14 +121,11 @@ const ethCalText = computed(() =>
   border: 1px solid rgba(86, 61, 124, 0.2);
 
   .card-header {
-    @apply mb-0 border-gray-300 bg-gray-200 py-3 px-6 text-center text-gray-900 rounded-t;
-    color: black;
+    @apply mb-0 border-gray-300 py-3 px-6 text-center rounded-t;
   }
   .ethioian-date-header {
     background-image: linear-gradient(#90ee90, #ffffe0, #ffffe0, #e87171);
-  }
-  .european-date-header {
-    background-color: rgb(70, 163, 255);
+    color: black;
   }
 }
 
@@ -134,7 +134,7 @@ const ethCalText = computed(() =>
 }
 
 .eth-date-number-input {
-  @apply mb-1 block rounded border border-gray-200 bg-theme-bg text-theme-text py-1 text-base leading-normal;
+  @apply mb-1 block rounded border border-theme-border bg-theme-bg text-theme-text py-1 text-base leading-normal;
   padding-left: 0.6rem;
   width: 3em;
 }
