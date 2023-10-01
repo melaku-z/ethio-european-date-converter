@@ -95,9 +95,13 @@ jobs:
             ethiopian-calendar-date-converter.zip
             web-app.zip
 
+      - run: pnpm run sync:android && pnpm run update:android
+        working-directory: ./mobile
+
       # Pull the latest image to build, and avoid caching pull-only images.
       # (docker pull is faster than caching in most cases.)
       - run: docker-compose pull
+        working-directory: ./mobile
       - uses: satackey/action-docker-layer-caching@v0.0.11
         # Ignore the failure of a step and avoid terminating the job.
         continue-on-error: true
