@@ -1,7 +1,7 @@
 {
   "name": "ethiopian-calendar-date-converter-web-app",
   "description": "Convert dates between Ethiopian and European calendars offline.",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "keywords": [
     "Calendar Converter",
     "Ethiopian Calendar"
