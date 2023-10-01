@@ -3,11 +3,13 @@ name: build and test
 on:
   push:
     branches: [main, master]
+    tags:
+      - 'v*.*.*'
   pull_request:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages and release
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -75,6 +77,23 @@ jobs:
           path: playwright-report/
           retention-days: 30
 
+      - name: Zip releases 1
+        run: zip -r ../web-app.zip .
+        working-directory: ./dist
+        if: startsWith(github.ref, 'refs/tags/')
+      - name: Zip releases 2
+        run: zip -r ../../../ethiopian-calendar-date-converter.zip .
+        working-directory: ./packages/ethiopian-calendar-date-converter/dist
+        if: startsWith(github.ref, 'refs/tags/')
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            ethiopian-calendar-date-converter.zip
+            web-app.zip
+
   # Deployment job for github pages
   deploy-github-pages:
     environment:
@@ -95,12 +114,12 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
-          
+
       - name: pnpm install
         run: pnpm install
         env:
           CI: true
-          
+
       - name: build
         run: pnpm build
         env:
