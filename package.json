@@ -72,7 +72,7 @@
     "verify-for-ci": "pnpm lint && pnpm format && pnpm build && pnpm test && pnpm run test:e2e",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
-  "packageManager": "pnpm@8.7.5",
+  "packageManager": "pnpm@8.8.0",
   "pnpm": {
     "overrides": {
       "ethiopian-calendar-date-converter": "workspace:*",
