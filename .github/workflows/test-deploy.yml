@@ -94,6 +94,28 @@ jobs:
             ethiopian-calendar-date-converter.zip
             web-app.zip
 
+      # Pull the latest image to build, and avoid caching pull-only images.
+      # (docker pull is faster than caching in most cases.)
+      - run: docker-compose pull
+      - uses: satackey/action-docker-layer-caching@v0.0.11
+        # Ignore the failure of a step and avoid terminating the job.
+        continue-on-error: true
+
+      - name: Build Android
+        run: docker-compose up
+        working-directory: ./mobile
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: app-debug.apk
+          path: mobile/android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+      - uses: actions/upload-artifact@v3
+        with:
+          name: app-release-unsigned.apk
+          path: mobile/android/app/build/outputs/apk/release/app-release-unsigned.apk
+          retention-days: 30
+
   # Deployment job for github pages
   deploy-github-pages:
     environment:
