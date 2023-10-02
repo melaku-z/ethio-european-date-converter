@@ -97,13 +97,13 @@ jobs:
         with:
           name: app-debug.apk
           path: mobile/android/app/build/outputs/apk/debug/app-debug.apk
-          retention-days: 30
+          retention-days: 7
           if-no-files-found: error
       - uses: actions/upload-artifact@v3
         with:
           name: app-release-unsigned.apk
           path: mobile/android/app/build/outputs/apk/release/app-release-unsigned.apk
-          retention-days: 30
+          retention-days: 2
           if-no-files-found: error
 
       - name: Zip releases 1
