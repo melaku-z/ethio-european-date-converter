@@ -3,15 +3,15 @@ import { computed, ref, watch } from 'vue'
 
 export function useEthTodayDateTimeText() {
   const ethDateTimeNow = ref<EthDateTime>()
-  const ethTodayDateText = computed(() =>
-    ethDateTimeNow.value?.toDateWithDayString(),
+  const ethTodayDateText = computed(
+    () => ethDateTimeNow.value?.toDateWithDayString(),
   )
   const ethTodayTimeText = computed(
     () => ethDateTimeNow.value?.toTimeString() || '',
   )
 
   const liveRefreshEnabled = ref(false)
-  const liveRefreshTimer = ref<NodeJS.Timer>()
+  const liveRefreshTimer = ref<NodeJS.Timeout>()
 
   function refreshEthDate() {
     ethDateTimeNow.value = EthDateTime.now()
