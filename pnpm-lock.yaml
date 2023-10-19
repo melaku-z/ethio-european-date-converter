@@ -148,7 +148,7 @@ importers:
     devDependencies:
       '@capacitor/assets':
         specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.8.0)(typescript@5.2.2)
+        version: 3.0.0(@types/node@18.18.1)(typescript@5.2.2)
       '@capacitor/cli':
         specifier: ^5.0.5
         version: 5.0.5
@@ -282,7 +282,7 @@ packages:
       '@babel/helpers': 7.23.1
       '@babel/parser': 7.23.0
       '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.0
+      '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
       convert-source-map: 2.0.0
       debug: 4.3.4
@@ -486,10 +486,6 @@ packages:
     resolution: {integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==}
     engines: {node: '>=6.9.0'}
 
-  /@babel/helper-validator-identifier@7.22.5:
-    resolution: {integrity: sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ==}
-    engines: {node: '>=6.9.0'}
-
   /@babel/helper-validator-option@7.22.15:
     resolution: {integrity: sha512-bMn7RmyFjY/mdECUbgn9eoSY4vqvacUnS9i9vGAGttgFWesO6B4CYWA7XlpbWgBt71iv/hfbPlynohStqnu5hA==}
     engines: {node: '>=6.9.0'}
@@ -509,7 +505,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.0
+      '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
     transitivePeerDependencies:
       - supports-color
@@ -523,13 +519,6 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
-
-  /@babel/parser@7.22.5:
-    resolution: {integrity: sha512-DFZMC9LJUG9PLOclRC32G63UXwzqS2koQC8dkx+PLdmt1xSePYpbT/NbsrJy8Q/muXz7o/h/d4A7Fuyixm559Q==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-    dependencies:
-      '@babel/types': 7.22.5
 
   /@babel/parser@7.23.0:
     resolution: {integrity: sha512-vvPKKdMemU85V9WE/l5wZEmImpCtLqbnTvqDS2U1fJ96KrxoW7KrXhNsNCblQlg8Ck4b85yxdTyelsMUgFUXiw==}
@@ -1392,8 +1381,8 @@ packages:
       '@babel/types': 7.23.0
     dev: true
 
-  /@babel/traverse@7.23.0:
-    resolution: {integrity: sha512-t/QaEvyIoIkwzpiZ7aoSKK8kObQYeF7T2v+dazAYCb8SXtp58zEVkWW7zAnju8FNKNdr4ScAOEDmMItbyOmEYw==}
+  /@babel/traverse@7.23.2:
+    resolution: {integrity: sha512-azpe59SQ48qG6nu2CzcMLbxUudtN+dOM9kDbUqGq3HXUJRlo7i8fvPoxQUzYgLZ4cMVmuZgm8vvBpNeRhd6XSw==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.22.13
@@ -1409,14 +1398,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /@babel/types@7.22.5:
-    resolution: {integrity: sha512-zo3MIHGOkPOfoRXitsgHLjEXmlDaD/5KU1Uzuc9GNiZPhSqVxVRtxuPaSBZDsYZ9qV88AjtMtWW7ww98loJ9KA==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.22.5
-      '@babel/helper-validator-identifier': 7.22.5
-      to-fast-properties: 2.0.0
 
   /@babel/types@7.23.0:
     resolution: {integrity: sha512-0oIyUfKoI3mSqMvsxBdclDwxXKXAUA8v/apZbc+iSyARYou1o8ZGDxbUYyLFoW2arqS2jDGqJuZvv1d/io1axg==}
@@ -1438,7 +1419,7 @@ packages:
       '@capacitor/core': 5.0.5
     dev: false
 
-  /@capacitor/assets@3.0.0(@types/node@20.8.0)(typescript@5.2.2):
+  /@capacitor/assets@3.0.0(@types/node@18.18.1)(typescript@5.2.2):
     resolution: {integrity: sha512-+SGfGqxnHwvoMgT709EZ0WASch0KEvK+PphLXrPmZotcoVTGppc6iy6xsYICRTVnX9SDD61/aZGDCDTPf1uTEg==}
     engines: {node: '>=10.3.0'}
     hasBin: true
@@ -1446,7 +1427,7 @@ packages:
       '@capacitor/cli': 5.4.1
       '@ionic/utils-array': 2.1.6
       '@ionic/utils-fs': 3.1.7
-      '@trapezedev/project': 7.0.10(@types/node@20.8.0)(typescript@5.2.2)
+      '@trapezedev/project': 7.0.10(@types/node@18.18.1)(typescript@5.2.2)
       commander: 8.3.0
       debug: 4.3.4
       fs-extra: 10.1.0
@@ -2209,7 +2190,7 @@ packages:
     resolution: {integrity: sha512-k822Is3jGroqOTKF0gAFm80LmhFJWBAyZvNtyuXq6uQUzDDe2fj/gHwixP6VFzlpaWKLP7IuR609Xv8gwJCXyg==}
     dev: true
 
-  /@trapezedev/project@7.0.10(@types/node@20.8.0)(typescript@5.2.2):
+  /@trapezedev/project@7.0.10(@types/node@18.18.1)(typescript@5.2.2):
     resolution: {integrity: sha512-UjwsStjhHq/+D1bWREmFDoyKql+qFIgJX93zQLg7R6CyWZUdtlGP2hU3l7tsVRtjJBVXpVu5mj8tdwJJoABO3A==}
     dependencies:
       '@ionic/utils-fs': 3.1.7
@@ -2234,7 +2215,7 @@ packages:
       replace: 1.2.2
       tempy: 1.0.1
       tmp: 0.2.1
-      ts-node: 10.9.1(@types/node@20.8.0)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@18.18.1)(typescript@5.2.2)
       xcode: 3.0.1
       xml-js: 1.6.11
       xpath: 0.0.32
@@ -2773,7 +2754,7 @@ packages:
   /@vue/compiler-core@3.3.4:
     resolution: {integrity: sha512-cquyDNvZ6jTbf/+x+AgM2Arrp6G4Dzbb0R64jiG804HRMfRiFXWI6kqUVqZ6ZR0bQhIoQjB4+2bhNtVwndW15g==}
     dependencies:
-      '@babel/parser': 7.22.5
+      '@babel/parser': 7.23.0
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
       source-map-js: 1.0.2
@@ -8921,7 +8902,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: false
 
-  /ts-node@10.9.1(@types/node@20.8.0)(typescript@5.2.2):
+  /ts-node@10.9.1(@types/node@18.18.1)(typescript@5.2.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -8940,7 +8921,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.8.0
+      '@types/node': 18.18.1
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
