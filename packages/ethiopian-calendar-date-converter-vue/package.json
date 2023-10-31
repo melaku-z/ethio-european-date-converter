@@ -54,7 +54,7 @@
   },
   "homepage": "https://github.com/melaku-z/ethio-european-date-converter/tree/master/packages/ethiopian-calendar-date-converter-vue#readme",
   "license": "MIT",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.0",
   "main": "./dist/ethiopian-calendar-date-converter-vue.cjs",
   "module": "./dist/ethiopian-calendar-date-converter-vue.mjs",
   "types": "./dist/ethiopian-calendar-date-converter-vue.d.ts",
