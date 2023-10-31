@@ -10,7 +10,7 @@
   "author": "Melaku Zewdu <melaku44@gmail.com>",
   "type": "module",
   "devDependencies": {
-    "@types/node": "^18.18.1",
+    "@types/node": "^20.0.0",
     "@vitest/coverage-v8": "^0.34.6",
     "@vue/test-utils": "^2.4.1",
     "@vue/tsconfig": "^0.4.0",
@@ -54,7 +54,7 @@
   },
   "homepage": "https://github.com/melaku-z/ethio-european-date-converter/tree/master/packages/ethiopian-calendar-date-converter-vue#readme",
   "license": "MIT",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.0",
   "main": "./dist/ethiopian-calendar-date-converter-vue.cjs",
   "module": "./dist/ethiopian-calendar-date-converter-vue.mjs",
   "types": "./dist/ethiopian-calendar-date-converter-vue.d.ts",
