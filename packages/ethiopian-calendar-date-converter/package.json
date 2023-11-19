@@ -10,11 +10,11 @@
   "type": "module",
   "devDependencies": {
     "@vitest/coverage-v8": "^0.34.6",
-    "dts-bundle-generator": "^8.0.1",
-    "eslint": "^8.50.0",
-    "prettier": "^3.0.3",
+    "dts-bundle-generator": "^8.1.2",
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0",
     "typescript": "~5.2.2",
-    "vite": "^4.4.9",
+    "vite": "^5.0.0",
     "vitest": "^0.34.6"
   },
   "scripts": {
