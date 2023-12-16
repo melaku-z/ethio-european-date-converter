@@ -59,7 +59,7 @@ jobs:
           CI: true
 
       - name: Archive test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ failure() }}
         with:
           name: lh-test-report.html
@@ -71,7 +71,7 @@ jobs:
       - name: Run Playwright tests
         run: pnpm run test:e2e
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
@@ -93,13 +93,13 @@ jobs:
         run: docker-compose up
         working-directory: ./mobile
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: app-debug.apk
           path: mobile/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 7
           if-no-files-found: error
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: app-release-unsigned.apk
           path: mobile/android/app/build/outputs/apk/release/app-release-unsigned.apk
@@ -160,4 +160,4 @@ jobs:
           path: ./dist
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
