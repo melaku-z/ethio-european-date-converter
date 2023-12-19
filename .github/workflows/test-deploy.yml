@@ -155,7 +155,7 @@ jobs:
         env:
           BASE_URL: /ethio-european-date-converter/
       - name: Upload artifact # for github pages
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
       - name: Deploy to GitHub Pages
