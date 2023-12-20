@@ -11,6 +11,10 @@
       "matchDepPatterns": ["typescript", "@types", "tsconfig", "vue-tsc"],
       "rangeStrategy": "replace",
       "groupName": "typescript"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions"
     }
   ]
 }
