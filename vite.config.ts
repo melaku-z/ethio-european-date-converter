@@ -269,6 +269,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    assetsInlineLimit: 512,
+  },
   test: {
     exclude: [
       ...configDefaults.exclude,
@@ -279,9 +282,6 @@ export default defineConfig({
       'e2e',
     ],
     root: fileURLToPath(new URL('./', import.meta.url)),
-    transformMode: {
-      web: [/\.[jt]sx$/],
-    },
   },
-  base: process.env.BASE_URL,
+  base: process.env.BASE_URL, // github pages root url
 })
