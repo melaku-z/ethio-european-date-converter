@@ -33,3 +33,4 @@ tests/lhreport.html
 mobile/.gradle
 mobile/android-sdk
 .vite-ssg-temp
+*.tsbuildinfo
