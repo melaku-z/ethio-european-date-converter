@@ -19,7 +19,7 @@
   "devDependencies": {
     "@playwright/test": "^1.40.1",
     "@rushstack/eslint-patch": "^1.6.1",
-    "@tsconfig/node18": "^18.2.2",
+    "@tsconfig/node20": "^20.1.2",
     "@types/eslint": "^8.56.0",
     "@types/jsdom": "^21.1.6",
     "@types/koa": "^2.13.12",
@@ -67,7 +67,7 @@
     "test:playwright:install": "playwright install --with-deps",
     "build-only": "vite-ssg build",
     "start-server:prod": "web-dev-server --root-dir dist --port 8000 --open --compatibility none",
-    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "type-check": "vue-tsc --build --force",
     "format": "prettier --write src/",
     "verify-for-ci": "pnpm lint && pnpm format && pnpm build && pnpm test && pnpm run test:e2e",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
