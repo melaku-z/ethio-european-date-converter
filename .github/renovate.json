@@ -13,6 +13,11 @@
       "groupName": "typescript"
     },
     {
+      "matchDepPatterns": ["dts-bundle-generator"],
+      "rangeStrategy": "replace",
+      "groupName": "dts-bundle-generator"
+    },
+    {
       "matchManagers": ["github-actions"],
       "groupName": "github-actions"
     }
