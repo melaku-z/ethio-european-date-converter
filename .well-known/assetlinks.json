@@ -4,7 +4,9 @@
     "target": {
       "namespace": "android_app",
       "package_name": "xyz.appmaker.zxuqhl",
-      "sha256_cert_fingerprints": ["8C:A3:0D:35:E5:E1:F0:54:36:67:E4:25:E1:49:A9:3B:75:62:19:C3:9B:88:E9:40:11:42:21:2D:80:44:67:36"]
+      "sha256_cert_fingerprints": [
+        "8C:A3:0D:35:E5:E1:F0:54:36:67:E4:25:E1:49:A9:3B:75:62:19:C3:9B:88:E9:40:11:42:21:2D:80:44:67:36"
+      ]
     }
   }
 ]

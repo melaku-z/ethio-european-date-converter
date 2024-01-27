@@ -10,7 +10,7 @@ module.exports = {
         'theme-border': 'var(--theme-input-border)',
         'theme-header-text': 'var(--theme-header-text)',
         'theme-blue-bg': 'var(--theme-blue-bg)',
-      }
-    }
-  }
+      },
+    },
+  },
 }
