@@ -43,7 +43,7 @@
     "lighthouse": "^11.4.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.32",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.4",
     "puppeteer": "^21.6.1",
     "typescript": "~5.3.3",
     "vite": "^5.0.12",
@@ -68,7 +68,7 @@
     "build-only": "vite-ssg build",
     "start-server:prod": "web-dev-server --root-dir dist --port 8000 --open --compatibility none",
     "type-check": "vue-tsc --build --force",
-    "format": "prettier --write src/",
+    "format": "prettier . \"!pnpm-lock.yaml\" \"!mobile\" --write",
     "verify-for-ci": "pnpm lint && pnpm format && pnpm build && pnpm test && pnpm run test:e2e",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
