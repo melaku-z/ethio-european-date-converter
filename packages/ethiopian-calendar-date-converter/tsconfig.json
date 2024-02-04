@@ -19,8 +19,8 @@
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"],
+  "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"]
 }
