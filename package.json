@@ -47,7 +47,7 @@
     "puppeteer": "^22.0.0",
     "typescript": "~5.3.3",
     "vite": "^5.0.12",
-    "vite-plugin-pwa": "^0.17.5",
+    "vite-plugin-pwa": "^0.18.0",
     "vite-ssg": "^0.23.6",
     "vitest": "^1.2.2",
     "vitest-fail-on-console": "^0.5.1",
