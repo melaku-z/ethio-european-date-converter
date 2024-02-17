@@ -3,7 +3,6 @@
   "include": ["vite.config.*", "vitest.config.*", "playwright.config.*"],
   "compilerOptions": {
     "composite": true,
-    "module": "ESNext",
-    "types": ["node"]
+    "module": "ESNext"
   }
 }
