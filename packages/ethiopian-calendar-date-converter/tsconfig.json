@@ -15,7 +15,6 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["node"],
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
