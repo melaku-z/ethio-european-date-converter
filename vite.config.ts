@@ -271,6 +271,20 @@ export default defineConfig({
   },
   build: {
     assetsInlineLimit: 512,
+    // Tauri uses Chromium on Windows and WebKit on macOS and Linux
+    target: process.env.TAURI_PLATFORM
+      ? process.env.TAURI_PLATFORM == 'windows'
+        ? 'chrome105'
+        : 'safari13'
+      : undefined,
+    // don't minify for debug builds
+    minify: process.env.TAURI_DEBUG ? false : undefined,
+    // produce sourcemaps for debug builds
+    sourcemap: process.env.TAURI_DEBUG
+      ? true
+      : process.env.TAURI_PLATFORM
+        ? false
+        : undefined,
   },
   test: {
     exclude: [
@@ -284,4 +298,6 @@ export default defineConfig({
     root: fileURLToPath(new URL('./', import.meta.url)),
   },
   base: process.env.BASE_URL, // github pages root url
+  // prevent vite from obscuring rust errors
+  clearScreen: process.env.TAURI_PLATFORM ? false : undefined,
 })

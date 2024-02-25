@@ -1,0 +1,66 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "pnpm -w run build",
+    "beforeDevCommand": "pnpm -w run dev",
+    "devPath": "http://localhost:5173",
+    "distDir": "../../dist"
+  },
+  "package": {
+    "productName": "Ethiopian Calendar Converter",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false
+    },
+    "bundle": {
+      "active": true,
+      "category": "Utility",
+      "copyright": "Copyright (c) 2024 melaku.zewdu",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "app.netlify.ethiopian-calendar",
+      "longDescription": "Convert dates between Ethiopian and European calendars",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "Ethio-European Date Converter",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 700,
+        "resizable": true,
+        "title": "Ethiopian Calendar",
+        "width": 800
+      }
+    ]
+  }
+}

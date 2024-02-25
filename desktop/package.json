@@ -1,0 +1,19 @@
+{
+  "name": "ethiopian-calendar-converter-desktop",
+  "version": "1.0.0",
+  "description": "Convert dates between Ethiopian and European calendars",
+  "scripts": {
+    "dev:desktop": "tauri dev",
+    "build:desktop": "tauri build",
+    "icons:desktop": "tauri icon ../public/icons-b23883c8/ios/1024.png"
+  },
+  "keywords": [
+    "Calendar Converter",
+    "Ethiopian Calendar"
+  ],
+  "author": "Melaku Zewdu <melaku44@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.5.10"
+  }
+}
