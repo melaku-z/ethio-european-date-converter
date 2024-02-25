@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "Ethiopian Calendar Converter",
-    "version": "0.1.0"
+    "version": "4.2.0"
   },
   "tauri": {
     "allowlist": {
