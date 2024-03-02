@@ -95,6 +95,7 @@ jobs:
           files: |
             ethiopian-calendar-date-converter.zip
             web-app.zip
+          name: ${{ github.ref_name }}
 
   # Deployment job for github pages
   deploy-github-pages:
