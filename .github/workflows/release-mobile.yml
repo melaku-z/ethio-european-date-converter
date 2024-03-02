@@ -12,7 +12,7 @@ on:
 
 # Allow one concurrent deployment
 concurrency:
-  group: pages-${{ github.head_ref || github.ref }}
+  group: mobile-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:

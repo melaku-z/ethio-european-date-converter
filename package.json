@@ -64,6 +64,7 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "test:playwright:install": "playwright install --with-deps",
+    "test:puppeteer:install": "puppeteer browsers install chrome",
     "build-only": "vite-ssg build",
     "start-server:prod": "web-dev-server --root-dir dist --port 8000 --open --compatibility none",
     "type-check": "vue-tsc --build --force",

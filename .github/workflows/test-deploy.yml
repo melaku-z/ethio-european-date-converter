@@ -51,6 +51,9 @@ jobs:
       - name: build
         run: pnpm build
 
+      - name: Install Puppeteer
+        run: pnpm run test:puppeteer:install
+
       - name: test
         run: pnpm test
         env:

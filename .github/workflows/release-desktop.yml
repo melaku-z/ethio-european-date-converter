@@ -8,6 +8,11 @@ on:
     paths:
       - desktop/**
 
+# Allow one concurrent deployment
+concurrency:
+  group: desktop-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   release:
     permissions:
@@ -57,7 +62,7 @@ jobs:
           tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
           releaseName: 'Ethiopian calendar date converter v__VERSION__' # tauri-action replaces \_\_VERSION\_\_ with the app version.
           releaseBody: 'See the assets to download and install this version.'
-          releaseDraft: false
+          releaseDraft: ${{ !startsWith(github.ref, 'refs/tags/') }}
           prerelease: false
           projectPath: ./desktop/.
           tauriScript: pnpm tauri
