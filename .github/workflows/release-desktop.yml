@@ -4,6 +4,9 @@ on:
     tags:
       - 'v*.*.*'
   workflow_dispatch:
+  pull_request:
+    paths:
+      - desktop/**
 
 jobs:
   release:

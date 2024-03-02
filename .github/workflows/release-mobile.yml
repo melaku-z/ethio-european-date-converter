@@ -1,0 +1,81 @@
+name: build mobile
+
+on:
+  push:
+    branches: [main, master]
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    paths:
+      - mobile/**
+  workflow_dispatch:
+
+# Allow one concurrent deployment
+concurrency:
+  group: pages-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    # Sets permissions of the GITHUB_TOKEN to allow release
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: pnpm install
+        run: pnpm install
+        env:
+          CI: true
+
+      - name: build
+        run: pnpm build
+
+      - run: pnpm run sync:android && pnpm run update:android
+        working-directory: ./mobile
+
+      # Pull the latest image to build, and avoid caching pull-only images.
+      # (docker pull is faster than caching in most cases.)
+      - run: docker-compose pull
+        working-directory: ./mobile
+      - uses: satackey/action-docker-layer-caching@v0.0.11
+        # Ignore the failure of a step and avoid terminating the job.
+        continue-on-error: true
+
+      - name: Build Android
+        run: docker-compose up
+        working-directory: ./mobile
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-debug.apk
+          path: mobile/android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 7
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-release-unsigned.apk
+          path: mobile/android/app/build/outputs/apk/release/app-release-unsigned.apk
+          retention-days: 2
+          if-no-files-found: error
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files:
+            mobile/android/app/build/outputs/apk/debug/app-debug.apk
+          name: android app release
