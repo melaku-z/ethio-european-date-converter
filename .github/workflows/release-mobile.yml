@@ -12,7 +12,7 @@ on:
 
 # Allow one concurrent deployment
 concurrency:
-  group: pages-${{ github.head_ref || github.ref }}
+  group: mobile-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -78,4 +78,4 @@ jobs:
         with:
           files:
             mobile/android/app/build/outputs/apk/debug/app-debug.apk
-          name: android app release
+          name: ${{ github.ref_name }} Android
