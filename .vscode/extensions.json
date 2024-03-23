@@ -8,7 +8,7 @@
     "cpylua.language-postcss",
     "bradlc.vscode-tailwindcss",
     "sonarsource.sonarlint-vscode",
-    "ZixuanChen.vitest-explorer",
+    "vitest.explorer",
     "esbenp.prettier-vscode"
   ]
 }
