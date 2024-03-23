@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-test:
+  mobile-build-test:
     runs-on: ubuntu-latest
 
     # Sets permissions of the GITHUB_TOKEN to allow release
