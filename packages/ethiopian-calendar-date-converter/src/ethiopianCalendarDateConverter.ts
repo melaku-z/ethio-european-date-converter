@@ -16,7 +16,7 @@ function dayOfWeekString(day: DayOfWeek): string {
     3: 'Wednesday',
     4: 'Thursday',
     5: 'Friday',
-    6: 'Saterday',
+    6: 'Saturday',
   }
   return dayOfWeekStrings[day]
 }
