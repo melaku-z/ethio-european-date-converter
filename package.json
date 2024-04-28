@@ -14,18 +14,18 @@
     "ethiopian-calendar-date-converter": "workspace:*",
     "ethiopian-calendar-date-converter-vue": "workspace:*",
     "tailwindcss": "^3.4.3",
-    "vue": "^3.4.21"
+    "vue": "^3.4.25"
   },
   "devDependencies": {
     "@playwright/test": "^1.43.1",
     "@rushstack/eslint-patch": "^1.10.2",
     "@tsconfig/node20": "^20.1.4",
-    "@types/eslint": "^8.56.9",
+    "@types/eslint": "^8.56.10",
     "@types/jsdom": "^21.1.6",
     "@types/koa": "^2.15.0",
     "@types/koa-static": "^4.0.4",
     "@vitejs/plugin-vue": "^5.0.4",
-    "@vitest/browser": "^1.5.0",
+    "@vitest/browser": "^1.5.2",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.5",
@@ -43,15 +43,15 @@
     "npm-run-all2": "^6.1.2",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
-    "puppeteer": "^22.6.4",
+    "puppeteer": "^22.7.1",
     "typescript": "~5.4.5",
-    "vite": "^5.2.8",
+    "vite": "^5.2.10",
     "vite-plugin-pwa": "^0.19.8",
-    "vite-ssg": "^0.23.6",
-    "vitest": "^1.5.0",
+    "vite-ssg": "^0.23.7",
+    "vitest": "^1.5.2",
     "vitest-fail-on-console": "^0.6.3",
-    "vue-tsc": "^2.0.13",
-    "workbox-window": "^7.0.0"
+    "vue-tsc": "^2.0.14",
+    "workbox-window": "^7.1.0"
   },
   "scripts": {
     "dev": "vite",
@@ -75,7 +75,6 @@
   "devEngines": {
     "node": ">=20"
   },
-  "packageManager": "pnpm@8.12.1",
   "pnpm": {
     "overrides": {
       "ethiopian-calendar-date-converter": "workspace:*",
