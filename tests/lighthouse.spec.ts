@@ -15,7 +15,7 @@ const categories = [
   'pwa',
   'seo',
   'best-practices',
-]
+] as const
 
 describe('home page', async () => {
   const SERVER_PORT = 8001
@@ -80,7 +80,11 @@ function getLightHouseSummary(lhResult: Result) {
   }
 
   categories.forEach((category) => {
-    result[category] = String((lhResult.categories[category]?.score || 0) * 100)
+    const categoryResult = lhResult.categories[category]?.score
+    if (categoryResult != null)
+      result[category] = String(
+        (lhResult.categories[category]?.score || 0) * 100,
+      )
   })
 
   return [result, expectedResult]
