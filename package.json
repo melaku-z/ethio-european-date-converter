@@ -46,10 +46,10 @@
     "puppeteer": "^22.7.1",
     "typescript": "~5.4.5",
     "vite": "^5.2.10",
-    "vite-plugin-pwa": "^0.19.8",
+    "vite-plugin-pwa": "^0.20.0",
     "vite-ssg": "^0.23.7",
     "vitest": "^1.5.2",
-    "vitest-fail-on-console": "^0.6.3",
+    "vitest-fail-on-console": "^0.7.0",
     "vue-tsc": "^2.0.14",
     "workbox-window": "^7.1.0"
   },
