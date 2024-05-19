@@ -9,13 +9,13 @@
   "author": "Melaku Zewdu <melaku44@gmail.com>",
   "type": "module",
   "devDependencies": {
-    "@vitest/coverage-v8": "^1.5.2",
+    "@vitest/coverage-v8": "^1.6.0",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "typescript": "~5.4.5",
-    "vite": "^5.2.10",
-    "vitest": "^1.5.2"
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
   },
   "scripts": {
     "test": "vitest run",
