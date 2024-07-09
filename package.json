@@ -25,7 +25,7 @@
     "@types/koa": "^2.15.0",
     "@types/koa-static": "^4.0.4",
     "@vitejs/plugin-vue": "^5.0.5",
-    "@vitest/browser": "^1.6.0",
+    "@vitest/browser": "^2.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.6",
@@ -48,7 +48,7 @@
     "vite": "^5.3.1",
     "vite-plugin-pwa": "^0.20.0",
     "vite-ssg": "^0.23.7",
-    "vitest": "^1.6.0",
+    "vitest": "^2.0.0",
     "vitest-fail-on-console": "^0.7.0",
     "vue-tsc": "^2.0.21",
     "workbox-window": "^7.1.0"
