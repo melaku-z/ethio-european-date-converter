@@ -12,7 +12,7 @@ importers:
       '@playwright/test': ^1.44.1
       '@rushstack/eslint-patch': ^1.10.3
       '@tsconfig/node20': ^20.1.4
-      '@types/eslint': ^8.56.10
+      '@types/eslint': ^9.0.0
       '@types/jsdom': ^21.1.7
       '@types/koa': ^2.15.0
       '@types/koa-static': ^4.0.4
@@ -58,13 +58,13 @@ importers:
       '@playwright/test': 1.45.1
       '@rushstack/eslint-patch': 1.10.3
       '@tsconfig/node20': 20.1.4
-      '@types/eslint': 8.56.10
+      '@types/eslint': 9.6.0
       '@types/jsdom': 21.1.7
       '@types/koa': 2.15.0
       '@types/koa-static': 4.0.4
       '@vitejs/plugin-vue': 5.0.5_vite@5.3.3+vue@3.4.29
       '@vitest/browser': 2.0.0_ze5pbvteoiyxmr6drcdygsnf4i
-      '@vue/eslint-config-prettier': 9.0.0_llvjxngn5ybfi5u4c6b3gsikqm
+      '@vue/eslint-config-prettier': 9.0.0_xjd3nhm5iwgoc2ubiduus7ngh4
       '@vue/eslint-config-typescript': 13.0.0_pvsa4bihergrf3vz6xa77kzn5u
       '@vue/test-utils': 2.4.6
       '@vue/tsconfig': 0.5.1
@@ -2836,8 +2836,8 @@ packages:
       '@types/node': 20.14.6
     dev: true
 
-  /@types/eslint/8.56.10:
-    resolution: {integrity: sha512-Shavhk87gCtY2fhXDctcfS3e6FdxWkCx1iUZ9eEUbh7rTqlZT0/IzOkCOVt0fCjcFuZ9FPYfuezTBImfHCDBGQ==}
+  /@types/eslint/9.6.0:
+    resolution: {integrity: sha512-gi6WQJ7cHRgZxtkQEoyHMppPjq9Kxo5Tjn2prSKDSmZrCz8TZ3jSRCeTJm+WoM+oB0WG37bRqLzaaU3q7JypGg==}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
@@ -3344,7 +3344,7 @@ packages:
       '@vue/compiler-dom': 3.4.29
       '@vue/shared': 3.4.29
 
-  /@vue/eslint-config-prettier/9.0.0_llvjxngn5ybfi5u4c6b3gsikqm:
+  /@vue/eslint-config-prettier/9.0.0_xjd3nhm5iwgoc2ubiduus7ngh4:
     resolution: {integrity: sha512-z1ZIAAUS9pKzo/ANEfd2sO+v2IUalz7cM/cTLOZ7vRFOPk5/xuRKQteOu1DErFLAh/lYGXMVZ0IfYKlyInuDVg==}
     peerDependencies:
       eslint: '>= 8.0.0'
@@ -3352,7 +3352,7 @@ packages:
     dependencies:
       eslint: 8.57.0
       eslint-config-prettier: 9.1.0_eslint@8.57.0
-      eslint-plugin-prettier: 5.1.3_bjhjpg77mmwy6yzdqi42mz7qwy
+      eslint-plugin-prettier: 5.1.3_qlngnpiipqey3nq2wspytjslfi
       prettier: 3.3.3
     transitivePeerDependencies:
       - '@types/eslint'
@@ -5206,7 +5206,7 @@ packages:
       eslint: 8.57.0
     dev: true
 
-  /eslint-plugin-prettier/5.1.3_bjhjpg77mmwy6yzdqi42mz7qwy:
+  /eslint-plugin-prettier/5.1.3_qlngnpiipqey3nq2wspytjslfi:
     resolution: {integrity: sha512-C9GCVAs4Eq7ZC/XFQHITLiHJxQngdtraXaM+LoUFoFp/lHNl2Zn8f3WQbe9HvTBBQ9YnKFB0/2Ajdqwo5D1EAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -5220,7 +5220,7 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 9.6.0
       eslint: 8.57.0
       eslint-config-prettier: 9.1.0_eslint@8.57.0
       prettier: 3.3.3
