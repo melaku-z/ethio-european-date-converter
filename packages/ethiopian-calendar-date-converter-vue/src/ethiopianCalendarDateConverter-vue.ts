@@ -36,13 +36,13 @@ export function useEthTodayDateTimeText() {
   }
 }
 
-export function useCalendarConverter() {
-  interface EthDateRef {
-    date: number | null
-    month: number | null
-    year: number | null
-  }
+interface EthDateRef {
+  date: number | null
+  month: number | null
+  year: number | null
+}
 
+export function useCalendarConverter() {
   const ethDate = ref<EthDateRef | EthDateTime>({
     date: null,
     month: null,
