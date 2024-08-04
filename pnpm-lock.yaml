@@ -137,7 +137,7 @@ importers:
   desktop:
     devDependencies:
       '@tauri-apps/cli':
-        specifier: ^1.6.0
+        specifier: ^1.5.14
         version: 1.6.0
 
   mobile:
