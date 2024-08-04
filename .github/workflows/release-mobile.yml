@@ -49,14 +49,14 @@ jobs:
 
       # Pull the latest image to build, and avoid caching pull-only images.
       # (docker pull is faster than caching in most cases.)
-      - run: docker-compose pull
+      - run: docker compose pull
         working-directory: ./mobile
       - uses: satackey/action-docker-layer-caching@v0.0.11
         # Ignore the failure of a step and avoid terminating the job.
         continue-on-error: true
 
       - name: Build Android
-        run: docker-compose up
+        run: docker compose up
         working-directory: ./mobile
 
       - uses: actions/upload-artifact@v4
