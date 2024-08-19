@@ -26,11 +26,11 @@
       "groupName": "android"
     },
     {
-      "sourceDirectory": "desktop",
+      "matchFileNames": ["desktop/**"],
       "groupName": "desktop"
     },
     {
-      "sourceDirectory": "mobile",
+      "matchFileNames": ["mobile/**"],
       "groupName": "mobile"
     }
   ]
