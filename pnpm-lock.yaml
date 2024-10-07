@@ -18,7 +18,7 @@ importers:
       '@types/koa-static': ^4.0.4
       '@vitejs/plugin-vue': ^5.1.2
       '@vitest/browser': ^2.0.5
-      '@vue/eslint-config-prettier': ^9.0.0
+      '@vue/eslint-config-prettier': ^10.0.0
       '@vue/eslint-config-typescript': ^13.0.0
       '@vue/test-utils': ^2.4.6
       '@vue/tsconfig': ^0.5.1
@@ -64,7 +64,7 @@ importers:
       '@types/koa-static': 4.0.4
       '@vitejs/plugin-vue': 5.1.3_vite@5.4.6+vue@3.5.5
       '@vitest/browser': 2.1.1_xayscdrtupze5yqopgmoca7s6i
-      '@vue/eslint-config-prettier': 9.0.0_sqnky6ie6p7w6o73xq2u7fhihu
+      '@vue/eslint-config-prettier': 10.0.0_sqnky6ie6p7w6o73xq2u7fhihu
       '@vue/eslint-config-typescript': 13.0.0_fwn5u65d3xzxzsqhijelwaf7dy
       '@vue/test-utils': 2.4.6
       '@vue/tsconfig': 0.5.1
@@ -1969,7 +1969,7 @@ packages:
       debug: 4.3.4
       signal-exit: 3.0.7
       tree-kill: 1.2.2
-      tslib: 2.6.2
+      tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2003,7 +2003,7 @@ packages:
     engines: {node: '>=16.0.0'}
     dependencies:
       debug: 4.3.4
-      tslib: 2.6.2
+      tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2035,7 +2035,7 @@ packages:
       '@ionic/utils-terminal': 2.3.4
       cross-spawn: 7.0.3
       debug: 4.3.4
-      tslib: 2.6.2
+      tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2067,7 +2067,7 @@ packages:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
-      tslib: 2.6.2
+      tslib: 2.7.0
       untildify: 4.0.0
       wrap-ansi: 7.0.0
     transitivePeerDependencies:
@@ -3384,10 +3384,10 @@ packages:
       he: 1.2.0
     dev: true
 
-  /@vue/eslint-config-prettier/9.0.0_sqnky6ie6p7w6o73xq2u7fhihu:
-    resolution: {integrity: sha512-z1ZIAAUS9pKzo/ANEfd2sO+v2IUalz7cM/cTLOZ7vRFOPk5/xuRKQteOu1DErFLAh/lYGXMVZ0IfYKlyInuDVg==}
+  /@vue/eslint-config-prettier/10.0.0_sqnky6ie6p7w6o73xq2u7fhihu:
+    resolution: {integrity: sha512-iDEjsfT+UXQTJfe+4mstb/B5BSZ5RpL6FO3F97XxElIXdD04gkH+F7PR4fBMEVyJi4892G4LQVPQ8oXxVyp8Dw==}
     peerDependencies:
-      eslint: '>= 8.0.0'
+      eslint: '>= 8.21.0'
       prettier: '>= 3.0.0'
     dependencies:
       eslint: 8.57.1
