@@ -33,7 +33,7 @@
     "@web/dev-server": "^0.4.6",
     "autoprefixer": "^10.4.20",
     "compress": "link:@types/koajs/compress",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-vue": "^9.27.0",
     "jsdom": "^25.0.0",
     "koa": "^2.15.3",
