@@ -27,7 +27,7 @@
     "@vitejs/plugin-vue": "^5.1.2",
     "@vitest/browser": "^2.0.5",
     "@vue/eslint-config-prettier": "^10.0.0",
-    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/eslint-config-typescript": "^14.0.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
     "@web/dev-server": "^0.4.6",
