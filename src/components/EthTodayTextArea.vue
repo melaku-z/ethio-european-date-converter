@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import { useEthTodayDateTimeText } from 'ethiopian-calendar-date-converter-vue'
+import { onMounted } from 'vue'
+
+const { ethTodayDateText, ethTodayTimeText, liveRefreshEnabled } =
+  useEthTodayDateTimeText()
+
+function onVisibilitychange() {
+  liveRefreshEnabled.value = document.visibilityState == 'visible'
+}
+
+onMounted(() => {
+  liveRefreshEnabled.value = true
+
+  document.addEventListener('visibilitychange', onVisibilitychange)
+})
+</script>
+
 <template>
   <article class="eth-today-time-text-container">
     <div class="bg-theme-bg text-theme-text w-full p-4 pl-14">
@@ -21,24 +39,6 @@
     </div>
   </article>
 </template>
-
-<script setup lang="ts">
-import { useEthTodayDateTimeText } from 'ethiopian-calendar-date-converter-vue'
-import { onMounted } from 'vue'
-
-const { ethTodayDateText, ethTodayTimeText, liveRefreshEnabled } =
-  useEthTodayDateTimeText()
-
-function onVisibilitychange() {
-  liveRefreshEnabled.value = document.visibilityState == 'visible'
-}
-
-onMounted(() => {
-  liveRefreshEnabled.value = true
-
-  document.addEventListener('visibilitychange', onVisibilitychange)
-})
-</script>
 
 <style>
 .eth-today-time-text-container {

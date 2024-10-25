@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import EthTodayTextArea from './components/EthTodayTextArea.vue'
-import SocialFooter from './components/SocialFooter.vue'
-import FooterInfo from './components/FooterInfo.vue'
 import CalendarConverter from './components/CalendarConverter.vue'
+import EthTodayTextArea from './components/EthTodayTextArea.vue'
+import FooterInfo from './components/FooterInfo.vue'
+import SocialFooter from './components/SocialFooter.vue'
 </script>
 
 <template>

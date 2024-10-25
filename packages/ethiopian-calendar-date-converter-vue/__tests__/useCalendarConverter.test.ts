@@ -1,7 +1,8 @@
-import { useCalendarConverter } from '../src/ethiopianCalendarDateConverter-vue'
-import { describe, it, expect } from 'vitest'
-import { EthDateTime } from 'ethiopian-calendar-date-converter'
 import { flushPromises } from '@vue/test-utils'
+import { EthDateTime } from 'ethiopian-calendar-date-converter'
+import { describe, expect, it } from 'vitest'
+
+import { useCalendarConverter } from '../src/ethiopianCalendarDateConverter-vue'
 
 describe('useCalendarConverter', () => {
   it('should set the initial current date in both calendars', async () => {

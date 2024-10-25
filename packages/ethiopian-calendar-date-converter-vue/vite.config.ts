@@ -1,7 +1,8 @@
+import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { defineConfig } from 'vite'
+
 import packageJson from './package.json'
-import vue from '@vitejs/plugin-vue'
 
 const getPackageName = () => {
   return packageJson.name as string
@@ -31,7 +32,7 @@ export default defineConfig({
       ),
       name: getPackageNameCamelCase(),
       formats: ['es', 'cjs', 'iife'],
-      fileName: (format) => fileName[format],
+      fileName: (format) => fileName[format as 'es' | 'cjs' | 'iife'],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

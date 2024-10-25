@@ -1,5 +1,6 @@
+import { describe, expect, it } from 'vitest'
+
 import { EthDateTime } from '../src/ethiopianCalendarDateConverter'
-import { describe, it, expect } from 'vitest'
 
 const fixture = {
   dates: [

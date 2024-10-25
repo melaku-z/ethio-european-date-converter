@@ -1,7 +1,7 @@
-import { constants } from 'zlib'
-import serve from 'koa-static'
+import Koa, { Middleware } from 'koa'
 import compress from 'koa-compress'
-import Koa from 'koa'
+import serve from 'koa-static'
+import { constants } from 'zlib'
 
 export async function startServer(port = 8000, rootDir = 'dist') {
   const app = new Koa()
@@ -14,7 +14,7 @@ export async function startServer(port = 8000, rootDir = 'dist') {
         flush: constants.Z_SYNC_FLUSH,
       },
       br: false, // disable brotli
-    }) as unknown as any,
+    }) as unknown as Middleware,
   )
   app.use(serve(rootDir))
 

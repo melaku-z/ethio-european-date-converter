@@ -1,3 +1,30 @@
+<script setup lang="ts">
+import { limits } from 'ethiopian-calendar-date-converter'
+import { useCalendarConverter } from 'ethiopian-calendar-date-converter-vue'
+import { computed, onMounted } from 'vue'
+
+const { ethDate, eurCalString, setInitialCurrentDate } = useCalendarConverter()
+
+onMounted(setInitialCurrentDate)
+
+const eurCalText = computed(() => {
+  const [eurYear, eurMon, eurDate] = eurCalString.value.split('-').map(Number)
+  if (!eurDate) return ''
+
+  return (
+    new Date(Date.UTC(eurYear, eurMon - 1, eurDate))
+      .toUTCString()
+      .substring(0, 16) + ' (at GMT+0)'
+  )
+})
+
+const ethCalText = computed(() =>
+  'toDateWithDayString' in ethDate.value
+    ? ethDate.value.toDateWithDayString()
+    : '',
+)
+</script>
+
 <template>
   <div class="flex flex-wrap mx-auto my-14">
     <section class="card">
@@ -86,33 +113,6 @@
     </section>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useCalendarConverter } from 'ethiopian-calendar-date-converter-vue'
-import { limits } from 'ethiopian-calendar-date-converter'
-import { computed, onMounted } from 'vue'
-
-const { ethDate, eurCalString, setInitialCurrentDate } = useCalendarConverter()
-
-onMounted(setInitialCurrentDate)
-
-const eurCalText = computed(() => {
-  const [eurYear, eurMon, eurDate] = eurCalString.value.split('-').map(Number)
-  if (!eurDate) return ''
-
-  return (
-    new Date(Date.UTC(eurYear, eurMon - 1, eurDate))
-      .toUTCString()
-      .substring(0, 16) + ' (at GMT+0)'
-  )
-})
-
-const ethCalText = computed(() =>
-  'toDateWithDayString' in ethDate.value
-    ? ethDate.value.toDateWithDayString()
-    : '',
-)
-</script>
 
 <style lang="postcss">
 .card {
