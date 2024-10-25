@@ -40,7 +40,7 @@
     "koa-compress": "github:koajs/compress",
     "koa-static": "^5.0.0",
     "lighthouse": "^11.7.1",
-    "npm-run-all2": "^6.2.2",
+    "npm-run-all2": "^7.0.0",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "puppeteer": "^23.1.0",
