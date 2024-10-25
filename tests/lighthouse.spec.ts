@@ -1,13 +1,14 @@
 /**
  * @vitest-environment node
  */
-import { describe, it, expect, beforeAll, afterAll } from 'vitest'
-import lighthouse from 'lighthouse'
-import puppeteer from 'puppeteer'
 import { writeFile } from 'fs/promises'
-import { startServer } from './serverStartup'
-import Result from 'lighthouse/types/lhr/lhr'
 import { Server } from 'http'
+import lighthouse from 'lighthouse'
+import Result from 'lighthouse/types/lhr/lhr'
+import puppeteer from 'puppeteer'
+import { afterAll, beforeAll, describe, expect, it } from 'vitest'
+
+import { startServer } from './serverStartup'
 
 const categories = [
   'accessibility',

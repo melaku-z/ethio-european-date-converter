@@ -3,6 +3,7 @@
   "include": ["vite.config.*", "vitest.config.*", "playwright.config.*"],
   "compilerOptions": {
     "composite": true,
+    "resolveJsonModule": true,
     "module": "ESNext"
   }
 }

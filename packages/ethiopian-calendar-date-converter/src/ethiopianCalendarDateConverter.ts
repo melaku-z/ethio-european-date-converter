@@ -1,10 +1,10 @@
 import {
   fourYears,
-  oneYear,
-  oneDay,
   globalTimeDifference,
   maxEurDate,
   minEurDate,
+  oneDay,
+  oneYear,
 } from './dateConstants'
 import { DayOfWeek, MonthEth } from './types'
 

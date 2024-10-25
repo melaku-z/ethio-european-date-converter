@@ -1,5 +1,6 @@
 import path from 'path'
 import { defineConfig } from 'vite'
+
 import packageJson from './package.json'
 
 const getPackageName = () => {
