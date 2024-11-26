@@ -18,6 +18,10 @@
       "matchDepNames": ["/dts-bundle-generator/"]
     },
     {
+      "groupName": "eslint",
+      "matchDepNames": ["/eslint/", "/@eslint/"]
+    },
+    {
       "matchManagers": ["github-actions"],
       "groupName": "github-actions"
     },
