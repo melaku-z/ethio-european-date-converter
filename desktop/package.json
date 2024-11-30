@@ -5,6 +5,7 @@
   "scripts": {
     "dev:desktop": "tauri dev",
     "build:desktop": "tauri build",
+    "tauri-migrate": "tauri migrate --verbose",
     "icons:desktop": "tauri icon ../public/icons-b23883c8/ios/1024.png"
   },
   "keywords": [
@@ -14,6 +15,6 @@
   "author": "Melaku Zewdu <melaku44@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@tauri-apps/cli": "^2.0.0"
+    "@tauri-apps/cli": "^2.1.0"
   }
 }
