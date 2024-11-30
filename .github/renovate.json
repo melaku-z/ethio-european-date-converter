@@ -35,6 +35,7 @@
     },
     {
       "matchFileNames": ["mobile/**"],
+      "matchCategories": ["js"],
       "groupName": "mobile"
     }
   ]
