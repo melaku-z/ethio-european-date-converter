@@ -46,7 +46,7 @@
     "koa-static": "^5.0.0",
     "lighthouse": "^11.7.1",
     "npm-run-all2": "^7.0.2",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "puppeteer": "^23.11.1",
     "typescript": "~5.7.2",
