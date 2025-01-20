@@ -11,7 +11,7 @@
   "devDependencies": {
     "@vitest/coverage-v8": "2.1.6",
     "dts-bundle-generator": "^9.5.1",
-    "eslint": "^9.17.0",
+    "eslint": "^9.18.0",
     "prettier": "^3.4.2",
     "typescript": "~5.7.2",
     "vite": "^6.0.7",
