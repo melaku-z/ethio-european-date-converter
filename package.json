@@ -52,7 +52,7 @@
     "typescript": "~5.7.2",
     "vite": "^6.0.9",
     "vite-plugin-pwa": "^0.21.1",
-    "vite-ssg": "^0.24.3",
+    "vite-ssg": "^25.0.0",
     "vitest": "3.0.2",
     "vitest-fail-on-console": "^0.7.1",
     "vue-tsc": "^2.2.0",
