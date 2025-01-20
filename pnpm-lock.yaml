@@ -34,7 +34,7 @@ importers:
       eslint-plugin-vue: ^9.32.0
       ethiopian-calendar-date-converter: workspace:*
       ethiopian-calendar-date-converter-vue: workspace:*
-      jsdom: ^25.0.1
+      jsdom: ^26.0.0
       koa: ^2.15.3
       koa-compress: github:koajs/compress
       koa-static: ^5.0.0
@@ -83,7 +83,7 @@ importers:
       eslint-plugin-playwright: 2.1.0_eslint@9.18.0
       eslint-plugin-simple-import-sort: 12.1.1_eslint@9.18.0
       eslint-plugin-vue: 9.32.0_eslint@9.18.0
-      jsdom: 25.0.1
+      jsdom: 26.0.0
       koa: 2.15.3
       koa-compress: github.com/koajs/compress/0852175dfdb61cef1681d0d138ae72fd18208183
       koa-static: 5.0.0
@@ -96,7 +96,7 @@ importers:
       vite: 6.0.9_@types+node@22.10.7
       vite-plugin-pwa: 0.21.1_f257gz3ntxopt44egjyq7zzhba
       vite-ssg: 25.0.0_vite@6.0.9+vue@3.5.13
-      vitest: 3.0.2_hxefulizq5gh3a732yqvqddxka
+      vitest: 3.0.2_smmlsxhplvoxesix2y6hcdood4
       vitest-fail-on-console: 0.7.1_vite@6.0.9+vitest@3.0.2
       vue-tsc: 2.2.0_typescript@5.7.3
       workbox-window: 7.3.0
@@ -3131,7 +3131,7 @@ packages:
       msw: 2.7.0_jz7g66zcxnytounk3ufizcpw2i
       sirv: 3.0.0
       tinyrainbow: 2.0.0
-      vitest: 3.0.2_hxefulizq5gh3a732yqvqddxka
+      vitest: 3.0.2_smmlsxhplvoxesix2y6hcdood4
       ws: 8.18.0
     transitivePeerDependencies:
       - '@types/node'
@@ -3182,7 +3182,7 @@ packages:
     dependencies:
       eslint: 9.18.0
       typescript: 5.7.3
-      vitest: 3.0.2_hxefulizq5gh3a732yqvqddxka
+      vitest: 3.0.2_smmlsxhplvoxesix2y6hcdood4
     dev: true
 
   /@vitest/expect/3.0.2:
@@ -6804,6 +6804,42 @@ packages:
       - utf-8-validate
     dev: true
 
+  /jsdom/26.0.0:
+    resolution: {integrity: sha512-BZYDGVAIriBWTpIxYzrXjv3E/4u8+/pSG5bQdIYCbNCGOvsPkDQfTVLAIXAf9ETdCpduCVTkDe2NNZ8NIwUVzw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      canvas: ^3.0.0
+    peerDependenciesMeta:
+      canvas:
+        optional: true
+    dependencies:
+      cssstyle: 4.2.1
+      data-urls: 5.0.0
+      decimal.js: 10.4.3
+      form-data: 4.0.1
+      html-encoding-sniffer: 4.0.0
+      http-proxy-agent: 7.0.2
+      https-proxy-agent: 7.0.6
+      is-potential-custom-element-name: 1.0.1
+      nwsapi: 2.2.16
+      parse5: 7.2.1
+      rrweb-cssom: 0.8.0
+      saxes: 6.0.0
+      symbol-tree: 3.2.4
+      tough-cookie: 5.1.0
+      w3c-xmlserializer: 5.0.0
+      webidl-conversions: 7.0.0
+      whatwg-encoding: 3.1.1
+      whatwg-mimetype: 4.0.0
+      whatwg-url: 14.1.0
+      ws: 8.18.0
+      xml-name-validator: 5.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: true
+
   /jsesc/3.0.2:
     resolution: {integrity: sha512-xKqzzWXDttJuOcawBt4KnKHHIf5oQ/Cxax+0PWFG+DFDgHNAdi+TXECADI+RYiFUMmx8792xsMbbgXj4CwnP4g==}
     engines: {node: '>=6'}
@@ -10090,7 +10126,7 @@ packages:
     dependencies:
       chalk: 5.3.0
       vite: 6.0.9_@types+node@22.10.7
-      vitest: 3.0.2_hxefulizq5gh3a732yqvqddxka
+      vitest: 3.0.2_smmlsxhplvoxesix2y6hcdood4
     dev: true
 
   /vitest/3.0.2:
@@ -10153,7 +10189,7 @@ packages:
       - yaml
     dev: true
 
-  /vitest/3.0.2_hxefulizq5gh3a732yqvqddxka:
+  /vitest/3.0.2_smmlsxhplvoxesix2y6hcdood4:
     resolution: {integrity: sha512-5bzaHakQ0hmVVKLhfh/jXf6oETDBtgPo8tQCHYB+wftNgFJ+Hah67IsWc8ivx4vFL025Ow8UiuTf4W57z4izvQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
@@ -10190,7 +10226,7 @@ packages:
       chai: 5.1.2
       debug: 4.4.0
       expect-type: 1.1.0
-      jsdom: 25.0.1
+      jsdom: 26.0.0
       magic-string: 0.30.17
       pathe: 2.0.2
       std-env: 3.8.0
