@@ -47,7 +47,7 @@ importers:
       typescript: ~5.7.2
       vite: ^6.0.9
       vite-plugin-pwa: ^0.21.1
-      vite-ssg: ^0.24.3
+      vite-ssg: ^25.0.0
       vitest: 3.0.2
       vitest-fail-on-console: ^0.7.1
       vue: ^3.5.13
@@ -95,7 +95,7 @@ importers:
       typescript: 5.7.3
       vite: 6.0.9_@types+node@22.10.7
       vite-plugin-pwa: 0.21.1_f257gz3ntxopt44egjyq7zzhba
-      vite-ssg: 0.24.3_vite@6.0.9+vue@3.5.13
+      vite-ssg: 25.0.0_vite@6.0.9+vue@3.5.13
       vitest: 3.0.2_hxefulizq5gh3a732yqvqddxka
       vitest-fail-on-console: 0.7.1_vite@6.0.9+vitest@3.0.2
       vue-tsc: 2.2.0_typescript@5.7.3
@@ -9954,20 +9954,17 @@ packages:
       - supports-color
     dev: true
 
-  /vite-ssg/0.24.3_vite@6.0.9+vue@3.5.13:
-    resolution: {integrity: sha512-LEoJGJD495Hol3vfPJpugee5GkBnhy5Zh67YO7ITxZrSrxqKDqIsE/l5Rtuu5dXSlXKdu+q1yk4xc+vymfzKSQ==}
+  /vite-ssg/25.0.0_vite@6.0.9+vue@3.5.13:
+    resolution: {integrity: sha512-/z4IFxL5nvo1cZWzedFdtuQNXWU/X/X/Dbsxw0vISO5kDktCLFtvZGp79TDsUOA4urG4VqC3bqrlKVdAiLJAcQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     peerDependencies:
       beasties: ^0.2.0
-      critters: ^0.0.24
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0 || ^6.0.0
       vue: ^3.2.10
       vue-router: ^4.0.1
     peerDependenciesMeta:
       beasties:
-        optional: true
-      critters:
         optional: true
       vue-router:
         optional: true
