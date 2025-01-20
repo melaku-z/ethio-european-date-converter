@@ -48,7 +48,7 @@
     "npm-run-all2": "^7.0.2",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
-    "puppeteer": "^23.11.1",
+    "puppeteer": "^24.1.0",
     "typescript": "~5.7.2",
     "vite": "^6.0.9",
     "vite-plugin-pwa": "^0.21.1",
