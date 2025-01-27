@@ -14,7 +14,7 @@
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
     "dts-bundle-generator": "^9.5.1",
-    "eslint": "^9.18.0",
+    "eslint": "^9.19.0",
     "prettier": "^3.4.2",
     "typescript": "~5.7.2",
     "vite": "^6.0.11",
