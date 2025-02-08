@@ -17,7 +17,7 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@playwright/test": "^1.50.0",
+    "@playwright/test": "^1.50.1",
     "@rushstack/eslint-patch": "^1.10.5",
     "@tsconfig/node22": "^22.0.0",
     "@types/eslint": "^9.6.1",
@@ -48,9 +48,9 @@
     "npm-run-all2": "^7.0.2",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
-    "puppeteer": "^24.1.1",
+    "puppeteer": "^24.2.0",
     "typescript": "~5.7.2",
-    "vite": "^6.0.11",
+    "vite": "^6.1.0",
     "vite-plugin-pwa": "^0.21.1",
     "vite-ssg": "^25.0.0",
     "vitest": "3.0.4",
