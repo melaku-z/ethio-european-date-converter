@@ -16,7 +16,7 @@
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.21.0",
     "prettier": "^3.4.2",
-    "typescript": "~5.7.2",
+    "typescript": "~5.8.0",
     "vite": "^6.2.0",
     "vitest": "3.0.7"
   },
