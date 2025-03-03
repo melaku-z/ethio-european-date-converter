@@ -14,7 +14,7 @@
     "eslint": "^9.20.0",
     "prettier": "^3.4.2",
     "typescript": "~5.7.2",
-    "vite": "^6.1.1",
+    "vite": "^6.2.0",
     "vitest": "3.0.6"
   },
   "scripts": {
