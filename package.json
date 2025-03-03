@@ -49,7 +49,7 @@
     "postcss": "^8.5.3",
     "prettier": "^3.4.2",
     "puppeteer": "^24.3.0",
-    "typescript": "~5.7.2",
+    "typescript": "~5.8.0",
     "vite": "^6.2.0",
     "vite-plugin-pwa": "^0.21.1",
     "vite-ssg": "^25.2.0",
