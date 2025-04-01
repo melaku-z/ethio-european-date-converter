@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.51.1",
-    "@rushstack/eslint-patch": "^1.10.5",
+    "@rushstack/eslint-patch": "^1.11.0",
     "@tsconfig/node22": "^22.0.0",
     "@types/eslint": "^9.6.1",
     "@types/jsdom": "^21.1.7",
@@ -35,7 +35,7 @@
     "@web/dev-server": "^0.4.6",
     "autoprefixer": "^10.4.21",
     "compress": "link:@types/koajs/compress",
-    "eslint": "^9.21.0",
+    "eslint": "^9.23.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-playwright": "^2.2.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
