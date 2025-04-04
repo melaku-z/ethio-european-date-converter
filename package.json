@@ -50,7 +50,7 @@
     "prettier": "^3.5.3",
     "puppeteer": "^24.5.0",
     "typescript": "~5.8.0",
-    "vite": "^6.2.4",
+    "vite": "^6.2.5",
     "vite-plugin-pwa": "^1.0.0",
     "vite-ssg": "^26.1.1",
     "vitest": "3.0.9",
