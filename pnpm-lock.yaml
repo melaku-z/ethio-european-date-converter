@@ -109,16 +109,16 @@ importers:
 
   mobile:
     specifiers:
-      '@capacitor/android': ^6.2.0
+      '@capacitor/android': ^6.2.1
       '@capacitor/assets': ^3.0.5
-      '@capacitor/cli': ^6.2.0
-      '@capacitor/core': ^6.2.0
+      '@capacitor/cli': ^6.2.1
+      '@capacitor/core': ^6.2.1
     dependencies:
-      '@capacitor/android': 6.2.0_@capacitor+core@6.2.0
-      '@capacitor/core': 6.2.0
+      '@capacitor/android': 6.2.1_@capacitor+core@6.2.1
+      '@capacitor/core': 6.2.1
     devDependencies:
       '@capacitor/assets': 3.0.5
-      '@capacitor/cli': 6.2.0
+      '@capacitor/cli': 6.2.1
 
   packages/ethiopian-calendar-date-converter:
     specifiers:
@@ -1253,12 +1253,12 @@ packages:
       tough-cookie: 4.1.4
     dev: true
 
-  /@capacitor/android/6.2.0_@capacitor+core@6.2.0:
-    resolution: {integrity: sha512-3YIDPylV0Q2adEQ/H568p496QdYG0jK/XGMdx7OGSqdBZen92ciAsYdyhLtyl91UVsN1lBhDi5H6j3T2KS6aJg==}
+  /@capacitor/android/6.2.1_@capacitor+core@6.2.1:
+    resolution: {integrity: sha512-8gd4CIiQO5LAIlPIfd5mCuodBRxMMdZZEdj8qG8m+dQ1sQ2xyemVpzHmRK8qSCHorsBUCg3D62j2cp6bEBAkdw==}
     peerDependencies:
       '@capacitor/core': ^6.2.0
     dependencies:
-      '@capacitor/core': 6.2.0
+      '@capacitor/core': 6.2.1
     dev: false
 
   /@capacitor/assets/3.0.5:
@@ -1314,8 +1314,8 @@ packages:
       - supports-color
     dev: true
 
-  /@capacitor/cli/6.2.0:
-    resolution: {integrity: sha512-EWcXG39mZh35zrHhOqzN1ILeSyMRyEqWVtQDXqMGjCXYRH6b6p5TvyvLDN8ZNy26tbhI3i79gfrgirt+mNwuuw==}
+  /@capacitor/cli/6.2.1:
+    resolution: {integrity: sha512-JKl0FpFge8PgQNInw12kcKieQ4BmOyazQ4JGJOfEpVXlgrX1yPhSZTPjngupzTCiK3I7q7iGG5kjun0fDqgSCA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
@@ -1340,8 +1340,8 @@ packages:
       - supports-color
     dev: true
 
-  /@capacitor/core/6.2.0:
-    resolution: {integrity: sha512-B9IlJtDpUqhhYb+T8+cp2Db/3RETX36STgjeU2kQZBs/SLAcFiMama227o+msRjLeo3DO+7HJjWVA1+XlyyPEg==}
+  /@capacitor/core/6.2.1:
+    resolution: {integrity: sha512-urZwxa7hVE/BnA18oCFAdizXPse6fCKanQyEqpmz6cBJ2vObwMpyJDG5jBeoSsgocS9+Ax+9vb4ducWJn0y2qQ==}
     dependencies:
       tslib: 2.8.1
     dev: false
