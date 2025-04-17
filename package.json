@@ -35,7 +35,7 @@
     "@web/dev-server": "^0.4.6",
     "autoprefixer": "^10.4.21",
     "compress": "link:@types/koajs/compress",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-playwright": "^2.2.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
