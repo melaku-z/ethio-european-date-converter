@@ -31,7 +31,7 @@ importers:
       eslint-plugin-import: ^2.31.0
       eslint-plugin-playwright: ^2.2.0
       eslint-plugin-simple-import-sort: ^12.1.1
-      eslint-plugin-vue: ^10.1.0
+      eslint-plugin-vue: ^10.2.0
       ethiopian-calendar-date-converter: workspace:*
       ethiopian-calendar-date-converter-vue: workspace:*
       jsdom: ^26.1.0
@@ -72,7 +72,7 @@ importers:
       '@vitest/browser': 3.1.4_vite@6.3.5+vitest@3.1.4
       '@vitest/eslint-plugin': 1.2.1_t7hyboezfnymlyfcsbwohhasqi
       '@vue/eslint-config-prettier': 10.2.0_nh6y6wikdsu3xfiqieoeynorxu
-      '@vue/eslint-config-typescript': 14.3.0_pzqkwuartk6zxnqkbbgehdsznu
+      '@vue/eslint-config-typescript': 14.3.0_gfkqtwy4st5tnsmnfjrhyui34m
       '@vue/test-utils': 2.4.6
       '@vue/tsconfig': 0.7.0_k6eeeae433np5seyl4etirvzqm
       '@web/dev-server': 0.4.6
@@ -82,7 +82,7 @@ importers:
       eslint-plugin-import: 2.31.0_eslint@9.28.0
       eslint-plugin-playwright: 2.2.0_eslint@9.28.0
       eslint-plugin-simple-import-sort: 12.1.1_eslint@9.28.0
-      eslint-plugin-vue: 10.1.0_eslint@9.28.0
+      eslint-plugin-vue: 10.2.0_eslint@9.28.0
       jsdom: 26.1.0
       koa: 3.0.0
       koa-compress: github.com/koajs/compress/0852175dfdb61cef1681d0d138ae72fd18208183
@@ -3164,7 +3164,7 @@ packages:
       '@vitest/spy': 3.1.4
       estree-walker: 3.0.3
       magic-string: 0.30.17
-      vite: 6.3.5
+      vite: 6.3.5_@types+node@22.10.7
     dev: true
 
   /@vitest/pretty-format/3.1.4:
@@ -3275,7 +3275,7 @@ packages:
       - '@types/eslint'
     dev: true
 
-  /@vue/eslint-config-typescript/14.3.0_pzqkwuartk6zxnqkbbgehdsznu:
+  /@vue/eslint-config-typescript/14.3.0_gfkqtwy4st5tnsmnfjrhyui34m:
     resolution: {integrity: sha512-bOreIxlSC/xsUdhDdKIHb1grwJah+IokNeJ50LqA1StdOHeSPUxSIPNxyKgRx4YdjhyzC6TKtrCf6yYK99x3Uw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
@@ -3288,7 +3288,7 @@ packages:
     dependencies:
       '@typescript-eslint/utils': 8.32.1_rwhgmzii4qnxmf2zjgy4mc3rxu
       eslint: 9.28.0
-      eslint-plugin-vue: 10.1.0_eslint@9.28.0
+      eslint-plugin-vue: 10.2.0_eslint@9.28.0
       fast-glob: 3.3.3
       typescript: 5.8.2
       typescript-eslint: 8.20.0_rwhgmzii4qnxmf2zjgy4mc3rxu
@@ -5327,8 +5327,8 @@ packages:
       eslint: 9.28.0
     dev: true
 
-  /eslint-plugin-vue/10.1.0_eslint@9.28.0:
-    resolution: {integrity: sha512-/VTiJ1eSfNLw6lvG9ENySbGmcVvz6wZ9nA7ZqXlLBY2RkaF15iViYKxglWiIch12KiLAj0j1iXPYU6W4wTROFA==}
+  /eslint-plugin-vue/10.2.0_eslint@9.28.0:
+    resolution: {integrity: sha512-tl9s+KN3z0hN2b8fV2xSs5ytGl7Esk1oSCxULLwFcdaElhZ8btYYZFrWxvh4En+czrSDtuLCeCOGa8HhEZuBdQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
