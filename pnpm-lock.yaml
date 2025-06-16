@@ -19,7 +19,7 @@ importers:
       '@types/node': ^22.10.5
       '@vitejs/plugin-vue': ^5.2.4
       '@vitest/browser': 3.2.3
-      '@vitest/eslint-plugin': ^1.2.1
+      '@vitest/eslint-plugin': ^1.2.5
       '@vue/eslint-config-prettier': ^10.2.0
       '@vue/eslint-config-typescript': ^14.2.0
       '@vue/test-utils': ^2.4.6
@@ -70,7 +70,7 @@ importers:
       '@types/node': 22.10.7
       '@vitejs/plugin-vue': 5.2.4_vite@6.3.5+vue@3.5.16
       '@vitest/browser': 3.2.3_vite@6.3.5+vitest@3.2.3
-      '@vitest/eslint-plugin': 1.2.1_266l6pees2kiakgynrtjlcv4wa
+      '@vitest/eslint-plugin': 1.2.5_266l6pees2kiakgynrtjlcv4wa
       '@vue/eslint-config-prettier': 10.2.0_nh6y6wikdsu3xfiqieoeynorxu
       '@vue/eslint-config-typescript': 14.3.0_gfkqtwy4st5tnsmnfjrhyui34m
       '@vue/test-utils': 2.4.6
@@ -3132,8 +3132,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/eslint-plugin/1.2.1_266l6pees2kiakgynrtjlcv4wa:
-    resolution: {integrity: sha512-JQr1jdVcrsoS7Sdzn83h9sq4DvREf9Q/onTZbJCqTVlv/76qb+TZrLv/9VhjnjSMHweQH5FdpMDeCR6aDe2fgw==}
+  /@vitest/eslint-plugin/1.2.5_266l6pees2kiakgynrtjlcv4wa:
+    resolution: {integrity: sha512-cfmXz++mkqYpssrKymd7KJumxaZBsfFji2y22QV04kDYKRbiaZ+s4WZL/bzAkcefVKj4KkFctVALHdDZhFhHGg==}
     peerDependencies:
       eslint: '>= 8.57.0'
       typescript: '>= 5.0.0'
