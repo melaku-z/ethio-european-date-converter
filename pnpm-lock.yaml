@@ -9,7 +9,7 @@ importers:
   .:
     specifiers:
       '@fortawesome/fontawesome-free': ^6.7.2
-      '@playwright/test': ^1.53.1
+      '@playwright/test': ^1.53.2
       '@rushstack/eslint-patch': ^1.11.0
       '@tsconfig/node22': ^22.0.0
       '@types/eslint': ^9.6.1
@@ -42,12 +42,12 @@ importers:
       npm-run-all2: ^7.0.2
       postcss: ^8.5.6
       prettier: ^3.5.3
-      puppeteer: ^24.10.2
+      puppeteer: ^24.11.2
       tailwindcss: ^3.4.17
       typescript: ~5.8.0
       vite: ^6.3.5
-      vite-plugin-pwa: ^1.0.0
-      vite-ssg: ^27.0.1
+      vite-plugin-pwa: ^1.0.1
+      vite-ssg: ^27.1.0
       vitest: 3.2.4
       vitest-fail-on-console: ^0.7.1
       vue: ^3.5.17
@@ -60,7 +60,7 @@ importers:
       tailwindcss: 3.4.17
       vue: 3.5.17_typescript@5.8.2
     devDependencies:
-      '@playwright/test': 1.53.1
+      '@playwright/test': 1.53.2
       '@rushstack/eslint-patch': 1.11.0
       '@tsconfig/node22': 22.0.0
       '@types/eslint': 9.6.1
@@ -91,11 +91,11 @@ importers:
       npm-run-all2: 7.0.2
       postcss: 8.5.6
       prettier: 3.5.3
-      puppeteer: 24.10.2_typescript@5.8.2
+      puppeteer: 24.11.2_typescript@5.8.2
       typescript: 5.8.2
       vite: 6.3.5_@types+node@22.10.7
-      vite-plugin-pwa: 1.0.0_rcgchtlfpbhmnjewegvhf4mfbq
-      vite-ssg: 27.0.1_y2onn3ppfdihnli34ccyfx2t7i
+      vite-plugin-pwa: 1.0.1_rcgchtlfpbhmnjewegvhf4mfbq
+      vite-ssg: 27.1.0_y2onn3ppfdihnli34ccyfx2t7i
       vitest: 3.2.4_s4il3i53fkrp6kamkqu5slhrki
       vitest-fail-on-console: 0.7.1_vite@6.3.5+vitest@3.2.4
       vue-tsc: 2.2.0_typescript@5.8.2
@@ -2047,12 +2047,12 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
-  /@playwright/test/1.53.1:
-    resolution: {integrity: sha512-Z4c23LHV0muZ8hfv4jw6HngPJkbbtZxTkxPNIg7cJcTc9C28N/p2q7g3JZS2SiKBBHJ3uM1dgDye66bB7LEk5w==}
+  /@playwright/test/1.53.2:
+    resolution: {integrity: sha512-tEB2U5z74ebBeyfGNZ3Jfg29AnW+5HlWhvHtb/Mqco9pFdZU1ZLNdVb2UtB5CvmiilNr2ZfVH/qMmAROG/XTzw==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      playwright: 1.53.1
+      playwright: 1.53.2
     dev: true
 
   /@polka/url/1.0.0-next.28:
@@ -3057,19 +3057,19 @@ packages:
       eslint-visitor-keys: 4.2.0
     dev: true
 
-  /@unhead/dom/2.0.10:
-    resolution: {integrity: sha512-00I1FFogvb2S2nLjSSpgVRWNuzPoST/mHXxSNddPTOVB9q3+VpTCdWYIhfQFXza1uhdsBioFqEC3nA2qmeUoiw==}
+  /@unhead/dom/2.0.11:
+    resolution: {integrity: sha512-QvBWYisV0W3sLrYSa6Dicb4pj0xZopEtGPQRs3s8WIHw88kwCvIlVi2OU3oAD453yJ0sIlZjJQxgb1wRcVqozQ==}
     peerDependencies:
-      unhead: 2.0.10
+      unhead: 2.0.11
     dev: true
 
-  /@unhead/vue/2.0.10_vue@3.5.17:
-    resolution: {integrity: sha512-lV7E1sXX6/te8+IiUwlMysBAyJT/WM5Je47cRnpU5hsvDRziSIGfim9qMWbsTouH+paavRJz1i8gk5hRzjvkcw==}
+  /@unhead/vue/2.0.11_vue@3.5.17:
+    resolution: {integrity: sha512-8fotlaymgclwiywz9sCr+4EfJs4aoVr0TW31lk5Z8c3VVxeKLSjS4rs8ely8HQd9e3UWxYzZhR8ZqQh0qJPQ/w==}
     peerDependencies:
       vue: '>=3.5.13'
     dependencies:
       hookable: 5.5.3
-      unhead: 2.0.10
+      unhead: 2.0.11
       vue: 3.5.17_typescript@5.8.2
     dev: true
 
@@ -3107,7 +3107,7 @@ packages:
       sirv: 3.0.1
       tinyrainbow: 2.0.0
       vitest: 3.2.4_s4il3i53fkrp6kamkqu5slhrki
-      ws: 8.18.2
+      ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -3630,8 +3630,8 @@ packages:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
 
-  /ansis/4.0.0:
-    resolution: {integrity: sha512-P8nrHI1EyW9OfBt1X7hMSwGN2vwRuqHSKJAT1gbLWZRzDa24oHjYwGHvEgHeBepupzk878yS/HBZ0NMPYtbolw==}
+  /ansis/4.1.0:
+    resolution: {integrity: sha512-BGcItUBWSMRgOCe+SVZJ+S7yTRG0eGt9cXAHev72yuGcY23hnLA7Bky5L/xLyPINoSN95geovfBkqoTlNZYa7w==}
     engines: {node: '>=14'}
     dev: true
 
@@ -4201,12 +4201,12 @@ packages:
       zod: 3.23.8
     dev: true
 
-  /chromium-bidi/5.1.0_2zwnkfi4il4kw4ypjnh5qv2sry:
+  /chromium-bidi/5.1.0_zx3rg76poflc6jnq3jeyuvwiam:
     resolution: {integrity: sha512-9MSRhWRVoRPDG0TgzkHrshFSJJNZzfY5UFqUMuksg7zL1yoZIZ3jLB0YAgHclbiAxPI86pBnwDX1tbzoiV8aFw==}
     peerDependencies:
       devtools-protocol: '*'
     dependencies:
-      devtools-protocol: 0.0.1452169
+      devtools-protocol: 0.0.1464554
       mitt: 3.0.1
       zod: 3.24.4
     dev: true
@@ -4871,8 +4871,8 @@ packages:
     resolution: {integrity: sha512-DPnhUXvmvKT2dFA/j7B+riVLUt9Q6RKJlcppojL5CoRywJJKLDYnRlw0gTFKfgDPHP5E04UoB71SxoJlVZy8FA==}
     dev: true
 
-  /devtools-protocol/0.0.1452169:
-    resolution: {integrity: sha512-FOFDVMGrAUNp0dDKsAU1TorWJUx2JOU1k9xdgBKKJF3IBh/Uhl2yswG5r3TEAOrCiGY2QRp1e6LVDQrCsTKO4g==}
+  /devtools-protocol/0.0.1464554:
+    resolution: {integrity: sha512-CAoP3lYfwAGQTaAXYvA6JZR0fjGUb7qec1qf4mToyoH2TZgUFeIqYcjh6f9jNuhHfuZiEdH+PONHYrLhRQX6aw==}
     dev: true
 
   /dezalgo/1.0.4:
@@ -6723,7 +6723,7 @@ packages:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.2.0
-      ws: 8.18.2
+      ws: 8.18.3
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -7944,18 +7944,18 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /playwright-core/1.53.1:
-    resolution: {integrity: sha512-Z46Oq7tLAyT0lGoFx4DOuB1IA9D1TPj0QkYxpPVUnGDqHHvDpCftu1J2hM2PiWsNMoZh8+LQaarAWcDfPBc6zg==}
+  /playwright-core/1.53.2:
+    resolution: {integrity: sha512-ox/OytMy+2w1jcYEYlOo1Hhp8hZkLCximMTUTMBXjGUA1KoFfiSZ+DU+3a739jsPY0yoKH2TFy9S2fsJas8yAw==}
     engines: {node: '>=18'}
     hasBin: true
     dev: true
 
-  /playwright/1.53.1:
-    resolution: {integrity: sha512-LJ13YLr/ocweuwxyGf1XNFWIU4M2zUSo149Qbp+A4cpwDjsxRPj7k6H25LBrEHiEwxvRbD8HdwvQmRMSvquhYw==}
+  /playwright/1.53.2:
+    resolution: {integrity: sha512-6K/qQxVFuVQhRQhFsVZ9fGeatxirtrpPgxzBYWyZLEXJzqYwuL4fuNmfOfD5et1tJE4GScKyPNeLhZeRwuTU3A==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      playwright-core: 1.53.1
+      playwright-core: 1.53.2
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -8180,7 +8180,7 @@ packages:
       chromium-bidi: 0.6.3_w4ynke5veqslv6xu7cgf46ap7u
       debug: 4.4.1
       devtools-protocol: 0.0.1312386
-      ws: 8.18.2
+      ws: 8.18.3
     transitivePeerDependencies:
       - bare-buffer
       - bufferutil
@@ -8188,16 +8188,16 @@ packages:
       - utf-8-validate
     dev: true
 
-  /puppeteer-core/24.10.2:
-    resolution: {integrity: sha512-CnzhOgrZj8DvkDqI+Yx+9or33i3Y9uUYbKyYpP4C13jWwXx/keQ38RMTMmxuLCWQlxjZrOH0Foq7P2fGP7adDQ==}
+  /puppeteer-core/24.11.2:
+    resolution: {integrity: sha512-c49WifNb8hix+gQH17TldmD6TC/Md2HBaTJLHexIUq4sZvo2pyHY/Pp25qFQjibksBu/SJRYUY7JsoaepNbiRA==}
     engines: {node: '>=18'}
     dependencies:
       '@puppeteer/browsers': 2.10.5
-      chromium-bidi: 5.1.0_2zwnkfi4il4kw4ypjnh5qv2sry
+      chromium-bidi: 5.1.0_zx3rg76poflc6jnq3jeyuvwiam
       debug: 4.4.1
-      devtools-protocol: 0.0.1452169
+      devtools-protocol: 0.0.1464554
       typed-query-selector: 2.12.0
-      ws: 8.18.2
+      ws: 8.18.3
     transitivePeerDependencies:
       - bare-buffer
       - bufferutil
@@ -8205,17 +8205,17 @@ packages:
       - utf-8-validate
     dev: true
 
-  /puppeteer/24.10.2_typescript@5.8.2:
-    resolution: {integrity: sha512-+k26rCz6akFZntx0hqUoFjCojgOLIxZs6p2k53LmEicwsT8F/FMBKfRfiBw1sitjiCvlR/15K7lBqfjXa251FA==}
+  /puppeteer/24.11.2_typescript@5.8.2:
+    resolution: {integrity: sha512-HopdRZWHa5zk0HSwd8hU+GlahQ3fmesTAqMIDHVY9HasCvppcYuHYXyjml0nlm+nbwVCqAQWV+dSmiNCrZGTGQ==}
     engines: {node: '>=18'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@puppeteer/browsers': 2.10.5
-      chromium-bidi: 5.1.0_2zwnkfi4il4kw4ypjnh5qv2sry
+      chromium-bidi: 5.1.0_zx3rg76poflc6jnq3jeyuvwiam
       cosmiconfig: 9.0.0_typescript@5.8.2
-      devtools-protocol: 0.0.1452169
-      puppeteer-core: 24.10.2
+      devtools-protocol: 0.0.1464554
+      puppeteer-core: 24.11.2
       typed-query-selector: 2.12.0
     transitivePeerDependencies:
       - bare-buffer
@@ -9656,8 +9656,8 @@ packages:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
     dev: true
 
-  /unhead/2.0.10:
-    resolution: {integrity: sha512-GT188rzTCeSKt55tYyQlHHKfUTtZvgubrXiwzGeXg6UjcKO3FsagaMzQp6TVDrpDY++3i7Qt0t3pnCc/ebg5yQ==}
+  /unhead/2.0.11:
+    resolution: {integrity: sha512-wob9IFYcCH6Tr+84P6/m2EDhdPgq/Fb8AlLEes/2eE4empMHfZk/qFhA7cCmIiXRCPqUFt/pN+nIJVs5nEp9Ng==}
     dependencies:
       hookable: 5.5.3
     dev: true
@@ -9802,12 +9802,12 @@ packages:
       - yaml
     dev: true
 
-  /vite-plugin-pwa/1.0.0_rcgchtlfpbhmnjewegvhf4mfbq:
-    resolution: {integrity: sha512-X77jo0AOd5OcxmWj3WnVti8n7Kw2tBgV1c8MCXFclrSlDV23ePzv2eTDIALXI2Qo6nJ5pZJeZAuX0AawvRfoeA==}
+  /vite-plugin-pwa/1.0.1_rcgchtlfpbhmnjewegvhf4mfbq:
+    resolution: {integrity: sha512-STyUomQbydj7vGamtgQYIJI0YsUZ3T4pJLGBQDQPhzMse6aGSncmEN21OV35PrFsmCvmtiH+Nu1JS1ke4RqBjQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@vite-pwa/assets-generator': ^1.0.0
-      vite: ^3.1.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
+      vite: ^3.1.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
       workbox-window: ^7.3.0
     peerDependenciesMeta:
       '@vite-pwa/assets-generator':
@@ -9824,14 +9824,14 @@ packages:
       - supports-color
     dev: true
 
-  /vite-ssg/27.0.1_y2onn3ppfdihnli34ccyfx2t7i:
-    resolution: {integrity: sha512-RL9atZ4HHLdaa3PuXoiKr6kxw0CSBk4E449Dy2BGhpDArSJJ7WSmmHCJTKr6zmqKUb1ETjRH97fXOx8jXdiugQ==}
+  /vite-ssg/27.1.0_y2onn3ppfdihnli34ccyfx2t7i:
+    resolution: {integrity: sha512-Nq2cdNXJAPLuY8Ko071KCwQt0xf6bao+TRZmtEMlHAQBF5OJctlC4nqyABupkexXKASg+bO+dGCijGO3Z+h8/Q==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     peerDependencies:
       beasties: ^0.2.0
       prettier: ^3.3.0
-      vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0 || ^6.0.0
+      vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0 || ^6.0.0 || ^7.0.0-0
       vue: ^3.2.10
       vue-router: ^4.0.1
     peerDependenciesMeta:
@@ -9842,9 +9842,9 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@unhead/dom': 2.0.10
-      '@unhead/vue': 2.0.10_vue@3.5.17
-      ansis: 4.0.0
+      '@unhead/dom': 2.0.11
+      '@unhead/vue': 2.0.11_vue@3.5.17
+      ansis: 4.1.0
       cac: 6.7.14
       html-minifier-terser: 7.2.0
       html5parser: 2.0.2
@@ -10505,8 +10505,8 @@ packages:
         optional: true
     dev: true
 
-  /ws/8.18.2:
-    resolution: {integrity: sha512-DMricUmwGZUVr++AEAe2uiVM7UoO9MAVZMDu05UQOaUII0lp+zOzLLU4Xqh/JvTqklB1T4uELaaPBKyjE1r4fQ==}
+  /ws/8.18.3:
+    resolution: {integrity: sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
