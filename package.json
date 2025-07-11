@@ -25,7 +25,7 @@
     "@types/koa": "^2.15.0",
     "@types/koa-static": "^4.0.4",
     "@types/node": "^22.10.5",
-    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitejs/plugin-vue": "^6.0.0",
     "@vitest/browser": "3.2.4",
     "@vitest/eslint-plugin": "^1.2.7",
     "@vue/eslint-config-prettier": "^10.2.0",
