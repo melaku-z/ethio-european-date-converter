@@ -5,7 +5,9 @@
     "vitest.config.*",
     "package.json",
     "playwright.config.*",
-    "tailwind.config.*"
+    "tailwind.config.*",
+    "packages/ethiopian-calendar-date-converter/dts-bundle-generator.config.cjs",
+    "packages/ethiopian-calendar-date-converter-vue/dts-bundle-generator.config.cjs"
   ],
   "compilerOptions": {
     "noEmit": true,
