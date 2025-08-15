@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build-test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     # Sets permissions of the GITHUB_TOKEN to allow release
     permissions:
