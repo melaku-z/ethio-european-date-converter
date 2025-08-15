@@ -55,7 +55,7 @@
     "vite-plugin-pwa": "^1.0.1",
     "vite-ssg": "^28.0.0",
     "vitest": "3.2.4",
-    "vitest-fail-on-console": "^0.7.1",
+    "vitest-fail-on-console": "^0.9.0",
     "vue-tsc": "^3.0.5",
     "workbox-window": "^7.3.0"
   },
