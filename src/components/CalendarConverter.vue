@@ -12,7 +12,7 @@ const eurCalText = computed(() => {
   if (!eurDate) return ''
 
   return (
-    new Date(Date.UTC(eurYear, eurMon - 1, eurDate))
+    new Date(Date.UTC(eurYear!, eurMon! - 1, eurDate))
       .toUTCString()
       .substring(0, 16) + ' (at GMT+0)'
   )

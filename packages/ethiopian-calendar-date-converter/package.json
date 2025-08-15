@@ -13,7 +13,7 @@
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.33.0",
     "prettier": "^3.6.2",
-    "typescript": "~5.8.0",
+    "typescript": "~5.9.0",
     "vite": "^7.0.5",
     "vitest": "3.2.4"
   },
@@ -21,7 +21,7 @@
     "test": "vitest run",
     "prepublishOnly": "pnpm lint && pnpm build && pnpm test",
     "dev": "vite --host",
-    "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.cjs",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "lint:scripts": "eslint . --ext .ts --fix",
