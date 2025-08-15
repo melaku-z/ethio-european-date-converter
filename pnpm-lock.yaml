@@ -25,11 +25,11 @@ importers:
         specifier: ^3.4.17
         version: 3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.9.2))
       vue:
-        specifier: ^3.5.17
+        specifier: ^3.5.18
         version: 3.5.18(typescript@5.9.2)
     devDependencies:
       '@playwright/test':
-        specifier: ^1.54.1
+        specifier: ^1.54.2
         version: 1.54.2
       '@rushstack/eslint-patch':
         specifier: ^1.12.0
@@ -44,8 +44,8 @@ importers:
         specifier: ^21.1.7
         version: 21.1.7
       '@types/koa':
-        specifier: ^2.15.0
-        version: 2.15.0
+        specifier: ^3.0.0
+        version: 3.0.0
       '@types/koa-static':
         specifier: ^4.0.4
         version: 4.0.4
@@ -53,7 +53,7 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^6.0.0
+        specifier: ^6.0.1
         version: 6.0.1(vite@7.1.2(@types/node@22.10.5)(jiti@1.21.7)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.18(typescript@5.9.2))
       '@vitest/browser':
         specifier: 3.2.4
@@ -104,7 +104,7 @@ importers:
         specifier: ^26.1.0
         version: 26.1.0
       koa:
-        specifier: ^3.0.0
+        specifier: ^3.0.1
         version: 3.0.1
       koa-compress:
         specifier: github:koajs/compress
@@ -125,19 +125,19 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
       puppeteer:
-        specifier: ^24.14.0
+        specifier: ^24.16.2
         version: 24.16.2(typescript@5.9.2)
       typescript:
         specifier: ~5.9.0
         version: 5.9.2
       vite:
-        specifier: ^7.0.5
+        specifier: ^7.1.2
         version: 7.1.2(@types/node@22.10.5)(jiti@1.21.7)(terser@5.37.0)(yaml@2.7.0)
       vite-plugin-pwa:
-        specifier: ^1.0.1
+        specifier: ^1.0.2
         version: 1.0.2(vite@7.1.2(@types/node@22.10.5)(jiti@1.21.7)(terser@5.37.0)(yaml@2.7.0))(workbox-build@7.1.0)(workbox-window@7.3.0)
       vite-ssg:
-        specifier: ^28.0.0
+        specifier: ^28.1.0
         version: 28.1.0(prettier@3.6.2)(unhead@2.0.14)(vite@7.1.2(@types/node@22.10.5)(jiti@1.21.7)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.18(typescript@5.9.2))
       vitest:
         specifier: 3.2.4
@@ -192,7 +192,7 @@ importers:
         specifier: ~5.9.0
         version: 5.9.2
       vite:
-        specifier: ^7.0.5
+        specifier: ^7.1.2
         version: 7.1.2(@types/node@22.10.5)(jiti@1.21.7)(terser@5.37.0)(yaml@2.7.0)
       vitest:
         specifier: 3.2.4
@@ -204,7 +204,7 @@ importers:
         specifier: workspace:*
         version: link:../ethiopian-calendar-date-converter
       vue:
-        specifier: ^3.5.17
+        specifier: ^3.5.18
         version: 3.5.18(typescript@5.9.2)
     devDependencies:
       '@vitest/coverage-v8':
@@ -229,7 +229,7 @@ importers:
         specifier: ~5.9.0
         version: 5.9.2
       vite:
-        specifier: ^7.0.5
+        specifier: ^7.1.2
         version: 7.1.2(@types/node@22.10.5)(jiti@1.21.7)(terser@5.37.0)(yaml@2.7.0)
       vitest:
         specifier: 3.2.4
@@ -1587,6 +1587,9 @@ packages:
 
   '@types/koa@2.15.0':
     resolution: {integrity: sha512-7QFsywoE5URbuVnG3loe03QXuGajrnotr3gQkXcEBShORai23MePfFYdhz90FEtBBpkyIYQbVD+evKtloCgX3g==}
+
+  '@types/koa@3.0.0':
+    resolution: {integrity: sha512-MOcVYdVYmkSutVHZZPh8j3+dAjLyR5Tl59CN0eKgpkE1h/LBSmPAsQQuWs+bKu7WtGNn+hKfJH9Gzml+PulmDg==}
 
   '@types/mime@1.3.5':
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
@@ -7467,18 +7470,29 @@ snapshots:
 
   '@types/koa-compose@3.2.8':
     dependencies:
-      '@types/koa': 2.15.0
+      '@types/koa': 3.0.0
 
   '@types/koa-send@4.1.6':
     dependencies:
-      '@types/koa': 2.15.0
+      '@types/koa': 3.0.0
 
   '@types/koa-static@4.0.4':
     dependencies:
-      '@types/koa': 2.15.0
+      '@types/koa': 3.0.0
       '@types/koa-send': 4.1.6
 
   '@types/koa@2.15.0':
+    dependencies:
+      '@types/accepts': 1.3.7
+      '@types/content-disposition': 0.5.8
+      '@types/cookies': 0.9.0
+      '@types/http-assert': 1.5.6
+      '@types/http-errors': 2.0.4
+      '@types/keygrip': 1.0.6
+      '@types/koa-compose': 3.2.8
+      '@types/node': 22.10.5
+
+  '@types/koa@3.0.0':
     dependencies:
       '@types/accepts': 1.3.7
       '@types/content-disposition': 0.5.8
