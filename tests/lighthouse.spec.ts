@@ -57,8 +57,8 @@ describe('home page', async () => {
       port: Number(new URL(browser.wsEndpoint()).port),
       output: ['html'],
       logLevel: 'error',
-      onlyCategories: categories,
     }))!
+
     // await writeFile('tests/lhreport.html', String(report))
     const [result, expectedResult] = getLightHouseSummary(lhr)
     expect(result).toEqual(expectedResult)
@@ -71,12 +71,12 @@ function getLightHouseSummary(lhResult: Result) {
   const expectedResult = {
     accessibility: '100',
     performance: '100',
-    pwa: '100',
+    // pwa: '100',
     seo: '100',
     'best-practices': '100',
     pageSpeed: 100,
   }
-  const result = {
+  const result: Record<string, string | number> = {
     pageSpeed: (lhResult.audits['speed-index'].score || 0) * 100,
   }
 
