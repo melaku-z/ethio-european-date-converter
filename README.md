@@ -1,6 +1,6 @@
 # Ethio-European Date Converter
 
-![build and test](<https://github.com/melaku-z/ethio-european-date-converter/actions/workflows/test-deploy.yml/badge.svg?branch=master>)
+![build and test](https://github.com/melaku-z/ethio-european-date-converter/actions/workflows/test-deploy.yml/badge.svg?branch=master)
 [![Version](https://img.shields.io/npm/v/ethiopian-calendar-date-converter.svg?sanitize=true)](https://www.npmjs.com/package/ethiopian-calendar-date-converter)
 [![License](https://img.shields.io/npm/l/ethiopian-calendar-date-converter.svg?sanitize=true)](https://www.npmjs.com/package/ethiopian-calendar-date-converter)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmelaku-z%2Fethio-european-date-converter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmelaku-z%2Fethio-european-date-converter?ref=badge_shield)
