@@ -2,3 +2,4 @@ packages:
   - 'packages/*'
   - 'mobile'
   - 'desktop'
+minimumReleaseAge: 1440 # one day

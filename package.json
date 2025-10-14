@@ -32,7 +32,6 @@
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.0",
-    "@web/dev-server": "^0.4.6",
     "autoprefixer": "^10.4.21",
     "compress": "link:@types/koajs/compress",
     "eslint": "^9.37.0",
