@@ -115,7 +115,8 @@ const ethCalText = computed(() =>
 </template>
 
 <style lang="postcss">
-@reference "../assets/main.postcss";
+@reference "../assets/main.css";
+
 .card {
   @apply flex flex-col rounded border border-gray-300 p-4 w-full md:w-96 md:mx-auto;
   background-color: rgba(86, 61, 124, 0.15);

@@ -19,7 +19,6 @@ import SocialFooter from './components/SocialFooter.vue'
 </template>
 
 <style>
-@reference "./assets/main.postcss";
 #app {
   padding-top: 60px;
   height: 100vh;
