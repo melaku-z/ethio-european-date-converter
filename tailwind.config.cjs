@@ -1,7 +1,6 @@
-/*eslint-env node*/
-/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{vue,html}'],
+  content: ['./index.html', './src/**/*.{vue,html,ts,postcss,css}'],
   theme: {
     extend: {
       colors: {

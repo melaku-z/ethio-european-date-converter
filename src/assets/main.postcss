@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.cjs';
+@source '../../index.html';
+@source '../../src/**/*.{vue,ts,postcss,css}';
 
 body {
   min-height: 100vh;

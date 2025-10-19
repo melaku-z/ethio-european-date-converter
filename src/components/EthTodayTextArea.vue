@@ -41,6 +41,7 @@ onMounted(() => {
 </template>
 
 <style>
+@reference "../assets/main.postcss";
 .eth-today-time-text-container {
   @apply mx-auto sm:p-3 p-4 break-words text-center text-xl font-light rounded;
   background-color: rgba(86, 61, 124, 0.15);

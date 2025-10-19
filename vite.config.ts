@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
@@ -8,6 +9,7 @@ import { configDefaults } from 'vitest/config'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     vue(),
     VitePWA({
       devOptions: {

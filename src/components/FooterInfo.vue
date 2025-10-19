@@ -33,6 +33,7 @@
 </template>
 
 <style lang="postcss" scoped>
+@reference "../assets/main.postcss";
 details {
   @apply border-gray-300 bg-theme-bg text-theme-text;
   summary {
