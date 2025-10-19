@@ -18,24 +18,13 @@ onMounted(() => {
 
 <template>
   <article class="eth-today-time-text-container">
-    <div class="bg-theme-bg text-theme-text w-full p-4 pl-14">
+    <div class="bg-theme-bg text-theme-text w-full p-4">
       Today in Ethiopian Calendar is
 
       <strong class="font-bold">
         {{ ethTodayDateText || '...loading...' }}
       </strong>
       {{ ethTodayTimeText }}
-
-      <button
-        type="button"
-        class="rounded border py-1 px-2 text-xl font-bold ml-1"
-        :disabled="liveRefreshEnabled"
-        :class="{
-          'opacity-0': liveRefreshEnabled,
-        }"
-      >
-        ⟳
-      </button>
     </div>
   </article>
 </template>
