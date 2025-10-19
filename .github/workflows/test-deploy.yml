@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build-test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     # Sets permissions of the GITHUB_TOKEN to allow release
     permissions:
@@ -29,7 +29,7 @@ jobs:
           version: 10
 
       - name: Use Node.js 22.x
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: 'pnpm'
@@ -120,7 +120,7 @@ jobs:
           version: 10
 
       - name: Use Node.js 22.x
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: 'pnpm'
@@ -135,7 +135,7 @@ jobs:
         env:
           BASE_URL: /ethio-european-date-converter/
       - name: Upload artifact # for github pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
       - name: Deploy to GitHub Pages
