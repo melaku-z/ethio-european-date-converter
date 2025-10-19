@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.ts';
+@source '../../index.html';
+@source '../../src/**/*.{vue,ts,postcss,css}';
 
 body {
   min-height: 100vh;
@@ -25,13 +27,4 @@ body {
     --theme-header-text: rgb(232, 230, 227);
     --theme-blue-bg: rgb(0, 81, 162);
   }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  position: relative;
-  font-weight: normal;
 }

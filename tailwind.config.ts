@@ -1,7 +1,7 @@
-/*eslint-env node*/
-/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
-module.exports = {
-  content: ['./index.html', './src/**/*.{vue,html}'],
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: ['./index.html', './src/**/*.{vue,html,ts,postcss,css}'],
   theme: {
     extend: {
       colors: {
@@ -13,4 +13,4 @@ module.exports = {
       },
     },
   },
-}
+} satisfies Config

@@ -32,6 +32,8 @@
 </template>
 
 <style scoped lang="postcss">
+@reference "../assets/main.css";
+
 .social-footer {
   @apply mx-auto flex flex-wrap w-10/12 mb-8;
   background-color: rgb(221, 217, 226);
