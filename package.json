@@ -42,7 +42,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-vue": "^10.5.0",
     "jsdom": "^27.0.0",
-    "koa": "^3.0.1",
+    "koa": "^3.0.3",
     "koa-compress": "github:koajs/compress",
     "koa-static": "^5.0.0",
     "lighthouse": "^13.0.0",
