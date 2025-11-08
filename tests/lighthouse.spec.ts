@@ -53,7 +53,7 @@ describe('home page', async () => {
   it('has acceptable lighthouse score', async () => {
     const browser = await puppeteer.launch(
       // No sandbox because: https://pptr.dev/troubleshooting#issues-with-apparmor-on-ubuntu
-      { args: ['--no-sandbox'] }
+      { args: ['--no-sandbox'] },
     )
 
     const { lhr, report } = (await lighthouse('http://localhost:8001/', {
