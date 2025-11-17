@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
-    "@rushstack/eslint-patch": "^1.14.1",
+    "@rushstack/eslint-patch": "^1.15.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/vite": "^4.1.17",
     "@tsconfig/node22": "^22.0.2",
