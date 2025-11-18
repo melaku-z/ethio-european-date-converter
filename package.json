@@ -9,6 +9,26 @@
   "author": "Melaku Zewdu <melaku44@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:dependencies": "pnpm --filter ethiopian-calendar-date-converter build && pnpm --filter ethiopian-calendar-date-converter-vue build",
+    "build:package": "run-p type-check build-only",
+    "build": "pnpm run build:dependencies && pnpm run build:package",
+    "deploy:cloudflare": "wrangler pages deploy dist --project-name=ethiopian-calendar",
+    "preview": "vite preview",
+    "test": "vitest run && pnpm run test:dependencies",
+    "test:dependencies": "pnpm --filter ethiopian-calendar-date-converter test && pnpm --filter ethiopian-calendar-date-converter-vue test",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:playwright:install": "playwright install --with-deps",
+    "test:puppeteer:install": "puppeteer browsers install chrome",
+    "build-only": "vite-ssg build",
+    "start-server:prod": "web-dev-server --root-dir dist --port 8000 --open --compatibility none",
+    "type-check": "vue-tsc --build --force",
+    "format": "prettier . \"!pnpm-lock.yaml\" \"!mobile\" --write",
+    "verify-for-ci": "pnpm lint && pnpm format && pnpm build && pnpm test && pnpm run test:e2e",
+    "lint": "eslint . --fix"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
     "ethiopian-calendar-date-converter": "workspace:*",
@@ -18,7 +38,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
-    "@rushstack/eslint-patch": "^1.14.1",
+    "@rushstack/eslint-patch": "^1.15.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/vite": "^4.1.17",
     "@tsconfig/node22": "^22.0.2",
@@ -57,29 +77,11 @@
     "vitest": "^4.0.8",
     "vitest-fail-on-console": "^0.10.1",
     "vue-tsc": "^3.1.3",
-    "workbox-window": "^7.3.0"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build:dependencies": "pnpm --filter ethiopian-calendar-date-converter build && pnpm --filter ethiopian-calendar-date-converter-vue build",
-    "build:package": "run-p type-check build-only",
-    "build": "pnpm run build:dependencies && pnpm run build:package",
-    "preview": "vite preview",
-    "test": "vitest run && pnpm run test:dependencies",
-    "test:dependencies": "pnpm --filter ethiopian-calendar-date-converter test && pnpm --filter ethiopian-calendar-date-converter-vue test",
-    "test:watch": "vitest",
-    "test:e2e": "playwright test",
-    "test:playwright:install": "playwright install --with-deps",
-    "test:puppeteer:install": "puppeteer browsers install chrome",
-    "build-only": "vite-ssg build",
-    "start-server:prod": "web-dev-server --root-dir dist --port 8000 --open --compatibility none",
-    "type-check": "vue-tsc --build --force",
-    "format": "prettier . \"!pnpm-lock.yaml\" \"!mobile\" --write",
-    "verify-for-ci": "pnpm lint && pnpm format && pnpm build && pnpm test && pnpm run test:e2e",
-    "lint": "eslint . --fix"
+    "workbox-window": "^7.3.0",
+    "wrangler": "^4.47.0"
   },
   "devEngines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "pnpm": {
     "overrides": {

@@ -97,6 +97,15 @@ jobs:
             web-app.zip
           name: ${{ github.ref_name }}
 
+      - if: github.ref == 'refs/heads/master'
+        name: Cloudflare deploy site
+        uses: cloudflare/wrangler-action@v3
+        with:
+          command: pages deploy dist --project-name=ethiopian-calendar
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
   # Deployment job for github pages
   deploy-github-pages:
     environment:
