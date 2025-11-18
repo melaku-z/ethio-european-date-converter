@@ -101,7 +101,7 @@ importers:
         specifier: ^10.5.1
         version: 10.5.1(@typescript-eslint/parser@8.46.4(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(vue-eslint-parser@10.2.0(eslint@9.39.1(jiti@2.6.1)))
       jsdom:
-        specifier: ^27.1.0
+        specifier: ^27.2.0
         version: 27.2.0
       koa:
         specifier: ^3.1.1
@@ -125,7 +125,7 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
       puppeteer:
-        specifier: ^24.29.1
+        specifier: ^24.30.0
         version: 24.30.0(typescript@5.9.3)
       typescript:
         specifier: ~5.9.3
@@ -207,7 +207,7 @@ importers:
         specifier: workspace:*
         version: link:../ethiopian-calendar-date-converter
       vue:
-        specifier: ^3.5.22
+        specifier: ^3.5.24
         version: 3.5.24(typescript@5.9.3)
     devDependencies:
       '@vitest/coverage-v8':
