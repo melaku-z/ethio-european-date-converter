@@ -63,7 +63,7 @@ export default defineComponent({
 
 ## Demo
 
-A sample web application using this library can be accessed at <https://ethiopian-calendar.netlify.app>
+A sample web application using this library can be accessed at <https://ethiopian-calendar.pages.dev>
 
 ## License
 
