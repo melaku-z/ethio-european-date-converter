@@ -41,7 +41,7 @@
     "format": "prettier . --write"
   },
   "devEngines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "repository": {
     "type": "git",
