@@ -32,6 +32,9 @@ tests/lhreport.html
 
 mobile/.gradle
 mobile/android-sdk
+mobile/android/app/build/*
+!mobile/android/app/build/.npmkeep
+
 desktop/src-tauri/target
 .vite-ssg-temp
 *.tsbuildinfo
