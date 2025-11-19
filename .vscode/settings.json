@@ -2,10 +2,7 @@
   "eslint.validate": ["vue", "javascript", "typescript"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
+  "[typescript,javascript,vue,json,jsonc,yml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "css.validate": false,
@@ -18,15 +15,6 @@
   "files.exclude": {
     "**/node_modules": true,
     "dist": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "npm.packageManager": "pnpm",

@@ -19,6 +19,7 @@ jobs:
 
     # Sets permissions of the GITHUB_TOKEN to allow release
     permissions:
+      id-token: write # Required for OIDC, pnpm publish
       contents: write
 
     steps:
@@ -46,7 +47,7 @@ jobs:
           CI: true
 
       - name: lint
-        run: pnpm lint && pnpm format
+        run: pnpm lint && pnpm format:check
 
       - name: build
         run: pnpm build
@@ -78,6 +79,15 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+      - name: Deploy npm
+        run: pnpm publish
+        working-directory: ./packages/ethiopian-calendar-date-converter
+        if: startsWith(github.ref, 'refs/tags/')
+      - name: Deploy npm vue
+        run: pnpm publish
+        working-directory: ./packages/ethiopian-calendar-date-converter-vue
+        if: startsWith(github.ref, 'refs/tags/')
 
       - name: Zip releases 1
         run: zip -r ../web-app.zip .
