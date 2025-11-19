@@ -1,7 +1,7 @@
 {
   "name": "ethiopian-calendar-date-converter-vue",
   "description": "Convert dates between Ethiopian and European/Gregorian calendars",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "keywords": [
     "Calendar Converter",
     "Ethiopian Calendar",
@@ -20,8 +20,10 @@
     "vite": "^7.2.2",
     "vitest": "^4.0.10"
   },
+  "dependencies": {
+    "ethiopian-calendar-date-converter": "workspace:*"
+  },
   "peerDependencies": {
-    "ethiopian-calendar-date-converter": "workspace:*",
     "vue": "^3.5.24"
   },
   "pnpm": {
