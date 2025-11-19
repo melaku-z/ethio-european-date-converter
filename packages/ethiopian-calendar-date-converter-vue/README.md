@@ -17,13 +17,13 @@ This library contains [Vue.js composables](https://vuejs.org/guide/reusability/c
 ### npm
 
 ```bash
-npm install -S ethiopian-calendar-date-converter-vue ethiopian-calendar-date-converter
+npm install -S ethiopian-calendar-date-converter-vue
 ```
 
 ### pnpm
 
 ```bash
-pnpm install ethiopian-calendar-date-converter-vue ethiopian-calendar-date-converter
+pnpm install ethiopian-calendar-date-converter-vue
 ```
 
 ## Usage
