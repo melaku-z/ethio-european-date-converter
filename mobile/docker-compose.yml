@@ -13,5 +13,5 @@ services:
     # command: ./gradlew assembleRelease
     # command: ./gradlew bundleRelease
     # command: ./gradlew buildRelease
-    command: ./gradlew build
+    command: sh -c "./gradlew build && ./gradlew bundleRelease"
     working_dir: /web/mobile/android

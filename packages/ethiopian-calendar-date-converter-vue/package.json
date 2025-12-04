@@ -15,16 +15,16 @@
     "@vue/tsconfig": "^0.8.1",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.39.1",
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.3",
     "typescript": "~5.9.3",
-    "vite": "^7.2.2",
-    "vitest": "^4.0.10"
+    "vite": "^7.2.6",
+    "vitest": "^4.0.15"
   },
   "dependencies": {
     "ethiopian-calendar-date-converter": "workspace:*"
   },
   "peerDependencies": {
-    "vue": "^3.5.24"
+    "vue": "^3.5.25"
   },
   "pnpm": {
     "overrides": {

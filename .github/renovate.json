@@ -1,12 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "group:allNonMajor", "schedule:weekly"],
+  "extends": ["config:recommended", "group:allNonMajor", "schedule:monthly"],
   "rangeStrategy": "bump",
   "postUpdateOptions": ["pnpmDedupe"],
   "minimumReleaseAge": "2 days",
   "packageRules": [
     {
-      "matchPackageNames": ["pnpm"],
+      "matchPackageNames": ["pnpm", "node"],
       "matchUpdateTypes": ["minor", "patch"],
       "enabled": false
     },

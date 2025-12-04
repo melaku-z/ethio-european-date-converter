@@ -1,16 +1,16 @@
 {
   "type": "module",
   "dependencies": {
-    "@capacitor/android": "^6.2.1",
-    "@capacitor/core": "^6.2.1"
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/core": "^7.4.4"
   },
   "devDependencies": {
     "@capacitor/assets": "^3.0.5",
-    "@capacitor/cli": "^6.2.1"
+    "@capacitor/cli": "^7.4.4"
   },
   "scripts": {
     "generate:assets": "capacitor-assets generate --iconBackgroundColor '#fff' --iconBackgroundColorDark '#000' --splashBackgroundColor '#157878' --splashBackgroundColorDark '#157878'",
-    "build:android": "pnpm build && pnpm cap sync",
+    "build:android": "pnpm -w build && pnpm cap sync",
     "sync:android": "pnpm cap sync",
     "update:android": "pnpm cap update",
     "debug:android": "cap run android"
