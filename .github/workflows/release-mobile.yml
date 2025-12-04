@@ -5,14 +5,18 @@ on:
     branches: [main, master]
     tags:
       - 'v*.*.*'
+    paths:
+      - mobile/**
+      - .github/workflows/release-mobile.yml
   pull_request:
     paths:
       - mobile/**
+      - .github/workflows/release-mobile.yml
   workflow_dispatch:
 
 # Allow one concurrent deployment
 concurrency:
-  group: mobile-${{ github.head_ref || github.ref }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -24,7 +28,9 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: '0'
 
       - uses: pnpm/action-setup@v4
         with:
@@ -47,17 +53,20 @@ jobs:
       - run: pnpm run sync:android && pnpm run update:android
         working-directory: ./mobile
 
-      # Pull the latest image to build, and avoid caching pull-only images.
-      # (docker pull is faster than caching in most cases.)
-      - run: docker compose pull
-        working-directory: ./mobile
-      - uses: satackey/action-docker-layer-caching@v0.0.11
-        # Ignore the failure of a step and avoid terminating the job.
-        continue-on-error: true
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
 
-      - name: Build Android
-        run: docker compose up
-        working-directory: ./mobile
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          log-accepted-android-sdk-licenses: false
+
+      - name: Build Android App
+        run: ./gradlew --no-daemon build && ./gradlew --no-daemon bundleRelease
+        working-directory: ./mobile/android
 
       - uses: actions/upload-artifact@v5
         with:
