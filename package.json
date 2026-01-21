@@ -78,7 +78,7 @@
     "vitest-fail-on-console": "^0.10.1",
     "vue-tsc": "^3.1.5",
     "workbox-window": "^7.4.0",
-    "wrangler": "^4.53.0"
+    "wrangler": "^4.59.1"
   },
   "devEngines": {
     "node": ">=24"
