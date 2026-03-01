@@ -3,3 +3,6 @@ packages:
   - 'mobile'
   - 'desktop'
 minimumReleaseAge: 1440 # one day
+minimumReleaseAgeExclude:
+  # Renovate security update: koa@3.1.2
+  - koa@3.1.2
