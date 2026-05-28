@@ -68,7 +68,7 @@
     "lighthouse": "^13.0.1",
     "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.10",
-    "prettier": "^3.7.3",
+    "prettier": "^3.8.3",
     "puppeteer": "^24.32.0",
     "typescript": "~5.9.3",
     "vite": "^7.2.6",
