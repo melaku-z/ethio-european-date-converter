@@ -34,7 +34,7 @@ jobs:
       - name: Use Node.js 24.x
         uses: actions/setup-node@v6
         with:
-          node-version: 24.x
+          node-version: 24.16.0
           cache: 'pnpm'
 
       - name: Setup cache for Chromium binary
@@ -145,7 +145,7 @@ jobs:
       - name: Use Node.js 24.x
         uses: actions/setup-node@v6
         with:
-          node-version: 24.x
+          node-version: 24.16.0
           cache: 'pnpm'
 
       - name: pnpm install
