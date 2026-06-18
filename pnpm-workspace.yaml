@@ -11,3 +11,6 @@ allowBuilds:
   puppeteer: false
   sharp: false
   workerd: false
+minimumReleaseAgeExclude:
+  # Renovate security update: vite@7.3.5
+  - vite@7.3.5
