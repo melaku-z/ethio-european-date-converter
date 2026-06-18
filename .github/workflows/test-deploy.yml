@@ -29,7 +29,7 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 11
 
       - name: Use Node.js 24.x
         uses: actions/setup-node@v6
@@ -41,7 +41,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/puppeteer
-          key: ${{ runner.os }}-pnpm-chromium-${{ hashFiles('pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-pnpm-11-chromium-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: pnpm install
         run: pnpm install
@@ -140,7 +140,7 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 11
 
       - name: Use Node.js 24.x
         uses: actions/setup-node@v6

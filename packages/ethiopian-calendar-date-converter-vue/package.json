@@ -26,11 +26,6 @@
   "peerDependencies": {
     "vue": "^3.5.25"
   },
-  "pnpm": {
-    "overrides": {
-      "ethiopian-calendar-date-converter": "workspace:*"
-    }
-  },
   "scripts": {
     "test": "vitest run",
     "prepublishOnly": "pnpm lint && pnpm build && pnpm test",

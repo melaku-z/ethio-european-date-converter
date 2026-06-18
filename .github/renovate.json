@@ -33,12 +33,28 @@
       "matchDepNames": ["/vitest/", "/@vitest/"]
     },
     {
+      "groupName": "capacitor",
+      "matchDepNames": ["/capacitor/", "/@capacitor/"]
+    },
+    {
+      "groupName": "android-gradle",
+      "matchDepNames": ["/gradle/", "/android/", "/androidx/"],
+      "enabled": false
+    },
+    {
       "matchManagers": ["github-actions"],
       "groupName": "github-actions"
     },
     {
-      "matchCategories": ["java"],
-      "groupName": "android"
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["actions/node-versions"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "enabled": false
+    },
+    {
+      "matchDepTypes": ["uses-with"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "enabled": false
     },
     {
       "matchFileNames": ["desktop/**"],
@@ -46,7 +62,6 @@
     },
     {
       "matchFileNames": ["mobile/**"],
-      "matchCategories": ["js"],
       "groupName": "mobile"
     }
   ]
