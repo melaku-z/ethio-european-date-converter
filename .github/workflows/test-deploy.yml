@@ -16,6 +16,7 @@ concurrency:
 jobs:
   build-test:
     runs-on: ubuntu-24.04
+    timeout-minutes: 22
 
     # Sets permissions of the GITHUB_TOKEN to allow release
     permissions:
@@ -69,7 +70,20 @@ jobs:
           name: lh-test-report.html
           path: tests/lhreport.html
 
+      - name: Get Playwright version
+        shell: bash
+        run: |
+          echo "PLAYWRIGHT_VERSION=$(jq -r '.devDependencies["@playwright/test"]' package.json | sed 's/^[^0-9]*//')" >> $GITHUB_ENV
+
+      - name: Cache Playwright
+        id: playwright-cache
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}-${{ runner.os }}
+
       - name: Install Playwright Browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: pnpm run test:playwright:install
 
       - name: Run Playwright tests

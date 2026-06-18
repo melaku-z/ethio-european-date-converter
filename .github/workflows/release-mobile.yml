@@ -22,6 +22,7 @@ concurrency:
 jobs:
   mobile-build-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     # Sets permissions of the GITHUB_TOKEN to allow release
     permissions:
