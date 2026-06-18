@@ -40,7 +40,7 @@ jobs:
       - name: Setup cache for Chromium binary
         uses: actions/cache@v4
         with:
-          path: ~/.cache/puppeteer
+          path: ${{ github.workspace }}/.cache/puppeteer
           key: ${{ runner.os }}-pnpm-chromium-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: pnpm install
@@ -56,11 +56,14 @@ jobs:
 
       - name: Install Puppeteer
         run: pnpm run test:puppeteer:install
+        env:
+          PUPPETEER_CACHE_DIR: ${{ github.workspace }}/.cache/puppeteer
 
       - name: test
         run: pnpm test
         env:
           CI: true
+          PUPPETEER_CACHE_DIR: ${{ github.workspace }}/.cache/puppeteer
 
       - name: Archive test results
         uses: actions/upload-artifact@v5
