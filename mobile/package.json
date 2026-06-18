@@ -2,11 +2,11 @@
   "type": "module",
   "dependencies": {
     "@capacitor/android": "^7.4.4",
-    "@capacitor/core": "^7.4.4"
+    "@capacitor/core": "^8.4.0"
   },
   "devDependencies": {
     "@capacitor/assets": "^3.0.5",
-    "@capacitor/cli": "^7.4.4"
+    "@capacitor/cli": "^8.4.0"
   },
   "scripts": {
     "generate:assets": "capacitor-assets generate --iconBackgroundColor '#fff' --iconBackgroundColorDark '#000' --splashBackgroundColor '#157878' --splashBackgroundColorDark '#157878'",
