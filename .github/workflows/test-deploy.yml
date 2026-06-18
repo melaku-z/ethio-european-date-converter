@@ -27,7 +27,7 @@ jobs:
         with:
           fetch-depth: '0'
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           version: 11
 
@@ -38,7 +38,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Setup cache for Chromium binary
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-pnpm-11-chromium-${{ hashFiles('pnpm-lock.yaml') }}
@@ -63,7 +63,7 @@ jobs:
           CI: true
 
       - name: Archive test results
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         if: ${{ failure() }}
         with:
           name: lh-test-report.html
@@ -75,7 +75,7 @@ jobs:
       - name: Run Playwright tests
         run: pnpm run test:e2e
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: playwright-report
@@ -101,7 +101,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
@@ -111,7 +111,7 @@ jobs:
 
       - if: github.ref == 'refs/heads/master'
         name: Cloudflare deploy site
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           command: pages deploy dist --project-name=ethiopian-calendar
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -138,7 +138,7 @@ jobs:
         with:
           fetch-depth: '0'
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           version: 11
 
@@ -158,9 +158,9 @@ jobs:
         env:
           BASE_URL: /ethio-european-date-converter/
       - name: Upload artifact # for github pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
