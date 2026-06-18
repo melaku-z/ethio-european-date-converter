@@ -1,0 +1,3 @@
+overrides:
+  ethiopian-calendar-date-converter: workspace:*
+  ethiopian-calendar-date-converter-vue: workspace:*

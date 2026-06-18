@@ -80,14 +80,9 @@
     "workbox-window": "^7.4.0",
     "wrangler": "^4.53.0"
   },
-  "devEngines": {
-    "node": ">=24"
-  },
-  "pnpm": {
-    "overrides": {
-      "ethiopian-calendar-date-converter": "workspace:*",
-      "ethiopian-calendar-date-converter-vue": "workspace:*"
-    }
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=11.7.0"
   },
   "private": true
 }

@@ -3,8 +3,11 @@ packages:
   - 'mobile'
   - 'desktop'
 minimumReleaseAge: 1440 # one day
-minimumReleaseAgeExclude:
-  # Renovate security update: koa@3.1.2
-  - koa@3.1.2
-  # Renovate security update: vite@7.3.2
-  - vite@7.3.2
+overrides:
+  ethiopian-calendar-date-converter: workspace:*
+  ethiopian-calendar-date-converter-vue: workspace:*
+allowBuilds:
+  esbuild: false
+  puppeteer: false
+  sharp: false
+  workerd: false
