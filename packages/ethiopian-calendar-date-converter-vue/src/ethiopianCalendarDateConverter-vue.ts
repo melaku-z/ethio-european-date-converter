@@ -11,7 +11,7 @@ export function useEthTodayDateTimeText() {
   )
 
   const liveRefreshEnabled = ref(false)
-  const liveRefreshTimer = ref<NodeJS.Timeout>()
+  const liveRefreshTimer = ref<number>()
 
   function refreshEthDate() {
     ethDateTimeNow.value = EthDateTime.now()
