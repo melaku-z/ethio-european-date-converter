@@ -83,7 +83,6 @@ jobs:
           key: playwright-browsers-2-${{ env.PLAYWRIGHT_VERSION }}-${{ runner.os }}
 
       - name: Install Playwright Browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: pnpm run test:playwright:install
 
       - name: Run Playwright tests
