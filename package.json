@@ -26,7 +26,7 @@
     "start-server:prod": "web-dev-server --root-dir dist --port 8000 --open --compatibility none",
     "type-check": "vue-tsc --build --force",
     "format": "prettier . \"!pnpm-lock.yaml\" \"!mobile/android/app/src/main/assets/public\" --write",
-    "format:check": "prettier . \"!pnpm-lock.yaml\" \"!mobile/android/app/src/main/assets/public\" --check",
+    "format:check": "prettier . \"!pnpm-lock.yaml\" \"!pnpm-workspace.yaml\" \"!mobile/android/app/src/main/assets/public\" --check",
     "verify-for-ci": "pnpm lint && pnpm format && pnpm build && pnpm test && pnpm run test:e2e",
     "lint": "eslint . --fix"
   },
