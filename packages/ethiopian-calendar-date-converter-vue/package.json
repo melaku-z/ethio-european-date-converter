@@ -17,14 +17,14 @@
     "eslint": "^9.39.4",
     "prettier": "^3.8.4",
     "typescript": "~6.0.3",
-    "vite": "^8.0.16",
+    "vite": "^8.1.2",
     "vitest": "^4.1.9"
   },
   "dependencies": {
     "ethiopian-calendar-date-converter": "workspace:*"
   },
   "peerDependencies": {
-    "vue": "^3.5.38"
+    "vue": "^3.5.39"
   },
   "scripts": {
     "test": "vitest run",
