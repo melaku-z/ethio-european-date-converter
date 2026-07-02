@@ -155,8 +155,8 @@ importers:
   desktop:
     devDependencies:
       '@tauri-apps/cli':
-        specifier: ^2.11.3
-        version: 2.11.3
+        specifier: ^2.11.4
+        version: 2.11.4
 
   mobile:
     dependencies:
@@ -193,10 +193,10 @@ importers:
         version: 6.0.3
       vite:
         specifier: ^8.0.16
-        version: 8.0.16(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
+        version: 8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
       vitest:
         specifier: ^4.1.9
-        version: 4.1.9(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@4.1.9)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.0.16(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
+        version: 4.1.9(@opentelemetry/api@1.9.1)(@types/node@26.0.0)(@vitest/coverage-v8@4.1.9)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
 
   packages/ethiopian-calendar-date-converter-vue:
     dependencies:
@@ -230,10 +230,10 @@ importers:
         version: 6.0.3
       vite:
         specifier: ^8.0.16
-        version: 8.0.16(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
+        version: 8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
       vitest:
         specifier: ^4.1.9
-        version: 4.1.9(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@4.1.9)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.0.16(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
+        version: 4.1.9(@opentelemetry/api@1.9.1)(@types/node@26.0.0)(@vitest/coverage-v8@4.1.9)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
 
 packages:
 
@@ -1927,79 +1927,79 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
-  '@tauri-apps/cli-darwin-arm64@2.11.3':
-    resolution: {integrity: sha512-BxpaM8bsCoXs3wd4WKYhas/G1gs7+r7B+e4WnyRk2GEoVOouJB1hoL6E6YLXZDXbYci6VFdrNnobQwd2uVL4ew==}
+  '@tauri-apps/cli-darwin-arm64@2.11.4':
+    resolution: {integrity: sha512-1ryOF3ZhpZ/nemHV5zVwBQBz9jDGKmKPvWPADOhc83ig0P4bMc2iER4NbC6r9sjeIZ6RVQ4g3RZIYvezhcl4TQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@tauri-apps/cli-darwin-x64@2.11.3':
-    resolution: {integrity: sha512-DbZYuPB1ZEzcAHYeyCvo3ltzM27+aXwPloCrtexPnmgPgulYJm3TOq6aC4S+wPhSXteddg8zImtNkvx/gQzmwg==}
+  '@tauri-apps/cli-darwin-x64@2.11.4':
+    resolution: {integrity: sha512-uFsGQAAfuyz1k/yGLmkWfkBlgKAqZfxqlHmLWx81QU27RJWfmbNHCIq8T8w1e+VClleIuZUjpHWfoE4E3DLo3A==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@tauri-apps/cli-linux-arm-gnueabihf@2.11.3':
-    resolution: {integrity: sha512-741NduqBmz1XkdU8yz3OI/kBZtqHbvxo9F9ytIeWYU69/Ba9dcZEbqOU++Dp0G/XU8vAI0TfTywEl+p+BbLvaA==}
+  '@tauri-apps/cli-linux-arm-gnueabihf@2.11.4':
+    resolution: {integrity: sha512-IaHZn5CdBL21oUmjiVOS1ctw6Ip1O0pjp70FwOWmYz1myWe0SY96ZIj2FYf7pT0m8bI2h/hrs5ZbEXXh44/MkQ==}
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [linux]
 
-  '@tauri-apps/cli-linux-arm64-gnu@2.11.3':
-    resolution: {integrity: sha512-RWAXT8pTqIczXcoic+LXlo6uEbAXGB0cgh6Pg7Y9xVnEbzryQ1JHtRGj9SxzrKSemBIDBH6Qc24kK2G69i8ofA==}
+  '@tauri-apps/cli-linux-arm64-gnu@2.11.4':
+    resolution: {integrity: sha512-N41/ukTRVe6XSuUTESuFdGeOW2i7k62tK+6gHK5Kd5/q5RPvvi19GaWAVPPb9u95HSGmTChSolBfzynUsssFaA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@tauri-apps/cli-linux-arm64-musl@2.11.3':
-    resolution: {integrity: sha512-qomqYS+yAkd0gXMRmhguWXc7RfVN+XKKXaEwbf5QmKURwydLFOTldd6F8/WoZDSsBMrV8dpNxz0YneGLmobiSA==}
+  '@tauri-apps/cli-linux-arm64-musl@2.11.4':
+    resolution: {integrity: sha512-v277UnT/fB64xAfSroL5N3Km3tLmvATWqJJw/wRI+g6o+HkeD0slyE7gOhNs1MbjE41R7bQOTxMVoL3aomUJmw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@tauri-apps/cli-linux-riscv64-gnu@2.11.3':
-    resolution: {integrity: sha512-jOCXbDqeDj5XcclsOBAaXjtTgwZCVg8zEZ+dbPUCoADOgljFgL0rOkYTc96vUYgOrYEfuHYihWMxIDGaD6GwJw==}
+  '@tauri-apps/cli-linux-riscv64-gnu@2.11.4':
+    resolution: {integrity: sha512-qqgNkQ2u1yZHxjhxsZaxUtRDW8dIqIYm33rx/mzwQv0SfY9x1B+iraj8vWeFiXjjSVVhEMepXSOts1TqPzvXNQ==}
     engines: {node: '>= 10'}
     cpu: [riscv64]
     os: [linux]
     libc: [glibc]
 
-  '@tauri-apps/cli-linux-x64-gnu@2.11.3':
-    resolution: {integrity: sha512-+u3HO/F3gHwL48t9gWN/urqZvpaEJzBFmTaq5eSIhvy8TOvnhb+LgJr3Q3BG+5JxuBrCUjqtOEz6gMttdJFSBA==}
+  '@tauri-apps/cli-linux-x64-gnu@2.11.4':
+    resolution: {integrity: sha512-2VRNWl84FOH0m2giiDkO2h0QXlcMJeX+zJDpI5kDIQAx6s+geF3v48F4DXfJez4GS/FdoDGnPnw1C2iYGbQ7bQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@tauri-apps/cli-linux-x64-musl@2.11.3':
-    resolution: {integrity: sha512-spr5Jpr6KF/vehkLwJ0YmdGv8QwpWU+uw7J8bgijO0sox6ZCYsSNMbcsQjTqPi4xl+p0woIYpWXgChgHYpAc8g==}
+  '@tauri-apps/cli-linux-x64-musl@2.11.4':
+    resolution: {integrity: sha512-o9GyhYor/nc7xarmwDE3ka2szuW3uuZzXjHWh64Q8YX5AtSgxdQkFWzrY4O8KiGtVNvFBI14H3Q49Qj5TOIP/A==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@tauri-apps/cli-win32-arm64-msvc@2.11.3':
-    resolution: {integrity: sha512-abkoRQih5xBa3vz2spWaex0kP/MzVzVPQHom2f8jnCq46R/luOD6Uy85EMU9/bfzf6ZzdorWJsgO+OMX90Fx2w==}
+  '@tauri-apps/cli-win32-arm64-msvc@2.11.4':
+    resolution: {integrity: sha512-ld5Ehb598m0VkYyylRPNeCFsBe/km0jxis6KgMpl3IGY6I/i1RwQXO05I1AsXUXO2WC6AvB/Lw4qTf/asiuEiQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@tauri-apps/cli-win32-ia32-msvc@2.11.3':
-    resolution: {integrity: sha512-Vy6AvzFm1G40hg3r+OYDB3jkuu7R4wnMzbQBKuun9v6Cgg8IierpLL7toMzrZKs/8NlG8Sg4x1iLFR52oknyHg==}
+  '@tauri-apps/cli-win32-ia32-msvc@2.11.4':
+    resolution: {integrity: sha512-12Hxi0XX/H5VFxO/bGgHkFWhml9VMgEOu9CidjeCeTNQ1l6fpUlbiGgSP7CLI3PFtW9/FfbeHieZ+kyWK5H7CA==}
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
 
-  '@tauri-apps/cli-win32-x64-msvc@2.11.3':
-    resolution: {integrity: sha512-GlciF75GdbseajOyib2aCHwE3BXIqZ1liGKWLFRvCdN5wm8h8hFssEVKQ/6E+2jsMLg9v7LCTb983YFnn0QSww==}
+  '@tauri-apps/cli-win32-x64-msvc@2.11.4':
+    resolution: {integrity: sha512-+vDiqBIU5dMISg/wNvX3sF+ZHfgJGJ5T0AcO+EHNXV9GGAG+P5fzodlDXD3QdKCRgZxMoCm5PPvj3BqLNjBthw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  '@tauri-apps/cli@2.11.3':
-    resolution: {integrity: sha512-EElQe8z8uD7Pi5++tJ/UfEwWuK08rd3oCDYdeIbJAb6pZRrxlqmoF5gh5H5YvzmUPhS4IRCaLSsQhvWkrfK+GQ==}
+  '@tauri-apps/cli@2.11.4':
+    resolution: {integrity: sha512-R8xGtMpwyetawSqm9kYOuMmEqkhUbvcUy8n0aNXIxollKBLESUu5f4Fx+64hgASYm1H+jSWq6jCW6zqTnH6hqQ==}
     engines: {node: '>= 10'}
     hasBin: true
 
@@ -2826,10 +2826,12 @@ packages:
   conventional-changelog-atom@2.0.8:
     resolution: {integrity: sha512-xo6v46icsFTK3bb7dY/8m2qvc8sZemRgdqLb/bjpBsH2UyOS8rKNTgcb5025Hri6IpANPApbXMg15QLb1LJpBw==}
     engines: {node: '>=10'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-codemirror@2.0.8:
     resolution: {integrity: sha512-z5DAsn3uj1Vfp7po3gpt2Boc+Bdwmw2++ZHa5Ak9k0UKsYAO5mH1UBTN0qSCuJZREIhX6WU4E1p3IW2oRCNzQw==}
     engines: {node: '>=10'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-conventionalcommits@4.6.3:
     resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
@@ -2838,26 +2840,32 @@ packages:
   conventional-changelog-core@4.2.4:
     resolution: {integrity: sha512-gDVS+zVJHE2v4SLc6B0sLsPiloR0ygU7HaDW14aNJE1v4SlqJPILPl/aJC7YdtRE4CybBf8gDwObBvKha8Xlyg==}
     engines: {node: '>=10'}
+    deprecated: Deprecated and no longer maintained. Please use conventional-changelog instead.
 
   conventional-changelog-ember@2.0.9:
     resolution: {integrity: sha512-ulzIReoZEvZCBDhcNYfDIsLTHzYHc7awh+eI44ZtV5cx6LVxLlVtEmcO+2/kGIHGtw+qVabJYjdI5cJOQgXh1A==}
     engines: {node: '>=10'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-eslint@3.0.9:
     resolution: {integrity: sha512-6NpUCMgU8qmWmyAMSZO5NrRd7rTgErjrm4VASam2u5jrZS0n38V7Y9CzTtLT2qwz5xEChDR4BduoWIr8TfwvXA==}
     engines: {node: '>=10'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-express@2.0.6:
     resolution: {integrity: sha512-SDez2f3iVJw6V563O3pRtNwXtQaSmEfTCaTBPCqn0oG0mfkq0rX4hHBq5P7De2MncoRixrALj3u3oQsNK+Q0pQ==}
     engines: {node: '>=10'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-jquery@3.0.11:
     resolution: {integrity: sha512-x8AWz5/Td55F7+o/9LQ6cQIPwrCjfJQ5Zmfqi8thwUEKHstEn4kTIofXub7plf1xvFA2TqhZlq7fy5OmV6BOMw==}
     engines: {node: '>=10'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-jshint@2.0.9:
     resolution: {integrity: sha512-wMLdaIzq6TNnMHMy31hql02OEQ8nCQfExw1SE0hYL5KvU+JCTuPaDO+7JiogGT2gJAxiUGATdtYYfh+nT+6riA==}
     engines: {node: '>=10'}
+    deprecated: This preset is deprecated. Please use conventional-changelog-conventionalcommits or conventional-changelog-angular instead.
 
   conventional-changelog-preset-loader@2.3.4:
     resolution: {integrity: sha512-GEKRWkrSAZeTq5+YjUZOYxdHq+ci4dNwHvpaBC3+ENalzFWuCWa9EZXSuZBpkr72sMdKB+1fyDV4takK1Lf58g==}
@@ -3539,7 +3547,7 @@ packages:
   git-raw-commits@2.0.11:
     resolution: {integrity: sha512-VnctFhw+xfj8Va1xtfEqCUD2XDrbAPSJx+hSrE5K7fGdjZruW7XV+QOrN7LF/RJyvspRiD2I0asWsxFp0ya26A==}
     engines: {node: '>=10'}
-    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-remote-origin-url@2.0.0:
@@ -3549,7 +3557,7 @@ packages:
   git-semver-tags@4.1.1:
     resolution: {integrity: sha512-OWyMt5zBe7xFs8vglMmhM9lRQzCWL3WjHtxNNfJTMngGym7pC1kh8sP6jevfydJ6LP3ZvGxfb6ABYgPUM0mtsA==}
     engines: {node: '>=10'}
-    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   gitconfiglocal@1.0.0:
@@ -6776,7 +6784,7 @@ snapshots:
       '@ionic/utils-subprocess': 2.1.14
       '@ionic/utils-terminal': 2.3.5
       commander: 9.5.0
-      debug: 4.3.4
+      debug: 4.4.3
       env-paths: 2.2.1
       kleur: 4.1.5
       native-run: 2.0.3
@@ -6786,7 +6794,7 @@ snapshots:
       rimraf: 4.4.1
       semver: 7.8.5
       tar: 6.2.1
-      tslib: 2.6.2
+      tslib: 2.8.1
       xml2js: 0.5.0
     transitivePeerDependencies:
       - supports-color
@@ -7169,17 +7177,17 @@ snapshots:
 
   '@ionic/utils-array@2.1.6':
     dependencies:
-      debug: 4.3.4
-      tslib: 2.6.2
+      debug: 4.4.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
   '@ionic/utils-fs@3.1.7':
     dependencies:
       '@types/fs-extra': 8.1.5
-      debug: 4.3.4
+      debug: 4.4.3
       fs-extra: 9.1.0
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -7194,10 +7202,10 @@ snapshots:
     dependencies:
       '@ionic/utils-object': 2.1.6
       '@ionic/utils-terminal': 2.3.4
-      debug: 4.3.4
+      debug: 4.4.3
       signal-exit: 3.0.7
       tree-kill: 1.2.2
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -7214,8 +7222,8 @@ snapshots:
 
   '@ionic/utils-stream@3.1.6':
     dependencies:
-      debug: 4.3.4
-      tslib: 2.6.2
+      debug: 4.4.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -7234,8 +7242,8 @@ snapshots:
       '@ionic/utils-stream': 3.1.6
       '@ionic/utils-terminal': 2.3.4
       cross-spawn: 7.0.6
-      debug: 4.3.4
-      tslib: 2.6.2
+      debug: 4.4.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -7255,12 +7263,12 @@ snapshots:
   '@ionic/utils-terminal@2.3.4':
     dependencies:
       '@types/slice-ansi': 4.0.0
-      debug: 4.3.4
+      debug: 4.4.3
       signal-exit: 3.0.7
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
-      tslib: 2.6.2
+      tslib: 2.8.1
       untildify: 4.0.0
       wrap-ansi: 7.0.0
     transitivePeerDependencies:
@@ -7621,7 +7629,7 @@ snapshots:
   '@prettier/plugin-xml@2.2.0':
     dependencies:
       '@xml-tools/parser': 1.0.11
-      prettier: 2.8.8
+      prettier: 3.8.4
 
   '@prisma/instrumentation@6.11.1(@opentelemetry/api@1.9.1)':
     dependencies:
@@ -7889,52 +7897,52 @@ snapshots:
       tailwindcss: 4.3.1
       vite: 8.0.16(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
 
-  '@tauri-apps/cli-darwin-arm64@2.11.3':
+  '@tauri-apps/cli-darwin-arm64@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-darwin-x64@2.11.3':
+  '@tauri-apps/cli-darwin-x64@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-linux-arm-gnueabihf@2.11.3':
+  '@tauri-apps/cli-linux-arm-gnueabihf@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-linux-arm64-gnu@2.11.3':
+  '@tauri-apps/cli-linux-arm64-gnu@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-linux-arm64-musl@2.11.3':
+  '@tauri-apps/cli-linux-arm64-musl@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-linux-riscv64-gnu@2.11.3':
+  '@tauri-apps/cli-linux-riscv64-gnu@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-linux-x64-gnu@2.11.3':
+  '@tauri-apps/cli-linux-x64-gnu@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-linux-x64-musl@2.11.3':
+  '@tauri-apps/cli-linux-x64-musl@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-win32-arm64-msvc@2.11.3':
+  '@tauri-apps/cli-win32-arm64-msvc@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-win32-ia32-msvc@2.11.3':
+  '@tauri-apps/cli-win32-ia32-msvc@2.11.4':
     optional: true
 
-  '@tauri-apps/cli-win32-x64-msvc@2.11.3':
+  '@tauri-apps/cli-win32-x64-msvc@2.11.4':
     optional: true
 
-  '@tauri-apps/cli@2.11.3':
+  '@tauri-apps/cli@2.11.4':
     optionalDependencies:
-      '@tauri-apps/cli-darwin-arm64': 2.11.3
-      '@tauri-apps/cli-darwin-x64': 2.11.3
-      '@tauri-apps/cli-linux-arm-gnueabihf': 2.11.3
-      '@tauri-apps/cli-linux-arm64-gnu': 2.11.3
-      '@tauri-apps/cli-linux-arm64-musl': 2.11.3
-      '@tauri-apps/cli-linux-riscv64-gnu': 2.11.3
-      '@tauri-apps/cli-linux-x64-gnu': 2.11.3
-      '@tauri-apps/cli-linux-x64-musl': 2.11.3
-      '@tauri-apps/cli-win32-arm64-msvc': 2.11.3
-      '@tauri-apps/cli-win32-ia32-msvc': 2.11.3
-      '@tauri-apps/cli-win32-x64-msvc': 2.11.3
+      '@tauri-apps/cli-darwin-arm64': 2.11.4
+      '@tauri-apps/cli-darwin-x64': 2.11.4
+      '@tauri-apps/cli-linux-arm-gnueabihf': 2.11.4
+      '@tauri-apps/cli-linux-arm64-gnu': 2.11.4
+      '@tauri-apps/cli-linux-arm64-musl': 2.11.4
+      '@tauri-apps/cli-linux-riscv64-gnu': 2.11.4
+      '@tauri-apps/cli-linux-x64-gnu': 2.11.4
+      '@tauri-apps/cli-linux-x64-musl': 2.11.4
+      '@tauri-apps/cli-win32-arm64-msvc': 2.11.4
+      '@tauri-apps/cli-win32-ia32-msvc': 2.11.4
+      '@tauri-apps/cli-win32-x64-msvc': 2.11.4
 
   '@trapezedev/gradle-parse@7.1.3': {}
 
@@ -7963,7 +7971,7 @@ snapshots:
       xcode: 3.0.1
       xml-js: 1.6.11
       xpath: 0.0.32
-      yargs: 17.7.2
+      yargs: 17.7.3
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -8041,7 +8049,7 @@ snapshots:
 
   '@types/fs-extra@8.1.5':
     dependencies:
-      '@types/node': 26.0.0
+      '@types/node': 24.13.2
 
   '@types/http-assert@1.5.6': {}
 
@@ -8097,6 +8105,7 @@ snapshots:
   '@types/node@26.0.0':
     dependencies:
       undici-types: 8.3.0
+    optional: true
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -8305,6 +8314,14 @@ snapshots:
       magic-string: 0.30.21
     optionalDependencies:
       vite: 8.0.16(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
+
+  '@vitest/mocker@4.1.9(vite@8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))':
+    dependencies:
+      '@vitest/spy': 4.1.9
+      estree-walker: 3.0.3
+      magic-string: 0.30.21
+    optionalDependencies:
+      vite: 8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
 
   '@vitest/pretty-format@4.1.9':
     dependencies:
@@ -11876,7 +11893,8 @@ snapshots:
 
   undici-types@7.28.0: {}
 
-  undici-types@8.3.0: {}
+  undici-types@8.3.0:
+    optional: true
 
   undici@7.28.0: {}
 
@@ -11980,6 +11998,20 @@ snapshots:
       jiti: 2.7.0
       terser: 5.48.0
 
+  vite@8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0):
+    dependencies:
+      lightningcss: 1.32.0
+      picomatch: 4.0.4
+      postcss: 8.5.15
+      rolldown: 1.0.3
+      tinyglobby: 0.2.17
+    optionalDependencies:
+      '@types/node': 26.0.0
+      esbuild: 0.28.1
+      fsevents: 2.3.3
+      jiti: 2.7.0
+      terser: 5.48.0
+
   vitest-fail-on-console@0.10.1(@vitest/utils@4.1.9)(vite@8.0.16(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@4.1.9):
     dependencies:
       '@vitest/utils': 4.1.9
@@ -12012,6 +12044,36 @@ snapshots:
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
       '@types/node': 24.13.2
+      '@vitest/coverage-v8': 4.1.9(@vitest/browser@4.1.9)(vitest@4.1.9)
+      jsdom: 29.1.1(@noble/hashes@1.8.0)
+    transitivePeerDependencies:
+      - msw
+
+  vitest@4.1.9(@opentelemetry/api@1.9.1)(@types/node@26.0.0)(@vitest/coverage-v8@4.1.9)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)):
+    dependencies:
+      '@vitest/expect': 4.1.9
+      '@vitest/mocker': 4.1.9(vite@8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
+      '@vitest/pretty-format': 4.1.9
+      '@vitest/runner': 4.1.9
+      '@vitest/snapshot': 4.1.9
+      '@vitest/spy': 4.1.9
+      '@vitest/utils': 4.1.9
+      es-module-lexer: 2.1.0
+      expect-type: 1.3.0
+      magic-string: 0.30.21
+      obug: 2.1.3
+      pathe: 2.0.3
+      picomatch: 4.0.4
+      std-env: 4.1.0
+      tinybench: 2.9.0
+      tinyexec: 1.2.4
+      tinyglobby: 0.2.17
+      tinyrainbow: 3.1.0
+      vite: 8.0.16(@types/node@26.0.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
+      why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@opentelemetry/api': 1.9.1
+      '@types/node': 26.0.0
       '@vitest/coverage-v8': 4.1.9(@vitest/browser@4.1.9)(vitest@4.1.9)
       jsdom: 29.1.1(@noble/hashes@1.8.0)
     transitivePeerDependencies:
