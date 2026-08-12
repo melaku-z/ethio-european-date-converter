@@ -18,3 +18,5 @@ minimumReleaseAgeExclude:
   - vitest@4.1.0
   # Renovate security update: @vitest/browser@4.1.10
   - "@vitest/browser@4.1.10"
+  # Renovate security update: postcss@8.5.23
+  - postcss@8.5.23
