@@ -11,20 +11,20 @@
   "type": "module",
   "devDependencies": {
     "@vitest/coverage-v8": "^4.1.9",
-    "@vue/test-utils": "^2.4.11",
+    "@vue/test-utils": "^2.5.0",
     "@vue/tsconfig": "^0.9.1",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.39.4",
     "prettier": "^3.8.4",
     "typescript": "~6.0.3",
-    "vite": "^8.1.3",
+    "vite": "^8.2.2",
     "vitest": "^4.1.9"
   },
   "dependencies": {
     "ethiopian-calendar-date-converter": "workspace:*"
   },
   "peerDependencies": {
-    "vue": "^3.5.39"
+    "vue": "^3.5.42"
   },
   "scripts": {
     "test": "vitest run",
