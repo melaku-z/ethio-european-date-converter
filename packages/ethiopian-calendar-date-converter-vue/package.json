@@ -10,7 +10,7 @@
   "author": "Melaku Zewdu <melaku44@gmail.com>",
   "type": "module",
   "devDependencies": {
-    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/coverage-v8": "^4.1.11",
     "@vue/test-utils": "^2.5.0",
     "@vue/tsconfig": "^0.9.1",
     "dts-bundle-generator": "^9.5.1",
