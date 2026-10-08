@@ -4075,8 +4075,8 @@ packages:
     resolution: {integrity: sha512-e7IpWJrnanNUroVK2taAgMxoEZvHLXdQiNjeExSu/DEIWm83jaKGBgb7tLmu2rMYpA027qFB3iLR/k3AVpFRnA==}
     engines: {node: '>= 18'}
 
-  legacy-javascript@0.0.1:
-    resolution: {integrity: sha512-lPyntS4/aS7jpuvOlitZDFifBCb4W8L/3QU0PLbUTUj+zYah8rfVjYic88yG7ZKTxhS5h9iz7duT8oUXKszLhg==}
+  legacy-javascript@0.0.2:
+    resolution: {integrity: sha512-6cMw8OPPX9VOgnWwL6Y7vbNCpd45/RmGMrcSJGaOF4FZfTdEbtlSDUs2ZvHleTUsqSDuKthzHvD6C//jW8ETBA==}
 
   leven@3.1.0:
     resolution: {integrity: sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==}
@@ -7396,7 +7396,7 @@ snapshots:
 
   '@paulirish/trace_engine@0.0.65':
     dependencies:
-      legacy-javascript: 0.0.1
+      legacy-javascript: 0.0.2
       third-party-web: 0.30.0
 
   '@pkgr/core@0.3.6': {}
@@ -10110,7 +10110,7 @@ snapshots:
       type-is: 2.1.0
       vary: 1.1.2
 
-  legacy-javascript@0.0.1: {}
+  legacy-javascript@0.0.2: {}
 
   leven@3.1.0: {}
 
