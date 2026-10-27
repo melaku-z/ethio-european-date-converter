@@ -59,8 +59,8 @@ importers:
         specifier: ^6.0.8
         version: 6.0.8(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.42(typescript@6.0.3))
       '@vitest/browser':
-        specifier: ^5.0.3
-        version: 5.0.3(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3)
+        specifier: ^5.0.5
+        version: 5.0.5(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3)
       '@vitest/eslint-plugin':
         specifier: ^1.6.20
         version: 1.6.20(@typescript-eslint/eslint-plugin@8.61.1(@typescript-eslint/parser@8.61.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@5.0.3)
@@ -141,7 +141,7 @@ importers:
         version: 5.0.3(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
       vitest-fail-on-console:
         specifier: ^0.10.1
-        version: 0.10.1(@vitest/utils@5.0.3)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3)
+        version: 0.10.1(@vitest/utils@5.0.5)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3)
       vue-tsc:
         specifier: ^3.3.5
         version: 3.3.5(typescript@6.0.3)
@@ -178,7 +178,7 @@ importers:
     devDependencies:
       '@vitest/coverage-v8':
         specifier: ^5.0.3
-        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
+        version: 5.0.3(@vitest/browser@5.0.5)(vitest@5.0.3)
       dts-bundle-generator:
         specifier: ^9.5.1
         version: 9.5.1
@@ -209,7 +209,7 @@ importers:
     devDependencies:
       '@vitest/coverage-v8':
         specifier: ^5.0.3
-        version: 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
+        version: 5.0.3(@vitest/browser@5.0.5)(vitest@5.0.3)
       '@vue/test-utils':
         specifier: ^2.5.0
         version: 2.5.0(@vue/compiler-dom@3.5.42)(@vue/server-renderer@3.5.42)(vue@3.5.42(typescript@6.0.3))
@@ -2203,10 +2203,10 @@ packages:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
       vue: ^3.2.25
 
-  '@vitest/browser@5.0.3':
-    resolution: {integrity: sha512-7KHIkVA/gTRxQV9qPa9qLK+g5INZG6iRrlwXSFG5EKsOomW3UzzW7wsdt1Yp5PufzQ43lniuONlb4lUVCC2qSg==}
+  '@vitest/browser@5.0.5':
+    resolution: {integrity: sha512-IDMoZX/iZ8rkilw7weaSgN8tJ7iZ9hUv0wYoKXyiyjWjWFwLSWAY707DcVTgxTYOudWC1E3HA9LYn7kVa9a7uQ==}
     peerDependencies:
-      vitest: 5.0.3
+      vitest: 5.0.5
 
   '@vitest/coverage-v8@5.0.3':
     resolution: {integrity: sha512-+klsyz7BvT1vCU28Zkfzms1Ia78XD0V41U3FUtRaa3S+vOr/EXvK1O6BvVD7l1RzEjm6SONR2aybOvDDf9u0mQ==}
@@ -2252,19 +2252,44 @@ packages:
       vite:
         optional: true
 
+  '@vitest/mocker@5.0.5':
+    resolution: {integrity: sha512-xLL3lkDegJZw+MGoGaCCsFayDZthGgpAtr3Vziyfc4p7xH89K7KRPcRBBh/kEYm0Aqkt5DtTmkYpBtRV/FrHZg==}
+    peerDependencies:
+      msw: ^2.4.9 || ^3.0.0
+      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
+    peerDependenciesMeta:
+      msw:
+        optional: true
+      vite:
+        optional: true
+
   '@vitest/pretty-format@5.0.3':
     resolution: {integrity: sha512-3hr5eV5z2ff0l2Q1vaKQbB4j3M3tElw8stDokEOTqXJB3Es5VrT8gBRIMY59gGuFp8Y61sWlWFK1aNUH5dHDYw==}
 
+  '@vitest/pretty-format@5.0.5':
+    resolution: {integrity: sha512-24sSdIlMA9DVPXnYiB9siwU0bTd887Y9jX3+vabztCSsvHwo7ipvJ/a2L3Rljw8+2rK1f5fCj3h5U9I/Jsqgbw==}
+
   '@vitest/spy@5.0.3':
     resolution: {integrity: sha512-XhFysQTB8AZ+P4gMi+Lpo99vg2AZi0qKpaB9yXQl37+CaMEAPO3iH/wGVnSyL5MPERiLezpqTVtrR6UZH5GCXg==}
+
+  '@vitest/spy@5.0.5':
+    resolution: {integrity: sha512-lwJRExuH417257Q5wv9QYugN9IMJkoxcrKrYxGPQkBzl7wlNpTUxD/5yNX4ESKVUIShKPgkGchYPFMWOOk0wzw==}
 
   '@vitest/ui@5.0.3':
     resolution: {integrity: sha512-9dfvqDBvSbHM6y9YVXxAypkl2z7mrWozK/JFo237qI0cj/3M/kzDKiVZqzi3TE54Ler7Jditud7OMBZCyUvRHA==}
     peerDependencies:
       vitest: 5.0.3
 
+  '@vitest/ui@5.0.5':
+    resolution: {integrity: sha512-dCoGUOdgmCaSB2g+WQ/spPCBkytAWdNUkFSXY4z+eYp2d8JEOY8v0uDRaJTG9qf/kTlTVZ4CuYMYMz/f1HS/qQ==}
+    peerDependencies:
+      vitest: 5.0.5
+
   '@vitest/utils@5.0.3':
     resolution: {integrity: sha512-77fDTZv8eu1CzlIfgPU2yrl5MXSUaUAOvgdZEeVm3X3WIxUubIX2SforqS6176lT32HCF6uBVMYVqfHxw7o6eg==}
+
+  '@vitest/utils@5.0.5':
+    resolution: {integrity: sha512-/rBu7gzLDQI/SC79Tn98b5DwOgaHU/Gt4I9OVeP3YofzNaYtbImRCOJQmT1S6vOJg9gEIlWC+r3QxKkjuSa1nQ==}
 
   '@volar/language-core@2.4.28':
     resolution: {integrity: sha512-w4qhIJ8ZSitgLAkVay6AbcnC7gP3glYM3fYwKV3srj8m494E3xtrCv6E+bWviiK/8hs6e6t1ij1s2Endql7vzQ==}
@@ -4312,6 +4337,9 @@ packages:
   magic-string@1.4.2:
     resolution: {integrity: sha512-vG+rjFRj1PqdIBozIxAGMjPlOhaVe+GXpbttY/iSK7rGcJRMlwNJO7dcUwmUqkymsFLJiNGI06t4D7Fr7yRC9g==}
 
+  magic-string@1.4.5:
+    resolution: {integrity: sha512-oLLC2+YvQUfAa+vxoufE/yc1icb87M9iXIRqAoR/2EhE/8cb3SF/+Gi0c2By1B+5Vz2e2vQtUvHiu1+63Znh+w==}
+
   magicast@0.5.5:
     resolution: {integrity: sha512-UicdXN8zQ3JHlxVq+28afMXPr1z7WNY6+7EJnzTdQWkTAlMLF5fNCCKxJHBQwGaNGR11581EiQmQzx73+MvszA==}
 
@@ -5350,6 +5378,10 @@ packages:
     resolution: {integrity: sha512-yau8yJdTt989Mm0Bd/236QnzEiPf2xLLTqUZRUJOo/3CB078LSwzei343DgtJVmfJKJE3TMINY1u42SQsP6mXw==}
     engines: {node: '>=14.0.0'}
 
+  tinyrainbow@3.2.0:
+    resolution: {integrity: sha512-LgO3D9yZJjApUiuUfl9iFAwrtaX4+lok3wJIqttGoKCHlWUqHqbQpnxCf82L8FjgKsh4iGo78hqJwgL8F6To2A==}
+    engines: {node: '>=14.0.0'}
+
   tldts-core@7.4.11:
     resolution: {integrity: sha512-CW3WN2rIIE/Of21mulhgnGOwoDyEFNygyIBOONSdyAuSATgMMUCpLeUlB+E8sAwA5xRV9hYPl+kyZ9citHCaKg==}
 
@@ -5919,6 +5951,18 @@ packages:
 
   ws@8.21.3:
     resolution: {integrity: sha512-201TZ/kPWxoPr/OKWjquZR1SWKXcvxdH+e1xrx89b3YbmzLMFCLfnaG1HFIgWzJOEWZ7MvpK++odZufgYR50Rw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
+  ws@8.22.0:
+    resolution: {integrity: sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -8056,25 +8100,25 @@ snapshots:
       vite: 8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
       vue: 3.5.42(typescript@6.0.3)
 
-  '@vitest/browser@5.0.3(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3)':
+  '@vitest/browser@5.0.5(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3)':
     dependencies:
       '@blazediff/core': 1.10.0
-      '@vitest/mocker': 5.0.3(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
-      '@vitest/ui': 5.0.3(vitest@5.0.3)
-      '@vitest/utils': 5.0.3
-      magic-string: 1.4.2
+      '@vitest/mocker': 5.0.5(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
+      '@vitest/ui': 5.0.5(vitest@5.0.3)
+      '@vitest/utils': 5.0.5
+      magic-string: 1.4.5
       pngjs: 7.0.0
       sirv: 3.0.2
-      tinyrainbow: 3.1.1
+      tinyrainbow: 3.2.0
       vitest: 5.0.3(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
-      ws: 8.21.3
+      ws: 8.22.0
     transitivePeerDependencies:
       - bufferutil
       - msw
       - utf-8-validate
       - vite
 
-  '@vitest/coverage-v8@5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)':
+  '@vitest/coverage-v8@5.0.3(@vitest/browser@5.0.5)(vitest@5.0.3)':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/istanbul-lib-coverage': 1.0.2
@@ -8086,7 +8130,7 @@ snapshots:
       tinyrainbow: 3.1.1
       vitest: 5.0.3(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
     optionalDependencies:
-      '@vitest/browser': 5.0.3(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3)
+      '@vitest/browser': 5.0.5(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3)
 
   '@vitest/eslint-plugin@1.6.20(@typescript-eslint/eslint-plugin@8.61.1(@typescript-eslint/parser@8.61.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@5.0.3)':
     dependencies:
@@ -8115,11 +8159,27 @@ snapshots:
     optionalDependencies:
       vite: 8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
 
+  '@vitest/mocker@5.0.5(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))':
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.31
+      '@vitest/spy': 5.0.5
+      estree-walker: 3.0.3
+      magic-string: 1.4.5
+    optionalDependencies:
+      vite: 8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
+
   '@vitest/pretty-format@5.0.3':
     dependencies:
-      tinyrainbow: 3.1.1
+      tinyrainbow: 3.2.0
+    optional: true
+
+  '@vitest/pretty-format@5.0.5':
+    dependencies:
+      tinyrainbow: 3.2.0
 
   '@vitest/spy@5.0.3': {}
+
+  '@vitest/spy@5.0.5': {}
 
   '@vitest/ui@5.0.3(vitest@5.0.3)':
     dependencies:
@@ -8128,14 +8188,32 @@ snapshots:
       flatted: 3.4.4
       pathe: 2.0.3
       sirv: 3.0.2
-      tinyrainbow: 3.1.1
+      tinyrainbow: 3.2.0
+      vitest: 5.0.3(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
+    optional: true
+
+  '@vitest/ui@5.0.5(vitest@5.0.3)':
+    dependencies:
+      '@vitest/utils': 5.0.5
+      fflate: 0.8.3
+      flatted: 3.4.4
+      pathe: 2.0.3
+      sirv: 3.0.2
+      tinyrainbow: 3.2.0
       vitest: 5.0.3(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
 
   '@vitest/utils@5.0.3':
     dependencies:
       '@vitest/pretty-format': 5.0.3
       convert-source-map: 2.0.0
-      tinyrainbow: 3.1.1
+      tinyrainbow: 3.2.0
+    optional: true
+
+  '@vitest/utils@5.0.5':
+    dependencies:
+      '@vitest/pretty-format': 5.0.5
+      convert-source-map: 2.0.0
+      tinyrainbow: 3.2.0
 
   '@volar/language-core@2.4.28':
     dependencies:
@@ -10325,6 +10403,10 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
 
+  magic-string@1.4.5:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.6.0
+
   magicast@0.5.5:
     dependencies:
       '@babel/parser': 7.29.8
@@ -11542,6 +11624,8 @@ snapshots:
 
   tinyrainbow@3.1.1: {}
 
+  tinyrainbow@3.2.0: {}
+
   tldts-core@7.4.11: {}
 
   tldts-icann@7.4.11:
@@ -11807,9 +11891,9 @@ snapshots:
       jiti: 2.7.0
       terser: 5.48.0
 
-  vitest-fail-on-console@0.10.1(@vitest/utils@5.0.3)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3):
+  vitest-fail-on-console@0.10.1(@vitest/utils@5.0.5)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vitest@5.0.3):
     dependencies:
-      '@vitest/utils': 5.0.3
+      '@vitest/utils': 5.0.5
       chalk: 5.6.2
       vite: 8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
       vitest: 5.0.3(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
@@ -11833,7 +11917,7 @@ snapshots:
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
       '@types/node': 24.13.2
-      '@vitest/coverage-v8': 5.0.3(@vitest/browser@5.0.3)(vitest@5.0.3)
+      '@vitest/coverage-v8': 5.0.3(@vitest/browser@5.0.5)(vitest@5.0.3)
       '@vitest/ui': 5.0.3(vitest@5.0.3)
       jsdom: 29.1.1(@noble/hashes@1.8.0)
     transitivePeerDependencies:
@@ -12127,6 +12211,8 @@ snapshots:
   ws@8.21.0: {}
 
   ws@8.21.3: {}
+
+  ws@8.22.0: {}
 
   xcode@3.0.1:
     dependencies:
