@@ -66,7 +66,7 @@ importers:
         version: 1.6.20(@typescript-eslint/eslint-plugin@8.61.1(@typescript-eslint/parser@8.61.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@5.0.3)
       '@vue/eslint-config-prettier':
         specifier: ^10.2.0
-        version: 10.2.0(@types/eslint@9.6.1)(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4)
+        version: 10.2.0(@types/eslint@9.6.1)(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.9.10)
       '@vue/eslint-config-typescript':
         specifier: ^14.9.0
         version: 14.9.0(eslint-plugin-vue@10.9.2(@typescript-eslint/parser@8.61.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(vue-eslint-parser@10.4.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
@@ -90,7 +90,7 @@ importers:
         version: 2.10.4(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))
       eslint-plugin-prettier:
         specifier: ^5.5.6
-        version: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4)
+        version: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.9.10)
       eslint-plugin-simple-import-sort:
         specifier: ^12.1.1
         version: 12.1.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))
@@ -119,8 +119,8 @@ importers:
         specifier: ^8.5.28
         version: 8.5.28
       prettier:
-        specifier: ^3.8.4
-        version: 3.8.4
+        specifier: ^3.9.10
+        version: 3.9.10
       puppeteer:
         specifier: ^25.10.0
         version: 25.10.0(yauzl@2.10.0)
@@ -135,7 +135,7 @@ importers:
         version: 1.3.0(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(workbox-build@7.4.1(supports-color@10.2.2))(workbox-window@7.4.1)
       vite-ssg:
         specifier: ^28.3.0
-        version: 28.3.0(@noble/hashes@1.8.0)(prettier@3.8.4)(supports-color@10.2.2)(unhead@2.1.15)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.42(typescript@6.0.3))
+        version: 28.3.0(@noble/hashes@1.8.0)(prettier@3.9.10)(supports-color@10.2.2)(unhead@2.1.15)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.42(typescript@6.0.3))
       vitest:
         specifier: ^5.0.3
         version: 5.0.3(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))
@@ -186,8 +186,8 @@ importers:
         specifier: ^9.39.4
         version: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
       prettier:
-        specifier: ^3.8.4
-        version: 3.8.4
+        specifier: ^3.9.10
+        version: 3.9.10
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -223,8 +223,8 @@ importers:
         specifier: ^9.39.4
         version: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
       prettier:
-        specifier: ^3.8.4
-        version: 3.8.4
+        specifier: ^3.9.10
+        version: 3.9.10
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -1430,6 +1430,7 @@ packages:
   '@opentelemetry/sdk-trace-base@2.11.0':
     resolution: {integrity: sha512-H19x/TX/LZdqiYOjM7fqtSxwlplC5pgelavqbQdHbhdq0q/AI/TGkM2dfGuuynTXmJPeF2HoZVoPDu+TGoW78A==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': '>=1.3.0 <1.10.0'
 
@@ -4075,8 +4076,8 @@ packages:
     resolution: {integrity: sha512-e7IpWJrnanNUroVK2taAgMxoEZvHLXdQiNjeExSu/DEIWm83jaKGBgb7tLmu2rMYpA027qFB3iLR/k3AVpFRnA==}
     engines: {node: '>= 18'}
 
-  legacy-javascript@0.0.1:
-    resolution: {integrity: sha512-lPyntS4/aS7jpuvOlitZDFifBCb4W8L/3QU0PLbUTUj+zYah8rfVjYic88yG7ZKTxhS5h9iz7duT8oUXKszLhg==}
+  legacy-javascript@0.0.4:
+    resolution: {integrity: sha512-UTmeKBVxnfJcpmpOvzzNnLsQT99BXHpPlc/ZKddIRmWmrR0fw6335I3lq4+sJoP60UTbBNaYsGYVPc65YB1x3A==}
 
   leven@3.1.0:
     resolution: {integrity: sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==}
@@ -4776,8 +4777,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.8.4:
-    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+  prettier@3.9.10:
+    resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7396,7 +7397,7 @@ snapshots:
 
   '@paulirish/trace_engine@0.0.65':
     dependencies:
-      legacy-javascript: 0.0.1
+      legacy-javascript: 0.0.4
       third-party-web: 0.30.0
 
   '@pkgr/core@0.3.6': {}
@@ -7422,7 +7423,7 @@ snapshots:
   '@prettier/plugin-xml@2.2.0':
     dependencies:
       '@xml-tools/parser': 1.0.11
-      prettier: 3.8.4
+      prettier: 3.9.10
 
   '@puppeteer/browsers@3.2.2(yauzl@2.10.0)':
     dependencies:
@@ -8181,12 +8182,12 @@ snapshots:
       '@vue/compiler-dom': 3.5.42
       '@vue/shared': 3.5.42
 
-  '@vue/eslint-config-prettier@10.2.0(@types/eslint@9.6.1)(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4)':
+  '@vue/eslint-config-prettier@10.2.0(@types/eslint@9.6.1)(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.9.10)':
     dependencies:
       eslint: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
       eslint-config-prettier: 10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))
-      eslint-plugin-prettier: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4)
-      prettier: 3.8.4
+      eslint-plugin-prettier: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.9.10)
+      prettier: 3.9.10
     transitivePeerDependencies:
       - '@types/eslint'
 
@@ -9251,10 +9252,10 @@ snapshots:
       eslint: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
       globals: 17.6.0
 
-  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4):
+  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.9.10):
     dependencies:
       eslint: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
-      prettier: 3.8.4
+      prettier: 3.9.10
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     optionalDependencies:
@@ -10110,7 +10111,7 @@ snapshots:
       type-is: 2.1.0
       vary: 1.1.2
 
-  legacy-javascript@0.0.1: {}
+  legacy-javascript@0.0.4: {}
 
   leven@3.1.0: {}
 
@@ -10784,7 +10785,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.8.4: {}
+  prettier@3.9.10: {}
 
   pretty-bytes@5.6.0: {}
 
@@ -11774,7 +11775,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-ssg@28.3.0(@noble/hashes@1.8.0)(prettier@3.8.4)(supports-color@10.2.2)(unhead@2.1.15)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.42(typescript@6.0.3)):
+  vite-ssg@28.3.0(@noble/hashes@1.8.0)(prettier@3.9.10)(supports-color@10.2.2)(unhead@2.1.15)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.42(typescript@6.0.3)):
     dependencies:
       '@unhead/dom': 2.1.15(unhead@2.1.15)
       '@unhead/vue': 2.1.15(vue@3.5.42(typescript@6.0.3))
@@ -11786,7 +11787,7 @@ snapshots:
       vite: 8.2.2(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)
       vue: 3.5.42(typescript@6.0.3)
     optionalDependencies:
-      prettier: 3.8.4
+      prettier: 3.9.10
     transitivePeerDependencies:
       - '@noble/hashes'
       - canvas
