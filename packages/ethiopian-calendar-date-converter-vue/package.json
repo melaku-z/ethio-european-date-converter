@@ -11,7 +11,7 @@
   "type": "module",
   "devDependencies": {
     "@vitest/coverage-v8": "^5.0.3",
-    "@vue/test-utils": "^2.5.0",
+    "@vue/test-utils": "^2.5.1",
     "@vue/tsconfig": "^0.9.1",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.39.4",
@@ -24,7 +24,7 @@
     "ethiopian-calendar-date-converter": "workspace:*"
   },
   "peerDependencies": {
-    "vue": "^3.5.42"
+    "vue": "^3.5.45"
   },
   "scripts": {
     "test": "vitest run",
