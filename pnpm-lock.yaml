@@ -66,7 +66,7 @@ importers:
         version: 1.6.20(@typescript-eslint/eslint-plugin@8.61.1(@typescript-eslint/parser@8.61.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@5.0.3)
       '@vue/eslint-config-prettier':
         specifier: ^10.2.0
-        version: 10.2.0(@types/eslint@9.6.1)(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4)
+        version: 10.2.0(@types/eslint@9.6.1)(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.10.1)
       '@vue/eslint-config-typescript':
         specifier: ^14.9.0
         version: 14.9.0(eslint-plugin-vue@10.9.2(@typescript-eslint/parser@8.61.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(vue-eslint-parser@10.4.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
@@ -90,7 +90,7 @@ importers:
         version: 2.10.4(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))
       eslint-plugin-prettier:
         specifier: ^5.5.6
-        version: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4)
+        version: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.10.1)
       eslint-plugin-simple-import-sort:
         specifier: ^12.1.1
         version: 12.1.1(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))
@@ -105,7 +105,7 @@ importers:
         version: 3.3.0
       koa-compress:
         specifier: github:koajs/compress
-        version: https://codeload.github.com/koajs/compress/tar.gz/c56967d8c1e0537eab4cddcf3bef18ea162181cf
+        version: https://codeload.github.com/koajs/compress/tar.gz/8946c78c98c34ffb0c593a892196513e96a6acb0
       koa-static:
         specifier: ^5.0.0
         version: 5.0.0(supports-color@10.2.2)
@@ -119,8 +119,8 @@ importers:
         specifier: ^8.5.32
         version: 8.5.32
       prettier:
-        specifier: ^3.8.4
-        version: 3.8.4
+        specifier: ^3.10.1
+        version: 3.10.1
       puppeteer:
         specifier: ^25.16.0
         version: 25.17.0(yauzl@2.10.0)
@@ -135,7 +135,7 @@ importers:
         version: 1.3.0(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0))(workbox-build@7.4.1(supports-color@10.2.2))(workbox-window@7.4.1)
       vite-ssg:
         specifier: ^28.3.0
-        version: 28.3.0(@noble/hashes@1.8.0)(prettier@3.8.4)(supports-color@10.2.2)(unhead@2.1.15)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.45(typescript@6.0.3))
+        version: 28.3.0(@noble/hashes@1.8.0)(prettier@3.10.1)(supports-color@10.2.2)(unhead@2.1.15)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.45(typescript@6.0.3))
       vitest:
         specifier: ^5.0.3
         version: 5.0.3(@opentelemetry/api@1.9.1)(@types/node@24.13.2)(@vitest/coverage-v8@5.0.3)(@vitest/ui@5.0.3)(jsdom@29.1.1(@noble/hashes@1.8.0))(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0))
@@ -186,8 +186,8 @@ importers:
         specifier: ^9.39.4
         version: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
       prettier:
-        specifier: ^3.8.4
-        version: 3.8.4
+        specifier: ^3.10.1
+        version: 3.10.1
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -223,8 +223,8 @@ importers:
         specifier: ^9.39.4
         version: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
       prettier:
-        specifier: ^3.8.4
-        version: 3.8.4
+        specifier: ^3.10.1
+        version: 3.10.1
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -4204,8 +4204,8 @@ packages:
   koa-compose@4.1.0:
     resolution: {integrity: sha512-8ODW8TrDuMYvXRwra/Kh7/rJo9BtOfPc6qO8eAfC80CnCvSjSl0bkRM24X6/XBBEyj0v1nRUQ1LyOy3dbqOWXw==}
 
-  koa-compress@https://codeload.github.com/koajs/compress/tar.gz/c56967d8c1e0537eab4cddcf3bef18ea162181cf:
-    resolution: {gitHosted: true, integrity: sha512-guBQUgDPzZbEftFvp9XoHp+lteANnlk9zJRX6z3yoRCujzucvlWc5vKEs6zOV5EIdy0+KzBy747tIT8ypoB02w==, tarball: https://codeload.github.com/koajs/compress/tar.gz/c56967d8c1e0537eab4cddcf3bef18ea162181cf}
+  koa-compress@https://codeload.github.com/koajs/compress/tar.gz/8946c78c98c34ffb0c593a892196513e96a6acb0:
+    resolution: {gitHosted: true, integrity: sha512-Gz1J0sEnkYaUSb3v+ribCzp9YJqNlFZOzi1D5Wr88yFsw+UDzRdSV8dN0vFjDNepMTzJI5BGVDPVwHl7fQaOJw==, tarball: https://codeload.github.com/koajs/compress/tar.gz/8946c78c98c34ffb0c593a892196513e96a6acb0}
     version: 5.3.0
 
   koa-is-json@1.0.0:
@@ -4863,8 +4863,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.8.4:
-    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+  prettier@3.10.1:
+    resolution: {integrity: sha512-70vp3ZUYoPlFbF9uiTdXHUUCGEIp7d4+6p+8DYbkm2jP7x/3i/paXVF6dopSI3zd/CEitrZN1rc4i85xWmmXlg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7532,7 +7532,7 @@ snapshots:
   '@prettier/plugin-xml@2.2.0':
     dependencies:
       '@xml-tools/parser': 1.0.11
-      prettier: 3.8.4
+      prettier: 3.10.1
 
   '@puppeteer/browsers@3.2.7(yauzl@2.10.0)':
     dependencies:
@@ -8325,12 +8325,12 @@ snapshots:
       '@vue/compiler-dom': 3.5.45
       '@vue/shared': 3.5.45
 
-  '@vue/eslint-config-prettier@10.2.0(@types/eslint@9.6.1)(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4)':
+  '@vue/eslint-config-prettier@10.2.0(@types/eslint@9.6.1)(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.10.1)':
     dependencies:
       eslint: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
       eslint-config-prettier: 10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))
-      eslint-plugin-prettier: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4)
-      prettier: 3.8.4
+      eslint-plugin-prettier: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.10.1)
+      prettier: 3.10.1
     transitivePeerDependencies:
       - '@types/eslint'
 
@@ -9413,10 +9413,10 @@ snapshots:
       eslint: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
       globals: 17.6.0
 
-  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.8.4):
+  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2)))(eslint@9.39.4(jiti@2.7.0)(supports-color@10.2.2))(prettier@3.10.1):
     dependencies:
       eslint: 9.39.4(jiti@2.7.0)(supports-color@10.2.2)
-      prettier: 3.8.4
+      prettier: 3.10.1
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     optionalDependencies:
@@ -10237,7 +10237,7 @@ snapshots:
 
   koa-compose@4.1.0: {}
 
-  koa-compress@https://codeload.github.com/koajs/compress/tar.gz/c56967d8c1e0537eab4cddcf3bef18ea162181cf:
+  koa-compress@https://codeload.github.com/koajs/compress/tar.gz/8946c78c98c34ffb0c593a892196513e96a6acb0:
     dependencies:
       bytes: 3.1.2
       compressible: 2.0.18
@@ -10941,7 +10941,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.8.4: {}
+  prettier@3.10.1: {}
 
   pretty-bytes@5.6.0: {}
 
@@ -11936,7 +11936,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-ssg@28.3.0(@noble/hashes@1.8.0)(prettier@3.8.4)(supports-color@10.2.2)(unhead@2.1.15)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.45(typescript@6.0.3)):
+  vite-ssg@28.3.0(@noble/hashes@1.8.0)(prettier@3.10.1)(supports-color@10.2.2)(unhead@2.1.15)(vite@8.2.2(@types/node@24.13.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0))(vue@3.5.45(typescript@6.0.3)):
     dependencies:
       '@unhead/dom': 2.1.15(unhead@2.1.15)
       '@unhead/vue': 2.1.15(vue@3.5.45(typescript@6.0.3))
@@ -11948,7 +11948,7 @@ snapshots:
       vite: 8.2.2(@types/node@24.13.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0)
       vue: 3.5.45(typescript@6.0.3)
     optionalDependencies:
-      prettier: 3.8.4
+      prettier: 3.10.1
     transitivePeerDependencies:
       - '@noble/hashes'
       - canvas
