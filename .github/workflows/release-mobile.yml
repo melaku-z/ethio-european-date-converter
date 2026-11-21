@@ -35,12 +35,12 @@ jobs:
 
       - uses: pnpm/action-setup@v6
         with:
-          version: 11
+          version: 12.21.0
 
       - name: Use Node.js 24.x
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
-          node-version: 24.x
+          node-version: 26.13.1
           cache: 'pnpm'
 
       - name: pnpm install
@@ -55,7 +55,7 @@ jobs:
         working-directory: ./mobile
 
       - name: Set up JDK 21
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v6
         with:
           java-version: '21'
           distribution: 'temurin'
