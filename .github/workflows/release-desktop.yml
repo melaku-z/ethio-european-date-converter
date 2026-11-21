@@ -47,18 +47,18 @@ jobs:
 
       - uses: pnpm/action-setup@v6
         with:
-          version: 11
+          version: 12.21.0
       - name: Sync node version and setup cache
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
-          node-version: 24.x
+          node-version: 26.13.1
           cache: 'pnpm'
 
       - name: Install frontend dependencies
         run: pnpm install
 
       - name: Build the app
-        uses: tauri-apps/tauri-action@v0
+        uses: tauri-apps/tauri-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
