@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build-test:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 22
 
     # Sets permissions of the GITHUB_TOKEN to allow release
@@ -30,16 +30,16 @@ jobs:
 
       - uses: pnpm/action-setup@v6
         with:
-          version: 11
+          version: 12.23.0
 
       - name: Use Node.js 24.x
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
-          node-version: 24.x
+          node-version: 26.13.1
           cache: 'pnpm'
 
       - name: Setup cache for Chromium binary
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ~/.cache/puppeteer
           key: ${{ runner.os }}-pnpm-11-chromium-${{ hashFiles('pnpm-lock.yaml') }}
@@ -77,7 +77,7 @@ jobs:
 
       - name: Cache Playwright
         id: playwright-cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: playwright-browsers-2-${{ env.PLAYWRIGHT_VERSION }}-${{ runner.os }}
@@ -153,12 +153,12 @@ jobs:
 
       - uses: pnpm/action-setup@v6
         with:
-          version: 11
+          version: 12.23.0
 
       - name: Use Node.js 24.x
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
-          node-version: 24.x
+          node-version: 26.13.1
           cache: 'pnpm'
 
       - name: pnpm install
