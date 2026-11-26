@@ -24,7 +24,7 @@
     "ethiopian-calendar-date-converter": "workspace:*"
   },
   "peerDependencies": {
-    "vue": "^3.5.45"
+    "vue": "^3.5.46"
   },
   "scripts": {
     "test": "vitest run",
